@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Document.aux
+A level-1 auxiliary file: 1-Dedicace.aux
+A level-1 auxiliary file: 2-Remerciements.aux
+A level-1 auxiliary file: 3-Resume_sujet.aux
+A level-1 auxiliary file: 3-Abstract.aux
+A level-1 auxiliary file: 4-Sigles_Abrev.aux
+A level-1 auxiliary file: 5-Introduction.aux
+A level-1 auxiliary file: 6-Revue_litterature.aux
+A level-1 auxiliary file: 7-Theme1.aux
+A level-1 auxiliary file: 7-Theme2.aux
+A level-1 auxiliary file: 7-Theme3.aux
+A level-1 auxiliary file: 8-Conclusion.aux
+The style file: IEEEtran-francais.bst
+A level-1 auxiliary file: 9-Annexes.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Document.bib
+Warning--I didn't find a database entry for "Cohen2006"
+Warning--I didn't find a database entry for "Electrical2006"
+Warning--I didn't find a database entry for "Min2016"
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+Warning--missing nationality in Thorsson2014
+Warning--missing nationality in Schirmer2012
+Warning--missing nationality in Sakai2015
+Warning--empty author in Daintith2010
+Warning--empty author in Corrosion2018
+Warning--missing institution in Electrical2023
+Warning--missing institution in CSA2002
+
+Done.
+You've used 36 entries,
+            4024 wiz_defined-function locations,
+            1070 strings with 13789 characters,
+and the built_in function-call counts, 19663 in all, are:
+= -- 1608
+> -- 347
+< -- 137
++ -- 202
+- -- 74
+* -- 937
+:= -- 3314
+add.period$ -- 70
+call.type$ -- 36
+change.case$ -- 49
+chr.to.int$ -- 355
+cite$ -- 43
+duplicate$ -- 1449
+empty$ -- 1656
+format.name$ -- 67
+if$ -- 4372
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 265
+newline$ -- 180
+num.names$ -- 35
+pop$ -- 637
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 4
+skip$ -- 1527
+stack$ -- 0
+substring$ -- 586
+swap$ -- 1111
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 36
+warning$ -- 7
+while$ -- 64
+width$ -- 37
+write$ -- 394
+(There were 10 warnings)
