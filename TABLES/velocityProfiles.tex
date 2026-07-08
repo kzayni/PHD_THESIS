@@ -1,0 +1,29 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htb!]
+\centering
+\caption{Velocity Wall Functions}
+\label{tab:veloctityprofiles}
+\begin{tabular}{ccc}
+\hline
+Source &
+SA or $k-\omega$ SST &
+Velocity Profile \\ \hline\hline
+\\
+Spalding \cite{spalding1961single}  &
+Both &
+$y^+ = u^+ + e^{-\kappa B} (1 - e^{\kappa u^+} - \frac{(\kappa u^+)}{1!} - \frac{(\kappa u^+)^2}{2!} - ...)$ \\ \\
+
+\\
+
+Reichardt \cite{reichardt1951vollstandige} & Both & $u^+ = \frac{ln(1+\kappa y^+)}{\kappa} + 7.8 (1-e^{-\frac{y^+}{11}}-\frac{y^+}{11}e^{-\frac{y^+}{3}})$ \\ \\
+
+
+\multirow{3}{*}{Knopp \cite{knopp2006grid}} & SA & $F_{SA,\alpha} =(1-\phi_{SA}) F_{Sp,5} +\phi_{SA}F_{Rei,m}$ with $\phi_{SA} = tanh[(\frac{y^+}{24})^3]$\\ \\
+
+& $k-\omega$ SST & $F_{k\omega,\alpha} =(1-\phi_{k\omega}) F_{Sp,3} +\phi_{k\omega}F_{Rei,m}$ with $\phi_{k\omega} = tanh[(\frac{y^+}{50})^2]$\\ \\
+
+\multirow{3}{*}{Allmaras \cite{allmaras2012modifications}} & \multirow{2}{*}{SA} & $u^+ = \Bar{B} + c_1ln((y^+ + a_1)^2 + b_1^2) - c_2ln((y^+ + a_2)^2 + b_2^2)$ \\ & & $- c_3 atan2(b_1,y^+ + a_1) - c_4atan2(b_2,y^+ + a_2)$ \\ \\ 
+\hline
+\end{tabular}
+\end{table}

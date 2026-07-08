@@ -1,0 +1,31 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+
+\begin{table}[htp!]
+\centering
+\caption{IBM Comparison}
+\label{tab:IBM_MODELS}
+\begin{tabular}{ccccccc}
+\hline
+Class & Method & Implementation & Accuracy & Stability
+ & Cost \\
+\hline
+\hline
+\\
+
+Geometrical & Cut-Cell & Hard & $1^{st}$ & Hard & High \\
+
+\\
+
+\multirow{3}{*}{Continuous Forcing} & Rigid Body Forcing & Easy & $1^{st}$ Order & Hard & Low \\ \\
+
+& Penalization & Easy & $2^{nd}$ Order & Hard & Low \\
+
+\\
+
+\multirow{5}{*}{Discrete Forcing} & Direct Forcing & Medium & $2^{nd}$ Order & Hard & Low  \\ \\
+& Ghost-Cell & Medium & $2^{nd}$ Order  & No Issues  & High \\ \\
+& Face Forcing & Medium & $2^{nd}$ Order & No Issues & High \\ \\ 
+\hline
+\end{tabular}
+\end{table}

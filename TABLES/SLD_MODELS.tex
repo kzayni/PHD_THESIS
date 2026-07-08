@@ -1,0 +1,38 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htb!]
+\centering
+\caption{SLD Splashing Models}
+\label{tab:splashing_Models}
+\begin{tabular}{ccc}
+\hline
+Source &
+Mass Loss Coefficient &
+Splashing Criterion \\ \hline\hline
+\\
+Mundo et al. \cite{mundo1998modeling} &
+$n_s (\frac{d_s}{d_0})^3$ &
+$K_M = (Oh^{-0.4}We)^{0.625} > 57.7$ \\ \\
+
+\\
+Trujillo et al. \cite{trujillo2000modelling} &
+$0.8 [1.0 - e^{-0.85(K_y - 17)}]$ &
+$K_y = \frac{1}{0.45^\frac{3}{8}}(Oh^{-0.4}We)^{0.3125} > 17$ \\ \\
+
+\\
+Honsek et al. \cite{honsek2006fensap} &
+$\frac{3.8}{K_y^{0.5}} [1.0 - e^{-0.85(K_y - 17)}]$ &
+$K_y > 17$ \\ \\
+
+\\
+Wright et al. \cite{wright2004semi} &
+$0.7 (1.0 - sin(\theta_0)) [1.0-e^{-0.0092(K_M - 200.0)}]$ &
+$\frac{0.859 \, K_m^{0.5} \, (\frac{\rho_{w}}{LWC})^{0.125}}{sin(\theta_0)^{1.25}} > 200.0$ \& $\theta < \frac{\pi}{2}$ \\ \\
+
+\\
+Trontin et al. \cite{trontin2016revisited} &
+$1.0 - g(\frac{\theta}{\theta_c})f(\frac{K_c-K_0}{K_0})$ &
+$ K_c = We_n \cdot Oh^{\frac{-2}{5}} > 657 $\\ \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,30 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htb!]
+\centering
+\caption{Temperature Wall Functions}
+\label{tab:temperatureprofiles}
+\begin{tabular}{ccc}
+\hline
+Source &
+SA or $k-\omega$ SST &
+Temperature Profile\\ \hline\hline
+\\
+\multirow{3}{*}{Kader \cite{kader1972heat}} & \multirow{2}{*}{Both} & $\theta^+ = Pry^+ e^{-\tau} + 2.12 ln((1+y^+) + \beta(Pr)) e^{-\frac{1}{\tau}}$ \\ \\ & & $\tau = \frac{0.01 (Pry^+)^4}{1+5Pr^3y^+}$ , $\beta = (3.85 Pr^{\frac{1}{3}}-1.3)^2+ 2.12ln(Pr)$ \\ \\ 
+
+\\
+
+\multirow{3}{*}{Jayatillaka \cite{jayatilleke1966influence}} & \multirow{2}{*}{Both} & $T^+ = Pr_t(u^+ + P_f)$ \\ \\ & & $P_f = 0.24 [(\frac{Pr}{Pr_t})^\frac{3}{4}-1][1+0.28 exp(-0.007 \frac{Pr_t}{Pr})]$ \\ \\ 
+
+\\
+
+
+\multirow{3}{*}{Arpaci  \cite{arpaci1984heat}} & \multirow{2}{*}{Both} & $  T^+ =
+    \begin{cases}
+      Pr \, y^+ & y^+ < y^+_1\\
+    a_2 - \frac{Pr_t}{2a_1(y^+)^2} & y^+_1 \leq y^+ < y^+_2  \\
+    \frac{Pr_t}{\kappa} ln(y^+) + \beta &  y^+ \geq y^+_2 
+    \end{cases} $ \\  \\ \\ 
+\hline
+\end{tabular}
+\end{table}

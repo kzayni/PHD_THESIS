@@ -24,7 +24,7 @@
 
 %% LA COMMANDE SUIVANTE ÉTABLIT LE LANGAGE DE LA THÈSE : ÉCRIRE french POUR UNE THÈSE EN FRANÇAIS
 %% THE NEXT COMMAND DETERMINES THE LANGUAGE OF THE THESIS: WRITE english FOR A THESIS IN ENGLISH
-\newcommand\Langue{french}            
+\newcommand\Langue{english}            
 
 \usepackage{ifthen}
 \usepackage[utf8]{inputenc}
@@ -66,6 +66,7 @@
 %% style with only the page number on the right. We also make sure that the 
 %% default page style is to display the page number at the top right.
 \usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
 \fancypagestyle{pagenumber}{\fancyhf{}\fancyhead[R]{\thepage}}
 \renewcommand\headrulewidth{0pt}
 \makeatletter
@@ -84,6 +85,7 @@
 \usepackage{subcaption} % figures & sous figures / figures & subfigures
 \usepackage{siunitx} % unites SI / SI units
 \usepackage{amssymb} % autres symboles mathematiques / other mathematical symbols
+\usepackage{multirow} % cells spanning multiple table rows
 \usepackage[bottom]{footmisc} % pour avoir les notes de bas de page en dessous des figures... / to have the footnotes below the figures
 %\usepackage{listings} % Si on veut ajouter des lignes de codes dans le texte / If you want to add lines of code to the text
 
@@ -95,7 +97,7 @@
 %%
 %% Définitions spécifiques à l'étudiant.
 %% Student-specific definitions.
-\include{0-Definitions_Etudiant}
+\include{CHAPTERS/0-Definitions_Etudiant}
 \ifthenelse{\equal{\monDiplome}{M}}{
 \newcommand\monSujet{Mémoire de maîtrise}
 \newcommand\monDipl{Maîtrise ès sciences appliquées}
@@ -193,10 +195,10 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 \monJury
 %%
 \pagestyle{pagenumber}%
-\include{1-Dedicace}          % Dédicace du document.
-\include{2-Remerciements}     % Remerciements / Acknowledments
-\include{3-Resume_sujet}      % Résumé du sujet en français / Abstract in French
-\include{3-Abstract}          % Résumé du sujet en anglais / Abstract in English
+\include{CHAPTERS/1-Dedicace}          % Dédicace du document.
+\include{CHAPTERS/2-Remerciements}     % Remerciements / Acknowledments
+\include{CHAPTERS/3-Resume_sujet}      % Résumé du sujet en français / Abstract in French
+\include{CHAPTERS/3-Abstract}          % Résumé du sujet en anglais / Abstract in English
 
 {\setlength{\parskip}{0pt}
 %%
@@ -254,15 +256,12 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 %% List of appendices, if needed.
 }
 
-\include{4-Sigles_Abrev}       % Liste des sigles et abréviations.
+\include{CHAPTERS/4-Sigles_Abrev}       % Liste des sigles et abréviations.
 \ifthenelse{\equal{\AnnexesPresentes}{O}}{\listofappendices}{}
 \mainmatter
-\include{5-Introduction}       % Introduction au sujet de recherche.
-\include{6-Revue_litterature}  % Revue de littérature / Literature review
-\include{7-Theme1}             % Premier thème (Doctorat) ou "Détails de la Solution" (Maîtrise) / First topic (PhD) or "Details of the Solution" (Master's).
-\include{7-Theme2}             % Second thème (Doctorat) ou "Résultats théoriques et expérimentaux" (Maîtrise) / Second theme (PhD) or "Theoretical and experimental results" (Master's)
-\include{7-Theme3}             % Troisième thème (Doctorat) ou effacez ce fichier si vous êtes à la Maîtrise / Third topic (PhD) or delete this file if you are in the Master's program
-\include{8-Conclusion}         % Conclusion.
+\include{CHAPTERS/5-Introduction}       % Introduction au sujet de recherche.
+\include{CHAPTERS/6-Revue_litterature}  % Revue de littérature / Literature review
+\include{CHAPTERS/8-Conclusion}         % Conclusion.
 %\backmatter
 \ifthenelse{\equal{\Langue}{english}}{
 	\renewcommand\bibname{REFERENCES}
@@ -277,6 +276,6 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 \ifthenelse{\equal{\AnnexesPresentes}{O}}{
 	\appendix%
 	\newcommand{\Annexe}[1]{\annexe{#1}\setcounter{figure}{0}\setcounter{table}{0}\setcounter{footnote}{0}}%
-	\include{9-Annexes}}
+	\include{CHAPTERS/9-Annexes}}
 {}
 \end{document}

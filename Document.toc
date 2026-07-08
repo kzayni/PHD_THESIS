@@ -1,37 +1,50 @@
-\babel@toc {french}{}\relax 
-\contentsline {compteur}{DÉDICACE}{iii}{chapter*.1}%
-\contentsline {compteur}{REMERCIEMENTS}{iv}{chapter*.2}%
-\contentsline {compteur}{RÉSUMÉ}{v}{chapter*.3}%
-\contentsline {compteur}{ABSTRACT}{vi}{chapter*.4}%
+\babel@toc {english}{}\relax 
+\contentsline {compteur}{DEDICATION}{iv}{chapter*.1}%
+\contentsline {compteur}{ACKNOWLEDGEMENTS}{v}{chapter*.2}%
+\contentsline {compteur}{RÉSUMÉ}{vi}{chapter*.3}%
+\contentsline {compteur}{ABSTRACT}{vii}{chapter*.4}%
 \babel@toc {english}{}\relax 
 \babel@toc {french}{}\relax 
 \babel@toc {english}{}\relax 
-\babel@toc {french}{}\relax 
-{\pdfbookmark [0]{TABLE DES MATIÈRES}{toc}}
-\contentsline {compteur}{LISTE DES TABLEAUX}{viii}{chapter*.5}%
-\contentsline {compteur}{LISTE DES FIGURES}{ix}{chapter*.6}%
-\contentsline {compteur}{LISTE DES SIGLES ET ABRÉVIATIONS}{x}{chapter*.7}%
-\contentsline {compteur}{LISTE DES ANNEXES}{xi}{chapter*.8}%
+\babel@toc {english}{}\relax 
+{\pdfbookmark [0]{TABLE OF CONTENTS}{toc}}
+\contentsline {compteur}{LIST OF TABLES}{x}{chapter*.5}%
+\contentsline {compteur}{LIST OF FIGURES}{xi}{chapter*.6}%
+\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xii}{chapter*.7}%
+\contentsline {compteur}{LIST OF APPENDICES}{xiii}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Définitions et concepts de base}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Une sous-section}{1}{subsection.1.1.1}%
-\contentsline {subsubsection}{Une sous-sous-section}{1}{section*.9}%
-\contentsline {paragraph}{Le niveau paragraphe}{1}{section*.10}%
-\contentsline {section}{\numberline {1.2}Éléments de la problématique}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Autres types de structures de données}{2}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Le protocole IPv6}{2}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Objectifs de recherche}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Plan du mémoire}{3}{section.1.4}%
-\contentsline {paragraph}{Le taux de paquets perdus}{4}{section*.15}%
-\babel@toc {english}{}\relax 
-\babel@toc {french}{}\relax 
-\contentsline {chapter}{\numberline {2}REVUE DE LITTÉRATURE / LITERATURE REVIEW}{7}{chapter.2}%
-\contentsline {chapter}{\numberline {3}PREMIER THÈME / FIRST THEME}{8}{chapter.3}%
-\contentsline {chapter}{\numberline {4}SECOND THÈME / SECOND THEME}{9}{chapter.4}%
-\contentsline {chapter}{\numberline {5}TROISIÈME THÈME AVEC UN TITRE TRÈS LONG QUI S'ÉTEND SUR DEUX LIGNES / THIRD THEME WITH A VERY LONG TITLE THAT EXTENDS ON TWO LINES}{10}{chapter.5}%
-\contentsline {chapter}{\numberline {6}CONCLUSION}{12}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Synthèse des travaux / Summary of Works}{12}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Limitations de la solution proposée / Limitations}{12}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Améliorations futures / Future Research}{12}{section.6.3}%
-\contentsline {compteur}{RÉFÉRENCES}{13}{chapter*.18}%
-\contentsline {compteur}{ANNEXES}{16}{chapter*.18}%
+\contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problem Statement}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Ice Accretion Numerical Framework}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Current Techniques and Potential Solution}{6}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Research Hypothesis}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objectives}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Requirements and Constraints}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Thesis Outline}{8}{section.1.6}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Water-Droplet Tracking}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Eulerian Droplet Tracking}{10}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Lagrangian Droplet Tracking}{11}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Collection Efficiency}{14}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Supercooled Large Droplet Modeling}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Third-Order Effects}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Second-Order Effects: Deformation and Breakup}{17}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}First-Order Effects: Sticking, Splashing, and Bouncing}{18}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Immersed-Boundary Methods}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Classification}{21}{subsection.2.3.1}%
+\contentsline {subsubsection}{Geometrical Methods}{22}{section*.22}%
+\contentsline {subsubsection}{Continuous-Forcing Methods}{22}{section*.24}%
+\contentsline {subsubsection}{Discrete-Forcing Methods}{24}{section*.25}%
+\contentsline {subsection}{\numberline {2.3.2}Surface Representation}{26}{subsection.2.3.2}%
+\contentsline {subsubsection}{Interface Tracking}{26}{section*.29}%
+\contentsline {subsubsection}{Interface Capturing}{27}{section*.30}%
+\contentsline {subsection}{\numberline {2.3.3}Wall Functions}{29}{subsection.2.3.3}%
+\contentsline {subsubsection}{Velocity Wall Functions}{31}{section*.33}%
+\contentsline {subsubsection}{Temperature Wall Functions}{32}{section*.35}%
+\contentsline {subsubsection}{Influence of Roughness}{32}{section*.37}%
+\contentsline {chapter}{\numberline {3}CONCLUSION}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Summary of Works}{35}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Limitations}{35}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Future Research}{35}{section.3.3}%
+\contentsline {compteur}{REFERENCES}{36}{chapter*.39}%
+\contentsline {compteur}{APPENDICES}{44}{chapter*.39}%

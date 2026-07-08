@@ -1,0 +1,231 @@
+\newganttlinktype{f-m}{
+ \ganttsetstartanchor{on right=1}
+ \ganttsetendanchor{on left=0}
+ \draw[/pgfgantt/link]
+  ([xshift=-.2pt]\xLeft, \yUpper) --       % xshift to fit arrow
+  node[pos=.5, /pgfgantt/link label node] {\ganttlinklabel} 
+  (\xRight, \yLower);
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htp!]
+\label{tab:gantttt}
+\centering
+\raggedright
+\caption{Thesis Schedule}
+\begin{ganttchart}[
+hgrid,
+vgrid,
+progress label text={\pgfmathprintnumber[fixed, precision=0]{#1}\%},
+time slot format=isodate-yearmonth,
+x unit=0.7cm,
+y unit title=0.25cm,
+y unit chart=0.35cm,
+title label font=\fontsize{4}{5}\selectfont,
+milestone label font=\tiny\itshape,
+bar label font=\tiny,
+group label font=\scriptsize\bfseries,
+time slot unit=month,
+bar/.append style={fill=green},
+bar incomplete/.append style={fill=orange},
+group incomplete/.append style={draw=black,fill=none}
+]{2022-09}{2023-09}
+
+\gantttitlecalendar{year, month} \\
+\ganttgroup[/pgfgantt/group/.style={}]{Research}{2022-09}{2023-09} \\
+\ganttbar[progress=100, name=LR]{Literature Review}{2022-09}{2023-09} \\
+\ganttbar[progress=100, name=CHAMPSANA]{CHAMPS Analysis}{2022-09}{2023-09} \\
+
+\ganttgroup[/pgfgantt/group/.style={}]{Implementation \& Validation}{2022-09}{2023-09} \\
+\ganttbar[progress=100, name=T1A]{Lagrangian 2D Implementation}{2022-09}{2023-03} \\
+\ganttbar[progress=100, name=T1A]{Lagrangian 2D Validation Cases}{2022-09}{2023-06} \\
+\ganttbar[progress=100,name=SLD]{SLD Implementation}{2023-01}{2023-06} \\
+\ganttmilestone[milestone/.append style={fill=green},name=solver2d]{Solver 2D}{2023-06}\\
+\ganttbar[progress=100, name=T1A]{Lagrangian 3D Implementation}{2023-07}{2023-09} \\
+\ganttbar[progress=100, name=3dcases]{Lagrangian 3D Validation Cases}{2023-06}{2023-09} \\
+\ganttmilestone[milestone/.append style={fill=green},name=solver3d]{Solver 3D}{2023-09}\\
+
+\ganttgroup[/pgfgantt/group/.style={}]{Academia}{2022-09}{2023-09} \\
+\ganttbar[progress=100, name=CANDW]{Courses \& Workshops}{2022-09}{2023-09} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{IPW2}{2023-01}{2023-06} \\
+\ganttbar[progress=100, name=PSCRIPTS]{Preparing scripts}{2023-01}{2023-05} \\
+\ganttbar[progress=100, name=SPD]{Sorting Participants Data}{2023-03}{2023-05} \\
+\ganttbar[progress=100, name=SPD]{Simulations}{2023-02}{2023-06} \\
+\ganttbar[progress=100, name=PPL]{Preparing Presentations}{2023-05}{2023-06} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Conferences}{2022-09}{2023-09} \\
+\ganttbar[progress=100, name=CFDSC]{CFDSC}{2023-05}{2023-05} \\
+\ganttbar[progress=100, name=SAE]{SAE}{2023-06}{2023-06} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Comprehensive Exams}{2023-09}{2023-09} \\
+\ganttbar[progress=100, name=WP]{Writing Proposal}{2023-09}{2023-09} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Publications}{2023-01}{2023-04} \\
+\ganttbar[progress=100, name=WP]{CFDSC - Conference Paper}{2022-11}{2023-04} \\
+
+
+\ganttgroup[progress=100]{Vacations}{2023-06}{2023-06} \\
+
+\ganttlink[link type=f-m]{SLD}{solver2d}
+\ganttlink[link type=f-m]{3dcases}{solver3d}
+\end{ganttchart}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htp!]
+\centering
+\raggedright
+\begin{ganttchart}[
+hgrid,
+vgrid,
+progress label text={\pgfmathprintnumber[fixed, precision=1]{#1}\%},
+time slot format=isodate-yearmonth,
+today=2023-10,
+x unit=0.7cm,
+y unit title=0.2cm,
+y unit chart=0.3cm,
+title label font=\fontsize{4}{5}\selectfont,
+milestone label font=\tiny\itshape,
+bar label font=\tiny,
+group label font=\scriptsize\bfseries,
+time slot unit=month,
+today label=Current Date,
+bar/.append style={fill=green},
+bar incomplete/.append style={fill=orange},
+group incomplete/.append style={draw=black,fill=none}
+]{2023-09}{2024-09}
+
+\gantttitlecalendar{year, month} \\
+\ganttgroup[/pgfgantt/group/.style={}]{Research}{2023-09}{2023-11} \\
+\ganttbar[progress=90,name=LR]{Literature Review}{2023-09}{2023-11} \\
+\ganttbar[progress=80,name=CHAMPSANA]{CHAMPS Analysis}{2023-09}{2023-11} \\
+
+\ganttgroup[/pgfgantt/group/.style={}]{Implementation \& Validation}{2022-09}{2023-09} \\
+\ganttbar[progress=0, name=T1A]{Cassiopée API}{2023-11}{2023-11} \\
+\ganttbar[progress=0, name=T1A]{Hybrid Euler Lagrange 3D Solver}{2023-12}{2023-12} \\
+\ganttbar[progress=0, name=T1A]{Wall Functions}{2023-11}{2023-12} \\
+\ganttbar[progress=0, name=T1A]{Level Set 2D}{2024-01}{2024-02} \\
+\ganttbar[progress=0, name=T1A]{IBM Pre-processor 2D}{2024-01}{2024-02} \\
+\ganttbar[progress=0, name=T1A]{IBM Droplet solver 2D}{2024-03}{2024-05} \\
+\ganttbar[progress=0, name=verif2D]{Verification/Validation 2D}{2023-11}{2024-05} \\
+\ganttmilestone[milestone/.append style={fill=orange},name=3d]{Solver 2D}{2024-05}\\
+
+\ganttbar[progress=0, name=T1A]{Level Set 3D}{2024-06}{2024-07} \\
+\ganttbar[progress=0, name=T1A]{IBM Pre-processor 3D}{2024-06}{2024-07}\\
+\ganttbar[progress=0, name=T1A]{IBM Droplet solver 3D}{2024-07}{2024-09} \\
+\ganttbar[progress=0, name=verif3D]{Verification/Validation 3D}{2024-07}{2024-09} \\
+
+
+
+\ganttgroup[/pgfgantt/group/.style={}]{Academia}{2023-09}{2024-09} \\
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Comprehensive Exams}{2023-09}{2023-12} \\
+\ganttbar[progress=100, name=WP]{Writing Proposal}{2023-10}{2023-10} \\
+\ganttbar[progress=0, name=WE]{Writing Exam}{2023-11}{2023-11} \\
+\ganttmilestone[milestone/.append style={fill=orange},name=pres]{Presentation}{2023-11}\\
+\ganttlink[link type=-]{WP}{WE}
+\ganttlink[link type=f-m]{WE}{pres}
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Publications}{2023-01}{2023-04} \\
+\ganttbar[progress=0, name=WP]{Journal Paper TBD.}{2023-12}{2024-06} \\
+
+\ganttgroup[progress=0]{Vacations}{2024-02}{2024-02} \\
+
+\ganttlink[link type=f-m]{verif2D}{3d}
+
+\end{ganttchart}
+\end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htp!]
+\centering
+\raggedright
+\begin{ganttchart}[
+hgrid,
+vgrid,
+time slot format=isodate-yearmonth,
+progress label text={\pgfmathprintnumber[fixed, precision=0]{#1}\%},
+x unit=0.7cm,
+y unit title=0.25cm,
+y unit chart=0.35cm,
+title label font=\fontsize{4}{5}\selectfont,
+bar label font=\tiny,
+milestone label font=\tiny\itshape,
+group label font=\scriptsize\bfseries,
+time slot unit=month,
+bar/.append style={fill=green},
+bar incomplete/.append style={fill=orange},
+group incomplete/.append style={draw=black,fill=none}
+]{2024-09}{2025-09}
+
+\gantttitlecalendar{year, month} \\%% Literature review %%
+
+\ganttgroup[/pgfgantt/group/.style={}]{Implementation \& Validation}{2024-09}{2025-09} \\
+\ganttbar[progress=0, name=verif3D]{Verification/Validation 3D}{2024-09}{2025-01} \\
+\ganttmilestonez`[milestone/.append style={fill=orange},name=3dsol]{Solver 3D}{2025-01}\\
+\ganttbar[progress=0, name=Opt]{Optimization \& Debugging}{2024-09}{2025-06} \\
+
+\ganttgroup[/pgfgantt/group/.style={}]{Academia}{2024-09}{2025-09} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{IPW3}{2025-01}{2025-06} \\
+\ganttbar[progress=0, name=PSCRIPTS]{Preparing scripts}{2025-01}{2025-05} \\
+\ganttbar[progress=0, name=SPD]{Sorting Participants Data}{2025-03}{2025-05} \\
+\ganttbar[progress=0, name=SPD]{Simulations}{2025-02}{2025-06} \\
+\ganttbar[progress=0, name=PPL]{Preparing Presentations}{2025-05}{2025-06} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Publications}{2024-09}{2024-09} \\
+\ganttbar[progress=0, name=WP]{Conference Paper TBD.}{2024-11}{2025-04} \\
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Conferences}{2024-09}{2024-09} \\
+\ganttbar[progress=0, name=CFDSC]{Conference TBD.}{2025-06}{2025-06} \\
+
+
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Thesis}{2024-09}{2025-09}\\
+\ganttbar[progress=0, name=Corrections]{Writing Disseration}{2025-05}{2025-09} \\
+
+
+\ganttgroup[progress=0]{Vacations}{2025-02}{2025-02} \\
+
+\ganttlink[link type=f-m]{verif3D}{3dsol}
+\end{ganttchart}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htp!]
+\centering
+\raggedright
+\begin{ganttchart}[
+hgrid,
+vgrid,
+time slot format=isodate-yearmonth,
+progress label text={\pgfmathprintnumber[fixed, precision=0]{#1}\%},
+x unit=0.7cm,
+y unit title=0.25cm,
+y unit chart=0.35cm,
+title label font=\fontsize{4}{5}\selectfont,
+bar label font=\tiny,
+milestone label font=\tiny,
+group label font=\scriptsize\bfseries,
+time slot unit=month,
+bar/.append style={fill=green},
+bar incomplete/.append style={fill=orange},
+group incomplete/.append style={draw=black,fill=none}
+]{2025-09}{2026-09}
+
+\gantttitlecalendar{year, month} \\%% Literature review %%
+
+\ganttgroup[/pgfgantt/group/.style={}]{Academia}{2025-09}{2026-01} \\
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Publications}{2025-09}{2025-09} \\
+\ganttbar[progress=0, name=WP]{Journal Paper TBD.}{2025-09}{2025-12} \\
+\ganttgroup[/pgfgantt/group/.style={},group label font=\tiny\bfseries\color{red}]{Thesis}{2025-09}{2026-01}\\
+
+\ganttbar[progress=0, name=Corrections]{Corrections}{2025-09}{2025-10} \\
+\ganttmilestone[milestone/.append style={fill=orange},name=Sub]{Submission}{2025-10} \\ 
+\ganttbar[progress=0, name=Pres]{Prepare Presentation}{2025-11}{2025-12} \\
+\ganttmilestone[milestone/.append style={fill=orange},name=defense]{Thesis Defense}{2025-12}\\
+\ganttgroup[/pgfgantt/group/.style={},group label font=\scriptsize\bfseries\color{white}]{Implementation \& Validation}{2024-09}{2025-09}\\
+
+
+
+\ganttlink[link type=f-m]{Corrections}{Sub}
+\ganttlink[link type=f-m]{Pres}{defense}
+\end{ganttchart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{table}
