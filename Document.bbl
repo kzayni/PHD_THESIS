@@ -7,8 +7,7 @@
 \providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
 \providecommand{\BIBentryALTinterwordstretchfactor}{4}
 \providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
-\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
-  \fontdimen4\font\relax}
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus \fontdimen4\font\relax}
 \providecommand{\BIBforeignlanguage}[2]{{%
 \expandafter\ifx\csname l@#1\endcsname\relax
 \typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
@@ -21,435 +20,271 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{broeren2016ice}
-A.~P. Broeren, M.~G. Potapczuk, S.~Lee, A.~M. Malone, B.~P. Paul, and
-  B.~Woodard, ``Ice-accretion test results for three large-scale swept-wing
-  models in the nasa icing research tunnel,'' in \emph{8th AIAA Atmospheric and
-  Space Environments Conference}, 2016, p. 3733.
-
-\bibitem{noauthor_glenn_nodate}
+\bibitem{noauthor_crm-hl_2022}
 \BIBentryALTinterwordspacing
-``\BIBforeignlanguage{en-US}{Glenn {Research} {Center} - {NASA}}.'' [Online].
-  Available: \url{https://www.nasa.gov/gallery/glenn-images/}
+``\BIBforeignlanguage{en-US}{{CRM}-{HL} {\textbar} {NASA} {Common} {Research} {Model}},'' Apr. 2022. [Online]. Available: \url{https://commonresearchmodel.larc.nasa.gov/high-lift-crm/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{xie2020robust}
-L.~Xie, P.~Li, H.~Chen, and H.~Liu, ``Robust and efficient prediction of the
-  collection efficiency in icing accretion simulation for 3d complex geometries
-  using the lagrangian approach i: an adaptive interpolation method based on
-  the restricted radial basis functions,'' \emph{International Journal of Heat
-  and Mass Transfer}, vol. 150, p. 119290, 2020.
+L.~Xie, P.~Li, H.~Chen, and H.~Liu, ``Robust and efficient prediction of the collection efficiency in icing accretion simulation for 3d complex geometries using the lagrangian approach i: an adaptive interpolation method based on the restricted radial basis functions,'' \emph{International Journal of Heat and Mass Transfer}, vol. 150, p. 119290, 2020.
 
 \bibitem{whalen2005characteristics}
-E.~Whalen, A.~Broeren, M.~Bragg, and S.~Lee, ``Characteristics of runback ice
-  accretions on airfoils and their aerodynamics effects,'' in \emph{43rd AIAA
-  Aerospace Sciences Meeting and Exhibit}, 2005, p. 1065.
+E.~Whalen, A.~Broeren, M.~Bragg, and S.~Lee, ``Characteristics of runback ice accretions on airfoils and their aerodynamics effects,'' in \emph{43rd AIAA Aerospace Sciences Meeting and Exhibit}, 2005, p. 1065.
 
 \bibitem{ball_what_2014}
 \BIBentryALTinterwordspacing
-P.~Ball, ``\BIBforeignlanguage{en}{What {Makes} a {Droplet} {Splash}?}''
-  \emph{\BIBforeignlanguage{en}{Physics}}, vol.~7, p.~73, Jul. 2014, publisher:
-  American Physical Society. [Online]. Available:
-  \url{https://physics.aps.org/articles/v7/73}
+P.~Ball, ``\BIBforeignlanguage{en}{What {Makes} a {Droplet} {Splash}?}'' \emph{\BIBforeignlanguage{en}{Physics}}, vol.~7, p.~73, Jul. 2014, publisher: American Physical Society. [Online]. Available: \url{https://physics.aps.org/articles/v7/73}
 \BIBentrySTDinterwordspacing
 
 \bibitem{clarke1986euler}
-D.~K. Clarke, M.~Salas, and H.~Hassan, ``Euler calculations for multielement
-  airfoils using cartesian grids,'' \emph{AIAA journal}, vol.~24, no.~3, pp.
-  353--358, 1986.
+D.~K. Clarke, M.~Salas, and H.~Hassan, ``Euler calculations for multielement airfoils using cartesian grids,'' \emph{AIAA journal}, vol.~24, no.~3, pp. 353--358, 1986.
 
 \bibitem{mittal2008versatile}
-R.~Mittal, H.~Dong, M.~Bozkurttas, F.~Najjar, A.~Vargas, and A.~Von~Loebbecke,
-  ``A versatile sharp interface immersed boundary method for incompressible
-  flows with complex boundaries,'' \emph{Journal of computational physics},
-  vol. 227, no.~10, pp. 4825--4852, 2008.
+R.~Mittal, H.~Dong, M.~Bozkurttas, F.~Najjar, A.~Vargas, and A.~Von~Loebbecke, ``A versatile sharp interface immersed boundary method for incompressible flows with complex boundaries,'' \emph{Journal of computational physics}, vol. 227, no.~10, pp. 4825--4852, 2008.
 
 \bibitem{capizzano2014eulerian}
-F.~Capizzano and E.~Iuliano, ``A eulerian method for water droplet impingement
-  by means of an immersed boundary technique,'' \emph{Journal of Fluids
-  Engineering}, vol. 136, no.~4, p. 040906, 2014.
+F.~Capizzano and E.~Iuliano, ``A eulerian method for water droplet impingement by means of an immersed boundary technique,'' \emph{Journal of Fluids Engineering}, vol. 136, no.~4, p. 040906, 2014.
 
 \bibitem{scardovelli1999direct}
-R.~Scardovelli and S.~Zaleski, ``Direct numerical simulation of free-surface
-  and interfacial flow,'' \emph{Annual review of fluid mechanics}, vol.~31,
-  no.~1, pp. 567--603, 1999.
+R.~Scardovelli and S.~Zaleski, ``Direct numerical simulation of free-surface and interfacial flow,'' \emph{Annual review of fluid mechanics}, vol.~31, no.~1, pp. 567--603, 1999.
 
 \bibitem{prakash2019rans}
-A.~Prakash, ``Rans computation of heat transfer over rough surfaces,'' Ph.D.
-  dissertation, Ecole Polytechnique, Montreal (Canada), 2019.
+A.~Prakash, ``Rans computation of heat transfer over rough surfaces,'' Ph.D. dissertation, Ecole Polytechnique, Montreal (Canada), 2019.
 
 \bibitem{leary2002we}
-W.~M. Leary, \emph{We Freeze to Please: A History of NASA's Icing Research
-  Tunnel and the Quest for Flight Safety}.\hskip 1em plus 0.5em minus
-  0.4em\relax National Aeronautics and Space Administration, 2002, vol. 4226.
+W.~M. Leary, \emph{We Freeze to Please: A History of NASA's Icing Research Tunnel and the Quest for Flight Safety}.\hskip 1em plus 0.5em minus 0.4em\relax National Aeronautics and Space Administration, 2002, vol. 4226.
 
 \bibitem{lynch2001effects}
-F.~T. Lynch and A.~Khodadoust, ``Effects of ice accretions on aircraft
-  aerodynamics,'' \emph{Progress in Aerospace Sciences}, vol.~37, no.~8, pp.
-  669--767, 2001.
+F.~T. Lynch and A.~Khodadoust, ``Effects of ice accretions on aircraft aerodynamics,'' \emph{Progress in Aerospace Sciences}, vol.~37, no.~8, pp. 669--767, 2001.
 
 \bibitem{cao2015aircraft}
-Y.~Cao, Z.~Wu, Y.~Su, and Z.~Xu, ``Aircraft flight characteristics in icing
-  conditions,'' \emph{Progress in Aerospace Sciences}, vol.~74, pp. 62--80,
-  2015.
+Y.~Cao, Z.~Wu, Y.~Su, and Z.~Xu, ``Aircraft flight characteristics in icing conditions,'' \emph{Progress in Aerospace Sciences}, vol.~74, pp. 62--80, 2015.
 
 \bibitem{potapczuk2013aircraft}
-M.~G. Potapczuk, ``Aircraft icing research at nasa glenn research center,''
-  \emph{Journal of Aerospace Engineering}, vol.~26, no.~2, pp. 260--276, 2013.
+M.~G. Potapczuk, ``Aircraft icing research at nasa glenn research center,'' \emph{Journal of Aerospace Engineering}, vol.~26, no.~2, pp. 260--276, 2013.
 
 \bibitem{noauthor_flight_nodate}
 \BIBentryALTinterwordspacing
-``In-{Flight} {Icing}: {Flight} {Operations} - {Departure} - {Act}.'' [Online].
-  Available: \url{https://aircrafticing.grc.nasa.gov/1_2_4_2.html}
+``In-{Flight} {Icing}: {Flight} {Operations} - {Departure} - {Act}.'' [Online]. Available: \url{https://aircrafticing.grc.nasa.gov/1_2_4_2.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{potapczuk1991icing}
-M.~G. Potapczuk and J.~Reinmann, ``Icing simulation: A survey of computer
-  models and experimental facilities,'' in \emph{Fluid Dynamics Panel
-  Specialists Meeting}, no. E-6164, 1991.
+M.~G. Potapczuk and J.~Reinmann, ``Icing simulation: A survey of computer models and experimental facilities,'' in \emph{Fluid Dynamics Panel Specialists Meeting}, no. E-6164, 1991.
 
-\bibitem{appendixO}
-\BIBentryALTinterwordspacing
-``\BIBforeignlanguage{en}{Appendix {O} to {Part} 25, {Title} 14 --
-  {Supercooled} {Large} {Drop} {Icing} {Conditions}}.'' [Online]. Available:
-  \url{https://www.ecfr.gov/current/title-14/appendix-Appendix%20O%20to%20Part%2025}
-\BIBentrySTDinterwordspacing
+\bibitem{jeck2002icing}
+R.~K. Jeck, ``Icing design envelopes (14 cfr parts 25 and 29, appendix c) converted to a distance-based format,'' Federal Aviation Administration, Tech. Rep. DOT/FAA/AR-00/30, 2002.
 
-\bibitem{appendixC}
-\BIBentryALTinterwordspacing
-``\BIBforeignlanguage{en}{Appendix {C} to {Part} 25, {Title} 14 -- {Appendix}
-  {C} to {Part} 25}.'' [Online]. Available:
-  \url{https://www.ecfr.gov/current/title-14/appendix-Appendix%20C%20to%20Part%2025}
-\BIBentrySTDinterwordspacing
+\bibitem{canadaNRCIceAccretion}
+M.~Oleskiw, ``A review of 65 years of aircraft in-flight icing research at nrc,'' \emph{Canadian aeronautics and space journal. Le journal aéronautique et spatial du Canada}, vol.~47, 09 2001.
+
+\bibitem{ferschitz2017development}
+H.~Ferschitz, M.~Wannemacher, O.~Bucek, F.~Kn{\"o}bel, and W.~Breitfu{\ss}, ``Development of sld capabilities in the rta icing wind tunnel,'' \emph{SAE International Journal of Aerospace}, vol.~10, no. 2017-01-9001, pp. 12--21, 2017.
+
+\bibitem{oneraIcingWindTunnel}
+P.~Berthoumieu, B.~Déjean, V.~Bodoc, and T.~Alary, \emph{ONERA Research Icing Wind Tunnel}.
+
+\bibitem{iceAccretionOnSweptWings}
+A.~P. Broeren, M.~Potapczuk, J.~Riley, P.~Villedieu, F.~Moens, and M.~Bragg, \emph{Swept-Wing Ice Accretion Characterization and Aerodynamics}.
+
+\bibitem{pierreLavoie2p5D}
+P.~Lavoie, S.~Bourgault-Côté, and E.~Laurendeau, ``Numerical algorithms for infinite swept wing ice accretion,'' \emph{Computers \& Fluids}, vol. 161, pp. 189--198, 2018.
 
 \bibitem{laurendeau2022summary}
-E.~Laurendeau, S.~Bourgault-Cote, I.~A. Ozcer, R.~Hann, E.~Radenac, and
-  A.~Pueyo, ``Summary from the 1st aiaa ice prediction workshop,'' in
-  \emph{AIAA Aviation 2022 Forum}, 2022, p. 3398.
+E.~Laurendeau, S.~Bourgault-Cote, I.~A. Ozcer, R.~Hann, E.~Radenac, and A.~Pueyo, ``Summary from the 1st aiaa ice prediction workshop,'' in \emph{AIAA Aviation 2022 Forum}, 2022, p. 3398.
 
-\bibitem{KIND1998257}
-R.~Kind, M.~Potapczuk, A.~Feo, C.~Golia, and A.~Shah, ``Experimental and
-  computational simulation of in-flight icing phenomena,'' \emph{Progress in
-  Aerospace Sciences}, vol.~34, no.~5, pp. 257--345, 1998.
+\bibitem{laurendeau2024summary}
+E.~Laurendeau, M.~Blanchet, M.~K. Zayni, R.~Hann, E.~Radenac, I.~Mussa, and A.~Pueyo, ``Summary from the 2nd aiaa ice prediction workshop,'' in \emph{AIAA AVIATION FORUM AND ASCEND 2024}.\hskip 1em plus 0.5em minus 0.4em\relax American Institute of Aeronautics and Astronautics, Jul. 2024.
 
-\bibitem{BourgaultCote}
-S.~Bourgault-Côté, ``Ice interface evolution modelling algorithms for
-  aircraft icing,'' Ph.D. dissertation, Polytechnique Montréal, Montréal,
-  Canada, 2019.
-
-\bibitem{bourgault1999finite}
-Y.~Bourgault, W.~G. Habashi, J.~Dompierre, and G.~S. Baruzzi, ``A finite
-  element method study of eulerian droplets impingement models,''
-  \emph{International Journal for Numerical methods in fluids}, vol.~29, no.~4,
-  pp. 429--449, 1999.
-
-\bibitem{rendall2014finite}
-T.~Rendall and C.~B. Allen, ``Finite-volume droplet trajectories for icing
-  simulation,'' \emph{International journal of multiphase flow}, vol.~58, pp.
-  185--194, 2014.
+\bibitem{PENA2016278}
+D.~Pena, Y.~Hoarau, and E.~Laurendeau, ``A single step ice accretion model using level-set method,'' \emph{Journal of Fluids and Structures}, vol.~65, pp. 278--294, 2016.
 
 \bibitem{bourgault-coteMultilayerAirfoilIce2019}
-S.~{Bourgault-C{\^o}t{\'e}}, J.~{Docampo-S{\'a}nchez}, and E.~Laurendeau,
-  ``Multilayer {{Airfoil Ice Accretion Simulations Using}} a {{Level-Set
-  Method}} with {{B-Spline Representation}},'' \emph{AIAA Journal}, vol.~57,
-  no.~8, pp. 3299--3308, Aug. 2019.
+S.~{Bourgault-C{\^o}t{\'e}}, J.~{Docampo-S{\'a}nchez}, and E.~Laurendeau, ``Multilayer {{Airfoil Ice Accretion Simulations Using}} a {{Level-Set Method}} with {{B-Spline Representation}},'' \emph{AIAA Journal}, vol.~57, no.~8, pp. 3299--3308, Aug. 2019.
 
-\bibitem{BRUNO2022105351}
-\BIBentryALTinterwordspacing
-L.~Bruno and D.~Oberto, ``Effects of cell quality in grid boundary layer on the
-  simulated flow around a square cylinder,'' \emph{Computers \& Fluids}, vol.
-  238, p. 105351, 2022. [Online]. Available:
-  \url{https://www.sciencedirect.com/science/article/pii/S0045793022000391}
-\BIBentrySTDinterwordspacing
+\bibitem{lavoieLevelSet}
+P.~Lavoie, E.~Radenac, G.~Blanchard, E.~Laurendeau, and P.~Villedieu, ``Immersed boundary methodology for multistep ice accretion using a level set,'' \emph{Journal of Aircraft}, vol.~59, no.~4, pp. 912--926, 2022.
 
 \bibitem{blanchet2022conservative}
-M.~Blanchet, S.~Bourgault-Cote, and E.~Laurendeau, ``Conservative hyperbolic
-  droplet solver for aircraft icing,'' in \emph{AIAA AVIATION 2022 Forum},
-  2022, p. 3369.
+M.~Blanchet, S.~Bourgault-Cote, and E.~Laurendeau, ``Conservative hyperbolic droplet solver for aircraft icing,'' in \emph{AIAA AVIATION 2022 Forum}, 2022, p. 3369.
+
+\bibitem{bourgault1999finite}
+Y.~Bourgault, W.~G. Habashi, J.~Dompierre, and G.~S. Baruzzi, ``A finite element method study of eulerian droplets impingement models,'' \emph{International Journal for Numerical methods in fluids}, vol.~29, no.~4, pp. 429--449, 1999.
 
 \bibitem{darmofal1996analysis}
-D.~L. Darmofal and R.~Haimes, ``An analysis of 3d particle path integration
-  algorithms,'' \emph{Journal of Computational Physics}, vol. 123, no.~1, pp.
-  182--195, 1996.
+D.~L. Darmofal and R.~Haimes, ``An analysis of 3d particle path integration algorithms,'' \emph{Journal of Computational Physics}, vol. 123, no.~1, pp. 182--195, 1996.
 
 \bibitem{bellosta2023lagrangian}
-T.~Bellosta, G.~Baldan, G.~Sirianni, and A.~Guardone, ``Lagrangian and eulerian
-  algorithms for water droplets in in-flight ice accretion,'' \emph{Journal of
-  Computational and Applied Mathematics}, vol. 429, p. 115230, 2023.
+T.~Bellosta, G.~Baldan, G.~Sirianni, and A.~Guardone, ``Lagrangian and eulerian algorithms for water droplets in in-flight ice accretion,'' \emph{Journal of Computational and Applied Mathematics}, vol. 429, p. 115230, 2023.
 
 \bibitem{li2019fast}
-Z.~Li, Y.~Wang, and L.~Wang, ``A fast particle-locating method for the
-  arbitrary polyhedral mesh,'' \emph{Algorithms}, vol.~12, no.~9, p. 179, 2019.
+Z.~Li, Y.~Wang, and L.~Wang, ``A fast particle-locating method for the arbitrary polyhedral mesh,'' \emph{Algorithms}, vol.~12, no.~9, p. 179, 2019.
+
+\bibitem{rendall2014finite}
+T.~Rendall and C.~B. Allen, ``Finite-volume droplet trajectories for icing simulation,'' \emph{International journal of multiphase flow}, vol.~58, pp. 185--194, 2014.
 
 \bibitem{papadakis1999experimental}
-M.~Papadakis, K.~Hung, H.-W. Yeong, C.~Bidwell, and M.~Breer, ``Experimental
-  investigation of water impingement on single and multi-element airfoils,'' in
-  \emph{38th Aerospace Sciences Meeting and Exhibit}, 1999, p. 100.
+M.~Papadakis, K.~Hung, H.-W. Yeong, C.~Bidwell, and M.~Breer, ``Experimental investigation of water impingement on single and multi-element airfoils,'' in \emph{38th Aerospace Sciences Meeting and Exhibit}, 1999, p. 100.
 
 \bibitem{papadakis2004water}
-M.~Papadakis, A.~Rachman, S.-C. Wong, H.-W. Yeong, K.~Hung, and C.~Bidwell,
-  ``Water impingement experiments on a naca 23012 airfoil with simulated glaze
-  ice shapes,'' in \emph{42nd AIAA aerospace sciences meeting and exhibit},
-  2004, p. 565.
+M.~Papadakis, A.~Rachman, S.-C. Wong, H.-W. Yeong, K.~Hung, and C.~Bidwell, ``Water impingement experiments on a naca 23012 airfoil with simulated glaze ice shapes,'' in \emph{42nd AIAA aerospace sciences meeting and exhibit}, 2004, p. 565.
 
 \bibitem{papadakis2007large}
-M.~Papadakis, S.-C. Wong, A.~Rachman, K.~E. Hung, G.~T. Vu, and C.~S. Bidwell,
-  ``Large and small droplet impingement data on airfoils and two simulated ice
-  shapes,'' Tech. Rep., 2007.
+M.~Papadakis, S.-C. Wong, A.~Rachman, K.~E. Hung, G.~T. Vu, and C.~S. Bidwell, ``Large and small droplet impingement data on airfoils and two simulated ice shapes,'' Tech. Rep., 2007.
 
 \bibitem{papadakis2002experimental}
-M.~Papadakis, K.~E. Hung, G.~T. Vu, H.~W. Yeong, C.~S. Bidwell, M.~D. Breer,
-  and T.~J. Bencic, ``Experimental investigation of water droplet impingement
-  on airfoils, finite wings, and an s-duct engine inlet,'' Tech. Rep., 2002.
+M.~Papadakis, K.~E. Hung, G.~T. Vu, H.~W. Yeong, C.~S. Bidwell, M.~D. Breer, and T.~J. Bencic, ``Experimental investigation of water droplet impingement on airfoils, finite wings, and an s-duct engine inlet,'' Tech. Rep., 2002.
 
 \bibitem{papadakis2003experimental}
-M.~Papadakis, A.~Rachman, S.-C. Wong, C.~Bidwell, and T.~Bencic, ``An
-  experimental investigation of sld impingement on airfoils and simulated ice
-  shapes,'' SAE Technical Paper, Tech. Rep., 2003.
+M.~Papadakis, A.~Rachman, S.-C. Wong, C.~Bidwell, and T.~Bencic, ``An experimental investigation of sld impingement on airfoils and simulated ice shapes,'' SAE Technical Paper, Tech. Rep., 2003.
 
 \bibitem{tan2007experimental}
-C.~Tan, M.~Papadakis, D.~Miller, T.~Bencic, P.~Tate, and M.~Laun,
-  ``Experimental study of large droplet splashing and breakup,'' in \emph{45th
-  AIAA Aerospace Sciences Meeting and Exhibit}, 2007, p. 904.
+C.~Tan, M.~Papadakis, D.~Miller, T.~Bencic, P.~Tate, and M.~Laun, ``Experimental study of large droplet splashing and breakup,'' in \emph{45th AIAA Aerospace Sciences Meeting and Exhibit}, 2007, p. 904.
 
 \bibitem{vargas2011deformation}
-M.~Vargas and A.~Feo, ``Deformation and breakup of water droplets near an
-  airfoil leading edge,'' \emph{Journal of aircraft}, vol.~48, no.~5, pp.
-  1749--1765, 2011.
+M.~Vargas and A.~Feo, ``Deformation and breakup of water droplets near an airfoil leading edge,'' \emph{Journal of aircraft}, vol.~48, no.~5, pp. 1749--1765, 2011.
 
 \bibitem{berthoumieu2012experimental}
-P.~Berthoumieu, ``Experimental study of supercooled large droplets impact in an
-  icing wind tunnel,'' in \emph{4th AIAA Atmospheric and Space Environments
-  Conference}, 2012, p. 3130.
+P.~Berthoumieu, ``Experimental study of supercooled large droplets impact in an icing wind tunnel,'' in \emph{4th AIAA Atmospheric and Space Environments Conference}, 2012, p. 3130.
 
 \bibitem{wright2004semi}
-W.~Wright and M.~Potapczuk, ``Semi-empirical modelling of sld physics,'' in
-  \emph{42nd AIAA aerospace sciences meeting and exhibit}, 2004, p. 412.
+W.~Wright and M.~Potapczuk, ``Semi-empirical modelling of sld physics,'' in \emph{42nd AIAA aerospace sciences meeting and exhibit}, 2004, p. 412.
 
 \bibitem{bhargava2005numerical}
-C.~Bhargava, E.~Loth, and M.~Potapczuk, ``Numerical simulation of icing clouds
-  in the nasa glenn icing research tunnel,'' \emph{Journal of aircraft},
-  vol.~42, no.~6, pp. 1442--1451, 2005.
+C.~Bhargava, E.~Loth, and M.~Potapczuk, ``Numerical simulation of icing clouds in the nasa glenn icing research tunnel,'' \emph{Journal of aircraft}, vol.~42, no.~6, pp. 1442--1451, 2005.
 
 \bibitem{trontin2016revisited}
-P.~Trontin and P.~Villedieu, ``A revisited model for sld impact onto a solid
-  surface,'' in \emph{8th AIAA Atmospheric and Space Environments Conference},
-  2016, p. 3277.
+P.~Trontin and P.~Villedieu, ``A revisited model for sld impact onto a solid surface,'' in \emph{8th AIAA Atmospheric and Space Environments Conference}, 2016, p. 3277.
 
 \bibitem{guido2011shear}
-S.~Guido, ``Shear-induced droplet deformation: Effects of confined geometry and
-  viscoelasticity,'' \emph{Current opinion in colloid \& interface science},
-  vol.~16, no.~1, pp. 61--70, 2011.
+S.~Guido, ``Shear-induced droplet deformation: Effects of confined geometry and viscoelasticity,'' \emph{Current opinion in colloid \& interface science}, vol.~16, no.~1, pp. 61--70, 2011.
 
 \bibitem{xu_wang_che_2022}
-Z.~Xu, T.~Wang, and Z.~Che, ``Droplet breakup in airflow with strong shear
-  effect,'' \emph{Journal of Fluid Mechanics}, vol. 941, p. A54, 2022.
+Z.~Xu, T.~Wang, and Z.~Che, ``Droplet breakup in airflow with strong shear effect,'' \emph{Journal of Fluid Mechanics}, vol. 941, p. A54, 2022.
 
 \bibitem{cossali1999impact}
-G.~Cossali, G.~Brunello, A.~Coghe, and M.~Marengo, ``Impact of a single drop on
-  a liquid film: experimental analysis and comparison with empirical models,''
-  in \emph{Italian congress of thermofluid dynamics UIT, Ferrara}, vol.~30,
-  1999, pp. 1--12.
+G.~Cossali, G.~Brunello, A.~Coghe, and M.~Marengo, ``Impact of a single drop on a liquid film: experimental analysis and comparison with empirical models,'' in \emph{Italian congress of thermofluid dynamics UIT, Ferrara}, vol.~30, 1999, pp. 1--12.
 
 \bibitem{rein1993phenomena}
-M.~Rein, ``Phenomena of liquid drop impact on solid and liquid surfaces,''
-  \emph{Fluid dynamics research}, vol.~12, no.~2, pp. 61--93, 1993.
+M.~Rein, ``Phenomena of liquid drop impact on solid and liquid surfaces,'' \emph{Fluid dynamics research}, vol.~12, no.~2, pp. 61--93, 1993.
 
 \bibitem{alzaili2011experimental}
-J.~Alzaili and D.~Hammond, ``Experimental investigation of thin water film
-  stability and its characteristics in sld icing problem,'' SAE Technical
-  Paper, Tech. Rep., 2011.
+J.~Alzaili and D.~Hammond, ``Experimental investigation of thin water film stability and its characteristics in sld icing problem,'' SAE Technical Paper, Tech. Rep., 2011.
 
 \bibitem{vanzante2007database}
-J.~F. VanZante, ``A database of supercooled large droplet ice accretions,'' in
-  \emph{Aircraft and Engine Icing International Conference}, no.
-  NASA/CR-2007-215020, 2007.
+J.~F. VanZante, ``A database of supercooled large droplet ice accretions,'' in \emph{Aircraft and Engine Icing International Conference}, no. NASA/CR-2007-215020, 2007.
 
 \bibitem{trontin2017description}
-P.~Trontin, G.~Blanchard, A.~Kontogiannis, and P.~Villedieu, ``Description and
-  assessment of the new onera 2d icing suite igloo2d,'' in \emph{9th AIAA
-  Atmospheric and Space Environments Conference}, 2017, p. 3417.
+P.~Trontin, G.~Blanchard, A.~Kontogiannis, and P.~Villedieu, ``Description and assessment of the new onera 2d icing suite igloo2d,'' in \emph{9th AIAA Atmospheric and Space Environments Conference}, 2017, p. 3417.
 
 \bibitem{hirt1981volume}
-C.~W. Hirt and B.~D. Nichols, ``Volume of fluid (vof) method for the dynamics
-  of free boundaries,'' \emph{Journal of computational physics}, vol.~39,
-  no.~1, pp. 201--225, 1981.
+C.~W. Hirt and B.~D. Nichols, ``Volume of fluid (vof) method for the dynamics of free boundaries,'' \emph{Journal of computational physics}, vol.~39, no.~1, pp. 201--225, 1981.
 
 \bibitem{lian2014numerical}
-Y.~Lian, ``Numerical simulation of supercooled large droplets using the moment
-  of fluid method,'' in \emph{52nd Aerospace Sciences Meeting}, 2014, p. 0740.
+Y.~Lian, ``Numerical simulation of supercooled large droplets using the moment of fluid method,'' in \emph{52nd Aerospace Sciences Meeting}, 2014, p. 0740.
 
 \bibitem{bilodeau2016numerical}
-D.~R. Bilodeau, W.~G. Habashi, G.~S. Baruzzi, and M.~Fossati, ``Numerical
-  modeling of first and second order sld effects on 3d geometries,'' in
-  \emph{8th AIAA Atmospheric and Space Environments Conference}, 2016, p. 3280.
+D.~R. Bilodeau, W.~G. Habashi, G.~S. Baruzzi, and M.~Fossati, ``Numerical modeling of first and second order sld effects on 3d geometries,'' in \emph{8th AIAA Atmospheric and Space Environments Conference}, 2016, p. 3280.
 
 \bibitem{capizzano2023extending}
-F.~Capizzano and D.~de~Rosa, ``Extending the impingement capabilities of a
-  cartesian solver towards super-cooled large droplets (sld),'' SAE Technical
-  Paper, Tech. Rep., 2023.
+F.~Capizzano and D.~de~Rosa, ``Extending the impingement capabilities of a cartesian solver towards super-cooled large droplets (sld),'' SAE Technical Paper, Tech. Rep., 2023.
 
 \bibitem{mundo1998modeling}
-C.~Mundo, M.~Sommerfeld, and C.~Tropea, ``On the modeling of liquid sprays
-  impinging on surfaces,'' \emph{Atomization and sprays}, vol.~8, no.~6, 1998.
+C.~Mundo, M.~Sommerfeld, and C.~Tropea, ``On the modeling of liquid sprays impinging on surfaces,'' \emph{Atomization and sprays}, vol.~8, no.~6, 1998.
 
 \bibitem{trujillo2000modelling}
-M.~Trujillo, W.~Mathews, C.~Lee, and J.~Peters, ``Modelling and experiment of
-  impingement and atomization of a liquid spray on a wall,''
-  \emph{International journal of engine research}, vol.~1, no.~1, pp. 87--105,
-  2000.
+M.~Trujillo, W.~Mathews, C.~Lee, and J.~Peters, ``Modelling and experiment of impingement and atomization of a liquid spray on a wall,'' \emph{International journal of engine research}, vol.~1, no.~1, pp. 87--105, 2000.
 
 \bibitem{yarin1995impact}
-A.~L. Yarin and D.~A. Weiss, ``Impact of drops on solid surfaces: self-similar
-  capillary waves, and splashing as a new type of kinematic discontinuity,''
-  \emph{Journal of fluid mechanics}, vol. 283, pp. 141--173, 1995.
+A.~L. Yarin and D.~A. Weiss, ``Impact of drops on solid surfaces: self-similar capillary waves, and splashing as a new type of kinematic discontinuity,'' \emph{Journal of fluid mechanics}, vol. 283, pp. 141--173, 1995.
 
 \bibitem{honsek2006fensap}
-R.~Honsek and W.~G. Habashi, ``Fensap-ice: Eulerian modeling of droplet
-  impingement in the sld regime of aircraft icing,'' in \emph{44th AIAA
-  aerospace sciences meeting and exhibit}, 2006, p. 465.
+R.~Honsek and W.~G. Habashi, ``Fensap-ice: Eulerian modeling of droplet impingement in the sld regime of aircraft icing,'' in \emph{44th AIAA aerospace sciences meeting and exhibit}, 2006, p. 465.
 
 \bibitem{sotiropoulos2014immersed}
-F.~Sotiropoulos and X.~Yang, ``Immersed boundary methods for simulating
-  fluid--structure interaction,'' \emph{Progress in Aerospace Sciences},
-  vol.~65, pp. 1--21, 2014.
+F.~Sotiropoulos and X.~Yang, ``Immersed boundary methods for simulating fluid--structure interaction,'' \emph{Progress in Aerospace Sciences}, vol.~65, pp. 1--21, 2014.
 
 \bibitem{glimm2003conservative}
-J.~Glimm, X.~Li, Y.~Liu, Z.~Xu, and N.~Zhao, ``Conservative front tracking with
-  improved accuracy,'' \emph{SIAM Journal on Numerical Analysis}, vol.~41,
-  no.~5, pp. 1926--1947, 2003.
+J.~Glimm, X.~Li, Y.~Liu, Z.~Xu, and N.~Zhao, ``Conservative front tracking with improved accuracy,'' \emph{SIAM Journal on Numerical Analysis}, vol.~41, no.~5, pp. 1926--1947, 2003.
 
 \bibitem{kirkpatrick2003representation}
-M.~Kirkpatrick, S.~Armfield, and J.~Kent, ``A representation of curved
-  boundaries for the solution of the navier--stokes equations on a staggered
-  three-dimensional cartesian grid,'' \emph{Journal of Computational Physics},
-  vol. 184, no.~1, pp. 1--36, 2003.
+M.~Kirkpatrick, S.~Armfield, and J.~Kent, ``A representation of curved boundaries for the solution of the navier--stokes equations on a staggered three-dimensional cartesian grid,'' \emph{Journal of Computational Physics}, vol. 184, no.~1, pp. 1--36, 2003.
 
 \bibitem{meyer2010conservative}
-M.~Meyer, A.~Devesa, S.~Hickel, X.~Y. Hu, and N.~A. Adams, ``A conservative
-  immersed interface method for large-eddy simulation of incompressible
-  flows,'' \emph{Journal of Computational Physics}, vol. 229, no.~18, pp.
-  6300--6317, 2010.
+M.~Meyer, A.~Devesa, S.~Hickel, X.~Y. Hu, and N.~A. Adams, ``A conservative immersed interface method for large-eddy simulation of incompressible flows,'' \emph{Journal of Computational Physics}, vol. 229, no.~18, pp. 6300--6317, 2010.
 
 \bibitem{peskin1972flow}
-C.~S. Peskin, ``Flow patterns around heart valves: a numerical method,''
-  \emph{Journal of computational physics}, vol.~10, no.~2, pp. 252--271, 1972.
+C.~S. Peskin, ``Flow patterns around heart valves: a numerical method,'' \emph{Journal of computational physics}, vol.~10, no.~2, pp. 252--271, 1972.
 
 \bibitem{lai2000immersed}
-M.-C. Lai and C.~S. Peskin, ``An immersed boundary method with formal
-  second-order accuracy and reduced numerical viscosity,'' \emph{Journal of
-  computational Physics}, vol. 160, no.~2, pp. 705--719, 2000.
+M.-C. Lai and C.~S. Peskin, ``An immersed boundary method with formal second-order accuracy and reduced numerical viscosity,'' \emph{Journal of computational Physics}, vol. 160, no.~2, pp. 705--719, 2000.
 
 \bibitem{arquis1984conditions}
-E.~Arquis, J.~Caltagirone \emph{et~al.}, ``Sur les conditions hydrodynamiques
-  au voisinage d’une interface milieu fluide-milieu poreux: applicationa la
-  convection naturelle,'' \emph{CR Acad. Sci. Paris II}, vol. 299, pp. 1--4,
-  1984.
+E.~Arquis, J.~Caltagirone \emph{et~al.}, ``Sur les conditions hydrodynamiques au voisinage d’une interface milieu fluide-milieu poreux: applicationa la convection naturelle,'' \emph{CR Acad. Sci. Paris II}, vol. 299, pp. 1--4, 1984.
 
 \bibitem{mohd1997simulations}
-J.~Mohd-Yusof, ``For simulations of flow in complex geometries,'' \emph{Annual
-  research briefs}, vol. 317, p.~35, 1997.
+J.~Mohd-Yusof, ``For simulations of flow in complex geometries,'' \emph{Annual research briefs}, vol. 317, p.~35, 1997.
 
 \bibitem{tseng2003ghost}
-Y.-H. Tseng and J.~H. Ferziger, ``A ghost-cell immersed boundary method for
-  flow in complex geometry,'' \emph{Journal of computational physics}, vol.
-  192, no.~2, pp. 593--623, 2003.
+Y.-H. Tseng and J.~H. Ferziger, ``A ghost-cell immersed boundary method for flow in complex geometry,'' \emph{Journal of computational physics}, vol. 192, no.~2, pp. 593--623, 2003.
 
 \bibitem{capizzano2007compressible}
-F.~Capizzano, ``A compressible flow simulation system based on cartesian grids
-  with anisotropic refinements,'' in \emph{45th AIAA Aerospace Sciences Meeting
-  and Exhibit}, 2007, p. 1450.
+F.~Capizzano, ``A compressible flow simulation system based on cartesian grids with anisotropic refinements,'' in \emph{45th AIAA Aerospace Sciences Meeting and Exhibit}, 2007, p. 1450.
 
 \bibitem{capizzano2011turbulent}
-------, ``Turbulent wall model for immersed boundary methods,'' \emph{AIAA
-  journal}, vol.~49, no.~11, pp. 2367--2381, 2011.
+------, ``Turbulent wall model for immersed boundary methods,'' \emph{AIAA journal}, vol.~49, no.~11, pp. 2367--2381, 2011.
 
 \bibitem{sethian2003level}
-J.~A. Sethian and P.~Smereka, ``Level set methods for fluid interfaces,''
-  \emph{Annual review of fluid mechanics}, vol.~35, no.~1, pp. 341--372, 2003.
+J.~A. Sethian and P.~Smereka, ``Level set methods for fluid interfaces,'' \emph{Annual review of fluid mechanics}, vol.~35, no.~1, pp. 341--372, 2003.
 
 \bibitem{rauschenberger2013comparative}
-P.~Rauschenberger, A.~Criscione, K.~Eisenschmidt, D.~Kintea, S.~Jakirli{\'c},
-  {\v{Z}}.~Tukovi{\'c}, I.~Roisman, B.~Weigand, and C.~Tropea, ``Comparative
-  assessment of volume-of-fluid and level-set methods by relevance to dendritic
-  ice growth in supercooled water,'' \emph{Computers \& fluids}, vol.~79, pp.
-  44--52, 2013.
+P.~Rauschenberger, A.~Criscione, K.~Eisenschmidt, D.~Kintea, S.~Jakirli{\'c}, {\v{Z}}.~Tukovi{\'c}, I.~Roisman, B.~Weigand, and C.~Tropea, ``Comparative assessment of volume-of-fluid and level-set methods by relevance to dendritic ice growth in supercooled water,'' \emph{Computers \& fluids}, vol.~79, pp. 44--52, 2013.
 
 \bibitem{marter2017methode}
-I.~Marter, ``M{\'e}thode d'interface immerg{\'e}e pour la simulation directe de
-  l'atomisation primaire,'' Ph.D. dissertation, Institut sup{\'e}rieur de
-  l'A{\'e}ronautique et de l'Espace (ISAE); Universit{\'e} de~…, 2017.
+I.~Marter, ``M{\'e}thode d'interface immerg{\'e}e pour la simulation directe de l'atomisation primaire,'' Ph.D. dissertation, Institut sup{\'e}rieur de l'A{\'e}ronautique et de l'Espace (ISAE); Universit{\'e} de~…, 2017.
 
 \bibitem{kader1972heat}
-B.~Kader and A.~Yaglom, ``Heat and mass transfer laws for fully turbulent wall
-  flows,'' \emph{International Journal of Heat and Mass Transfer}, vol.~15,
-  no.~12, pp. 2329--2351, 1972.
+B.~Kader and A.~Yaglom, ``Heat and mass transfer laws for fully turbulent wall flows,'' \emph{International Journal of Heat and Mass Transfer}, vol.~15, no.~12, pp. 2329--2351, 1972.
 
 \bibitem{spalding1961single}
-D.~B. Spalding \emph{et~al.}, ``A single formula for the law of the wall,''
-  \emph{Journal of Applied Mechanics}, vol.~28, no.~3, pp. 455--458, 1961.
+D.~B. Spalding \emph{et~al.}, ``A single formula for the law of the wall,'' \emph{Journal of Applied Mechanics}, vol.~28, no.~3, pp. 455--458, 1961.
 
 \bibitem{reichardt1951vollstandige}
-H.~Reichardt, ``Vollst{\"a}ndige darstellung der turbulenten
-  geschwindigkeitsverteilung in glatten leitungen,'' \emph{ZAMM-Journal of
-  Applied Mathematics and Mechanics/Zeitschrift f{\"u}r Angewandte Mathematik
-  und Mechanik}, vol.~31, no.~7, pp. 208--219, 1951.
+H.~Reichardt, ``Vollst{\"a}ndige darstellung der turbulenten geschwindigkeitsverteilung in glatten leitungen,'' \emph{ZAMM-Journal of Applied Mathematics and Mechanics/Zeitschrift f{\"u}r Angewandte Mathematik und Mechanik}, vol.~31, no.~7, pp. 208--219, 1951.
 
 \bibitem{knopp2006grid}
-T.~Knopp, T.~Alrutz, and D.~Schwamborn, ``A grid and flow adaptive
-  wall-function method for rans turbulence modelling,'' \emph{Journal of
-  Computational Physics}, vol. 220, no.~1, pp. 19--40, 2006.
+T.~Knopp, T.~Alrutz, and D.~Schwamborn, ``A grid and flow adaptive wall-function method for rans turbulence modelling,'' \emph{Journal of Computational Physics}, vol. 220, no.~1, pp. 19--40, 2006.
 
 \bibitem{allmaras2012modifications}
-S.~R. Allmaras and F.~T. Johnson, ``Modifications and clarifications for the
-  implementation of the spalart-allmaras turbulence model,'' in \emph{Seventh
-  international conference on computational fluid dynamics (ICCFD7)}, vol.
-  1902.\hskip 1em plus 0.5em minus 0.4em\relax Big Island, HI, 2012.
+S.~R. Allmaras and F.~T. Johnson, ``Modifications and clarifications for the implementation of the spalart-allmaras turbulence model,'' in \emph{Seventh international conference on computational fluid dynamics (ICCFD7)}, vol. 1902.\hskip 1em plus 0.5em minus 0.4em\relax Big Island, HI, 2012.
 
 \bibitem{craft2002progress}
-T.~Craft, A.~Gerasimov, H.~Iacovides, and B.~Launder, ``Progress in the
-  generalization of wall-function treatments,'' \emph{International Journal of
-  Heat and Fluid Flow}, vol.~23, no.~2, pp. 148--160, 2002.
+T.~Craft, A.~Gerasimov, H.~Iacovides, and B.~Launder, ``Progress in the generalization of wall-function treatments,'' \emph{International Journal of Heat and Fluid Flow}, vol.~23, no.~2, pp. 148--160, 2002.
 
 \bibitem{gant2002development}
-S.~E. Gant, \emph{Development and application of a new wall function for
-  complex turbulent flows}.\hskip 1em plus 0.5em minus 0.4em\relax The
-  University of Manchester (United Kingdom), 2002.
+S.~E. Gant, \emph{Development and application of a new wall function for complex turbulent flows}.\hskip 1em plus 0.5em minus 0.4em\relax The University of Manchester (United Kingdom), 2002.
 
 \bibitem{popovac2007compound}
-M.~Popovac and K.~Hanjalic, ``Compound wall treatment for rans computation of
-  complex turbulent flows and heat transfer,'' \emph{Flow, turbulence and
-  combustion}, vol.~78, pp. 177--202, 2007.
+M.~Popovac and K.~Hanjalic, ``Compound wall treatment for rans computation of complex turbulent flows and heat transfer,'' \emph{Flow, turbulence and combustion}, vol.~78, pp. 177--202, 2007.
 
 \bibitem{kalitzin2005near}
-G.~Kalitzin, G.~Medic, G.~Iaccarino, and P.~Durbin, ``Near-wall behavior of
-  rans turbulence models and implications for wall functions,'' \emph{Journal
-  of Computational Physics}, vol. 204, no.~1, pp. 265--291, 2005.
+G.~Kalitzin, G.~Medic, G.~Iaccarino, and P.~Durbin, ``Near-wall behavior of rans turbulence models and implications for wall functions,'' \emph{Journal of Computational Physics}, vol. 204, no.~1, pp. 265--291, 2005.
 
 \bibitem{lacombe2019compatible}
-F.~Lacombe, D.~Pelletier, and A.~Garon, ``Compatible wall functions and
-  adaptive remeshing for the k-omega sst model,'' in \emph{AIAA Scitech 2019
-  Forum}, 2019, p. 2329.
+F.~Lacombe, D.~Pelletier, and A.~Garon, ``Compatible wall functions and adaptive remeshing for the k-omega sst model,'' in \emph{AIAA Scitech 2019 Forum}, 2019, p. 2329.
 
 \bibitem{jayatilleke1966influence}
-C.~L.~V. Jayatilleke, ``The influence of prandtl number and surface roughness
-  on the resistance of the laminar sub-layer to momentum and heat transfer,''
-  1966.
+C.~L.~V. Jayatilleke, ``The influence of prandtl number and surface roughness on the resistance of the laminar sub-layer to momentum and heat transfer,'' 1966.
 
 \bibitem{arpaci1984heat}
 V.~Arpaci and P.~Larsen, ``Heat engineering convection heat transfer,'' 1984.
 
 \bibitem{hansman1989investigation}
-R.~J. Hansman~Jr and S.~R. Turnock, ``Investigation of surface water behavior
-  during glaze ice accretion,'' \emph{Journal of Aircraft}, vol.~26, no.~2, pp.
-  140--147, 1989.
+R.~J. Hansman~Jr and S.~R. Turnock, ``Investigation of surface water behavior during glaze ice accretion,'' \emph{Journal of Aircraft}, vol.~26, no.~2, pp. 140--147, 1989.
 
 \bibitem{nikuradse1933laws}
-L.~Nikuradse, ``Laws of flow in rough pipes, vdi forsch. 361,'' \emph{English
-  translation. NACA TM-1292}, 1933.
+L.~Nikuradse, ``Laws of flow in rough pipes, vdi forsch. 361,'' \emph{English translation. NACA TM-1292}, 1933.
 
 \bibitem{schlichting1936experimentelle}
-H.~Schlichting, ``Experimentelle untersuchungen zum rauhigkeitsproblem,''
-  \emph{Ingenieur-Archiv}, vol.~7, no.~1, pp. 1--34, 1936.
+H.~Schlichting, ``Experimentelle untersuchungen zum rauhigkeitsproblem,'' \emph{Ingenieur-Archiv}, vol.~7, no.~1, pp. 1--34, 1936.
 
 \end{thebibliography}

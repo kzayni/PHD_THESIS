@@ -115,8 +115,12 @@
   pdfkeywords={\mesMotsClef},
   bookmarksnumbered,
   pdfstartview={FitV},
-  hidelinks,
-  linktoc=all
+  linktoc=all,
+  colorlinks=false,
+  pdfborder={0 0 1},
+  linkbordercolor={0 0 1},   % blue boxes for refs/TOC
+  citebordercolor={0 0.6 0}, % green boxes for citations
+  urlbordercolor={0.6 0 0}   % red boxes for URLs
 }
 
 %% Ajoute en 2022 (ajout des titres complets des tables et figure et alignement)
@@ -261,6 +265,9 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 \mainmatter
 \include{CHAPTERS/5-Introduction}       % Introduction au sujet de recherche.
 \include{CHAPTERS/6-Revue_litterature}  % Revue de littérature / Literature review
+\include{CHAPTERS/7-CHAPTER_LAGRANGIAN}
+\include{CHAPTERS/7-CHAPTER_LEVEL_SET}
+\include{CHAPTERS/7-CHAPTER_IBM}
 \include{CHAPTERS/8-Conclusion}         % Conclusion.
 %\backmatter
 \ifthenelse{\equal{\Langue}{english}}{

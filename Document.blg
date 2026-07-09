@@ -8,6 +8,9 @@ A level-1 auxiliary file: CHAPTERS/3-Abstract.aux
 A level-1 auxiliary file: CHAPTERS/4-Sigles_Abrev.aux
 A level-1 auxiliary file: CHAPTERS/5-Introduction.aux
 A level-1 auxiliary file: CHAPTERS/6-Revue_litterature.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LAGRANGIAN.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LEVEL_SET.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_IBM.aux
 A level-1 auxiliary file: CHAPTERS/8-Conclusion.aux
 The style file: IEEEtran.bst
 A level-1 auxiliary file: CHAPTERS/9-Annexes.aux
@@ -21,51 +24,55 @@ Warning--I didn't find a database entry for "IEEEexample:BSTcontrol"
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in oneraIcingWindTunnel
+Warning--empty year in oneraIcingWindTunnel
+Warning--missing publisher in iceAccretionOnSweptWings
+Warning--empty year in iceAccretionOnSweptWings
 Warning--missing institution in papadakis2007large
 Warning--missing institution in papadakis2002experimental
 Warning--empty journal in jayatilleke1966influence
 Warning--empty journal in arpaci1984heat
 
 Done.
-You've used 84 entries,
+You've used 87 entries,
             4024 wiz_defined-function locations,
-            1298 strings with 22931 characters,
-and the built_in function-call counts, 58783 in all, are:
-= -- 5018
-> -- 1259
-< -- 450
-+ -- 675
-- -- 224
-* -- 2746
-:= -- 9079
-add.period$ -- 169
-call.type$ -- 84
-change.case$ -- 83
-chr.to.int$ -- 903
-cite$ -- 88
-duplicate$ -- 4443
-empty$ -- 4670
-format.name$ -- 284
-if$ -- 13541
+            1322 strings with 23818 characters,
+and the built_in function-call counts, 61379 in all, are:
+= -- 5197
+> -- 1364
+< -- 475
++ -- 731
+- -- 245
+* -- 2877
+:= -- 9446
+add.period$ -- 174
+call.type$ -- 87
+change.case$ -- 84
+chr.to.int$ -- 960
+cite$ -- 95
+duplicate$ -- 4624
+empty$ -- 4875
+format.name$ -- 309
+if$ -- 14139
 int.to.chr$ -- 0
-int.to.str$ -- 84
-missing$ -- 781
-newline$ -- 287
-num.names$ -- 80
-pop$ -- 1713
+int.to.str$ -- 87
+missing$ -- 816
+newline$ -- 290
+num.names$ -- 85
+pop$ -- 1788
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 4744
+skip$ -- 4929
 stack$ -- 0
-substring$ -- 2372
-swap$ -- 3562
-text.length$ -- 149
+substring$ -- 2486
+swap$ -- 3722
+text.length$ -- 155
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 84
-warning$ -- 4
-while$ -- 260
-width$ -- 86
-write$ -- 853
-(There were 5 warnings)
+type$ -- 87
+warning$ -- 8
+while$ -- 272
+width$ -- 89
+write$ -- 875
+(There were 9 warnings)

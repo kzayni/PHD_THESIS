@@ -14,37 +14,37 @@
 \contentsline {compteur}{LIST OF APPENDICES}{xiii}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Problem Statement}{3}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Ice Accretion Numerical Framework}{4}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Current Techniques and Potential Solution}{6}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Research Hypothesis}{7}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Objectives}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Requirements and Constraints}{8}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Thesis Outline}{8}{section.1.6}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Water-Droplet Tracking}{9}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Eulerian Droplet Tracking}{10}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Lagrangian Droplet Tracking}{11}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Collection Efficiency}{14}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Supercooled Large Droplet Modeling}{16}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Third-Order Effects}{17}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Second-Order Effects: Deformation and Breakup}{17}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}First-Order Effects: Sticking, Splashing, and Bouncing}{18}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Immersed-Boundary Methods}{20}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Classification}{21}{subsection.2.3.1}%
-\contentsline {subsubsection}{Geometrical Methods}{22}{section*.22}%
-\contentsline {subsubsection}{Continuous-Forcing Methods}{22}{section*.24}%
-\contentsline {subsubsection}{Discrete-Forcing Methods}{24}{section*.25}%
-\contentsline {subsection}{\numberline {2.3.2}Surface Representation}{26}{subsection.2.3.2}%
-\contentsline {subsubsection}{Interface Tracking}{26}{section*.29}%
-\contentsline {subsubsection}{Interface Capturing}{27}{section*.30}%
-\contentsline {subsection}{\numberline {2.3.3}Wall Functions}{29}{subsection.2.3.3}%
-\contentsline {subsubsection}{Velocity Wall Functions}{31}{section*.33}%
-\contentsline {subsubsection}{Temperature Wall Functions}{32}{section*.35}%
-\contentsline {subsubsection}{Influence of Roughness}{32}{section*.37}%
-\contentsline {chapter}{\numberline {3}CONCLUSION}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Summary of Works}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Limitations}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Future Research}{35}{section.3.3}%
-\contentsline {compteur}{REFERENCES}{36}{chapter*.39}%
-\contentsline {compteur}{APPENDICES}{44}{chapter*.39}%
+\contentsline {section}{\numberline {1.2}Ice Morphologies}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Regulations \& Certification}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Ice Accretion Numerical Modeling}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Problem Statement}{6}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Motivation for the Proposed Approach}{7}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}Objectives of the Present Study}{9}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Thesis Outline}{10}{section.1.7}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Water-Droplet Tracking}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Eulerian Droplet Tracking}{13}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Lagrangian Droplet Tracking}{14}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Collection Efficiency}{17}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Supercooled Large Droplet Modeling}{19}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Third-Order Effects}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Second-Order Effects: Deformation and Breakup}{20}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}First-Order Effects: Sticking, Splashing, and Bouncing}{21}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Immersed-Boundary Methods}{23}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Classification}{24}{subsection.2.3.1}%
+\contentsline {subsubsection}{Geometrical Methods}{25}{section*.24}%
+\contentsline {subsubsection}{Continuous-Forcing Methods}{25}{section*.26}%
+\contentsline {subsubsection}{Discrete-Forcing Methods}{27}{section*.27}%
+\contentsline {subsection}{\numberline {2.3.2}Surface Representation}{29}{subsection.2.3.2}%
+\contentsline {subsubsection}{Interface Tracking}{29}{section*.31}%
+\contentsline {subsubsection}{Interface Capturing}{30}{section*.32}%
+\contentsline {subsection}{\numberline {2.3.3}Wall Functions}{32}{subsection.2.3.3}%
+\contentsline {subsubsection}{Velocity Wall Functions}{34}{section*.35}%
+\contentsline {subsubsection}{Temperature Wall Functions}{35}{section*.37}%
+\contentsline {subsubsection}{Influence of Roughness}{35}{section*.39}%
+\contentsline {chapter}{\numberline {3}CONCLUSION}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Summary of Works}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Limitations}{39}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Future Research}{39}{section.3.3}%
+\contentsline {compteur}{REFERENCES}{40}{chapter*.42}%
+\contentsline {compteur}{APPENDICES}{48}{chapter*.42}%
