@@ -4,47 +4,67 @@
 \contentsline {compteur}{RÉSUMÉ}{vi}{chapter*.3}%
 \contentsline {compteur}{ABSTRACT}{vii}{chapter*.4}%
 \babel@toc {english}{}\relax 
-\babel@toc {french}{}\relax 
-\babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 {\pdfbookmark [0]{TABLE OF CONTENTS}{toc}}
-\contentsline {compteur}{LIST OF TABLES}{x}{chapter*.5}%
-\contentsline {compteur}{LIST OF FIGURES}{xi}{chapter*.6}%
-\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xii}{chapter*.7}%
-\contentsline {compteur}{LIST OF APPENDICES}{xiii}{chapter*.8}%
+\contentsline {compteur}{LIST OF TABLES}{xi}{chapter*.5}%
+\contentsline {compteur}{LIST OF FIGURES}{xii}{chapter*.6}%
+\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xiv}{chapter*.7}%
+\contentsline {compteur}{LIST OF APPENDICES}{xv}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ice Morphologies}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Regulations \& Certification}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Ice Accretion Numerical Modeling}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Problem Statement}{6}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Motivation for the Proposed Approach}{7}{subsection.1.5.1}%
-\contentsline {section}{\numberline {1.6}Objectives of the Present Study}{9}{section.1.6}%
+\contentsline {subsection}{\numberline {1.5.1}Motivation for the Present Work}{7}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}Objectives of the Present Study}{8}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Thesis Outline}{10}{section.1.7}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Water-Droplet Tracking}{12}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Eulerian Droplet Tracking}{13}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Lagrangian Droplet Tracking}{14}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Collection Efficiency}{17}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Supercooled Large Droplet Modeling}{19}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Third-Order Effects}{20}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Second-Order Effects: Deformation and Breakup}{20}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}First-Order Effects: Sticking, Splashing, and Bouncing}{21}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Immersed-Boundary Methods}{23}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Classification}{24}{subsection.2.3.1}%
-\contentsline {subsubsection}{Geometrical Methods}{25}{section*.24}%
-\contentsline {subsubsection}{Continuous-Forcing Methods}{25}{section*.26}%
-\contentsline {subsubsection}{Discrete-Forcing Methods}{27}{section*.27}%
-\contentsline {subsection}{\numberline {2.3.2}Surface Representation}{29}{subsection.2.3.2}%
-\contentsline {subsubsection}{Interface Tracking}{29}{section*.31}%
-\contentsline {subsubsection}{Interface Capturing}{30}{section*.32}%
-\contentsline {subsection}{\numberline {2.3.3}Wall Functions}{32}{subsection.2.3.3}%
-\contentsline {subsubsection}{Velocity Wall Functions}{34}{section*.35}%
-\contentsline {subsubsection}{Temperature Wall Functions}{35}{section*.37}%
-\contentsline {subsubsection}{Influence of Roughness}{35}{section*.39}%
-\contentsline {chapter}{\numberline {3}CONCLUSION}{39}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Summary of Works}{39}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Limitations}{39}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Future Research}{39}{section.3.3}%
-\contentsline {compteur}{REFERENCES}{40}{chapter*.42}%
-\contentsline {compteur}{APPENDICES}{48}{chapter*.42}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aerodynamics}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{16}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{17}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{18}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Geometry Evolution}{23}{section.2.5}%
+\contentsline {subsubsection}{Interface Tracking}{23}{section*.22}%
+\contentsline {subsubsection}{Interface Capturing}{25}{section*.23}%
+\contentsline {section}{\numberline {2.6}Geometry Representation}{27}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{28}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{29}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{31}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{33}{section.2.7}%
+\contentsline {chapter}{\numberline {3}THESIS STRUCTURE}{36}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Research Objectives}{36}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Overall Research Strategy}{36}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Presentation of the Articles}{37}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Article 1: Lagrangian Droplet Tracking}{37}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Article 2: Three-Dimensional Level-Set Geometry Evolution}{37}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Article 3: Immersed-Boundary Ice Accretion}{37}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Relationship Between the Articles}{37}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Article I: A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Droplet Tracking Techniques}{41}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Droplet Tracking Approaches for Ice Accretion}{41}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Lagrangian Droplet Tracking}{42}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Improvements in Lagrangian Particle Tracking}{45}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ray--Quadrilateral Intersections in CFD Applications}{45}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Adaptive Seeding}{47}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Collection Efficiency Computations}{50}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}SuperCooled Large Droplets Effects Modeling}{51}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Hybrid Eulerian-Lagrangian Solver}{55}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Parallelism}{56}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Results \& Discussions}{57}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Scalability}{58}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Case IPW1 - 112 : NACA64A008 Horizontal Tail }{59}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Case IPW1 - 122 : Three Element Airfoil}{61}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Case IPW2 - 1.3 : Hybrid CRM (With Gap)}{62}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Case HLPW5 - 2.1 : CRM Wing-Body}{63}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Conclusion}{63}{section.4.5}%
+\contentsline {chapter}{\numberline {5}CONCLUSION}{72}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Summary of Works}{72}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Limitations}{72}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Future Research}{72}{section.5.3}%
+\contentsline {compteur}{REFERENCES}{73}{chapter*.48}%
+\contentsline {compteur}{APPENDICES}{86}{chapter*.48}%

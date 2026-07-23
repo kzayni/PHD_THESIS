@@ -8,6 +8,7 @@ A level-1 auxiliary file: CHAPTERS/3-Abstract.aux
 A level-1 auxiliary file: CHAPTERS/4-Sigles_Abrev.aux
 A level-1 auxiliary file: CHAPTERS/5-Introduction.aux
 A level-1 auxiliary file: CHAPTERS/6-Revue_litterature.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_THESIS_STRUCTURE.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LAGRANGIAN.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LEVEL_SET.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_IBM.aux
@@ -19,6 +20,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 11570 items from 5000.
 Database file #1: Document.bib
 Warning--I didn't find a database entry for "IEEEexample:BSTcontrol"
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
@@ -28,51 +30,71 @@ Warning--missing publisher in oneraIcingWindTunnel
 Warning--empty year in oneraIcingWindTunnel
 Warning--missing publisher in iceAccretionOnSweptWings
 Warning--empty year in iceAccretionOnSweptWings
-Warning--missing institution in papadakis2007large
-Warning--missing institution in papadakis2002experimental
-Warning--empty journal in jayatilleke1966influence
-Warning--empty journal in arpaci1984heat
+Warning--empty journal in zabaletamultishot
+Warning--empty year in zabaletamultishot
+Warning--missing institution in wright2008user
+Warning--missing publisher in spallartAllmaras
+Warning--empty year in spallartAllmaras
+Warning--empty year in pabloIcing
+Warning--missing publisher in guillaumeAuger
+Warning--empty year in guillaumeAuger
+Warning--missing publisher in isikLagrangian
+Warning--empty year in isikLagrangian
+Warning--missing publisher in zaidSabriLagrangian
+Warning--empty year in zaidSabriLagrangian
+Warning--empty journal in clift2005bubbles
+Warning--missing publisher in andySLD
+Warning--empty year in andySLD
+Warning--missing publisher in lagNodeDisplacement
+Warning--empty year in lagNodeDisplacement
+Warning--empty year in tuckerEikonal
+Warning--missing publisher in inviscidIBM47
+Warning--empty year in inviscidIBM47
+Warning--empty journal in mittal2005immersed
+Warning--empty journal in faa2010engine
+Warning--missing publisher in parenteau
+Warning--empty year in parenteau
 
 Done.
-You've used 87 entries,
+You've used 145 entries,
             4024 wiz_defined-function locations,
-            1322 strings with 23818 characters,
-and the built_in function-call counts, 61379 in all, are:
-= -- 5197
-> -- 1364
-< -- 475
-+ -- 731
-- -- 245
-* -- 2877
-:= -- 9446
-add.period$ -- 174
-call.type$ -- 87
-change.case$ -- 84
-chr.to.int$ -- 960
-cite$ -- 95
-duplicate$ -- 4624
-empty$ -- 4875
-format.name$ -- 309
-if$ -- 14139
+            1631 strings with 34412 characters,
+and the built_in function-call counts, 99116 in all, are:
+= -- 8154
+> -- 2309
+< -- 701
++ -- 1241
+- -- 433
+* -- 4614
+:= -- 15029
+add.period$ -- 301
+call.type$ -- 145
+change.case$ -- 136
+chr.to.int$ -- 1455
+cite$ -- 173
+duplicate$ -- 7572
+empty$ -- 8170
+format.name$ -- 544
+if$ -- 22909
 int.to.chr$ -- 0
-int.to.str$ -- 87
-missing$ -- 816
-newline$ -- 290
-num.names$ -- 85
-pop$ -- 1788
+int.to.str$ -- 145
+missing$ -- 1356
+newline$ -- 466
+num.names$ -- 145
+pop$ -- 3167
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 4929
+skip$ -- 7878
 stack$ -- 0
-substring$ -- 2486
-swap$ -- 3722
-text.length$ -- 155
+substring$ -- 3804
+swap$ -- 5944
+text.length$ -- 216
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 87
-warning$ -- 8
-while$ -- 272
-width$ -- 89
-write$ -- 875
-(There were 9 warnings)
+type$ -- 145
+warning$ -- 28
+while$ -- 394
+width$ -- 148
+write$ -- 1386
+(There were 29 warnings)

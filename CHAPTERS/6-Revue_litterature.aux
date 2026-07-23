@@ -1,91 +1,94 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\citation{blanchet2022conservative}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{12}{chapter.2}\protected@file@percent }
-\newlabel{sec:RevLitt}{{2}{12}{Thesis Outline}{chapter.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Water-Droplet Tracking}{12}{section.2.1}\protected@file@percent }
+\citation{guardoneReview}
+\citation{guardoneReview}
+\citation{hessClouds,rosenfeldClouds}
+\citation{radenac2024workflow,maximeBlanchetDynamicThermo}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{11}{chapter.2}\protected@file@percent }
+\newlabel{sec:RevLitt}{{2}{11}{Thesis Outline}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{11}{section.2.1}\protected@file@percent }
+\newlabel{sec:review_icing_overview}{{2.1}{11}{Overview of Numerical Ice Accretion Modeling}{section.2.1}{}}
+\citation{unsteadyHabashi}
+\citation{zabaletamultishot}
+\citation{laurendeau2022summary,laurendeau2024summary}
+\citation{gent2000aircraft}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic of the multilayer ice accretion framework.}}{12}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:icingFramework}{{2.1}{12}{Schematic of the multilayer ice accretion framework}{figure.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison of representative numerical aircraft icing solvers.}}{12}{table.caption.17}\protected@file@percent }
+\newlabel{tab:icing_solvers}{{2.1}{12}{Comparison of representative numerical aircraft icing solvers}{table.caption.17}{}}
+\newlabel{fig:flowSolution}{{2.2a}{13}{Aerodynamic solution represented by pressure contours.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{sub@fig:flowSolution}{{a}{13}{Aerodynamic solution represented by pressure contours.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{fig:dropSolution}{{2.2b}{13}{Droplet solution represented by particle trajectories.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{sub@fig:dropSolution}{{b}{13}{Droplet solution represented by particle trajectories.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{fig:geoSolution}{{2.2c}{13}{Geometry evolution represented by the accreted ice shape.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{sub@fig:geoSolution}{{c}{13}{Geometry evolution represented by the accreted ice shape.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{fig:gridSolution}{{2.2d}{13}{Updated computational mesh following geometry evolution.\caption@thelabel }{figure.caption.16}{}}
+\newlabel{sub@fig:gridSolution}{{d}{13}{Updated computational mesh following geometry evolution.\caption@thelabel }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration of the principal stages involved in a aircraft ice accretion simulation: (a) aerodynamic flow solution, (b) droplet impingement prediction, (c) geometry evolution through ice accretion, and (d) mesh update for the subsequent accretion layer.}}{13}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:icingSolutions}{{2.2}{13}{Illustration of the principal stages involved in a aircraft ice accretion simulation: (a) aerodynamic flow solution, (b) droplet impingement prediction, (c) geometry evolution through ice accretion, and (d) mesh update for the subsequent accretion layer}{figure.caption.16}{}}
+\citation{gent2000aircraft}
+\citation{wright2008user}
+\citation{saeed2001modified}
+\citation{ONICE}
+\citation{ransPushIcing}
+\citation{spallartAllmaras,kOmegaMenter}
+\citation{lavoieLevelSet,pabloIcing,guillaumeAuger}
+\citation{cousteix2005modeling,laurendeau2003drag}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Aerodynamics}{14}{section.2.2}\protected@file@percent }
+\newlabel{sec:review_flow_solvers}{{2.2}{14}{Aerodynamics}{section.2.2}{}}
 \citation{bourgault1999finite}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Eulerian Droplet Tracking}{13}{subsection.2.1.1}\protected@file@percent }
-\newlabel{sec:eulerianTracking}{{2.1.1}{13}{Eulerian Droplet Tracking}{subsection.2.1.1}{}}
-\newlabel{eq: continuityDroplet}{{2.1}{13}{Eulerian Droplet Tracking}{equation.2.1}{}}
-\newlabel{eq: momentumDroplet}{{2.2}{13}{Eulerian Droplet Tracking}{equation.2.2}{}}
-\citation{darmofal1996analysis}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Lagrangian Droplet Tracking}{14}{subsection.2.1.2}\protected@file@percent }
-\newlabel{sec:LagDropTracking}{{2.1.2}{14}{Lagrangian Droplet Tracking}{subsection.2.1.2}{}}
-\newlabel{eq:eqOfMotion}{{2.3}{14}{Lagrangian Droplet Tracking}{equation.2.3}{}}
-\newlabel{eq:forceCoef}{{2.4}{14}{Lagrangian Droplet Tracking}{equation.2.4}{}}
-\citation{bellosta2023lagrangian}
-\citation{bellosta2023lagrangian}
-\citation{li2019fast}
-\citation{li2019fast}
-\citation{rendall2014finite}
-\citation{rendall2014finite}
-\citation{bellosta2023lagrangian}
-\citation{li2019fast}
-\newlabel{fig:vicinity}{{2.1a}{15}{Vicinity face-to-face tracking \cite {bellosta2023lagrangian}\caption@thelabel }{figure.caption.17}{}}
-\newlabel{sub@fig:vicinity}{{a}{15}{Vicinity face-to-face tracking \cite {bellosta2023lagrangian}\caption@thelabel }{figure.caption.17}{}}
-\newlabel{fig:auxGrid}{{2.1b}{15}{Auxiliary-grid tracking \cite {li2019fast}\caption@thelabel }{figure.caption.17}{}}
-\newlabel{sub@fig:auxGrid}{{b}{15}{Auxiliary-grid tracking \cite {li2019fast}\caption@thelabel }{figure.caption.17}{}}
-\newlabel{fig:faceTracking}{{2.1c}{15}{Face-to-face tracking \cite {rendall2014finite}\caption@thelabel }{figure.caption.17}{}}
-\newlabel{sub@fig:faceTracking}{{c}{15}{Face-to-face tracking \cite {rendall2014finite}\caption@thelabel }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Examples of droplet-tracking techniques.}}{15}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:dropletTracking}{{2.1}{15}{Examples of droplet-tracking techniques}{figure.caption.17}{}}
-\citation{rendall2014finite}
-\citation{rendall2014finite}
-\newlabel{eq:BDF1}{{2.5}{16}{Lagrangian Droplet Tracking}{equation.2.5}{}}
-\newlabel{eq:BDF1_Time}{{2.6}{16}{Lagrangian Droplet Tracking}{equation.2.6}{}}
-\newlabel{eq:BDF2_Time}{{2.7}{16}{Lagrangian Droplet Tracking}{equation.2.7}{}}
-\newlabel{eq:alpha}{{2.8}{16}{Lagrangian Droplet Tracking}{equation.2.8}{}}
-\newlabel{eq:beta}{{2.9}{17}{Lagrangian Droplet Tracking}{equation.2.9}{}}
-\newlabel{eq:gamma}{{2.10}{17}{Lagrangian Droplet Tracking}{equation.2.10}{}}
-\newlabel{eq:facetFlow}{{2.12}{17}{Lagrangian Droplet Tracking}{equation.2.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Collection Efficiency}{17}{subsection.2.1.3}\protected@file@percent }
-\newlabel{sec:CollEfficiency}{{2.1.3}{17}{Collection Efficiency}{subsection.2.1.3}{}}
-\citation{xie2020robust}
-\citation{xie2020robust}
-\newlabel{eq:betaEq}{{2.13}{18}{Collection Efficiency}{equation.2.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Computation of the collection efficiency from droplet trajectories \cite  {xie2020robust}.}}{18}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:collectionEfficiency}{{2.2}{18}{Computation of the collection efficiency from droplet trajectories \cite {xie2020robust}}{figure.caption.18}{}}
-\newlabel{eq:betaEul}{{2.14}{18}{Collection Efficiency}{equation.2.14}{}}
-\citation{papadakis1999experimental,papadakis2004water,papadakis2007large,papadakis2002experimental,papadakis2003experimental}
-\citation{tan2007experimental,vargas2011deformation,berthoumieu2012experimental}
-\citation{whalen2005characteristics}
-\citation{whalen2005characteristics}
+\citation{yi2023numerical}
+\citation{wright2008user,saeed2001modified}
+\citation{bourgault1999finite}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{15}{section.2.3}\protected@file@percent }
+\newlabel{sec:review_droplet_impingement}{{2.3}{15}{Dispersed Phase Modeling}{section.2.3}{}}
+\newlabel{eq:impinging_mass_flux}{{2.1}{15}{Dispersed Phase Modeling}{equation.2.1}{}}
+\newlabel{eq:beta_eulerian}{{2.2}{15}{Dispersed Phase Modeling}{equation.2.2}{}}
+\newlabel{eq:beta_lagrangian_streamtube}{{2.3}{15}{Dispersed Phase Modeling}{equation.2.3}{}}
+\citation{bourgault1999finite}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Schematic representation of the Lagrangian droplet-seeding procedure. Droplets are released from an upstream plane and tracked until they either impinge on the immersed surface or bypass the body.}}{16}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:dropStreamTube}{{2.3}{16}{Schematic representation of the Lagrangian droplet-seeding procedure. Droplets are released from an upstream plane and tracked until they either impinge on the immersed surface or bypass the body}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{16}{subsection.2.3.1}\protected@file@percent }
+\newlabel{sec:eulerianTracking}{{2.3.1}{16}{Eulerian Droplet Formulation}{subsection.2.3.1}{}}
+\newlabel{eq:continuityDroplet}{{2.4}{16}{Eulerian Droplet Formulation}{equation.2.4}{}}
+\citation{blanchet2022conservative}
+\newlabel{eq:momentumDroplet}{{2.5}{17}{Eulerian Droplet Formulation}{equation.2.5}{}}
+\newlabel{eq:reynoldsDroplet}{{2.6}{17}{Eulerian Droplet Formulation}{equation.2.6}{}}
+\newlabel{eq:dropletInertia}{{2.7}{17}{Eulerian Droplet Formulation}{equation.2.7}{}}
+\newlabel{eq:froudeDroplet}{{2.8}{17}{Eulerian Droplet Formulation}{equation.2.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{17}{subsection.2.3.2}\protected@file@percent }
+\newlabel{sec:LagDropTracking}{{2.3.2}{17}{Lagrangian Droplet Formulation}{subsection.2.3.2}{}}
+\newlabel{eq:eqOfMotion}{{2.9}{17}{Lagrangian Droplet Formulation}{equation.2.9}{}}
+\citation{isikLagrangian,bellosta2023lagrangian,zaidSabriLagrangian,sirianni2023numerical,baldan2021scalable}
+\citation{guardoneReview}
 \citation{wright2004semi}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Pathological case for collection-efficiency computation on a multi-element airfoil.}}{19}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:collectionEfficiencyMDA}{{2.3}{19}{Pathological case for collection-efficiency computation on a multi-element airfoil}{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Supercooled Large Droplet Modeling}{19}{section.2.2}\protected@file@percent }
-\citation{bhargava2005numerical}
-\citation{trontin2016revisited}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Main features of SLD ice accretion \cite  {whalen2005characteristics}.}}{20}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:SLD_SHAPES}{{2.4}{20}{Main features of SLD ice accretion \cite {whalen2005characteristics}}{figure.caption.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Third-Order Effects}{20}{subsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Second-Order Effects: Deformation and Breakup}{20}{subsection.2.2.2}\protected@file@percent }
-\citation{guido2011shear}
-\citation{guido2011shear}
-\citation{xu_wang_che_2022}
-\citation{xu_wang_che_2022}
-\citation{cossali1999impact,rein1993phenomena,alzaili2011experimental,vanzante2007database}
-\citation{trontin2017description}
-\newlabel{fig:deformation}{{2.5a}{21}{Droplet deformation \cite {guido2011shear}\caption@thelabel }{figure.caption.21}{}}
-\newlabel{sub@fig:deformation}{{a}{21}{Droplet deformation \cite {guido2011shear}\caption@thelabel }{figure.caption.21}{}}
-\newlabel{fig:dropletBreakup}{{2.5b}{21}{Droplet breakup \cite {xu_wang_che_2022}\caption@thelabel }{figure.caption.21}{}}
-\newlabel{sub@fig:dropletBreakup}{{b}{21}{Droplet breakup \cite {xu_wang_che_2022}\caption@thelabel }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Examples of second-order SLD effects.}}{21}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:SLD2ndOrder}{{2.5}{21}{Examples of second-order SLD effects}{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}First-Order Effects: Sticking, Splashing, and Bouncing}{21}{subsection.2.2.3}\protected@file@percent }
-\citation{ball_what_2014}
-\citation{hirt1981volume}
-\citation{lian2014numerical}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Example of droplet splashing \cite  {ball_what_2014}.}}{22}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:splashing}{{2.6}{22}{Example of droplet splashing \cite {ball_what_2014}}{figure.caption.22}{}}
-\citation{bilodeau2016numerical}
-\citation{capizzano2023extending}
-\citation{bilodeau2016numerical}
+\citation{cao2020numerical}
+\citation{wright2004semi,trontin2016revisited}
+\newlabel{eq:lag_position}{{2.10}{18}{Lagrangian Droplet Formulation}{equation.2.10}{}}
+\newlabel{eq:forceCoef}{{2.11}{18}{Lagrangian Droplet Formulation}{equation.2.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{18}{subsection.2.3.3}\protected@file@percent }
+\newlabel{sec:review_sld}{{2.3.3}{18}{Supercooled Large Droplet Modeling}{subsection.2.3.3}{}}
+\citation{clift2005bubbles}
+\citation{tan2007experimental,andySLD}
+\newlabel{eq:CdBlend}{{2.12}{19}{Supercooled Large Droplet Modeling}{equation.2.12}{}}
+\newlabel{eq:CdWeight}{{2.13}{19}{Supercooled Large Droplet Modeling}{equation.2.13}{}}
+\newlabel{eq:Weber}{{2.14}{19}{Supercooled Large Droplet Modeling}{equation.2.14}{}}
+\newlabel{fig:DropletDeformation}{{2.4a}{19}{Droplet Deformation.\caption@thelabel }{figure.caption.19}{}}
+\newlabel{sub@fig:DropletDeformation}{{a}{19}{Droplet Deformation.\caption@thelabel }{figure.caption.19}{}}
+\newlabel{fig:DropletSplashing}{{2.4b}{19}{Droplet splashing.\caption@thelabel }{figure.caption.19}{}}
+\newlabel{sub@fig:DropletSplashing}{{b}{19}{Droplet splashing.\caption@thelabel }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Droplet Phenomena.}}{19}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:DropletPhenomena}{{2.4}{19}{Droplet Phenomena}{figure.caption.19}{}}
+\citation{habashiSPH}
+\citation{sirianni2023numerical}
+\citation{bilodeau2016numerical,capizzano2023extending}
+\newlabel{eq:sld_corrected_beta}{{2.15}{20}{Supercooled Large Droplet Modeling}{equation.2.15}{}}
+\newlabel{eq:sld_reimp_beta}{{2.16}{20}{Supercooled Large Droplet Modeling}{equation.2.16}{}}
 \citation{mundo1998modeling}
 \citation{trujillo2000modelling}
-\citation{yarin1995impact}
 \citation{honsek2006fensap}
+\citation{wright2004semi}
+\citation{trontin2016revisited}
 \citation{wright2004semi}
 \citation{trontin2016revisited}
 \citation{mundo1998modeling}
@@ -93,99 +96,103 @@
 \citation{honsek2006fensap}
 \citation{wright2004semi}
 \citation{trontin2016revisited}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Immersed-Boundary Methods}{23}{section.2.3}\protected@file@percent }
+\citation{messingerClassical}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces SLD splashing models.}}{21}{table.caption.20}\protected@file@percent }
+\newlabel{tab:splashing_Models}{{2.2}{21}{SLD splashing models}{table.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{21}{section.2.4}\protected@file@percent }
+\newlabel{sec:review_thermodynamics}{{2.4}{21}{Thermodynamic Modeling}{section.2.4}{}}
+\citation{bourgault-coteMultilayerAirfoilIce2019}
+\citation{bourgault-coteMultilayerAirfoilIce2019}
+\citation{myersExtension}
+\newlabel{fig:massBalanceThermo}{{2.5a}{22}{Mass balance.\caption@thelabel }{figure.caption.21}{}}
+\newlabel{sub@fig:massBalanceThermo}{{a}{22}{Mass balance.\caption@thelabel }{figure.caption.21}{}}
+\newlabel{fig:energyBalanceThermo}{{2.5b}{22}{Energy balance.\caption@thelabel }{figure.caption.21}{}}
+\newlabel{sub@fig:energyBalanceThermo}{{b}{22}{Energy balance.\caption@thelabel }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Control volume diagrams for mass and energy balance equations. Adapted from~\cite  {bourgault-coteMultilayerAirfoilIce2019}.}}{22}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:massEngergyThermo}{{2.5}{22}{Control volume diagrams for mass and energy balance equations. Adapted from~\cite {bourgault-coteMultilayerAirfoilIce2019}}{figure.caption.21}{}}
+\citation{zhu2012}
+\citation{laurendeau2022summary,laurendeau2024summary}
+\citation{SWIM}
+\citation{guardoneReview}
+\citation{lavoieThermo}
+\citation{lagNodeDisplacement}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Geometry Evolution}{23}{section.2.5}\protected@file@percent }
+\newlabel{sec:review_geometry_evolution}{{2.5}{23}{Geometry Evolution}{section.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Interface Tracking}{23}{section*.22}\protected@file@percent }
+\citation{pueyo2001improvements}
+\citation{radenac2024workflow,pabloIcing}
+\citation{tuckerEikonal}
+\citation{bourgault-coteMultilayerAirfoilIce2019}
+\citation{glimm2000}
+\newlabel{eq:algebraic_surface_displacement}{{2.17}{24}{Interface Tracking}{equation.2.17}{}}
+\citation{sethian2003level}
+\@writefile{toc}{\contentsline {subsubsection}{Interface Capturing}{25}{section*.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Representation of the level-set function $\phi $. The ice region is defined by $\phi < 0$ (blue), while the surrounding air corresponds to $\phi > 0$. The interface is implicitly represented by the zero level set $\phi = 0$.}}{25}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:IceAirInterface}{{2.6}{25}{Representation of the level-set function $\phi $. The ice region is defined by $\phi < 0$ (blue), while the surrounding air corresponds to $\phi > 0$. The interface is implicitly represented by the zero level set $\phi = 0$}{figure.caption.24}{}}
+\newlabel{eq:levelSet}{{2.19}{25}{Interface Capturing}{equation.2.19}{}}
+\citation{PENA2016278}
+\citation{HeloiseBeaugendre}
+\citation{bourgault-coteMultilayerAirfoilIce2019}
+\citation{lavoieLevelSet}
+\citation{alessandroLevelSet}
+\citation{papillonlaroche2026geometricreinitializationcapillaryflows}
+\citation{PESKIN1972252}
+\citation{inviscidIBM31,inviscidIBM47}
+\citation{turbulentIBM73,turbulentIBM170}
+\citation{multiphaseIBM127,multiphaseIBM184}
+\citation{fsiIBM72,fsiIBM174,fsiIBM191}
+\citation{pabloIcing,lavoieLevelSet}
+\citation{laurendeau2022summary,laurendeau2024summary}
 \citation{sotiropoulos2014immersed}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces SLD Splashing Models}}{24}{table.caption.23}\protected@file@percent }
-\newlabel{tab:splashing_Models}{{2.1}{24}{SLD Splashing Models}{table.caption.23}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Classification}{24}{subsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Geometry Representation}{27}{section.2.6}\protected@file@percent }
+\newlabel{sec:review_ibm}{{2.6}{27}{Geometry Representation}{section.2.6}{}}
 \citation{clarke1986euler}
 \citation{clarke1986euler}
 \citation{glimm2003conservative}
 \citation{kirkpatrick2003representation}
 \citation{meyer2010conservative}
-\@writefile{toc}{\contentsline {subsubsection}{Geometrical Methods}{25}{section*.24}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Boundary cut-cell method \cite  {clarke1986euler}.}}{25}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:cutCell}{{2.7}{25}{Boundary cut-cell method \cite {clarke1986euler}}{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Continuous-Forcing Methods}{25}{section*.26}\protected@file@percent }
-\citation{peskin1972flow}
-\citation{lai2000immersed}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{28}{subsection.2.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of the boundary cut-cell method adapted from Clarke et al.~\cite  {clarke1986euler}.}}{28}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:cutCell}{{2.7}{28}{Illustration of the boundary cut-cell method adapted from Clarke et al.~\cite {clarke1986euler}}{figure.caption.25}{}}
+\citation{PESKIN1972252}
+\citation{mittal2005immersed}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{29}{subsection.2.6.2}\protected@file@percent }
+\newlabel{eq:contForcingNS}{{2.23}{29}{Continuous-Forcing Methods}{equation.2.23}{}}
+\newlabel{eq:contForcingContinuity}{{2.23a}{29}{Continuous-Forcing Methods}{equation.2.23a}{}}
+\newlabel{eq:contForcingMomentum}{{2.23b}{29}{Continuous-Forcing Methods}{equation.2.23b}{}}
+\newlabel{eq:peskinForce}{{2.24}{29}{Continuous-Forcing Methods}{equation.2.24}{}}
+\newlabel{eq:peskinVelocity}{{2.25}{29}{Continuous-Forcing Methods}{equation.2.25}{}}
 \citation{arquis1984conditions}
-\newlabel{eq:contForcing}{{2.18}{26}{Continuous-Forcing Methods}{equation.2.18}{}}
-\newlabel{eq:contForcingRigid}{{2.21}{26}{Continuous-Forcing Methods}{equation.2.21}{}}
-\newlabel{eq:contForcingPenal}{{2.22}{26}{Continuous-Forcing Methods}{equation.2.22}{}}
-\citation{mohd1997simulations}
-\citation{mittal2008versatile}
-\citation{mittal2008versatile}
+\citation{angot1999penalization}
+\citation{SAKURAI2019452}
+\citation{highOrderIBM82}
+\citation{mohd1997combined}
+\citation{fadlun2000combined}
+\newlabel{eq:penalizationMask}{{2.26}{30}{Continuous-Forcing Methods}{equation.2.26}{}}
+\newlabel{eq:penalizationForce}{{2.27}{30}{Continuous-Forcing Methods}{equation.2.27}{}}
+\citation{majumdar2001rans}
 \citation{tseng2003ghost}
-\@writefile{toc}{\contentsline {subsubsection}{Discrete-Forcing Methods}{27}{section*.27}\protected@file@percent }
-\newlabel{eq:discreteForcing}{{2.25}{27}{Discrete-Forcing Methods}{equation.2.25}{}}
-\citation{capizzano2007compressible}
-\citation{capizzano2011turbulent}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{31}{subsection.2.6.3}\protected@file@percent }
+\newlabel{eq:discreteForcingMomentum}{{2.28}{31}{Discrete-Forcing Methods}{equation.2.28}{}}
+\newlabel{eq:discreteForcing}{{2.31}{31}{Discrete-Forcing Methods}{equation.2.31}{}}
+\citation{tseng2003ghost}
+\citation{tseng2003ghost}
+\citation{mittal2008versatile,tseng2003ghost}
+\citation{capizzano2007compressible,capizzano2011turbulent}
+\citation{capizzano2007compressible,capizzano2011turbulent}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Image-point and ghost-cell construction near an immersed boundary, adapted from Tseng and Ferziger~\cite  {tseng2003ghost}.}}{32}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:ghostCell}{{2.8}{32}{Image-point and ghost-cell construction near an immersed boundary, adapted from Tseng and Ferziger~\cite {tseng2003ghost}}{figure.caption.26}{}}
 \citation{capizzano2014eulerian}
 \citation{capizzano2014eulerian}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Image-point and ghost-cell construction near an immersed boundary \cite  {mittal2008versatile}.}}{28}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:ghostCell}{{2.8}{28}{Image-point and ghost-cell construction near an immersed boundary \cite {mittal2008versatile}}{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Illustration of face forcing near an immersed boundary \cite  {capizzano2014eulerian}.}}{28}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:faceForcing}{{2.9}{28}{Illustration of face forcing near an immersed boundary \cite {capizzano2014eulerian}}{figure.caption.29}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces IBM Comparison}}{29}{table.caption.30}\protected@file@percent }
-\newlabel{tab:IBM_MODELS}{{2.2}{29}{IBM Comparison}{table.caption.30}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Surface Representation}{29}{subsection.2.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Interface Tracking}{29}{section*.31}\protected@file@percent }
-\citation{sethian2003level}
-\citation{rauschenberger2013comparative}
-\@writefile{toc}{\contentsline {subsubsection}{Interface Capturing}{30}{section*.32}\protected@file@percent }
-\newlabel{eq:levelSet}{{2.26}{30}{Interface Capturing}{equation.2.26}{}}
-\citation{scardovelli1999direct}
-\citation{scardovelli1999direct}
-\citation{marter2017methode}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Interface reconstruction using (a) SLIC and (b) PLIC \cite  {scardovelli1999direct}.}}{31}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:VOF}{{2.10}{31}{Interface reconstruction using (a) SLIC and (b) PLIC \cite {scardovelli1999direct}}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Wall Functions}{32}{subsection.2.3.3}\protected@file@percent }
-\newlabel{sec:wallFunctions}{{2.3.3}{32}{Wall Functions}{subsection.2.3.3}{}}
-\newlabel{eq:reducedRANS}{{2.30}{32}{Wall Functions}{equation.2.30}{}}
-\newlabel{eq:reducedRANSTau}{{2.31}{32}{Wall Functions}{equation.2.31}{}}
-\newlabel{eq:reducedRANSTauND}{{2.32}{32}{Wall Functions}{equation.2.32}{}}
-\citation{prakash2019rans}
-\citation{kader1972heat}
-\newlabel{eq:standardwallfunc}{{2.33}{33}{Wall Functions}{equation.2.33}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Illustration of the different layers of a turbulent boundary layer \cite  {prakash2019rans}.}}{33}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:BL}{{2.11}{33}{Illustration of the different layers of a turbulent boundary layer \cite {prakash2019rans}}{figure.caption.34}{}}
-\newlabel{eq:reducedEnergy}{{2.34}{33}{Wall Functions}{equation.2.34}{}}
-\newlabel{eq:tempLayers}{{2.35}{33}{Wall Functions}{equation.2.35}{}}
-\citation{spalding1961single}
-\citation{reichardt1951vollstandige}
-\citation{knopp2006grid}
-\citation{allmaras2012modifications}
-\citation{craft2002progress}
-\citation{gant2002development}
-\citation{popovac2007compound}
-\@writefile{toc}{\contentsline {subsubsection}{Velocity Wall Functions}{34}{section*.35}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Velocity Wall Functions}}{34}{table.caption.36}\protected@file@percent }
-\newlabel{tab:veloctityprofiles}{{2.3}{34}{Velocity Wall Functions}{table.caption.36}{}}
-\citation{kader1972heat}
-\citation{kalitzin2005near}
-\citation{craft2002progress}
-\citation{popovac2007compound}
-\citation{lacombe2019compatible}
-\citation{kader1972heat}
-\citation{jayatilleke1966influence}
-\citation{arpaci1984heat}
-\citation{hansman1989investigation}
-\citation{nikuradse1933laws}
-\citation{prakash2019rans}
-\newlabel{eq:craft}{{2.36}{35}{Velocity Wall Functions}{equation.2.36}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Temperature Wall Functions}{35}{section*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Influence of Roughness}{35}{section*.39}\protected@file@percent }
-\citation{schlichting1936experimentelle}
-\citation{prakash2019rans}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Temperature Wall Functions}}{36}{table.caption.38}\protected@file@percent }
-\newlabel{tab:temperatureprofiles}{{2.4}{36}{Temperature Wall Functions}{table.caption.38}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Influence of roughness on the velocity profile \cite  {prakash2019rans}.}}{37}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:BLShift}{{2.12}{37}{Influence of roughness on the velocity profile \cite {prakash2019rans}}{figure.caption.40}{}}
-\newlabel{eq:roughnessExt}{{2.40}{37}{Influence of Roughness}{equation.2.40}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Illustration of face forcing near an immersed boundary, adapted from Capizzano et al.~\cite  {capizzano2014eulerian}.}}{33}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:faceForcing}{{2.9}{33}{Illustration of face forcing near an immersed boundary, adapted from Capizzano et al.~\cite {capizzano2014eulerian}}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{33}{section.2.7}\protected@file@percent }
+\newlabel{sec:review_synthesis}{{2.7}{33}{Synthesis and Positioning of the Present Work}{section.2.7}{}}
+\citation{lavoie2021immersed,pabloIcing}
+\citation{pabloIcing}
 \@setckpt{CHAPTERS/6-Revue_litterature}{
-\setcounter{page}{38}
-\setcounter{equation}{40}
+\setcounter{page}{36}
+\setcounter{equation}{31}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -194,20 +201,20 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{2}
-\setcounter{section}{3}
-\setcounter{subsection}{3}
+\setcounter{section}{7}
+\setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{12}
-\setcounter{table}{4}
-\setcounter{parentequation}{0}
+\setcounter{figure}{9}
+\setcounter{table}{2}
+\setcounter{parentequation}{23}
 \setcounter{LT@tables}{1}
 \setcounter{LT@chunks}{1}
-\setcounter{section@level}{3}
+\setcounter{section@level}{1}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{3}
-\setcounter{bookmark@seq@number}{31}
+\setcounter{bookmark@seq@number}{32}
 \setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}

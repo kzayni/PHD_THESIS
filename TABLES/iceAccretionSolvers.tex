@@ -1,0 +1,31 @@
+\begin{table}[ht]
+\centering
+\caption{Comparison of representative numerical aircraft icing solvers.}
+\label{tab:icing_solvers}
+\small
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{llcccccc}
+\toprule
+\textbf{Organization} &
+\textbf{Solver} &
+\textbf{Flow} &
+\textbf{Droplet} &
+\textbf{Thermo} &
+\textbf{Geo Evolution} &
+\textbf{Geo Rep.} &
+\textbf{Multishot} \\
+\midrule
+NASA                      & LEWICE           & Panel / Euler / RANS & Lagrangian & Messinger / Modified Messinger & Lagrangian           & Body-fitted        & \checkmark \\
+NASA                      & GlennICE         & RANS                 & Lagrangian & Messinger                      & Face Offset          & Body-fitted        & \checkmark \\
+ANSYS Canada              & FENSAP-ICE       & RANS                 & Eulerian   & Modified Messinger             & Lagrangian           & Body-fitted        & \checkmark \\
+ONERA                     & ONERA IGLOO3D    & RANS                 & Eulerian   & Extended Messinger             & Lagrangian           & Body-fitted        & \checkmark \\
+Bombardier                & Dragon Ice Suite & RANS                 & Eulerian   & Iterative Messinger            & Hyperbolic Marching  & Body-fitted        & \checkmark \\
+Polytechnique Montréal    & CHAMPS-ICE       & RANS                 & Eulerian   & Iterative Messinger            & Lagrangian / RBF     & Body-fitted        & \checkmark \\
+CIRA                      & SIMBA            & IBM                  & Eulerian   & Iterative Messinger            & Lagrangian           & Immersed Boundary  & \checkmark \\
+TU Braunschweig           & DICEPS           & RANS                 & Eulerian   & --                             & Lagrangian           & Body-fitted        & \checkmark \\
+University of Twente      & SWIM             & RANS                 & Eulerian   & SWIM                           & Lagrangian           & Body-fitted        & $\times$ \\
+Politecnico di Milano     & PoliMIce         & RANS                 & Lagrangian & Modified Myers                 & Level Set            & Body-fitted        & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

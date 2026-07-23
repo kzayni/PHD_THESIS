@@ -1,38 +1,68 @@
-% Please add the following required packages to your document preamble:
-% \usepackage{multirow}
+% Required packages:
+% \usepackage{booktabs}
+% \usepackage{adjustbox}
+
 \begin{table}[htb!]
 \centering
-\caption{SLD Splashing Models}
+\caption{SLD splashing models.}
 \label{tab:splashing_Models}
-\begin{tabular}{ccc}
-\hline
-Source &
-Mass Loss Coefficient &
-Splashing Criterion \\ \hline\hline
-\\
-Mundo et al. \cite{mundo1998modeling} &
-$n_s (\frac{d_s}{d_0})^3$ &
-$K_M = (Oh^{-0.4}We)^{0.625} > 57.7$ \\ \\
+\small
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Source} &
+\textbf{Mass Loss Coefficient} &
+\textbf{Splashing Criterion} \\
+\midrule
 
-\\
-Trujillo et al. \cite{trujillo2000modelling} &
-$0.8 [1.0 - e^{-0.85(K_y - 17)}]$ &
-$K_y = \frac{1}{0.45^\frac{3}{8}}(Oh^{-0.4}We)^{0.3125} > 17$ \\ \\
+\mbox{Mundo et al.~\cite{mundo1998modeling}}
+&
+$n_s\left(\dfrac{d_s}{d_0}\right)^3$
+&
+$K_M=\left(Oh^{-0.4}We\right)^{0.625}>57.7$
+\\[0.8em]
 
-\\
-Honsek et al. \cite{honsek2006fensap} &
-$\frac{3.8}{K_y^{0.5}} [1.0 - e^{-0.85(K_y - 17)}]$ &
-$K_y > 17$ \\ \\
+\mbox{Trujillo et al.~\cite{trujillo2000modelling}}
+&
+$0.8\left[1-\exp\left(-0.85(K_y-17)\right)\right]$
+&
+$K_y=
+\dfrac{1}{0.45^{3/8}}
+\left(Oh^{-0.4}We\right)^{0.3125}>17$
+\\[0.8em]
 
-\\
-Wright et al. \cite{wright2004semi} &
-$0.7 (1.0 - sin(\theta_0)) [1.0-e^{-0.0092(K_M - 200.0)}]$ &
-$\frac{0.859 \, K_m^{0.5} \, (\frac{\rho_{w}}{LWC})^{0.125}}{sin(\theta_0)^{1.25}} > 200.0$ \& $\theta < \frac{\pi}{2}$ \\ \\
+\mbox{Honsek et al.~\cite{honsek2006fensap}}
+&
+$\dfrac{3.8}{K_y^{1/2}}
+\left[1-\exp\left(-0.85(K_y-17)\right)\right]$
+&
+$K_y>17$
+\\[0.8em]
 
+\mbox{Wright et al.~\cite{wright2004semi}}
+&
+$0.7(1-\sin\theta_0)
+\left[1-\exp\left(-0.0092(K_M-200)\right)\right]$
+&
+$\dfrac{
+0.859\,K_M^{1/2}
+\left(\dfrac{\rho_w}{LWC}\right)^{1/8}}
+{\sin^{5/4}\theta_0}
+>200,
+\qquad
+\theta<\dfrac{\pi}{2}$
+\\[0.8em]
+
+\mbox{Trontin et al.~\cite{trontin2016revisited}}
+&
+$1-
+g\!\left(\dfrac{\theta}{\theta_c}\right)
+f\!\left(\dfrac{K_c-K_0}{K_0}\right)$
+&
+$K_c=We_n\,Oh^{-2/5}>657$
 \\
-Trontin et al. \cite{trontin2016revisited} &
-$1.0 - g(\frac{\theta}{\theta_c})f(\frac{K_c-K_0}{K_0})$ &
-$ K_c = We_n \cdot Oh^{\frac{-2}{5}} > 657 $\\ \\
-\hline
+
+\bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}

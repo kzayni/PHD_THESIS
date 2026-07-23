@@ -1,617 +1,600 @@
 \Chapter{LITERATURE REVIEW}\label{sec:RevLitt}
 
+\textit{
+This chapter reviews the principal numerical ingredients involved in aircraft ice-accretion simulations. It first presents the conventional quasi-steady framework adopted by most icing solvers before reviewing the aerodynamic, dispersed-phase, thermodynamic, geometry-evolution, and geometry-representation models and techniques reported in the literature. The chapter concludes with a synthesis of the current state of the art and identifies the remaining challenges that motivate the developments presented in the following chapters.
+}
 
-This chapter reviews the main numerical ingredients involved in aircraft ice accretion simulations. The first section focuses on water-droplet tracking techniques, with particular attention to Eulerian and Lagrangian formulations used to predict droplet impingement. The second section discusses Supercooled Large Droplet (SLD) effects and the semi-empirical models commonly used to account for splashing, bouncing, and secondary droplet behavior. The final sections review immersed-boundary methods, surface-representation techniques, and wall-function approaches relevant to robust ice accretion simulations.
+\section{Overview of Numerical Ice Accretion Modeling}\label{sec:review_icing_overview}
+Aircraft icing is the accumulation of ice on aircraft surfaces caused by the impingement and freezing of supercooled water droplets. From a numerical point of view, the problem involves the coupling of an external aerodynamic flow, a dispersed liquid phase, a surface thermodynamic balance, and an evolving fluid-solid interface. These different components are characterized by distinct physical time scales, which motivates the modular formulation used in most ice-accretion solvers~\cite{guardoneReview}. 
 
-\section{Water-Droplet Tracking}
+Certification icing conditions generally involve exposure over several minutes, resulting in an ice-accretion time scale that is several orders of magnitude longer than the characteristic flow and droplet time scales~\cite{guardoneReview}. Owing to this disparity, the transient ice-accretion process may be approximated as a succession of quasi-steady states.
 
-Water-droplet tracking is a central component of aircraft icing simulations. Before ice growth can be computed, the locations and rates at which droplets impinge on the aircraft surface must be determined. This impingement distribution directly affects the local water mass flux, the surface thermodynamic balance, and ultimately the predicted ice shape. Over the past decades, several numerical methods have been developed to model droplet transport in icing conditions. These methods generally seek a balance between accuracy, computational cost, robustness, and ease of integration into existing flow solvers.
+In addition to this separation of time scales, the low concentration of liquid water in icing clouds permits a further simplification in the treatment of the dispersed phase. Certification icing envelopes involve supercooled droplets with characteristic diameters ranging from approximately $10$ to $50~\mu\mathrm{m}$, while SLD conditions can extend to diameters approaching $1000~\mu\mathrm{m}$. For a typical liquid water content (LWC) of $1~\mathrm{g/m^3}$, the corresponding liquid volume fraction is of the order of $10^{-6}$ \cite{hessClouds, rosenfeldClouds}. This small volume fraction justifies the common assumption of one-way coupling between the air and droplet phases.
 
-Two main families of approaches are commonly used in the literature: Eulerian and Lagrangian methods. Eulerian models treat the droplet phase as a continuous medium. Governing equations similar to those used for the airflow are solved to obtain the droplet velocity field and the local water concentration throughout the computational domain. This formulation offers several advantages. It is generally computationally efficient, naturally suited for parallelization, and relatively easy to integrate into a finite-volume flow-solver framework. However, Eulerian methods also present limitations. Since the droplet phase is represented as a continuum, individual droplet information is lost, and phenomena such as splashing, breakup, and secondary droplet motion are more difficult to model directly. In addition, artificial dissipation and numerical oscillations can affect the solution, sometimes leading to nonphysical values such as negative water concentration. Such issues must be treated carefully, especially for complex geometries such as multi-element airfoils. Several techniques have been proposed to improve the robustness and conservation properties of Eulerian droplet solvers \cite{blanchet2022conservative}.
+\begin{figure}[htp]
+\centering
+\includegraphics[width=1.0\textwidth]{FIGURES/INTRODUCTION/ICING_FRAMEWORK.eps}
+\caption{Schematic of the multilayer ice accretion framework.}\label{fig:icingFramework}
+\end{figure}
 
-Lagrangian methods, on the other hand, track droplets or droplet parcels individually by solving their equations of motion along their trajectories. Historically, these methods were limited by their computational cost, especially when a large number of droplets was required to obtain smooth impingement maps. However, advances in high-performance computing have renewed interest in Lagrangian approaches for aircraft icing applications. These methods naturally provide access to individual droplet trajectories, impact velocities, and impact angles, which makes them particularly attractive for studying SLD effects and droplet-wall interactions.
+These assumptions provide the foundation for the conventional quasi-steady ice-accretion framework (Fig.~\ref{fig:icingFramework}). In its simplest form, the aerodynamic flow is first computed around the clean geometry. The resulting velocity field is then used to determine the transport of the dispersed phase and the local droplet impingement rate on the exposed surface. The latter is then provided to a surface thermodynamic model, which evaluates the local mass and energy balances and returns the ice-growth rate. Finally, the geometry is updated according to the predicted ice thickness. Representative aerodynamic, droplet, geometry-evolution, and mesh-update solutions associated with this sequence are shown in Fig.~\ref{fig:icingSolutions}. When this sequence is performed only once over the full exposure time, the approach is often referred to as a single-step or single-shot accretion simulation. When the total icing time is divided into several shorter intervals, the same sequence is repeated on the evolving geometry, leading to a multilayer formulation. Intermediate strategies, such as predictor--corrector formulations~\cite{radenac2024workflow, maximeBlanchetDynamicThermo}, have also been proposed to partially account for the retroaction of the growing ice shape on the flow and droplet fields. This limits the additional computational cost to a small number of surface-correction cycles.
 
-The choice between Eulerian and Lagrangian droplet tracking therefore depends on the targeted application and on the acceptable trade-off between computational efficiency, accuracy, and physical detail.
+Although the quasi-steady multilayer approach remains the standard strategy in engineering ice-accretion simulations, the physical process is inherently unsteady. Fully time-accurate formulations have been reported in the literature~\cite{unsteadyHabashi}. More recently, unsteady couplings involving scale-resolving flow simulations, such as LES, have also been explored~\cite{zabaletamultishot}. These approaches provide a more direct representation of the continuous interaction between the flow and the evolving ice surface, but their computational cost remains prohibitive for routine industrial icing applications, especially in three-dimensional configurations.
 
-\subsection{Eulerian Droplet Tracking}\label{sec:eulerianTracking}
+To provide a broader perspective on existing numerical approaches, Table~\ref{tab:icing_solvers} summarizes several state-of-the-art ice-accretion solvers reported in the literature \cite{laurendeau2022summary,laurendeau2024summary}. The table highlights the main numerical ingredients used in each framework. The remainder of this chapter then examines these components in more detail.
 
-Eulerian dispersed-phase tracking is based on a system of partial differential equations describing the evolution of the droplet concentration and droplet momentum. This formulation was first introduced for aircraft icing applications by Bourgault et al. \cite{bourgault1999finite}. The continuity equation is solved to obtain the nondimensional water concentration $\alpha$:
+\begin{figure}[htp]
+\centering
+\subfloat[Aerodynamic solution represented by pressure contours.]{%
+\includegraphics[width=0.35\textwidth]{FIGURES/LIT_REV/FLOW_SOLUTION.png}%
+\label{fig:flowSolution}%
+}%
+\hspace{1cm}%
+\subfloat[Droplet solution represented by particle trajectories.]{%
+\includegraphics[width=0.35\textwidth]{FIGURES/LIT_REV/DROP_SOLUTION.png}%
+\label{fig:dropSolution}%
+}%
+
+\subfloat[Geometry evolution represented by the accreted ice shape.]{%
+\includegraphics[width=0.35\textwidth]{FIGURES/LIT_REV/GEO_SOLUTION.png}%
+\label{fig:geoSolution}%
+}%
+\hspace{1cm}%
+\subfloat[Updated computational mesh following geometry evolution.]{%
+\includegraphics[width=0.35\textwidth]{FIGURES/LIT_REV/GRID_SOLUTION.png}%
+\label{fig:gridSolution}%
+}%
+\caption{Illustration of the principal stages involved in a aircraft ice accretion simulation: (a) aerodynamic flow solution, (b) droplet impingement prediction, (c) geometry evolution through ice accretion, and (d) mesh update for the subsequent accretion layer.}
+\label{fig:icingSolutions}
+\end{figure}
+
+\input{TABLES/iceAccretionSolvers}
+
+\section{Aerodynamics}\label{sec:review_flow_solvers}
+
+Early theoretical developments in aircraft icing were established before the availability of modern computational resources. Foundational contributions by Langmuir and Blodgett, Hardy, and Messinger provided the theoritical basis for ice accretion modeling~\cite{gent2000aircraft}. However, these early models were restricted to simple configurations, such as cylinders and spheres, or relied on empirical corrections when analytical solutions were not available. The extension of icing analysis to more representative aerodynamic geometries became possible only with the development of computational methods.
+
+The first generation of numerical icing tools emerged from research efforts led mainly by NASA Lewis Research Center in the United States, the Royal Aerospace Establishment in the United Kingdom, and ONERA in France~\cite{gent2000aircraft}. Early codes such as LEWICE~\cite{wright2008user} and CANICE \cite{saeed2001modified} relied primarily on inviscid aerodynamic descriptions, typically based on potential-flow or panel methods, coupled with boundary-layer corrections to estimate the near-wall quantities required by the icing model. Similarly, ONERA developed icing tools based on Euler flow solutions combined with boundary-layer calculations \cite{ONICE}. These approaches provided an efficient framework for ice-accretion prediction and formed the basis of several widely used engineering tools.
+
+With the maturation of computational fluid dynamics (CFD), especially from the 1970s onward, Reynolds-averaged Navier--Stokes (RANS) solvers progressively became the dominant aerodynamic model for practical icing simulations~\cite{ransPushIcing}. RANS solvers provide a more complete description of viscous effects and near-wall flow features, which are important for the ice shape prediction. This transition is reflected in recent IPW, where the majority of reported simulations rely on RANS-based aerodynamic solutions, most often using turbulence closures such as the Spalart–Allmaras or $k$–$\omega$ models \cite{spallartAllmaras, kOmegaMenter}. Although RANS calculations are more expensive than inviscid approaches, they remain affordable for industrial applications and provide a practical compromise between physical fidelity and computational cost.
+
+At the same time, recent work has renewed interest in lower-cost inviscid formulations strongly coupled with boundary-layer models~\cite{lavoieLevelSet,pabloIcing,guillaumeAuger}. These approaches aim to recover part of the accuracy of RANS-based icing simulations~\cite{cousteix2005modeling, laurendeau2003drag} while retaining the computational efficiency of Euler or potential-flow solvers. Such strategies are particularly attractive for design studies, parametric analyses, and multilayer ice-accretion calculations. The current literature therefore reflects two complementary trends: the continued use of RANS solvers as the standard aerodynamic model for engineering icing simulations, and the renewed interest in revisiting earlier inviscid and low- to medium-fidelity approaches using the knowledge and reference data gained from high-fidelity computational tools.
+
+\section{Dispersed Phase Modeling}\label{sec:review_droplet_impingement}
+
+Droplet-impingement prediction provides the local impingement rate required by the thermodynamic stage. Before the local ice-growth rate can be evaluated, the amount of supercooled water reaching the surface must first be determined. This quantity is commonly expressed through the collection efficiency, denoted by $\beta$, a dimensionless variable that represents the ratio of the local impinging water mass flux to the freestream water mass flux. The dimensional impinging water mass flux can therefore be written as
 
 \begin{equation}
-\frac{\partial \alpha}{\partial t} + \nabla \cdot (\alpha \boldsymbol{u_d}) = 0 ,
-\label{eq: continuityDroplet}
+    \dot{m}_{\mathrm{imp}} = \beta \, \mathrm{LWC} \, U_\infty 
+    \label{eq:impinging_mass_flux}
 \end{equation}
 
-where $\boldsymbol{u_d}$ is the droplet velocity. The corresponding momentum equation provides the droplet velocity field:
+where $U_\infty$ is the freestream velocity. The collection efficiency directly determines the water mass available for freezing or runback and therefore strongly influences the predicted ice shape.
+
+The definition of $\beta$ depends on the droplet formulation. In an Eulerian framework, the droplet phase is treated as a continuous medium. The local collection efficiency is then obtained from the normal component of the droplet mass flux at the wall~\cite{bourgault1999finite}. In nondimensional form, it can be expressed as
 
 \begin{equation}
-\frac{\partial (\alpha \boldsymbol{u_d})}{\partial t} +  \nabla \cdot (\alpha \boldsymbol{u_d} \otimes \boldsymbol{u_d}) = \frac{C_D , Re_D}{24K} \alpha (\boldsymbol{u_a} - \boldsymbol{u_d}) + \alpha \left(1-\frac{\rho_a}{\rho_w}\right) \frac{\boldsymbol{g}}{Fr^2}.
-\label{eq: momentumDroplet}
+    \beta = - \alpha \, \boldsymbol{u}_d \cdot \boldsymbol{n}
+    \label{eq:beta_eulerian}
 \end{equation}
 
-In this model, only drag and gravity forces are considered. The first term on the right-hand side of Equation~\ref{eq: momentumDroplet} represents the aerodynamic drag exerted by the airflow of velocity $\boldsymbol{u_a}$ on the droplet phase. The second term accounts for gravity.
-
-Eulerian droplet tracking offers several advantages. It is computationally efficient because individual droplets are not tracked separately. It is also well suited for high-performance computing, since the numerical structure of the droplet equations is similar to that of the airflow equations. This similarity facilitates implementation in existing finite-volume solvers and allows the same parallelization strategy to be reused.
-
-However, the Eulerian formulation also has important limitations. Since the droplet phase is averaged over the computational cells, individual droplet trajectories are not directly available. Microscale phenomena, such as droplet splashing, bouncing, and breakup, are difficult to represent without additional models. Numerical diffusion may also smear the impingement limits and reduce the accuracy of the local collection efficiency. Finally, for low droplet volume fractions or complex configurations, the dispersed phase may be poorly resolved, leading to nonphysical oscillations or negative values of the water concentration.
-
-\subsection{Lagrangian Droplet Tracking}\label{sec:LagDropTracking}
-
-In a Lagrangian formulation, droplets or droplet parcels are tracked by integrating their equation of motion. The droplet velocity $\boldsymbol{u_d}$ is first computed, and the droplet position is then obtained through an additional integration step. The equation of motion can be written as
+where $\alpha$ is the nondimensional water concentration, $\boldsymbol{u}_d$ is the droplet velocity, and $\boldsymbol{n}$ is the outward unit normal to the surface. In a Lagrangian framework, the collection efficiency is instead determined by tracking the deformation of a droplet streamtube initialized in the freestream as it approaches and intersects the surface. As illustrated in Fig.~\ref{fig:dropStreamTube}, $\beta$ may be interpreted, for a given surface element, as the ratio between the upstream seeding area associated with a set of neighboring droplet trajectories and the corresponding impingement area on the wall~\cite{yi2023numerical}:
 
 \begin{equation}
-\frac{d\boldsymbol{u_d}}{dt} = \frac{\boldsymbol{f}}{m} + \boldsymbol{g} = F( \boldsymbol{u_a}- \boldsymbol{u_d}) + \boldsymbol{g},
+    \beta = \frac{A_{\mathrm{upstream}}}{A_{\mathrm{impingement}}}
+    \label{eq:beta_lagrangian_streamtube}
+\end{equation}
+
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.75\textwidth]{FIGURES/LIT_REV/DROP_STREAM_TUBE.eps}
+    \caption{Schematic representation of the Lagrangian droplet-seeding
+    procedure. Droplets are released from an upstream plane and tracked until
+    they either impinge on the immersed surface or bypass the body.}
+    \label{fig:dropStreamTube}
+\end{figure}
+
+Historically, Lagrangian droplet tracking was the only approach in early icing codes~\cite{wright2008user,saeed2001modified}. In solvers based on potential-flow or panel methods, the airflow field was inexpensive to evaluate and droplet trajectories could be integrated directly through the computed velocity field. This made the Lagrangian formulation attractive because it provided a clear physical description of droplet motion. However, as ice-accretion solvers evolved toward Euler and RANS aerodynamic models, the computational cost of Lagrangian tracking became more restrictive. Accurate impingement maps require a large number of droplets, particularly in three-dimensional configurations. In addition, each droplet trajectory requires repeated interpolation of the carrier-flow solution, localization of the droplet within the computational mesh, and detection of surface impacts. These operations can become expensive and difficult to parallelize efficiently on complex unstructured grids. These limitations motivated the development of Eulerian droplet formulations~\cite{bourgault1999finite}, in which the dispersed phase is solved as a continuum using partial differential equations (PDE).
+
+\subsection{Eulerian Droplet Formulation}\label{sec:eulerianTracking}
+
+Eulerian dispersed-phase models describe the droplet field through continuous variables defined over the computational domain~\cite{bourgault1999finite}. The main unknowns are the nondimensional water concentration $\alpha$ and the droplet velocity $\boldsymbol{u}_d$. A common formulation consists of a conservation equation for the droplet concentration 
+
+\begin{equation}
+    \frac{\partial \alpha}{\partial t}
+    + \nabla \cdot \left(\alpha \boldsymbol{u}_d\right) = 0
+    \label{eq:continuityDroplet}
+\end{equation}
+
+combined with a momentum equation for the droplet phase
+
+\begin{equation}
+    \frac{\partial \left(\alpha \boldsymbol{u}_d\right)}{\partial t}
+    + \nabla \cdot
+    \left(\alpha \boldsymbol{u}_d \otimes \boldsymbol{u}_d\right)
+    =
+    \frac{C_D Re_D}{24K}\alpha
+    \left(\boldsymbol{u}_a-\boldsymbol{u}_d\right)
+    +
+    \alpha
+    \left(1-\frac{\rho_a}{\rho_w}\right)
+    \frac{\boldsymbol{g}}{Fr^2}
+    \label{eq:momentumDroplet}
+\end{equation}
+
+where $\boldsymbol{u}_a$ is the airflow velocity, $C_D$ is the droplet drag coefficient, $Re_D$ is the droplet Reynolds number (Eq.~\ref{eq:reynoldsDroplet}), $K$ is the inertia parameter (Eq.~\ref{eq:dropletInertia}), $\rho_a$ and $\rho_w$ are the air and water densities, respectively, $\boldsymbol{g}$ is the gravitational acceleration, and $Fr$ is the Froude number (Eq.~\ref{eq:froudeDroplet}). 
+
+\begin{equation}
+    \mathrm{Re}_d =
+    \frac{\rho_a \left\| \boldsymbol{u}_a - \boldsymbol{u}_d \right\| D}{\mu_a}
+    \label{eq:reynoldsDroplet}
+\end{equation}
+
+\begin{equation}
+    K = \frac{\rho_w D^2 U_\infty}{18 \mu_a L}
+    \label{eq:dropletInertia}
+\end{equation}
+
+\begin{equation}
+    \mathrm{Fr} =
+    \frac{U_{\infty}}{\sqrt{L g}}
+    \label{eq:froudeDroplet}
+\end{equation}
+
+The Eulerian approach is well suited to modern finite-volume CFD solvers. Since the droplet equations are written in conservative form, they can be discretized using numerical techniques similar to those used for the airflow equations. This makes the approach relatively efficient, naturally compatible with parallel computing, and convenient for three-dimensional simulations on complex grids.
+
+Nevertheless, the Eulerian formulation has limitations. Since the droplet phase is averaged within each computational cell, individual droplet trajectories, impact velocities, and impact angles are not directly available. Moreover, numerical diffusion may smear the impingement limits, especially near shadow zones. Numerical oscillations may also appear in low-concentration regions and can lead to nonphysical values of $\alpha$. Additional numerical treatments are therefore often required to preserve positivity, reduce artificial diffusion, and improve conservation properties~\cite{blanchet2022conservative}.
+
+\subsection{Lagrangian Droplet Formulation}\label{sec:LagDropTracking}
+
+In a Lagrangian formulation, droplets are tracked individually by integrating their equations of motion through the carrier-flow field. The droplet velocity $\boldsymbol{u}_d$  and  position $\boldsymbol{x}_d$ satisfy
+
+\begin{equation}
+\frac{d\boldsymbol{u_d}}{dt} = \frac{\textbf{f}}{m} + \textbf{g} = F( \boldsymbol{u_a}- \boldsymbol{u_d}) + \frac{\rho_d-\rho_a}{\rho_d}\textbf{g}
 \label{eq:eqOfMotion}
 \end{equation}
 
-where $\boldsymbol{f}$ is the aerodynamic force acting on the droplet, $m$ is the droplet mass, $\boldsymbol{g}$ is the gravitational acceleration, and $F$ is a scalar coefficient associated with drag.
-
-The main assumptions used in the present Lagrangian formulation are as follows:
-
-\begin{itemize}
-\item The droplet mass remains constant before impact;
-\item Droplets are independent from one another;
-\item The droplet concentration is sufficiently low that the dispersed phase does not affect the airflow;
-\item Turbulence effects on the droplet trajectories are neglected;
-\item Droplet rotation and lift forces are neglected.
-\end{itemize}
-
-Under these assumptions, the only forces considered are aerodynamic drag and gravity. The scalar coefficient $F$ is obtained from the local droplet Reynolds number, based on the relative velocity $| \boldsymbol{u_a} - \boldsymbol{u_d} |$ and droplet diameter. This gives
+and
 
 \begin{equation}
-F = \frac{C_D \frac{1}{2} \rho_a | \boldsymbol{u_a} -  \boldsymbol{u_d}| ^2 A}{m | \boldsymbol{u_a} -  \boldsymbol{u_d}|} = \frac{3 C_D  \rho_a | \boldsymbol{u_a} -  \boldsymbol{u_d}| }{4 \rho_w D},
-\label{eq:forceCoef}
+    \frac{d\boldsymbol{x}_d}{dt} = \boldsymbol{u}_d
+    \label{eq:lag_position}
 \end{equation}
 
-where $C_D$ is the droplet drag coefficient, $\rho_a$ is the air density, $\rho_w$ is the water density, and $D$ is the droplet diameter.
-
-A detailed analysis of numerical schemes for ordinary differential equations is presented by Darmofal and Haimes \cite{darmofal1996analysis}. Multistep schemes, such as Adams-Bashforth methods, and multistage schemes, such as Runge-Kutta methods, can be used to integrate droplet trajectories. However, particle-path integration may become unstable if the time step is too large. Therefore, a compromise must be found between computational cost, accuracy, and stability.
-
-In aircraft icing applications, the trajectory integration also depends strongly on interpolation of the airflow velocity. Since droplet paths do not generally coincide with the computational mesh, the host cell of each droplet must be identified after each integration step. Several localization and tracking techniques have been proposed for this purpose.
-
-\begin{figure}[htp]
-\centering
-\subfloat[Vicinity face-to-face tracking \cite{bellosta2023lagrangian}]{%
-\includegraphics[width=0.25\textwidth]{FIGURES/Droplet_Tracking/vicinity.png}%
-\label{fig:vicinity}%
-}%
-\hspace{1cm}%
-\subfloat[Auxiliary-grid tracking \cite{li2019fast}]{%
-\includegraphics[width=0.31\textwidth]{FIGURES/Droplet_Tracking/supportGrid.png}%
-\label{fig:auxGrid}%
-}%
-\hspace{1cm}%
-\subfloat[Face-to-face tracking \cite{rendall2014finite}]{%
-\includegraphics[width=0.31\textwidth]{FIGURES/Droplet_Tracking/faceTracking.png}%
-\label{fig:faceTracking}%
-}%
-\caption{Examples of droplet-tracking techniques.}
-\label{fig:dropletTracking}
-\end{figure}
-
-Tree-based search methods use octree-type data structures to identify the cell containing each droplet. Although general, these methods can become expensive for large-scale three-dimensional simulations. For example, a swept-wing dispersed-phase simulation may require several million droplets to obtain a sufficiently resolved impingement distribution. In this context, computational cost and parallel scalability are critical, which limits the practical use of global tree-based searches.
-
-Known-vicinity face-to-face methods \cite{bellosta2023lagrangian} use the previous droplet location to identify the current host cell. After the droplet position is advanced, a ray is cast along the droplet trajectory. If the trajectory remains within the current cell, the host cell is unchanged. Otherwise, the droplet crosses a face into an adjacent cell, which is identified using mesh connectivity. This procedure is repeated until the final host cell is found. This approach avoids global searches and is therefore more efficient for large unstructured grids.
-
-Auxiliary-grid methods \cite{li2019fast} use a structured background grid, typically Cartesian, to accelerate droplet localization. Before the simulation, a mapping is established between the background grid and the computational mesh. Each background cell stores the computational cells that it overlaps. During tracking, the droplet is first located in the auxiliary grid, and point-in-cell tests are then performed only on a small set of candidate computational cells. This can significantly reduce the cost of particle localization. However, the construction and storage of the background-grid mapping introduce additional preprocessing complexity, especially in three-dimensional simulations.
-
-Face-to-face tracking \cite{rendall2014finite} provides an attractive compromise between efficiency and accuracy. The method relies directly on mesh connectivity. At each step, the droplet velocity defines a trajectory segment, and the next cell is identified by finding the nearest face intersection. The local time step is then obtained from the residence time of the droplet in the current cell. This approach avoids explicit global cell searches and is naturally compatible with finite-volume data structures. It is therefore well suited for large-scale unstructured simulations.
-
-Because stability is a significant concern in droplet trajectory integration, implicit schemes are often preferred. Backward differentiation formulas provide an efficient and robust option \cite{rendall2014finite}. Further details on the implementation used in the present work are provided in Chapter~\ref{sec:RP}.
-
-Using a first-order backward difference formula, the discretized equation of motion can be written as
-
+where $F$ is a scalar drag coefficient : 
 \begin{equation}
-\alpha m \boldsymbol{u_d}^n + \beta m \boldsymbol{u_d}^{n-1} = \boldsymbol{f}(\boldsymbol{u_a},\boldsymbol{u_d}) + m \boldsymbol{g} = m F (\boldsymbol{u_a}-\boldsymbol{u_d}) + m \boldsymbol{g},
-\label{eq:BDF1}
+    F =
+    \frac{3 C_D \rho_a
+    \left|\boldsymbol{u}_a-\boldsymbol{u}_d\right|}
+    {4 \rho_w D}
+    \label{eq:forceCoef}
 \end{equation}
 
-where $\alpha = 1/\Delta t$ and $\beta = -1/\Delta t$. The droplet velocity at the new time level is then obtained from
+Although Lagrangian methods are considered expensive for high-fidelity icing simulations, they have recently gained renewed interest~\cite{isikLagrangian,bellosta2023lagrangian, zaidSabriLagrangian, sirianni2023numerical, baldan2021scalable}. Modern high-performance computing resources, improved particle-localization algorithms, and the need for detailed impact information have made Lagrangian approaches increasingly attractive. This is particularly true for SLD conditions, where splashing, bouncing, and secondary droplet motion are more naturally described in the Lagrangian framework.
+
+\subsection{Supercooled Large Droplet Modeling}\label{sec:review_sld}
+
+Supercooled Large Droplet conditions introduce additional physical mechanisms into droplet-impingement modeling. Compared with SSD, SLDs have larger diameters and therefore greater inertia, making their trajectories less responsive to changes in the surrounding airflow~\cite{guardoneReview}. They may consequently impinge farther downstream and potentially outside regions protected by conventional IPS.
+
+The additional phenomena associated with SLDs may be separated into effects occurring before and during impact. In-flight deformation and breakup can be regarded as second-order effects because they indirectly influence impingement by modifying the droplet shape, aerodynamic drag, and trajectory before contact with the surface. By contrast, splashing, bouncing, and secondary-droplet ejection constitute first-order wall-interaction effects because they directly determine the fraction of the impinging water mass that remains on the surface~\cite{wright2004semi}.
+
+As an SLD travels through a nonuniform flow field, variations in the aerodynamic pressure and shear stresses acting over its surface may deform it from its initially spherical shape. The resistance of the droplet to this deformation is governed primarily by surface-tension and viscous forces. When the aerodynamic forces become sufficiently large relative to these restoring forces, the spherical-droplet assumption is no longer valid, and the droplet may adopt an oblate or more complex nonspherical shape. Under more severe conditions, continued deformation may ultimately lead to breakup into smaller droplets~\cite{cao2020numerical}.
+
+Droplet deformation can affect impingement by modifying the aerodynamic drag and, consequently, the droplet response time and trajectory. Breakup may additionally alter the droplet-size distribution and produce smaller fragments that interact more strongly with the airflow. Nevertheless, the influence of deformation and breakup on the resulting impingement distribution has generally been found to remain limited for many icing conditions, with potentially greater importance under freezing-drizzle conditions \cite{wright2004semi, trontin2016revisited}. For this reason, these mechanisms are often neglected or represented through simplified corrections rather than modeled explicitly.
+
+A commonly used approximation accounts for deformation by modifying the drag coefficient without explicitly resolving the evolving droplet shape. The effective drag coefficient may be obtained by blending correlations for spherical droplets and oblate disks as a function of the droplet Reynolds and Weber numbers~\cite{clift2005bubbles}:
 
 \begin{equation}
-\boldsymbol{u_d}^{n} = \frac{ F \boldsymbol{u_a} -\beta \boldsymbol{u_d}^{n-1} +\boldsymbol{g}}{\alpha + F}.
-\label{eq:BDF1_Time}
-\end{equation}
-
-A second-order formulation can be obtained by retaining the velocity from the previous two time levels:
-
-\begin{equation}
-\boldsymbol{u_d}^{n} = \frac{ F \boldsymbol{u_a} -\beta \boldsymbol{u_d}^{n-1}  -\gamma \boldsymbol{u_d}^{n-2} +\boldsymbol{g}}{\alpha + F}.
-\label{eq:BDF2_Time}
-\end{equation}
-
-For variable time steps, the coefficients $\alpha$, $\beta$, and $\gamma$ are computed using the current time step $\Delta t_c$ and the previous time step $\Delta t_{c-1}$:
-
-\begin{equation}
-\alpha = \frac{2\Delta t_c+\Delta t_{c-1}}{(\Delta t_c+\Delta t_{c-1})\Delta t_c},
-\label{eq:alpha}
-\end{equation}
-
-\begin{equation}
-\beta = \frac{-(\Delta t_c+\Delta t_{c-1})}{\Delta t_c\Delta t_{c-1}},
-\label{eq:beta}
-\end{equation}
-
-\begin{equation}
-\gamma = \frac{\Delta t_c}{(\Delta t_c+\Delta t_{c-1})\Delta t_{c-1}}.
-\label{eq:gamma}
-\end{equation}
-
-The trajectory integration is performed iteratively. An initial estimate of the new droplet velocity is obtained from the previous value, $\boldsymbol{u_d}^{n}=\boldsymbol{u_d}^{n-1}$. The airflow velocity at the new position is then estimated, and the nearest face intersection is computed using the current trajectory estimate. This provides the local time step and the corresponding coefficients in Equations~\ref{eq:alpha}–\ref{eq:gamma}. Equation~\ref{eq:BDF1_Time} or Equation~\ref{eq:BDF2_Time} is then used to update the droplet velocity. The process is repeated until the change between successive velocity estimates becomes sufficiently small.
-
-The face intersection is computed using the midpoint velocity
-
-\begin{equation}
-\boldsymbol{u_d}^{n-\frac{1}{2}} = \frac{1}{2} \left(\boldsymbol{u_d}^n + \boldsymbol{u_d}^{n-1}\right).
-\end{equation}
-
-Because the local time step may vary significantly from one cell to another, the method may locally reduce to first-order accuracy. To mitigate this issue, limited gradients can be used to interpolate the airflow velocity at the droplet position:
-
-\begin{equation}
-\boldsymbol{u_a}{facet} = \boldsymbol{u_a}{cell} + \nabla \boldsymbol{u_a} \cdot \boldsymbol{d},
-\label{eq:facetFlow}
-\end{equation}
-
-where $\boldsymbol{d}$ is the vector from the cell center to the droplet position.
-
-The limiting behavior of Equation~\ref{eq:forceCoef} provides useful validation cases. For an infinitesimally small droplet, the coefficient $F$ tends to infinity, and the droplet velocity approaches the airflow velocity, $\boldsymbol{u_d}^{n} \approx \boldsymbol{u_a}^{n}$. In this limit, droplet trajectories coincide with airflow streamlines. Conversely, for very large droplets, $F$ tends toward zero, and the airflow has little influence on the droplet motion. The trajectory is then mainly governed by inertia and gravity.
-
-\subsection{Collection Efficiency}\label{sec:CollEfficiency}
-
-In addition to impingement locations, droplet tracking provides the collection efficiency of the geometry. The collection efficiency $\beta$ is a nondimensional measure of the local impingement rate. It relates the amount of water captured by a surface region to the amount of water that would pass through the corresponding upstream area, as illustrated in Figure~\ref{fig:collectionEfficiency}:
-
-\begin{equation}
-\beta = \frac{A_{upstream}}{A_{impingement}}.
-\label{eq:betaEq}
-\end{equation}
-
-\begin{figure}[htp]
-\centering
-\includegraphics[trim={0.1cm 0.1cm 0.1cm 0.1cm},clip,width=.4\textwidth]{FIGURES/SLD/collectionEfficiency.jpg}
-\caption{Computation of the collection efficiency from droplet trajectories \cite{xie2020robust}.}
-\label{fig:collectionEfficiency}
-\end{figure}
-
-The collection efficiency is a key quantity in ice accretion simulations because it determines the incoming water mass flux on the surface. In Eulerian models, $\beta$ is obtained directly from the normal component of the droplet flux at the wall:
-
-\begin{equation}
-\beta = -\boldsymbol{u_d} \cdot \boldsymbol{\hat{n}},
-\label{eq:betaEul}
-\end{equation}
-
-where $\boldsymbol{\hat{n}}$ is the outward unit normal to the surface.
-
-In Lagrangian models, the computation of $\beta$ is more involved. A classical approach consists in tracking neighboring droplets and computing the ratio between the upstream seeding area and the corresponding impingement area. In two-dimensional simulations, this can be done using two neighboring trajectories. In three-dimensional simulations, three or four neighboring trajectories are generally required. However, this strategy introduces several difficulties.
-
-First, in a parallel computing environment, neighboring droplets may be stored on different processors. Computing the local impingement area then requires additional communication, which may become expensive and difficult to manage. Second, neighboring droplets may not always impinge on the same component of a complex geometry. For example, in a multi-element airfoil, one droplet may impact the main element while another impacts the flap or slat, as shown in Figure~\ref{fig:collectionEfficiencyMDA}. In such cases, defining a meaningful local impingement area becomes ambiguous.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[trim={5cm 5cm 2cm 5cm},clip,width=.5\textwidth]{FIGURES/SLD/MDA.pdf}
-\caption{Pathological case for collection-efficiency computation on a multi-element airfoil.}
-\label{fig:collectionEfficiencyMDA}
-\end{figure}
-
-To address these issues, Xie et al. \cite{xie2020robust} proposed computing additional secondary trajectories around each primary droplet. Since the secondary trajectories are generated locally, they can be stored on the same processor, reducing communication requirements. The droplets are also released very close to one another, which increases the probability that they impinge on the same component of the geometry.
-
-\section{Supercooled Large Droplet Modeling}
-
-Supercooled Large Droplet conditions have received significant attention following the introduction of Appendix O to the Federal Airworthiness Regulations. Compared with standard icing conditions, SLD environments involve larger droplets with greater inertia. These droplets are less affected by the airflow and are more likely to impinge farther downstream on the aircraft surface. In addition, SLD impacts may involve splashing, bouncing, breakup, and secondary droplet reimpingement. These phenomena can extend the impingement limits and generate ice accretion in regions where ice protection systems may not be installed.
-
-SLD ice accretion is challenging from both experimental and numerical perspectives. Experimentally, obtaining reliable data is difficult, time-consuming, and expensive. Papadakis et al. \cite{papadakis1999experimental,papadakis2004water,papadakis2007large,papadakis2002experimental,papadakis2003experimental} provided extensive data on SLD impingement distributions and ice shapes. Other studies focused on specific SLD mechanisms, such as droplet deformation, breakup, and impact behavior \cite{tan2007experimental,vargas2011deformation,berthoumieu2012experimental}. Broeren et al. \cite{whalen2005characteristics} identified several characteristic features of SLD ice accretion, including horns, nodules, and clear ice, as shown in Figure~\ref{fig:SLD_SHAPES}.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.75\textwidth]{FIGURES/SLD/SLD_SHAPES.png}
-\caption{Main features of SLD ice accretion \cite{whalen2005characteristics}.}
-\label{fig:SLD_SHAPES}
-\end{figure}
-
-SLD behavior differs significantly from that of supercooled standard droplets. Because of their larger diameter, SLDs have greater inertia and their trajectories deviate more strongly from the airflow streamlines. Wright et al. \cite{wright2004semi} classified SLD effects according to their relative importance for aircraft icing simulations.
-
-\subsection{Third-Order Effects}
-
-Third-order SLD effects are generally small and are often neglected in practical icing simulations. This assumption is consistent with the hypotheses adopted in Section~\ref{sec:LagDropTracking}. These effects include the following:
-
-\begin{itemize}
-\item \textbf{Basset force:} This force accounts for the time history of the drag force. It is generally negligible when the viscosity of the carrier fluid is much smaller than that of the particles, as is the case for water droplets in air;
-\item \textbf{Saffman force:} This lift force can be relevant for small particles in shear flows, but is typically more important for gas bubbles than for water droplets in icing applications;
-\item \textbf{Turbulence effects:} Bhargava et al. \cite{bhargava2005numerical} investigated turbulence effects on droplet motion in the NASA IRT and found that they are generally of secondary importance, except in specific high-speed configurations such as rotor blades or propellers.
-\end{itemize}
-
-\subsection{Second-Order Effects: Deformation and Breakup}
-
-Unlike standard droplets, SLDs may deform significantly as they travel through the flow field. Because of their larger diameter, they are more sensitive to aerodynamic pressure differences across the droplet surface. When the aerodynamic forces exceed the restoring effects of surface tension and viscosity, the assumption of spherical droplets becomes invalid.
-
-Droplet deformation changes the effective drag coefficient and can therefore influence the droplet trajectory and the resulting impingement distribution. In more extreme cases, droplets may break up into smaller fragments, further modifying the droplet-size distribution and the water collection on the surface. However, except for some freezing-drizzle conditions, the influence of deformation and breakup appears to remain limited in many icing applications \cite{trontin2016revisited}.
-
-\begin{figure}[htp]
-\centering
-\subfloat[Droplet deformation \cite{guido2011shear}]{%
-\includegraphics[width=0.15\textwidth]{FIGURES/SLD/dropletDeformation.jpg}%
-\label{fig:deformation}%
-}%
-\hspace{2cm}%
-\subfloat[Droplet breakup \cite{xu_wang_che_2022}]{%
-\includegraphics[width=0.37\textwidth]{FIGURES/SLD/dropletBreakup.png}%
-\label{fig:dropletBreakup}%
-}%
-\caption{Examples of second-order SLD effects.}
-\label{fig:SLD2ndOrder}
-\end{figure}
-
-\subsection{First-Order Effects: Sticking, Splashing, and Bouncing}
-
-Droplet-wall interaction is one of the most important aspects of SLD modeling. When large droplets impact a surface, they do not necessarily stick completely. Depending on the impact conditions and surface properties, they may spread, bounce, splash, or generate secondary droplets. Experiments have shown that large droplets may fragment after impact, producing secondary droplets that can reimpinge farther downstream \cite{cossali1999impact,rein1993phenomena,alzaili2011experimental,vanzante2007database}. This mechanism increases the effective impingement limits compared with standard droplets.
-
-The outcome of droplet impact depends on several parameters, including droplet diameter, impact velocity, impact angle, density, viscosity, surface tension, surface roughness, wettability, and wall temperature. These quantities are commonly expressed using nondimensional groups such as the Reynolds, Weber, and Ohnesorge numbers. The main droplet-wall interaction regimes can be summarized as follows \cite{trontin2017description}:
-
-\begin{itemize}
-\item \textbf{Sticking:} The droplet adheres to the wall, and no mass loss occurs. This regime is generally associated with low impact velocity;
-\item \textbf{Bouncing:} A thin air film remains trapped between the droplet and the surface, preventing direct contact and causing the droplet to rebound;
-\item \textbf{Deposition and spreading:} The droplet spreads along the surface, contributing to a liquid film or merging with an existing water film. Part of the kinetic energy is dissipated by viscous effects, while another part is converted into surface energy;
-\item \textbf{Splashing:} At sufficiently high impact energy, viscous forces and surface tension are no longer able to maintain droplet integrity. The droplet fragments into secondary droplets, some of which are ejected from the surface.
-\end{itemize}
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.25\textwidth]{FIGURES/SLD/dropletSplashing.png}
-\caption{Example of droplet splashing \cite{ball_what_2014}.}
-\label{fig:splashing}
-\end{figure}
-
-Direct numerical simulation of droplet impact can be performed using interface-resolved methods such as the Volume of Fluid method \cite{hirt1981volume} or Moment of Fluid methods \cite{lian2014numerical}. However, such approaches require high-resolution meshes around each droplet and are therefore not practical for aircraft icing simulations involving millions of droplets. As a result, current SLD models generally rely on semi-empirical formulations calibrated against experimental data.
-
-These models often introduce a mass-loss coefficient $f_m$, or equivalently a sticking efficiency $\epsilon$, to account for the fraction of droplet mass retained after impact. The corrected collection efficiency is then written as
-
-\begin{equation}
-\beta_{final} =(1.0 - f_m) , \beta_{0},
-\end{equation}
-
-or equivalently,
-
-\begin{equation}
-\beta_{final} = \epsilon, \beta_{0}.
-\end{equation}
-
-This correction can be applied as a post-processing step for both Eulerian and Lagrangian droplet models. However, secondary droplet reimpingement is more naturally handled in a Lagrangian framework. In this case, semi-empirical models can provide post-impact quantities, such as secondary droplet diameter and velocity, allowing the droplets to be reinjected into the computational domain.
-
-In an Eulerian framework, secondary reimpingement is more difficult to model. One possible approach consists in modifying the boundary conditions on splashing surfaces \cite{bilodeau2016numerical}. The simulation is then performed in two stages. First, the original collection efficiency is computed and the splashing regions are identified. Second, selected wall faces are converted into inflow boundaries to model the reemission of secondary droplets. The final collection efficiency is then obtained as
-
-\begin{equation}
-\beta_{final} = \epsilon, \beta_{0} + \sum \beta_{re-impingement}.
-\end{equation}
-
-For complex three-dimensional geometries, however, the number of surface elements involved in reinjection may become very large, reducing the practical efficiency of this approach. Recent work has proposed converting all relevant boundary faces into inflow boundaries to reduce the computational cost \cite{capizzano2023extending}. Other approaches use statistical clustering to reduce the number of reinjection simulations \cite{bilodeau2016numerical}.
-
-Table~\ref{tab:splashing_Models} summarizes several splashing models available in the literature. Mundo et al. \cite{mundo1998modeling} proposed one of the first semi-empirical models for droplet splashing, in which the mass-loss coefficient is related to the number and size distribution of secondary droplets. Trujillo et al. \cite{trujillo2000modelling} introduced a model based on the parameters proposed by Yarin and Weiss \cite{yarin1995impact}, including effects of droplet-generator frequency and surface roughness. Honsek et al. \cite{honsek2006fensap} later modified Trujillo’s formulation and implemented it in FENSAP-ICE.
-
-Wright et al. \cite{wright2004semi} introduced the impact angle into the splashing parameters and mass-loss formulation. This makes splashing less likely for droplets impacting nearly normal to the surface and more likely near the impingement limits. Their model was calibrated by comparing computed water collection efficiencies with experimental data. Trontin et al. \cite{trontin2016revisited} proposed an alternative formulation based on subfunctions describing the dependence of mass loss on impact angle and kinetic energy. The model parameters were adjusted using comparisons with experimental data.
-
-\input{TABLES/SLD_MODELS}
-
-\section{Immersed-Boundary Methods}
-
-The robustness of aircraft icing simulations is strongly affected by the geometry and mesh-update stages. In classical body-fitted approaches, the computational mesh must conform to the aircraft surface and must be regenerated or deformed after each ice accretion layer. As the ice shape grows, the geometry can become increasingly complex, making it difficult to maintain high-quality near-wall cells and avoid mesh failure. This issue is especially critical for three-dimensional multilayer simulations.
-
-Immersed-boundary methods provide an alternative approach in which the geometry is represented independently of the computational mesh. The solid boundary may cut through grid cells, and boundary conditions are imposed through modifications of the governing equations or their discretization. This strategy can simplify mesh generation and improve robustness for complex and evolving geometries. However, each immersed-boundary formulation introduces specific numerical challenges related to accuracy, conservation, stability, wall modeling, and geometry representation.
-
-\subsection{Classification}
-
-Following the classification of Sotiropoulos and Yang \cite{sotiropoulos2014immersed}, immersed-boundary methods can be grouped into three main families: geometrical methods, continuous-forcing methods, and discrete-forcing methods. Geometrical methods modify the mesh or control volumes near the interface. Continuous-forcing methods add source terms to the governing equations to represent the boundary. Discrete-forcing methods impose the boundary conditions directly at the discrete level. The following sections summarize these approaches. Table~\ref{tab:IBM_MODELS} provides a comparison based on implementation complexity, accuracy, stability, and computational cost.
-
-\subsubsection{Geometrical Methods}
-
-Geometrical immersed-boundary methods rely on the ability of the solver to handle arbitrary cell shapes. These methods were introduced by Clarke et al. \cite{clarke1986euler} for Euler-flow simulations around multi-element airfoils. In this approach, a preprocessing step cuts the cells intersected by the solid boundary, as illustrated in Figure~\ref{fig:cutCell}. The resulting cut cells conform locally to the immersed interface.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.5\textwidth]{FIGURES/IBM/cutCell.png}
-\caption{Boundary cut-cell method \cite{clarke1986euler}.}
-\label{fig:cutCell}
-\end{figure}
-
-The main advantage of cut-cell methods is their sharp and conservative treatment of the boundary. In addition, the governing equations and numerical fluxes can often be kept close to those of the original solver. However, the geometric preprocessing is complex, particularly in three dimensions. Another major difficulty is the presence of very small cut cells, which can impose severe time-step restrictions and affect stability. Several remedies have been proposed, including cell merging \cite{glimm2003conservative}, cell linking \cite{kirkpatrick2003representation}, and cell mixing \cite{meyer2010conservative}.
-
-\subsubsection{Continuous-Forcing Methods}
-
-Continuous-forcing immersed-boundary methods modify the governing equations by adding a forcing term that accounts for the presence of the boundary. A generic system can be written as
-
-\begin{equation}
-\frac{\partial \boldsymbol{W}}{\partial t} = \boldsymbol{R} + \boldsymbol{F},
-\label{eq:contForcing}
-\end{equation}
-
-where $\boldsymbol{W}$ represents the conservative variables, $\boldsymbol{R}$ is the residual of the original governing equations, and $\boldsymbol{F}$ is the immersed-boundary forcing term.
-
-This class of methods originates from the work of Peskin \cite{peskin1972flow}, who introduced an immersed-boundary formulation for elastic boundaries in heart-flow simulations. In this method, the boundary is represented by Lagrangian markers located at positions $\boldsymbol{X}_k$ and moving with the fluid. The force is distributed to the surrounding grid points using a regularized Dirac function:
-
-\begin{equation}
-\boldsymbol{F} = \sum_k \boldsymbol{F}_k(t) \delta(\boldsymbol{r}_k),
+C_D
+=
+\left(1-f\right)C_{D,\mathrm{sphere}}
++
+f C_{D,\mathrm{disk}}
+\label{eq:CdBlend}
 \end{equation}
 
 with
 
 \begin{equation}
-\boldsymbol{r}_k = \rvert \boldsymbol{x} - \boldsymbol{X}_k \rvert.
+f
+=
+1-
+\left(
+1+0.07\sqrt{\mathrm{We}}
+\right)^{-6}
+\label{eq:CdWeight}
 \end{equation}
 
-Here, $\boldsymbol{F}k(t)$ is the force associated with marker $k$, typically obtained from a constitutive law. For rigid-body applications, the boundary can be modeled as a very stiff elastic structure. Lai and Peskin \cite{lai2000immersed} used a spring analogy in which the marker is forced toward an equilibrium position $\boldsymbol{X}{k,e}$:
+where the Weber number is defined as
 
 \begin{equation}
-\boldsymbol{F}_k(t) = k (\boldsymbol{X}k - \boldsymbol{X}{k,e}).
-\label{eq:contForcingRigid}
+\mathrm{We}
+=
+\frac{\rho_a d U_{\mathrm{rel}}^2}{\sigma}
+\label{eq:Weber}
 \end{equation}
 
-A high stiffness $k$ is required to mimic a rigid boundary, but this also makes the governing equations stiff and can lead to numerical instability. Implicit or semi-implicit treatments are therefore often required. Moreover, because the force is distributed over several grid points, the interface is diffuse, which generally limits the spatial accuracy of the method near the boundary.
+where $\rho_a$ is the air density, $d$ is the droplet diameter, $U_{\mathrm{rel}}$ is the relative air--droplet velocity, and $\sigma$ is the surface tension of water. $C_{D,\mathrm{sphere}}$ and $C_{D,\mathrm{disk}}$ depend on the droplet Reynolds number.
 
-Penalization methods provide another continuous-forcing strategy. The solid region is treated as a porous medium with very low permeability. This approach was introduced by Arquis and Caltagirone \cite{arquis1984conditions}. A source term is added to the momentum equations to drive the velocity inside the solid toward the solid velocity $\boldsymbol{u}_s$:
+\begin{figure}[htp] 
+    \centering
+    \subfloat[Droplet Deformation.]{%
+        \includegraphics[width=0.45\textwidth]{FIGURES/LIT_REV/DropletDeformation.png}%
+        \label{fig:DropletDeformation}%
+        }%
+    \subfloat[Droplet splashing.]{%
+        \includegraphics[width=0.45\textwidth]{FIGURES/LIT_REV/dropletSplashing.png}%
+        \label{fig:DropletSplashing}%
+        }%
+    \caption{Droplet Phenomena.}
+    \label{fig:DropletPhenomena}
+\end{figure}
+
+The most consequential SLD effects generally arise during droplet-wall interaction. At relatively low impact energy, an impinging droplet may stick to or spread over the surface and contribute directly to the surface water film. Under other conditions, it may bounce, splash, or break into secondary droplets~\cite{tan2007experimental, andySLD}. These secondary droplets can be ejected from the surface and may subsequently reimpinge farther downstream, thereby extending the effective impingement region. The amount of water deposited on the surface is therefore determined not only by the primary collection efficiency, but also by the outcome of the impact process.
+
+Because resolving individual droplet impacts with interface-capturing methods would be prohibitively expensive at aircraft scale~\cite{habashiSPH}, these first-order SLD wall-interaction effects are generally represented through semi-empirical models. Such models are commonly formulated in terms of nondimensional impact parameters, including the Reynolds, Weber, and Ohnesorge numbers, and may also account for the impact angle and impact velocity. A common approach consists in correcting the primary collection efficiency using a sticking rate $\epsilon$, or equivalently a mass-loss coefficient $f_m$:
 
 \begin{equation}
-\boldsymbol{F} = \sum_i \lambda \chi_{s,i}(\boldsymbol{u}_{s,i} - \boldsymbol{u}),
-\label{eq:contForcingPenal}
+\beta_{\mathrm{final}}
+=
+\epsilon \beta_0
+=
+\left(1-f_m\right)\beta_0,
+\label{eq:sld_corrected_beta}
 \end{equation}
 
-where $\chi$ is a mask function identifying the solid region and $\lambda$ is a large penalization parameter. As for stiff elastic forcing, large values of $\lambda$ increase the stiffness of the equations and may require implicit or semi-implicit time integration.
+where $\beta_0$ is the collection efficiency obtained before accounting for splashing or bouncing. This correction represents the fraction of the primary impinging water mass that remains on the surface after impact.
 
-\subsubsection{Discrete-Forcing Methods}
-
-Discrete-forcing methods impose the immersed-boundary conditions directly in the discretized equations rather than modifying the continuous governing equations. Direct forcing, introduced by Mohd-Yusof \cite{mohd1997simulations}, is a representative example. For the incompressible Navier-Stokes equations, the momentum equation can be written as
+More advanced SLD models also account for the generation and reimpingement of secondary droplets. In a Lagrangian framework, this can be handled by reinjecting secondary droplets with prescribed diameters, velocities, and ejection directions obtained from semi-empirical correlations~\cite{sirianni2023numerical}. In an Eulerian framework, secondary reimpingement is more difficult to represent directly because the dispersed phase is described as a continuous field. One strategy consists in modifying the boundary conditions on splashing surfaces so that the secondary droplets are reemitted into the computational domain and transported by the Eulerian equations \cite{bilodeau2016numerical,capizzano2023extending}. The resulting collection efficiency may then include both the retained primary contribution and the mass associated with secondary reimpingement:
 
 \begin{equation}
-\frac{\partial \boldsymbol{u}}{\partial t} = - \boldsymbol{u} \cdot \nabla \boldsymbol{u} - \nabla P + \frac{1}{Re} \nabla^2 \boldsymbol{u} + \boldsymbol{f},
+\beta_{\mathrm{final}}
+=
+\epsilon \beta_0
++
+\sum \beta_{\mathrm{reimp}},
+\label{eq:sld_reimp_beta}
 \end{equation}
 
-where $\boldsymbol{f}$ is the forcing term. Using an explicit Euler discretization gives
+where $\beta_{\mathrm{reimp}}$ denotes the collection-efficiency contribution associated with reimpinging secondary droplets. The modeling of SLD effects therefore remains closely linked to the selected droplet formulation. Eulerian methods provide an efficient and robust framework for primary impingement calculations, but require additional boundary-condition treatments to represent secondary droplets. Lagrangian methods are generally more expensive, but naturally provide the impact quantities required by splashing and bouncing correlations and allow secondary droplets to be tracked explicitly.
+
+Several semi-empirical SLD impact models have been proposed in the literature. Mundo et al. \cite{mundo1998modeling} developed an early splashing model describing the size and number of secondary droplets. Trujillo et al. \cite{trujillo2000modelling} introduced a formulation based on impact parameters and surface-roughness effects. Honsek et al. \cite{honsek2006fensap} subsequently adapted this approach for implementation in FENSAP-ICE. Wright et al. \cite{wright2004semi} introduced an impact-angle dependence into the splashing criterion and calibrated the model using experimental water-collection data. Trontin et al. \cite{trontin2016revisited} proposed an alternative formulation based on separate functions describing the dependence of mass loss on impact angle and kinetic energy. Among these approaches, the models of Wright et al.~\cite{wright2004semi} and Trontin et al.~\cite{trontin2016revisited} remain the most widely adopted in aircraft-icing codes. A summary of representative splashing models is provided in Table~\ref{tab:splashing_Models}.
+
+\input{TABLES/SLD_MODELS}
+
+
+\section{Thermodynamic Modeling}\label{sec:review_thermodynamics}
+Once the airflow and droplet-impingement solutions have been obtained, a thermodynamic analysis is performed over the exposed surface to determine the local ice-accretion rate. The aerodynamic solution provides the convective heat-transfer coefficient, the wall shear stress, and the surface-pressure distribution, whereas the dispersed-phase solution provides the local impinging-water mass flux and the kinetic energy of the droplets at impact. These quantities are subsequently introduced into surface mass- and energy-balance equations describing the freezing, evaporation, and transport of water over the surface.
+
+The thermodynamic problem involves three unknowns: the local ice-accretion rate, $\dot{m}_{\mathrm{ice}}$; the outgoing runback-water flow rate, $\dot{m}_{\mathrm{out}}$; and the surface temperature, $T_s$. The mass and energy conservation equations alone are insufficient to determine these quantities simultaneously. The system is therefore closed by introducing phase-state conditions derived from the classical Messinger model~\cite{messingerClassical}:
+
+\begin{itemize}
+    \item \textbf{Dry regime:} a dry element containing no liquid water;
+    
+    \item \textbf{Rime or fully freezing regime:} an element for which all
+    incoming water freezes and
+    $\dot{m}_{\mathrm{out}}=0$;
+    
+    \item \textbf{Glaze or partially freezing regime:} an element covered by a
+    liquid-water film, for which only part of the incoming water freezes and
+    $T_s=T_{\mathrm{freeze}}$;
+    
+    \item \textbf{Fully liquid regime:} an element for which no ice is formed and
+    $\dot{m}_{\mathrm{ice}}=0$.
+\end{itemize}
+
+ Although the model remains the basis of many contemporary ice-accretion solvers, its original implementation relied on a surface-marching procedure initiated near the stagnation point. This dependence on a clearly identified stagnation location complicates its application to configurations involving multiple stagnation regions, separated flows, or general three-dimensional geometries.
+
+\begin{figure}[htp] 
+    \centering
+    \subfloat[Mass balance.]{%
+        \includegraphics[width=0.45\textwidth]{FIGURES/LIT_REV/MASS_BALANCE.eps}%
+        \label{fig:massBalanceThermo}%
+        }%
+    \hspace{1cm} 
+    \subfloat[Energy balance.]{%
+        \includegraphics[width=0.45\textwidth]{FIGURES/LIT_REV/ENERGY_BALANCE.eps}%
+        \label{fig:energyBalanceThermo}%
+        }%
+    \caption{Control volume diagrams for mass and energy balance equations. Adapted from~\cite{bourgault-coteMultilayerAirfoilIce2019}.}
+    \label{fig:massEngergyThermo}
+\end{figure}
+
+Several extensions have consequently been proposed to improve either the physical description or the numerical robustness of the thermodynamic calculation. Myers et al.~\cite{myersExtension}, for example, extended the classical formulation by accounting for heat conduction through the growing ice layer. Although this modification provides a more detailed representation of the temperature distribution within the ice, it does not remove the dependence of the solution on the treatment of the stagnation point.
+
+A different strategy was introduced by Zhu et al.~\cite{zhu2012} through an iterative implementation of the Messinger model. Rather than relying exclusively on a predefined marching direction originating from a stagnation point, the surface-water distribution and thermodynamic state are updated iteratively. The transport direction of the runback water is determined from the local wall-shear-stress direction, with the surface-pressure gradient providing an additional contribution. This formulation is better suited to complex and three-dimensional geometries and has consequently been adopted by several modern ice-prediction tools, as reflected in the methods reported during recent ice-prediction workshops~\cite{laurendeau2022summary,laurendeau2024summary}.
+
+Bourgault et al.~\cite{SWIM} proposed an alternative formulation known as the Shallow-Water Icing Model (SWIM). In this approach, the liquid-water film is represented through surface PDEs describing its transport and evolution. In contrast to the iterative Messinger formulation, SWIM retains an explicitly unsteady description of the water film. It can therefore represent transient film-transport phenomena more naturally, but generally requires a more involved numerical treatment and introduces an additional computational cost. For many conventional ice-accretion conditions, the resulting ice shapes have nevertheless been found to remain broadly comparable to those obtained using iterative Messinger formulations~\cite{guardoneReview}.
+A more comprehensive assessment and comparison of the classical Messinger model, its extensions, and SWIM formulations is provided by Lavoie et al.~\cite{lavoieThermo}. 
+
+\section{Geometry Evolution}\label{sec:review_geometry_evolution}
+
+Once the local ice-accretion rate has been determined by the thermodynamic solver, the solid surface must be updated to represent the newly accumulated ice. The updated surface then becomes the aerodynamic geometry for the subsequent accretion layer. Geometry-evolution techniques can generally be divided into two broad categories: interface-tracking methods, in which the ice--air interface is represented explicitly, and interface-capturing methods, in which the interface is embedded implicitly within a field defined over a computational domain.
+
+\subsubsection{Interface Tracking}
+Interface-tracking methods represent the ice--air interface using marker points located directly on the surface or within the surrounding control volumes. In ice-accretion simulations, the markers generally correspond to the nodes of the surface mesh. The position of the interface is therefore known explicitly throughout the geometry-update procedure. The most commonly used approach is the algebraic geometry-evolution method, also referred to as Lagrangian node displacement~\cite{lagNodeDisplacement}. In its simplest form, each surface node is moved along the local normal by the predicted ice thickness:
 
 \begin{equation}
-\frac{\boldsymbol{u}^{n+1} - \boldsymbol{u}^{n}}{\Delta t} = - \boldsymbol{u} \cdot \nabla \boldsymbol{u} - \nabla P + \frac{1}{Re} \nabla^2 \boldsymbol{u} + \boldsymbol{f}.
+    \boldsymbol{x}_{\mathrm{new}}
+    =
+    \boldsymbol{x}_{\mathrm{old}}
+    +
+    h_{\mathrm{ice}} \boldsymbol{n}
+    \label{eq:algebraic_surface_displacement}
 \end{equation}
 
-The forcing term can then be selected to impose a target boundary velocity $\boldsymbol{u}_{target}$:
+where $\boldsymbol{x}_{\mathrm{old}}$ and $\boldsymbol{x}_{\mathrm{new}}$ denote the initial and updated node positions, respectively, $h_{\mathrm{ice}}$ is the local accumulated ice thickness, and $\boldsymbol{n}$ is the outward surface-normal vector. Several extensions have been introduced to improve the robustness and accuracy of this displacement procedure. One approach consists of dividing the prescribed ice thickness into a sequence of smaller increments and recomputing the surface normals after each intermediate displacement~\cite{pueyo2001improvements}. This reduces the error associated with extrapolating the initial normals over relatively large accretion distances. Another formulation that has been proposed consists of deriving the displacement direction from a normal-vector field rather than directly from the discrete surface normals~\cite{radenac2024workflow,pabloIcing}. Such fields are typically obtained from the gradient of a distance function satisfying an Eikonal equation~\cite{tuckerEikonal}. Since the distance field is computed over the surrounding domain, neighboring displacement directions become naturally aligned and vary smoothly across the surface. This reduces the sensitivity of the geometry update to local irregularities in the surface triangulation, particularly in regions of high curvature.
+
+Bourgault et al.~\cite{bourgault-coteMultilayerAirfoilIce2019} proposed a different interface-tracking approach based on constrained hyperbolic mesh generation. In this method, successive mesh layers are generated outward from the initial surface until the prescribed ice thickness is reached. An advantage of this formulation is that the newly accreted region is directly represented by a volume mesh, allowing the added ice volume to be evaluated without requiring a separate reconstruction procedure. Its application is nevertheless restricted to structured surface meshes, which limits its generality for complex three-dimensional configurations.
+
+The principal advantage of interface-tracking methods is that the interface position is explicitly available, allowing fine geometric structures to be represented accurately when the surface discretization is sufficiently resolved. However, large node displacements may lead to surface-element distortion, self-intersections, or a loss of mesh quality. Topological changes, such as the merging of neighboring ice structures or the formation of highly concave regions, are also difficult to handle robustly using an explicit surface representation. Although several successful treatments have been proposed in the literature~\cite{glimm2000}, maintaining a valid surface and volume mesh remains a challenging aspect of multilayer simulations involving complex ice shapes.
+
+\subsubsection{Interface Capturing}
+Interface-capturing methods represent the interface implicitly through a field variable defined over the surrounding computational domain. In the level-set method, an n-dimensional interface is embedded within an (n+1)-dimensional space and tracked through the evolution of a scalar function $\phi$ defined in that higher-dimensional domain~\cite{sethian2003level}. The ice–air interface is then recovered as the zero level set of $\phi$:
 
 \begin{equation}
-\boldsymbol{f} = \boldsymbol{u} \cdot \nabla \boldsymbol{u} + \nabla P - \frac{1}{Re} \nabla^2 \boldsymbol{u} + \frac{1}{\Delta t} (\boldsymbol{u}_{target} - \boldsymbol{u}^n).
-\label{eq:discreteForcing}
+    \Gamma
+    =
+    \left\{
+    \boldsymbol{x}
+    \,\middle|\,
+    \phi(\boldsymbol{x})=0
+    \right\}.
 \end{equation}
 
-If the immersed boundary coincides with a cell center, the target value can be imposed exactly. In practice, this alignment is rare, and interpolation is required to avoid a staircase representation of the boundary. Unlike continuous-forcing methods, discrete-forcing methods do not introduce large source terms into the continuous equations and therefore avoid some stiffness-related stability issues. However, care is required near highly curved boundaries and at high Reynolds numbers, where internal flow structures inside the solid region may affect stability.
+\begin{figure}[htbp] 
+    \centering
+    \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.5\textwidth]{FIGURES/LIT_REV/ICE_AIR_INTERFACE.eps}
+    \caption{Representation of the level-set function $\phi$. The ice region is defined by $\phi < 0$ (blue), while the surrounding air corresponds to $\phi > 0$. The interface is implicitly represented by the zero level set $\phi = 0$.}
+    \label{fig:IceAirInterface}
+\end{figure}
 
-Ghost-cell methods are another widely used discrete-forcing approach \cite{mittal2008versatile}. In these methods, cells located inside the solid but adjacent to the fluid are identified as ghost cells. For each ghost cell, an image point is constructed in the fluid, usually by casting a ray normal to the interface from the ghost-cell center. Flow variables are interpolated at the image point from neighboring fluid cells, and the ghost-cell values are then assigned so that the desired boundary condition is satisfied at the immersed interface. Figure~\ref{fig:ghostCell} illustrates the construction of ghost cells and image points.
+As illustrated in Figure~\ref{fig:IceAirInterface}, the level-set function is commonly defined as positive in the fluid region, negative within the solid, and zero at the interface. Its evolution is governed by an advection equation of the form
+
+\begin{equation}
+    \frac{\partial \phi}{\partial t}
+    +
+    \boldsymbol{V}\cdot\nabla\phi
+    =
+    0
+    \label{eq:levelSet}
+\end{equation}
+
+where $\boldsymbol{V}$ is an extension of the interface-growth velocity to the computational region surrounding the interface.  When $\phi$ is maintained as a signed-distance function, the interface-normal vector and curvature can be evaluated as
+
+\begin{equation}
+    \boldsymbol{n}
+    =
+    \frac{\nabla\phi}{\lvert\nabla\phi\rvert},
+\end{equation}
+and
+\begin{equation}
+    \kappa
+    =
+    \nabla\cdot
+    \left(
+    \frac{\nabla\phi}{\lvert\nabla\phi\rvert}
+    \right).
+\end{equation}
+
+
+Several attempts have been made to introduce level-set representations into aircraft ice-accretion simulations. Peña et al.~\cite{PENA2016278} presented one of the first applications of a level-set method to the evolution of an ice shape. Their work demonstrated the feasibility of representing ice growth implicitly, but the application was limited to single-step accretion.
+Beaugendre et al.~\cite{HeloiseBeaugendre} employed a level-set representation in a different icing context, namely to describe the evolving geometry and trajectories of ice fragments during shedding simulations. In this case, the implicit representation facilitated the treatment of moving solid interfaces and their interaction with the surrounding flow.
+
+Bourgault-Côté et al.~\cite{bourgault-coteMultilayerAirfoilIce2019} and Lavoie et al.~\cite{lavoieLevelSet} subsequently extended the use of level-set methods to multilayer ice-accretion simulations. Their studies considered both body-fitted and immersed-boundary frameworks.
+
+An alternative formulation was proposed by Donizetti et al.~\cite{alessandroLevelSet}, who introduced a discrete level-set representation constructed from a Lagrangian description of the surface. In this approach, the interface remains explicitly represented, while the level-set values at surrounding mesh points are recovered geometrically from the distance to the Lagrangian surface. The level-set field is therefore used primarily as an implicit geometric description rather than as the solution of a continuous advection equation.
+
+Level-set methods offer several advantages for ice-accretion simulations. They can accommodate large interface displacements and topological changes without requiring the connectivity of an explicit surface mesh to remain unchanged. These properties make them attractive for the development of robust three-dimensional multilayer geometry-evolution procedures. However, the signed-distance property:
+
+\begin{equation}
+\lvert\nabla\phi\rvert=1
+\end{equation}
+
+is generally not preserved as the interface evolves. A reinitialization or redistancing procedure is therefore commonly required to recover a suitable distance field~\cite{papillonlaroche2026geometricreinitializationcapillaryflows}. This step must be performed carefully, since it may displace the interface, alter the enclosed ice volume, or smooth sharp geometric features. The updated surface must then be extracted from the implicit level-set representation before the surrounding volume mesh can be regenerated. Particular care is required during this surface-reconstruction and volume-remeshing process to preserve distinctive features of the original clean geometry, especially in regions unaffected by ice accretion, while accurately representing the newly formed ice structures.
+
+% Another widely used interface-capturing technique is the Volume-of-Fluid method, in which the phase distribution is represented through a local volume fraction. Within the aircraft-icing literature, however, its use has largely focused on the small-scale simulation of individual droplet impacts, spreading, splashing, and breakup over solid surfaces~\cite{RAUSCHENBERGER201344}. Its application to the evolution of complete aircraft ice shapes remains comparatively limited.
+
+% \subsubsection{Stochastic Ice Accretion}
+
+% An alternative strategy for geometry evolution is provided by stochastic or morphogenetic ice-accretion models. This class of methods was initially developed by Szilder and co-workers~\cite{REF_SZILDER_INITIAL}, with the objective of reproducing irregular ice structures through a non-deterministic growth process. Rather than displacing an existing interface in a prescribed direction, the accreted geometry is assembled progressively from discrete building blocks representing frozen water elements.
+
+% The stochastic behavior may be introduced through the random selection of droplet impact locations or through the subsequent motion, interaction, and freezing of liquid elements on the surface~\cite{REF_SZILDER_STOCHASTIC}. The resulting ice shape therefore emerges from the statistical behavior of a large number of local accretion events. In contrast with conventional deterministic geometry-update methods, the ice density and local porosity may arise naturally from the packing and distribution of the frozen elements rather than being imposed through a separate empirical model.
+
+% These approaches are particularly attractive for representing highly irregular morphologies and small-scale surface structures that are difficult to recover using smooth interface-displacement methods. However, stochastic ice-accretion models remain comparatively underdeveloped in the literature and have seen limited use in complete aircraft icing frameworks~\cite{REF_STOCHASTIC_REVIEW}. Their presence in the Ice Prediction Workshops has also been limited, reflecting their current status as a specialized rather than widely adopted geometry-evolution strategy~\cite{REF_IPW_STOCHASTIC}.
+
+\section{Geometry Representation}\label{sec:review_ibm}
+
+The robustness of aircraft icing simulations is strongly influenced by the geometry-evolution and mesh-update procedures. In conventional body-fitted approaches, the computational mesh must conform to the aircraft surface and must therefore be deformed or regenerated after each accretion layer. As the ice shape develops, the surface may exhibit sharp gradients, horns, scallops, and other localized irregularities that make it increasingly difficult to preserve high-quality near-wall elements and avoid mesh degeneration or failure.
+
+Immersed-boundary methods provide an alternative framework in which the solid geometry is represented independently of the underlying computational mesh. The origins of the immersed-boundary approach are commonly traced to the pioneering work of Charles Peskin~\cite{PESKIN1972252}, who introduced forcing terms into the Navier–Stokes equations to represent the interaction between blood flow and the moving boundaries of heart valves. Since this early contribution, a wide range of immersed-boundary formulations has been developed.
+
+In an immersed-boundary framework, the physical boundary is generally allowed to intersect the computational cells rather than coincide with mesh faces. The boundary conditions may then be enforced through modifications of the governing equations, the numerical fluxes, or the discrete solution near the interface. Because the mesh does not need to conform explicitly to the surface, these methods can substantially simplify grid generation and geometry updates.
+
+Immersed-boundary methods have gained considerable attention and have been applied to a broad range of problems, including inviscid flows~\cite{inviscidIBM31,inviscidIBM47}, turbulent flows~\cite{turbulentIBM73,turbulentIBM170}, multiphase flows~\cite{multiphaseIBM127, multiphaseIBM184}, and fluid–structure interaction~\cite{fsiIBM72, fsiIBM174, fsiIBM191}. More recently, they have also been introduced into aircraft ice-accretion simulations~\cite{pabloIcing,lavoieLevelSet}.
+
+Their use in aircraft icing, however, remains comparatively limited. In particular, immersed-boundary approaches were reported by only one participant in each of the first two Ice Prediction Workshops, indicating that their application to complete ice-accretion frameworks is still at an early stage of development~\cite{laurendeau2022summary,laurendeau2024summary}. Additional work is therefore required to assess their accuracy, robustness, and compatibility within a coupled multilayer ice-accretion framework.
+
+Following the classification proposed by Sotiropoulos and Yang~\cite{sotiropoulos2014immersed}, immersed-boundary methods may be divided into three broad families: geometrical methods, continuous-forcing methods, and discrete-forcing methods. Geometrical methods modify the computational mesh, control volumes, or numerical integration procedure in the vicinity of the immersed interface. Continuous-forcing methods introduce forcing or source terms into the governing equations to represent the effect of the solid boundary. Discrete-forcing methods instead impose the boundary conditions directly within the discretized equations, typically by reconstructing or modifying the solution near the interface. The following sections summarize the main characteristics of these three approaches.
+
+\subsection{Geometrical Methods}
+
+The principal geometrical approach is the cut-cell method. In this formulation, the solid interface is represented by geometrically modifying the cells of a background mesh that it intersects. The portions of these cells located inside the solid are removed, producing control volumes that conform locally to the immersed boundary while leaving the remainder of the mesh unchanged. One of the earliest cut-cell formulations was introduced by Clarke et al.\cite{clarke1986euler} for Euler-flow simulations around multi-element airfoils. A general illustration of the cut-cell approach is provided in Figure\ref{fig:cutCell}.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=.5\textwidth]{FIGURES/IBM/cutCell.png}
+\caption{Illustration of the boundary cut-cell method adapted from Clarke et al.~\cite{clarke1986euler}.}
+\label{fig:cutCell}
+\end{figure}
+
+Because the interface is represented through an actual modification of the computational cells, some authors treat cut-cell methods separately and do not classify them strictly as immersed-boundary methods.
+
+Cut-cell methods provide a sharp representation of the interface and allow boundary conditions and numerical fluxes to be imposed directly on the reconstructed faces. They are also naturally suited to conservative finite-volume formulations, although the solver must support general polygonal or polyhedral control volumes.
+
+Their main limitations are the complexity of the geometric preprocessing, particularly in three dimensions, and the formation of very small cut cells when the interface passes close to a mesh node or face. These cells may impose severe time-step restrictions in explicit schemes and degrade numerical stability. To alleviate these problems, several remedies have been proposed in the literature, including cell merging~\cite{glimm2003conservative}, cell linking~\cite{kirkpatrick2003representation}, and conservative cell mixing~\cite{meyer2010conservative}.
+
+\subsection{Continuous-Forcing Methods}
+
+Continuous-forcing methods impose the immersed-boundary conditions by introducing a distributed force directly into the continuous governing equations. For example, the incompressible Navier--Stokes equations may be written as
+
+\begin{subequations}\label{eq:contForcingNS}
+\begin{align}
+    \nabla\cdot\boldsymbol{u} &= 0
+    \label{eq:contForcingContinuity}\\
+    \frac{\partial\boldsymbol{u}}{\partial t}
+    +\boldsymbol{u}\cdot\nabla\boldsymbol{u}
+    &=
+    -\frac{1}{\rho}\nabla p
+    +\nu\nabla^2\boldsymbol{u}
+    +\boldsymbol{f}
+    \label{eq:contForcingMomentum}
+\end{align}
+\end{subequations}
+
+where $\boldsymbol{u}$ is the fluid velocity, $\rho$ is the density, $p$ is the pressure, $\nu$ is the kinematic viscosity, and $\boldsymbol{f}$ is the forcing term used to represent the immersed boundary. The expression of $\boldsymbol{f}$ distinguishes the different continuous-forcing formulations.
+
+The original immersed-boundary method was introduced by Peskin for the simulation of blood flow interacting with elastic heart structures~\cite{PESKIN1972252}. The fluid equations are solved on an Eulerian background mesh, whereas the immersed boundary is represented by massless Lagrangian markers with coordinates $\boldsymbol{X}(s,t)$, where $s$ denotes the curvilinear coordinate along the immersed boundary and $t$ is time. The force exerted by the boundary on the fluid is distributed to the surrounding Eulerian points through a regularized Dirac function:
+
+\begin{equation}
+    \boldsymbol{f}(\boldsymbol{x},t)
+    =
+    \int_{\Gamma}
+    \boldsymbol{F}(s,t)
+    \delta\!\left(\boldsymbol{x}-\boldsymbol{X}(s,t)\right)
+    \,\mathrm{d}s
+    \label{eq:peskinForce}
+\end{equation}
+
+where $\boldsymbol{F}$ is the force defined on the Lagrangian boundary $\Gamma$. Conversely, the velocity of the markers is interpolated from the Eulerian velocity field according to
+
+\begin{equation}
+    \frac{\partial\boldsymbol{X}(s,t)}{\partial t}
+    =
+    \int_{\Omega}
+    \boldsymbol{u}(\boldsymbol{x},t)
+    \delta\!\left(\boldsymbol{x}-\boldsymbol{X}(s,t)\right)
+    \,\mathrm{d}\boldsymbol{x}
+    \label{eq:peskinVelocity}
+\end{equation}
+
+This two-way transfer allows the fluid to displace the immersed boundary while the boundary exerts a force on the fluid. The regularized Dirac function spreads this interaction over several grid points, resulting in a diffuse rather than sharp representation of the interface. Although this formulation is well suited to deformable interfaces, its extension to rigid bodies is more problematic. As the boundary stiffness is increased to suppress deformation, the constitutive laws used to determine the restoring force become increasingly stiff and may become ill posed in the rigid-body limit~\cite{mittal2005immersed}.
+
+These limitations motivated the development of penalization methods for rigid boundaries. Initially introduced by Arquis and Caltagirone to model flow through porous media~\cite{arquis1984conditions}, the method was subsequently extended to represent solid obstacles as regions of very low permeability~\cite{angot1999penalization}. A mask function distinguishes the solid and fluid domains:
+
+\begin{equation}
+    \chi(\boldsymbol{x},t)
+    =
+    \begin{cases}
+        1, & \boldsymbol{x}\in\Omega_s\\
+        0, & \boldsymbol{x}\in\Omega_f
+    \end{cases}
+    \label{eq:penalizationMask}
+\end{equation}
+
+where $\Omega_s$ and $\Omega_f$ denote the solid and fluid regions, respectively. For the incompressible Navier--Stokes equations, the no-slip condition may be imposed through the penalization force
+
+\begin{equation}
+    \boldsymbol{f}
+    =
+    \frac{\chi}{\eta}
+    \left(
+        \boldsymbol{u}_s-\boldsymbol{u}
+    \right)
+    \label{eq:penalizationForce}
+\end{equation}
+
+where $\boldsymbol{u}_s$ is the prescribed solid velocity and $\eta$ is a permeability or penalization parameter. In the fluid region, $\chi=0$ and the original equations are recovered. Within the solid, $\chi=1$, and a sufficiently small value of $\eta$ drives the fluid velocity toward the prescribed solid velocity. 
+
+Penalization methods require only limited modifications to an existing solver, with the main preprocessing operation consisting of identifying the solid region and constructing the mask function. They also possess a well-established mathematical foundation and can be combined with a wide range of spatial discretizations~\cite{SAKURAI2019452}. However, the boundary is generally represented diffusely, which commonly limits the classical formulation to first-order spatial accuracy near the interface. Higher-order corrections have nevertheless been proposed~\cite{highOrderIBM82}. Finally, the penalization parameter must be selected carefully: Decreasing $\eta$ improves the enforcement of the boundary condition but increases the stiffness of the governing equations and may therefore require careful numerical treatment. Although the example presented above involves a single penalization term, the enforcement of other boundary conditions may require several distinct penalization parameters. Their simultaneous selection can introduce additional case-dependent tuning and may require manual adjustment.
+
+\subsection{Discrete-Forcing Methods}
+
+Discrete-forcing methods impose the immersed-boundary conditions directly within the discretized governing equations. Their development is commonly traced to the work of Mohd-Yusof~\cite{mohd1997combined}, who modified the discrete momentum equations near the immersed interface to enforce a prescribed velocity. This idea was subsequently formalized and extended by Fadlun et al.~\cite{fadlun2000combined}.
+
+For illustration, the incompressible momentum equation may be written as
+
+\begin{equation}
+    \frac{\partial \boldsymbol{u}}{\partial t}
+    =
+    \boldsymbol{R}
+    +
+    \boldsymbol{f}
+    \label{eq:discreteForcingMomentum}
+\end{equation}
+
+where $\boldsymbol{R}$ contains the convective, pressure, and viscous contributions,
+
+\begin{equation}
+    \boldsymbol{R}
+    =
+    -\boldsymbol{u}\cdot\nabla\boldsymbol{u}
+    -\nabla p
+    +\frac{1}{Re}\nabla^2\boldsymbol{u}
+\end{equation}
+
+and $\boldsymbol{f}$ denotes the discrete forcing. Using a forward-Euler time discretization gives
+
+\begin{equation}
+    \frac{\boldsymbol{u}^{n+1}-\boldsymbol{u}^{n}}{\Delta t}
+    =
+    \boldsymbol{R}^{n}
+    +
+    \boldsymbol{f}^{n}
+\end{equation}
+
+Imposing a target velocity $\boldsymbol{u}_{\mathrm{target}}$ at the forcing point leads to
+
+\begin{equation}
+    \boldsymbol{f}^{n}
+    =
+    -\boldsymbol{R}^{n}
+    +
+    \frac{\boldsymbol{u}_{\mathrm{target}}
+    -\boldsymbol{u}^{n}}{\Delta t}
+    \label{eq:discreteForcing}
+\end{equation}
+
+Although this formulation is expressed through a forcing term, it does not generally need to be evaluated as an independent physical quantity. Instead, the velocity update is directly constructed so that the desired target value is obtained.
+
+The accuracy of the method depends primarily on the definition of $\boldsymbol{u}_{\mathrm{target}}$. The boundary value may be imposed directly from the nearest computational point, resulting in a staircase representation of the interface. Alternatively, the target value may be weighted using the local solid volume fraction to obtain a smoother transition. More accurate approaches reconstruct the target value from neighboring fluid data through interpolation~\cite{majumdar2001rans}. Unlike continuous-forcing methods, discrete forcing does not introduce a large source term into the continuous equations and therefore avoids the associated stiffness. However, its implementation depends on the spatial and temporal discretizations and generally requires geometrical preprocessing near the interface.
+
+A widely used form of discrete forcing is the ghost-cell immersed-boundary method, developed notably by Tseng and Ferziger~\cite{tseng2003ghost}. It generalizes the ghost-cell treatment of body-fitted boundaries to interfaces that do not coincide with the computational mesh. Cells located inside the solid but required to complete the stencil of neighboring fluid cells are identified as ghost cells. For each ghost cell, a wall point is determined on the immersed interface and an image point is constructed in the fluid, commonly along the local wall-normal direction. Since the image point does not generally coincide with a computational node, its solution is interpolated from neighboring fluid cells. The ghost-cell value is then assigned such that interpolation between the ghost and image points satisfies the prescribed condition at the wall.
 
 \begin{figure}[htp]
 \centering
 \includegraphics[width=.5\textwidth]{FIGURES/IBM/ghostCell.png}
-\caption{Image-point and ghost-cell construction near an immersed boundary \cite{mittal2008versatile}.}
+\caption{Image-point and ghost-cell construction near an immersed boundary, adapted from Tseng and Ferziger~\cite{tseng2003ghost}.}
 \label{fig:ghostCell}
 \end{figure}
 
-Ghost-cell methods can achieve first- or second-order spatial accuracy, depending on the interpolation strategy and the placement of the image point \cite{tseng2003ghost}. They also preserve the original form of the governing equations in the fluid region, which makes them attractive for compressible-flow solvers.
+Depending on the interpolation procedure, ghost-cell methods can retain the order of accuracy of the underlying numerical scheme and provide a sharp representation of the immersed interface~\cite{mittal2008versatile,tseng2003ghost}. The governing equations and flux calculations in the fluid domain remain largely unchanged, with the principal additions consisting of the geometrical preprocessing and the interpolation used to update the image and ghost values. These operations must be performed efficiently to limit the computational overhead.
 
-Face-forcing methods impose the boundary condition through modified fluxes at cell faces. This approach has been applied to Euler flows \cite{capizzano2007compressible}, RANS simulations \cite{capizzano2011turbulent}, and Eulerian droplet tracking \cite{capizzano2014eulerian}. The construction is similar to the ghost-cell approach, but the image point is defined along a normal passing through the cell face rather than the ghost-cell center. The reconstructed state is then used to compute the flux through the immersed boundary face.
+The main difficulties arise from the construction of suitable ghost, wall, and image points in regions containing high curvature, sharp features, or closely spaced boundaries. The image point may fall inside the solid or may not have a sufficient number of neighboring fluid cells for the required interpolation stencil. The number and placement of ghost-cell layers also depend on the numerical scheme and the width of its computational stencil. These issues become particularly important for complex iced geometries.
+
+In addition to ghost-cell methods, other discrete-forcing formulations have been developed. Capizzano et al.\cite{capizzano2007compressible,capizzano2011turbulent} proposed a face-forcing approach in which the boundary condition is imposed through the fluxes of the cell faces intersected by the immersed interface rather than through reconstructed cell values. The procedure remains similar to the ghost-cell approach: a wall-normal direction is constructed through the intersected face, an image point is defined in the fluid, and the state at this point is interpolated from neighboring cells. The reconstructed state is then used to determine the flux at the immersed-boundary face. This approach has been applied to Euler flows and RANS simulations\cite{capizzano2007compressible,capizzano2011turbulent}.
 
 \begin{figure}[htp]
 \centering
 \includegraphics[width=.5\textwidth]{FIGURES/IBM/faceForcing.png}
-\caption{Illustration of face forcing near an immersed boundary \cite{capizzano2014eulerian}.}
+\caption{Illustration of face forcing near an immersed boundary, adapted from Capizzano et al.~\cite{capizzano2014eulerian}.}
 \label{fig:faceForcing}
 \end{figure}
 
-\input{TABLES/IBM}
+Face forcing avoids some of the difficulties associated with placing several rows of ghost cells near complex interfaces. However, it requires a dedicated treatment of the numerical fluxes on immersed-boundary faces and therefore introduces more extensive modifications to the flow solver than conventional ghost-cell methods.
 
-\subsection{Surface Representation}
+\section{Synthesis and Positioning of the Present Work}\label{sec:review_synthesis}
 
-Surface representation is an essential component of both ice accretion simulations and immersed-boundary methods. In ice accretion, the surface must be updated as ice grows. In immersed-boundary methods, the interface must be located accurately in order to impose boundary conditions and compute quantities such as normals, wall distances, and curvature.
+Despite the continued improvement of the individual modules involved in numerical ice-accretion prediction, the automation and robustness of complete multilayer frameworks remain limited by three closely connected aspects: droplet-impingement modeling, geometry evolution, and the representation of the evolving geometry within the computational mesh. These components are particularly important in three-dimensional simulations, where accurately representing the droplet trajectories and their interaction with increasingly complex iced geometries becomes more challenging, while maintaining a valid surface and a high-quality volume mesh becomes progressively more difficult as the ice shape develops.
 
-Two main categories of interface representation exist in the literature: interface tracking and interface capturing. Interface-tracking methods represent the surface explicitly using markers or mesh points that move with the interface. Interface-capturing methods represent the surface implicitly as a field defined over the computational domain.
+Regarding droplet impingement, the literature does not identify a universally superior formulation. Eulerian and Lagrangian approaches provide comparable access to the collection-efficiency distribution, but each presents distinct advantages and limitations. Eulerian methods integrate naturally within finite-volume CFD solvers, are readily parallelized, and remain attractive for large three-dimensional calculations. Their continuum description, however, introduces numerical diffusion near impingement limits and does not directly provide individual impact quantities. Lagrangian methods offer a more direct physical representation of droplet motion and naturally provide impact locations, velocities, and angles. These properties are particularly valuable for SLD modeling and for tracking droplets generated by splashing. Their main limitation is computational cost, especially since a large number of trajectories must be tracked to obtain sufficiently resolved impingement maps. Consequently, the choice between Eulerian and Lagrangian formulations remains dependent on the intended application rather than on a clear overall advantage of either approach.
 
-\subsubsection{Interface Tracking}
+The literature on geometry evolution reveals a growing interest in interface-capturing methods. Classical interface-tracking approaches remain widely used because of their simplicity and because the evolving surface is available explicitly. Nevertheless, their robustness deteriorates when large displacements, concave regions, sharp features, or surface self-intersections develop. These difficulties become increasingly restrictive in three-dimensional multilayer simulations, where maintaining a valid surface connectivity is considerably more involved than in two dimensions. Interface-capturing techniques, particularly level-set methods, provide a more flexible alternative because they represent the interface implicitly and can accommodate large deformations and topological changes without explicitly preserving the original surface connectivity. They are therefore well suited to the formation of complex ice morphologies. Their benefits are accompanied by challenges related to signed-distance preservation, preservation of sharp features, and the extraction of an explicit surface required for the subsequent accretion layer.
 
-Interface-tracking methods are commonly used for problems involving discontinuous interfaces, such as two-phase flows. The interface is represented by marker points distributed either directly on the interface or within control volumes. Examples include the Marker-and-Cell and Particle-in-Cell methods.
+Geometry representation and volume-mesh generation constitute the third central difficulty. In conventional body-fitted frameworks, the volume mesh must be regenerated or deformed after each accretion step. Although this treatment provides a direct and accurate application of the wall boundary conditions, its automation becomes increasingly difficult as the ice shape develops sharp horns, scallops, and highly concave regions. Immersed-boundary methods have therefore gained considerable attention because they decouple the evolving surface from the underlying volume mesh and can reduce, or in some cases eliminate, repeated body-fitted remeshing.
 
-The main advantage of interface tracking is that the interface position is explicitly known, which enables an accurate representation of fine surface structures. However, because the interface markers do not generally coincide with the computational grid, flow quantities must be interpolated from the grid to the markers. This interpolation may introduce errors. In addition, large interface deformations can lead to poor marker distribution, requiring reseeding or remeshing. Topological changes, such as merging or breakup, are also difficult to handle robustly with explicit interface tracking.
+No single immersed-boundary formulation is equally suited to all the equations involved in an ice-accretion framework. Penalization methods require relatively limited modifications to an existing solver and have proved particularly attractive for Eulerian droplet transport~\cite{lavoie2021immersed,pabloIcing}. Their extension to aerodynamic simulations involving high-Reynolds-number turbulent flows is less straightforward.
 
-\subsubsection{Interface Capturing}
+Discrete approaches, such as ghost-cell immersed-boundary methods, provide a sharper representation of the interface and can retain the formal accuracy of the underlying numerical scheme. They are therefore generally better suited to aerodynamic-flow calculations, including compressible and turbulent formulations~\cite{pabloIcing}. Their implementation, however, requires more elaborate geometrical preprocessing and robust interpolation procedures. In particular, the construction of ghost, wall, and image points becomes challenging near sharp ice features, highly curved surfaces, and closely spaced portions of the interface.
 
-Interface-capturing methods represent the interface implicitly using a field variable. One of the most common approaches is the level-set method. In this method, the interface is represented as the zero contour of a scalar function $\phi$ defined over the computational domain \cite{sethian2003level}. The level-set function is advected according to
-
-\begin{equation}
-\frac{\partial \phi }{\partial t} + \boldsymbol{V} \cdot \nabla \phi = \phi (\nabla \cdot \boldsymbol{V}),
-\label{eq:levelSet}
-\end{equation}
-
-where $\boldsymbol{V}$ is the interface velocity field. The function $\phi$ is commonly defined as positive in the fluid, negative in the solid, and zero at the interface. When $\phi$ is a signed-distance function, interface normals and curvature can be obtained from
-
-\begin{equation}
-\boldsymbol{n} = \frac{\nabla \phi}{\rvert \nabla \phi \rvert},
-\end{equation}
-
-and
-
-\begin{equation}
-\boldsymbol{\kappa} = \nabla \cdot \frac{\nabla \phi}{\rvert \nabla \phi \rvert}.
-\end{equation}
-
-This information is useful for immersed-boundary methods, geometry evolution, and turbulence modeling.
-
-Level-set methods can naturally handle topological changes and provide smooth interface normals. However, they are not strictly conservative. In addition, during advection, the signed-distance property may be lost, especially when tangential velocity components are present near the interface. A reinitialization or redistancing procedure is therefore often required to restore the signed-distance property. The interface velocity must also be known not only at the interface but in its neighborhood, which may require an additional velocity-extension step.
-
-Another widely used interface-capturing technique is the Volume of Fluid method. In this approach, a volume fraction $f(\boldsymbol{x},t)$ is used to represent the fraction of a given material contained in each cell \cite{rauschenberger2013comparative}:
-
-\begin{equation}
-f(\boldsymbol{x},t) =
-\begin{cases}
-0 & \text{fluid},\\
-[0,1] & \text{interface},\\
-1 & \text{solid}.
-\end{cases}
-\end{equation}
-
-The interface is reconstructed from the volume fraction in each mixed cell. The accuracy of the method depends strongly on the reconstruction strategy. The Simple Linear Interface Calculation method is first-order accurate, whereas the Piecewise Linear Interface Calculation method can achieve second-order accuracy.
-
-The VoF/PLIC algorithm is generally divided into two steps: reconstruction and propagation. Figure~\ref{fig:VOF} illustrates the reconstruction process for SLIC and PLIC. PLIC is usually preferred because it provides a more accurate representation of the interface. However, for highly curved interfaces, features smaller than the local grid size cannot be resolved \cite{scardovelli1999direct}.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.75\textwidth]{FIGURES/IBM/VOF.png}
-\caption{Interface reconstruction using (a) SLIC and (b) PLIC \cite{scardovelli1999direct}.}
-\label{fig:VOF}
-\end{figure}
-
-Hybrid methods combining level-set and VoF approaches have also been proposed. The Coupled Level Set Volume-of-Fluid method, introduced by Marter \cite{marter2017methode}, combines the smooth geometric information of the level-set method with the conservation properties of VoF. In this approach, both fields are evolved simultaneously. The VoF field maintains conservation, while the level-set field provides normals, curvature, and distance information. The level-set interface is corrected using the VoF field, and a redistancing step is performed to maintain the signed-distance property.
-
-The main limitation of CLSVOF methods is their implementation complexity and computational cost, since both the level-set and VoF equations must be solved and coupled. Nevertheless, they provide improved capabilities compared with either method used alone.
-
-\subsection{Wall Functions}\label{sec:wallFunctions}
-
-At high Reynolds numbers, mean-flow gradients near the wall become very steep. In low-Reynolds-number RANS approaches, the turbulence model is integrated all the way to the wall. This requires very fine near-wall meshes and imposes strong constraints on the first-cell height, orthogonality, and grid smoothness. In ice accretion simulations, these constraints are particularly difficult to maintain because the surface evolves and may develop complex features such as horns, scallops, and runback ice.
-
-Wall functions provide a practical alternative by using semi-analytical near-wall profiles for velocity and temperature. Instead of resolving the entire viscous sublayer, wall functions model the relation between wall quantities and flow variables at a finite distance from the wall. This reduces mesh requirements and can improve the robustness of icing simulations, especially in immersed-boundary or multilayer frameworks.
-
-Near the wall, streamwise gradients are often small compared with wall-normal gradients. For an incompressible steady flow, the RANS momentum equation can be simplified as
-
-\begin{equation}
-\frac{d}{dy} \left((\mu + \mu_t) \frac{du}{dy}\right) = \frac{dp}{dx}.
-\label{eq:reducedRANS}
-\end{equation}
-
-Assuming a zero pressure gradient and integrating once gives
-
-\begin{equation}
-(\mu + \mu_t) \frac{du}{dy}= \tau_w,
-\label{eq:reducedRANSTau}
-\end{equation}
-
-where $\tau_w$ is the wall shear stress. In nondimensional form, this becomes
-
-\begin{equation}
-(1 + \nu_t^+) \frac{du^+}{dy^+}= 1.
-\label{eq:reducedRANSTauND}
-\end{equation}
-
-The inner region of the boundary layer is commonly divided into three subregions:
-
-\begin{itemize}
-\item \textbf{Viscous sublayer} ($y^+ < 5$): viscous effects dominate and turbulent viscosity is negligible. The velocity profile is approximately linear, $u^+ = y^+$;
-\item \textbf{Buffer layer} ($5 \leq y^+ < 30$): viscous and turbulent effects are both important;
-\item \textbf{Logarithmic layer} ($y^+ \geq 30$): turbulent transport dominates. Assuming $\nu_t^+ = \kappa y^+$, where $\kappa \approx 0.41$ is the von Karman constant, the velocity profile follows the logarithmic law.
-\end{itemize}
-
-The standard wall function is therefore written as
-
-\begin{equation}
-u^+ =
-\begin{cases}
-y^+ & y^+ < 5,\\
-\frac{1}{\kappa} \ln(y^+) + C & y^+ \geq 30,
-\end{cases}
-\label{eq:standardwallfunc}
-\end{equation}
-
-where $C$ is an empirical constant, typically between 5.0 and 5.5 depending on the turbulence model and calibration.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.5\textwidth]{FIGURES/IBM/wallFunctions.png}
-\caption{Illustration of the different layers of a turbulent boundary layer \cite{prakash2019rans}.}
-\label{fig:BL}
-\end{figure}
-
-A similar analysis can be applied to the energy equation to obtain temperature wall functions. The simplified energy equation can be written as
-
-\begin{equation}
-\frac{d}{dy} \left[ \left( \frac{\mu}{Pr} + \frac{\mu_t}{Pr_t} \right) \frac{dT}{dy} \right ] = 0.
-\label{eq:reducedEnergy}
-\end{equation}
-
-The corresponding nondimensional temperature profile is
-
-\begin{equation}
-T^+ =
-\begin{cases}
-Pr , y^+ & y^+ < 5,\\
-\frac{Pr_t}{\kappa_T} \ln(y^+) + C_T & y^+ \geq 30,
-\end{cases}
-\label{eq:tempLayers}
-\end{equation}
-
-where $\kappa_T = 0.48$ and $C_T = 3.9$ are empirical constants \cite{kader1972heat}.
-
-\subsubsection{Velocity Wall Functions}
-
-Several velocity wall functions have been proposed in the literature. The simplest is the standard wall function given in Equation~\ref{eq:standardwallfunc}. However, the buffer layer is difficult to model analytically because both viscous and turbulent effects are important. This has motivated the development of more general wall laws that interpolate between the viscous sublayer and logarithmic region. Such formulations are often referred to as universal wall functions because they describe the entire inner region. Table~\ref{tab:veloctityprofiles} summarizes several commonly used velocity wall functions.
-
-\input{TABLES/velocityProfiles}
-
-More general wall functions have also been developed for nonequilibrium boundary layers. Craft et al. \cite{craft2002progress} proposed an Analytical Wall Function that accounts for pressure-gradient and convection effects by integrating a more general near-wall momentum equation. This requires an assumed relation between turbulent viscosity and wall-normal distance.
-
-Gant \cite{gant2002development} proposed a wall function based on the numerical integration of a parabolized transport equation on a one-dimensional subgrid. The subgrid solution is then interpolated to the first wall cell.
-
-Popovac and Hanjalic \cite{popovac2007compound} observed that many advanced wall functions involve complex expressions that are difficult to implement in general-purpose CFD solvers. They proposed a simplified formulation based on a modified logarithmic law:
-
-\begin{equation}
-u^+ = \frac{1}{\psi \kappa} \ln(y^+) + C,
-\label{eq:craft}
-\end{equation}
-
-where $\psi$ accounts for nonequilibrium effects. For equilibrium flows, $\psi=1$, and the standard logarithmic law is recovered. They also combined this generalized wall function with the mixing function proposed by Kader \cite{kader1972heat} to extend its validity throughout the inner region.
-
-Kalitzin et al. \cite{kalitzin2005near} introduced a lookup-table wall function based on well-resolved Couette-flow simulations. In this approach, nondimensional profiles of velocity, temperature, and turbulence variables are precomputed and stored for later use.
-
-\subsubsection{Temperature Wall Functions}
-
-As for velocity, the standard temperature wall function given in Equation~\ref{eq:tempLayers} provides a simple representation of the near-wall thermal field. However, the buffer-layer behavior is difficult to describe using simple analytical expressions. Several temperature wall functions have therefore been proposed to provide continuous profiles across the inner region. Table~\ref{tab:temperatureprofiles} summarizes representative models.
-
-The wall functions proposed by Craft et al. \cite{craft2002progress} and Popovac and Hanjalic \cite{popovac2007compound} include heat-transfer effects in addition to velocity profiles. Another strategy is to use lookup tables for isothermal walls, where variations of $T^+$ with $y^+$ are precomputed. These approaches have also been extended to include pressure-gradient effects, as shown by Lacombe et al. \cite{lacombe2019compatible}.
-
-\input{TABLES/temperatureProfiles}
-
-\subsubsection{Influence of Roughness}
-
-Surface roughness plays an important role in aircraft icing simulations. Roughness modifies the near-wall turbulence and can increase convective heat transfer, which directly affects the predicted ice shape. This is particularly important for glaze ice, where not all impinging water freezes immediately upon impact. Instead, a liquid film may run back from the stagnation region and freeze downstream, contributing to horn formation. In such cases, roughness is related to beads, rivulets, and irregular surface features that develop during ice accretion \cite{hansman1989investigation}.
-
-The pioneering experiments of Nikuradse \cite{nikuradse1933laws} on sand-roughened pipes provided fundamental insight into rough-wall turbulent flows. One of the main observations was that roughness produces a downward shift of the logarithmic velocity profile, as illustrated in Figure~\ref{fig:BLShift}. The rough-wall logarithmic law can be written as
-
-\begin{equation}
-u^+ = \frac{1}{\kappa} \ln(y^+) + C - \Delta u^+,
-\end{equation}
-
-where $\Delta u^+$ is the roughness function.
-
-\begin{figure}[htp]
-\centering
-\includegraphics[width=.5\textwidth]{FIGURES/IBM/roughnessEffect.png}
-\caption{Influence of roughness on the velocity profile \cite{prakash2019rans}.}
-\label{fig:BLShift}
-\end{figure}
-
-Nikuradse classified roughness effects using the nondimensional roughness height. Schlichting \cite{schlichting1936experimentelle} later showed that a single geometric parameter is generally insufficient to describe the effect of arbitrary roughness elements. Roughness spacing, shape, inclination, and density can all influence the flow response. This led to the concept of equivalent sand-grain roughness $k_s$, defined as the roughness height that produces the same shift in the logarithmic velocity profile as the real surface. This parameter is widely used in modern CFD solvers.
-
-Several wall-function extensions include roughness effects by introducing a shift in the velocity profile. As summarized by Prakash et al. \cite{prakash2019rans}, the rough-wall velocity profile can be related to the smooth-wall profile through
-
-\begin{equation}
-\frac{du_{rough}^+}{dy^+} (y^+) = \frac{du_{smooth}^+}{dy^+} (y^+ + y_0^+),
-\end{equation}
-
-\begin{equation}
-u_{rough}^+ (y^+)= u_{smooth}^+(y^+ + y_0^+) - u_{smooth}^+(y_0^+),
-\end{equation}
-
-and
-
-\begin{equation}
-\Delta u^+ =  u_{smooth}^+(y_0^+).
-\label{eq:roughnessExt}
-\end{equation}
-
-Here, $y_0^+$ is a wall shift related to the nondimensional roughness height $k_s^+$. Similar corrections can be applied to temperature wall functions.
-
-The influence of roughness is commonly divided into three regimes:
-
-\begin{itemize}
-\item \textbf{Hydraulically smooth regime} ($k_s^+ < 5$): the roughness elements are contained within the viscous sublayer, and their effect on skin friction is small. The surface can be treated as smooth;
-\item \textbf{Transitionally rough regime} ($5 \leq k_s^+ \leq 70$): roughness begins to affect the near-wall flow, the viscous sublayer is reduced, and skin friction increases. This regime is sensitive to roughness shape, spacing, and distribution;
-\item \textbf{Fully rough regime} ($k_s^+ > 70$): the viscous sublayer is disrupted, and the skin-friction coefficient becomes largely independent of Reynolds number. The flow response is mainly controlled by the roughness geometry.
-\end{itemize}
-
-In aircraft icing simulations, roughness modeling remains a significant source of uncertainty. Since roughness affects heat transfer and water runback, it can strongly influence glaze-ice accretion and horn formation. A robust numerical framework must therefore account for roughness effects consistently within the flow, heat-transfer, and thermodynamic models.
+The preceding review therefore suggests that the most appropriate methodology for a complete ice-accretion framework may involve different numerical treatments for its individual modules rather than the systematic use of a single formulation. The present thesis follows this direction by focusing on complementary developments for droplet impingement, geometry evolution, and geometry representation. First, a Lagrangian droplet-tracking framework is investigated as an alternative to the established Eulerian formulation, with particular attention to its computational efficiency, collection-efficiency prediction, and ability to represent SLD wall interactions. Second, a level-set method is developed for robust three-dimensional multilayer geometry evolution, with the objective of reducing the dependence of the update procedure on the quality and connectivity of an explicit surface mesh. Finally, the integration of the evolving geometry within an immersed-boundary framework is examined to assess the extent to which repeated body-fitted remeshing can be reduced.

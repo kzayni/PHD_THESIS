@@ -1,0 +1,49 @@
+\chapter{THESIS STRUCTURE}\label{sec:thesisStructure}
+
+\textit{
+This chapter presents the organization of the thesis and the relationships between its principal scientific contributions. After summarizing the research objectives, it outlines the overall research strategy and briefly introduces the three articles that constitute the main contributions of this work.
+}
+
+\section{Research Objectives}\label{sec:thesisSpecificObjectives}
+
+The general objective of this thesis is to improve the robustness and automation of three-dimensional multilayer aircraft ice-accretion simulations through the development and assessment of numerical methods for droplet impingement, geometry evolution, and geometry representation.
+
+The specific objectives are:
+
+\begin{itemize}
+    \item Develop and assess a Lagrangian framework for droplet-impingement prediction, including Supercooled Large Droplet (SLD) phenomena.
+
+    \item Develop a robust level-set methodology for three-dimensional multilayer geometry evolution.
+
+    \item Extend an existing immersed-boundary flow solver to investigate an alternative geometry representation for aircraft ice-accretion simulations.
+
+    \item Verify and assess the proposed developments using representative analytical, numerical, and experimental icing benchmarks.
+\end{itemize}
+
+\section{Overall Research Strategy}\label{sec:thesisProposedSolution}
+
+As described in Chapter~\ref{sec:RevLitt}, aircraft ice-accretion simulations consist of successive aerodynamic, droplet-impingement, thermodynamic, and geometry-evolution calculations. Rather than modifying this overall workflow, the present work develops and evaluates improvements to three components of the numerical framework: droplet impingement, geometry evolution, and geometry representation.
+
+\section{Presentation of the Articles}
+\label{sec:articlePresentation}
+
+This thesis is presented in the form of three scientific articles, each corresponding to one of the principal developments pursued during this research.
+
+\subsection{Article 1: Lagrangian Droplet Tracking}
+
+The first article presents the development of a Lagrangian droplet-impingement framework integrated within the existing icing solver. The work focuses on improving the efficiency and robustness of particle tracking on unstructured meshes while extending the formulation to account for Supercooled Large Droplet effects. The proposed methodology is assessed using representative two- and three-dimensional icing benchmarks.
+
+\subsection{Article 2: Three-Dimensional Level-Set Geometry Evolution}
+
+The second article presents a level-set methodology for three-dimensional multilayer ice accretion. The work focuses on providing a robust geometry-evolution procedure capable of handling successive accretion layers while maintaining compatibility with the remaining components of the numerical framework. The methodology is verified and validated using representative icing configurations.
+
+\subsection{Article 3: Immersed-Boundary Ice Accretion}
+
+The third article investigates the extension of an existing immersed-boundary flow solver to aircraft ice-accretion simulations. The proposed framework integrates aerodynamic flow, droplet impingement, thermodynamic calculations, and geometry evolution in order to evaluate immersed-boundary techniques as an alternative to conventional body-fitted approaches for evolving geometries.
+
+\section{Relationship Between the Articles}
+\label{sec:articleRelationship}
+
+The three articles address complementary aspects of the aircraft ice-accretion process while remaining largely independent. The first article focuses on droplet-impingement prediction, the second on geometry evolution, and the third on geometry representation through immersed-boundary techniques.
+
+Although each development can be incorporated independently into an aircraft icing framework, together they contribute toward a more robust and automated methodology for three-dimensional multilayer aircraft ice-accretion simulations.
