@@ -1,31 +1,106 @@
 \begin{table}[ht]
 \centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{threeparttable}
 \caption{Comparison of representative numerical aircraft icing solvers.}
 \label{tab:icing_solvers}
 \small
-\begin{adjustbox}{max width=\textwidth}
-\begin{tabular}{llcccccc}
+
+\begin{tabular}{@{}lcccccccc@{}}
 \toprule
-\textbf{Organization} &
-\textbf{Solver} &
+\textbf{Org.} &
+\textbf{Solver}\tnote{*} &
 \textbf{Flow} &
 \textbf{Droplet} &
-\textbf{Thermo} &
-\textbf{Geo Evolution} &
-\textbf{Geo Rep.} &
-\textbf{Multishot} \\
+\textbf{Thermo.} &
+\textbf{Geo.}\tnote{**} &
+\textbf{IBM} &
+\textbf{Multishot} &
+\textbf{Ref.} \\
 \midrule
-NASA                      & LEWICE           & Panel / Euler / RANS & Lagrangian & Messinger / Modified Messinger & Lagrangian           & Body-fitted        & \checkmark \\
-NASA                      & GlennICE         & RANS                 & Lagrangian & Messinger                      & Face Offset          & Body-fitted        & \checkmark \\
-ANSYS Canada              & FENSAP-ICE       & RANS                 & Eulerian   & Modified Messinger             & Lagrangian           & Body-fitted        & \checkmark \\
-ONERA                     & ONERA IGLOO3D    & RANS                 & Eulerian   & Extended Messinger             & Lagrangian           & Body-fitted        & \checkmark \\
-Bombardier                & Dragon Ice Suite & RANS                 & Eulerian   & Iterative Messinger            & Hyperbolic Marching  & Body-fitted        & \checkmark \\
-Polytechnique Montréal    & CHAMPS-ICE       & RANS                 & Eulerian   & Iterative Messinger            & Lagrangian / RBF     & Body-fitted        & \checkmark \\
-CIRA                      & SIMBA            & IBM                  & Eulerian   & Iterative Messinger            & Lagrangian           & Immersed Boundary  & \checkmark \\
-TU Braunschweig           & DICEPS           & RANS                 & Eulerian   & --                             & Lagrangian           & Body-fitted        & \checkmark \\
-University of Twente      & SWIM             & RANS                 & Eulerian   & SWIM                           & Lagrangian           & Body-fitted        & $\times$ \\
-Politecnico di Milano     & PoliMIce         & RANS                 & Lagrangian & Modified Myers                 & Level Set            & Body-fitted        & \checkmark \\
+
+ANSYS Canada &
+FENSAP-ICE &
+RANS &
+Eul. &
+Messinger &
+Lag. + Wrapping &
+\xmark &
+\checkmark &
+\cite{Ozcer_2019}
+\\
+
+CIRA &
+SIMBA &
+RANS &
+Eul. &
+Messinger &
+Lag. &
+\checkmark &
+\checkmark &
+\cite{capizzanoIcing}
+\\
+
+NASA &
+GlennICE &
+RANS/Euler &
+Lag. &
+Messinger &
+Lag. &
+\xmark &
+\checkmark &
+\cite{glennIce}
+\\
+
+ONERA &
+IGLOO3D &
+RANS/Euler &
+Eul. &
+Messinger &
+Lag./LS &
+\checkmark &
+\checkmark &
+\cite{radenac2024workflow,pabloIcing,lavoieLevelSet}
+\\
+
+Politecnico di Milano &
+PoliMIce &
+RANS &
+Lag. &
+Mod. Myers &
+Lag. + LS &
+\xmark &
+\checkmark &
+\cite{donizetti2023level}
+\\
+
+Uni. of Strasbourg &
+NSMB &
+RANS &
+Eul. &
+SWIM &
+LS &
+\checkmark &
+\checkmark &
+\cite{alkebsiPhd}
+\\
+
 \bottomrule
 \end{tabular}
+
+\begin{tablenotes}[flushleft]
+\footnotesize
+
+\item[] \textit{Abbreviations:}
+Eul.: Eulerian; Lag.: Lagrangian; LS: Level Set; Mod.: Modified;
+IBM: Immersed-Boundary Method.
+
+\item[] \textit{Notes:}
+\item[*] The solvers listed here refer to the icing frameworks. The aerodynamic flow solution may be provided by separate CFD solvers; therefore, the Flow column indicates the types of flow formulations compatible with each icing framework rather than a specific flow solver.
+\item[**] In the geometry-evolution column, Lag. denotes Lagrangian node displacement and should not be confused with Lagrangian droplet tracking.
+
+\end{tablenotes}
+
+\end{threeparttable}
 \end{adjustbox}
 \end{table}

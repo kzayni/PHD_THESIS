@@ -2,31 +2,16 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Examples of ice accretion on aircraft components.}}{2}{figure.caption.9}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Ice accretion on the leading edge of the CRM hybrid wing model tested in the NASA Icing Research Tunnel. Photos taken from \cite {noauthor_crm-hl_2022}}}{3}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Mesh representation around a cylinder using (a) a body-fitted mesh and (b) an immersed-boundary mesh. In the body-fitted approach, the mesh conforms to the cylinder surface, whereas in the immersed-boundary approach, the cylinder is embedded within a non-conformal background mesh.}}{8}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic of the multilayer ice accretion framework.}}{12}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration of the principal stages involved in a aircraft ice accretion simulation: (a) aerodynamic flow solution, (b) droplet impingement prediction, (c) geometry evolution through ice accretion, and (d) mesh update for the subsequent accretion layer.}}{13}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Schematic representation of the Lagrangian droplet-seeding procedure. Droplets are released from an upstream plane and tracked until they either impinge on the immersed surface or bypass the body.}}{16}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Droplet Phenomena.}}{19}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Control volume diagrams for mass and energy balance equations. Adapted from~\cite {bourgault-coteMultilayerAirfoilIce2019}.}}{22}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Representation of the level-set function $\phi $. The ice region is defined by $\phi < 0$ (blue), while the surrounding air corresponds to $\phi > 0$. The interface is implicitly represented by the zero level set $\phi = 0$.}}{25}{figure.caption.24}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of the boundary cut-cell method adapted from Clarke et al.~\cite {clarke1986euler}.}}{28}{figure.caption.25}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Image-point and ghost-cell construction near an immersed boundary, adapted from Tseng and Ferziger~\cite {tseng2003ghost}.}}{32}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Illustration of face forcing near an immersed boundary, adapted from Capizzano et al.~\cite {capizzano2014eulerian}.}}{33}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of Eulerian solver results : Countour of water volume fraction $\alpha $ with droplet trajectories streamlines.}}{41}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Droplet tracking techniques.}}{43}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Steps for Ray--Bilinear Patch Intersection.}}{45}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Adaptive seeding.}}{48}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Seeding technique for large scale geometries.}}{49}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Collection Efficiency computations. Primary and auxiliary droplets are represented in blue and red respectively.}}{50}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Impact zone effect: Yellow-colored cells indicate at least one droplet impact, while purple-colored cells signify no impact.}}{52}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Droplet Phenomena.}}{53}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Lagrangian Solver Scalability.}}{59}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \centering Results for CASE IPW1 - 112.}}{65}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Description of Case IPW1 - 122.}}{66}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Aggregated impingement results of all IPW1 participants for Case IPW1-122.}}{66}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Results of CASE IPW1 - 122.}}{67}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Description of Case IPW2 1.3}}{68}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Results for CASE IPW2 - 1.3.}}{69}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \centering Results for CASE HLPW5 - 2.1.}}{70}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Collection Efficiency cuts.}}{71}{figure.caption.47}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Ice accretion on the leading edge of the Common Research Model (CRM) hybrid wing configuration tested in the NASA Icing Research Tunnel. Photos taken from~\cite {noauthor_crm-hl_2022}.}}{3}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Comparison of single-step and multilayer ice accretion predictions on a NACA~23012 airfoil.}}{6}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Mesh entanglement near the wing tip of a $30^\circ $ swept NACA~0012 wing during multilayer ice accretion.}}{7}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Mesh representation around a cylinder using (a) a body-fitted mesh and (b) an immersed-boundary mesh. In the body-fitted approach, the mesh conforms to the cylinder surface, whereas in the immersed-boundary approach, the cylinder is embedded within a non-conformal background mesh.}}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic of the multilayer ice accretion framework with representative solutions at each stage.}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Schematic representation of the Lagrangian droplet-seeding procedure. Droplets are released from an upstream plane and tracked until they either impinge on the surface.}}{17}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Examples of droplet deformation and splashing phenomena relevant to SLD conditions.}}{21}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Control volume diagrams for mass and energy balance equations. Adapted from~\cite {bourgault-coteMultilayerAirfoilIce2019}.}}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Schematic representation of surface-node displacement along the local normal according to the predicted ice thickness.}}{26}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Schematic representation of the level-set function. The ice--air interface $\Gamma $ is implicitly defined by the zero level set ($\phi = 0$), separating the ice domain $\Omega _S$ ($\phi < 0$) from the surrounding air domain $\Omega _F$ ($\phi > 0$).}}{27}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of the boundary cut-cell method~\cite {clarke1986euler}.}}{30}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Schematic representation of the solid and fluid domains using the mask function $\chi $.}}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Image-point and ghost-cell construction near an immersed boundary~\cite {tseng2003ghost}.}}{35}{figure.caption.30}%

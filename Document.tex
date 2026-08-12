@@ -90,7 +90,9 @@
 \usepackage{booktabs} % professional table rules (\toprule, \midrule, \bottomrule)
 \usepackage[bottom]{footmisc} % pour avoir les notes de bas de page en dessous des figures... / to have the footnotes below the figures
 %\usepackage{listings} % Si on veut ajouter des lignes de codes dans le texte / If you want to add lines of code to the text
-
+\usepackage{threeparttable}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}
 
 %%
 %% Définitions spécifiques au format de rédaction de Poly.
@@ -267,10 +269,15 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 \mainmatter
 \include{CHAPTERS/5-Introduction}       % Introduction au sujet de recherche.
 \include{CHAPTERS/6-Revue_litterature}  % Revue de littérature / Literature review
-\include{CHAPTERS/7-CHAPTER_THESIS_STRUCTURE}  % Revue de littérature / Literature review
-\include{CHAPTERS/7-CHAPTER_LAGRANGIAN}
+%\include{CHAPTERS/7-CHAPTER_THESIS_STRUCTURE}  % Revue de littérature / Literature review
+%\include{CHAPTERS/7-CHAPTER_LAGRANGIAN}
+
+\chapter{Article I: A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}\label{sec:lagArticle}
+
 \include{CHAPTERS/7-CHAPTER_LEVEL_SET}
 \include{CHAPTERS/7-CHAPTER_IBM}
+\include{CHAPTERS/7-CHAPTER_DISCUSSIONS}
+
 \include{CHAPTERS/8-Conclusion}         % Conclusion.
 %\backmatter
 \ifthenelse{\equal{\Langue}{english}}{

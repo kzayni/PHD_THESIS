@@ -12,15 +12,172 @@
 %%  Toutes les annexes doivent être inclues dans ce document
 %%  les unes à la suite des autres.
 %%  All annexes must be included in this document one after the other.
-\Annexe{Démo}
-Texte de l'annexe A\@. Remarquez que la phrase précédente se termine
-par une lettre majuscule suivie d'un point. On indique explicitement
-cette situation à \LaTeX{} afin que ce dernier ajuste correctement
-l'espacement entre le point final de la phrase et le début de la
-phrase suivante.
+\Annexe{THERMODYNAMIC BALANCE EQUATIONS}
+\label{app:thermodynamic_model}
 
+This appendix provides the detailed expressions associated with the mass- and energy-balance equations introduced in Section~\ref{sec:review_thermodynamics}. The balances are applied locally to a surface control volume containing the ice layer and, when present, a liquid-water film.
 
+\section{Mass Balance}
 
+The local conservation of water mass is expressed as
 
-\Annexe{Une dernière annexe / The Last Appendix}
-Texte de l'annexe C\@.
+\begin{equation}
+    \dot{m}_{imp}
+    + \sum \dot{m}_{in}
+    =
+    \sum \dot{m}_{out}
+    + \dot{m}_{ev/su}
+    + \dot{m}_{ice}
+    \label{eq:app_mass_balance}
+\end{equation}
+
+where $\dot{m}_{imp}$ is the impinging-water mass flow rate, $\dot{m}_{in}$ and $\dot{m}_{out}$ are the incoming and outgoing runback-water flow rates, respectively, $\dot{m}_{ev/su}$ represents mass loss through evaporation or sublimation, and $\dot{m}_{ice}$ is the ice-accretion rate. The evaporation or sublimation rate may be evaluated as
+
+\begin{equation}
+    \dot{m}_{ev/su}
+    =
+    \frac{0.7}{C_{p,a}}\,HTC
+    \left(
+        \frac{p_{v,s}-p_{v,\infty}}{P_\infty}
+    \right)
+    \label{eq:app_evaporation}
+\end{equation}
+
+where $C_{p,a}$ is the specific heat capacity of air, $p_{v,s}$ and $p_{v,\infty}$ are the water-vapor pressures at the surface and in the freestream, respectively, and $P_\infty$ is the freestream static pressure. The vapor pressure at the water or ice surface is evaluated as~\cite{ozgen2009ice}
+
+\begin{equation}
+    p_v
+    =
+    3386
+    \left(
+        0.0039
+        + 6.8096 \times 10^{-6}\,\bar{T}^{\,2}
+        + 3.5579 \times 10^{-7}\,\bar{T}^{\,3}
+    \right)
+    \label{eq:app_vapor_pressure}
+\end{equation}
+
+where $p_v$ is expressed in Pa and
+
+\begin{equation}
+    \bar{T}
+    =
+    72 + 1.8\left(T-273.15\right)
+    \label{eq:app_vapor_temperature}
+\end{equation}
+
+with $T$ expressed in K.
+
+\section{Energy Balance}
+
+Conservation of energy over the same surface control volume is written as
+
+\begin{equation}
+    \dot{Q}_{kin}
+    + \dot{Q}_{d}
+    + \dot{Q}_{a}
+    + \sum \dot{Q}_{in}
+    =
+    \dot{Q}_{conv}
+    + \dot{Q}_{rad}
+    + \dot{Q}_{ev/su}
+    + \sum \dot{Q}_{out}
+    + \dot{Q}_{ice}
+    \label{eq:app_energy_balance}
+\end{equation}
+
+where the individual contributions are detailed below. The kinetic energy associated with the impinging droplets is
+
+\begin{equation}
+    \dot{Q}_{kin}
+    =
+    \dot{m}_{imp}\frac{u_d^2}{2}
+    \label{eq:app_qkin}
+\end{equation}
+
+where $u_d$ is the droplet impact velocity. The sensible heat associated with the impinging droplets is
+
+\begin{equation}
+    \dot{Q}_{d}
+    =
+    \dot{m}_{imp} C_{p,w}
+    \left(T_s-T_\infty\right),
+    \label{eq:app_qdroplet}
+\end{equation}
+
+where $C_{p,w}$ is the specific heat capacity of liquid water. The aerodynamic-heating contribution is expressed as
+
+\begin{equation}
+    \dot{Q}_{a}
+    =
+    \frac{r\,HTC\,U_\infty^2}
+         {2C_{p,a}},
+    \label{eq:app_qaero}
+\end{equation}
+
+where $r$ is the recovery factor. The convective heat exchange is
+
+\begin{equation}
+    \dot{Q}_{conv}
+    =
+    HTC\left(T_s-T_{rec}\right),
+    \label{eq:app_qconv_recovery}
+\end{equation}
+
+The energy transported by incoming and outgoing runback water is
+
+\begin{equation}
+    \sum \dot{Q}_{in}
+    =
+    \sum \dot{m}_{in} C_{p,w}
+    \left(T_s-T_{ref}\right),
+    \label{eq:app_qin}
+\end{equation}
+
+and
+
+\begin{equation}
+    \sum \dot{Q}_{out}
+    =
+    \sum \dot{m}_{out} C_{p,w}
+    \left(T_s-T_{ref}\right),
+    \label{eq:app_qout}
+\end{equation}
+
+respectively, where $T_{ref}$ denotes the reference freezing temperature. Radiative heat transfer is given by
+
+\begin{equation}
+    \dot{Q}_{rad}
+    =
+    4\epsilon\sigma_r T_\infty^3
+    \left(T_s-T_\infty\right),
+    \label{eq:app_qrad}
+\end{equation}
+
+where $\epsilon$ is the surface emissivity and $\sigma$ is the Stefan--Boltzmann constant. The latent-energy contributions associated with evaporation and sublimation are
+
+\begin{equation}
+    \dot{Q}_{ev}
+    =
+    \dot{m}_{ev} L_v,
+    \qquad
+    \dot{Q}_{su}
+    =
+    \dot{m}_{su} L_s,
+    \label{eq:app_qevsu}
+\end{equation}
+
+where $L_v$ and $L_s$ are the latent heats of vaporization and
+sublimation, respectively. The energy associated with ice formation may be expressed as
+
+\begin{equation}
+    \dot{Q}_{ice}
+    =
+    \dot{m}_{ice}
+    \left[
+        C_{p,i}\left(T_s-T_{ref}\right)-L_f
+    \right],
+    \label{eq:app_qice}
+\end{equation}
+
+where $C_{p,i}$ is the specific heat capacity of ice and $L_f$ is the latent heat of fusion.
