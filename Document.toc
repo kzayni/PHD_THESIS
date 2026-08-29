@@ -9,7 +9,7 @@
 \contentsline {compteur}{LIST OF TABLES}{xi}{chapter*.5}%
 \contentsline {compteur}{LIST OF FIGURES}{xii}{chapter*.6}%
 \contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xiv}{chapter*.7}%
-\contentsline {compteur}{LIST OF APPENDICES}{xv}{chapter*.8}%
+\contentsline {compteur}{LIST OF APPENDICES}{xvii}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ice Morphologies}{2}{section.1.2}%
@@ -61,9 +61,9 @@
 \contentsline {section}{\numberline {7.1}Summary of Works}{76}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Limitations}{76}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Future Research}{76}{section.7.3}%
-\contentsline {compteur}{REFERENCES}{77}{chapter*.49}%
-\contentsline {compteur}{APPENDICES}{92}{chapter*.49}%
+\contentsline {compteur}{REFERENCES}{77}{chapter*.51}%
+\contentsline {compteur}{APPENDICES}{92}{chapter*.51}%
 \contentsline {section}{\numberline {A.1}Mass Balance}{92}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Energy Balance}{92}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Mesh Refinement Study}{94}{section.A.3}%
-\contentsline {section}{\numberline {A.4}SLD Models details}{95}{section.A.4}%
+\contentsline {section}{\numberline {B.1}Mesh Refinement Study}{95}{section.B.1}%
+\contentsline {section}{\numberline {B.2}SLD Model Details}{95}{section.B.2}%

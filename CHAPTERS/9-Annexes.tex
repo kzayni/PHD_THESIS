@@ -182,9 +182,22 @@ sublimation, respectively. The energy associated with ice formation may be expre
 
 where $C_{p,i}$ is the specific heat capacity of ice and $L_f$ is the latent heat of fusion.
 
+\Annexe{DROPLET-IMPINGEMENT VERIFICATION AND SLD MODELS}
+\label{app:droplet_models}
+
+This appendix presents supplementary material for the droplet-impingement
+framework. It first documents the mesh-refinement study used to compare the
+Eulerian and Lagrangian collection-efficiency predictions and then provides
+the detailed parameters of the SLD splashing models.
 
 \section{Mesh Refinement Study}
 \label{sec:VERIF_NACA}
+Figure~\ref{fig:NACA0012_VERIF} compares the Eulerian and Lagrangian
+collection-efficiency predictions on four successively refined meshes. The
+corresponding flow conditions are summarized in Table~\ref{tab:naca0012_VERIF},
+and the maximum differences are reported in
+Table~\ref{tab:naca0012_VERIF_error}.
+
 \begin{table}[h!]
 \centering
 \caption{Simulation Parameters}
@@ -240,9 +253,7 @@ Mesh & Max Difference $\beta$ [-]\\
 \label{tab:naca0012_VERIF_error}
 \end{table}
 
-\newpage
-
-\section{SLD Models details}
+\section{SLD Model Details}
 \label{app:SLD_MODELS_DETAILS}
 Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD models described in Section~\ref{Sec:SLDEffects}.
 

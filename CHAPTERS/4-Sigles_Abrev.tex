@@ -1,20 +1,78 @@
-% Liste des sigles et abbréviations / List of symbols and acronyms
+% List of symbols and acronyms
 \ifthenelse{\equal{\Langue}{english}}{
-	\newcommand\abbrevname{LIST OF SYMBOLS AND ACRONYMS}
+    \newcommand\abbrevname{LIST OF SYMBOLS AND ACRONYMS}
 }{
-	\newcommand\abbrevname{LISTE DES SIGLES ET ABRÉVIATIONS}
+    \newcommand\abbrevname{LISTE DES SYMBOLES, SIGLES ET ABRÉVIATIONS}
 }
 \chapter*{\abbrevname}
 \addcontentsline{toc}{compteur}{\abbrevname}
 \pagestyle{pagenumber}
-%
-\begin{acronym}
-  \acro{IETF}{Internet Engineering Task Force}
-  \acro{OSI}{Open Systems Interconnection}
-\end{acronym}
-%
-\begin{longtable}{lp{5in}}
-IETF       & Internet Engineering Task Force\\
-OSI        & Open Systems Interconnection\\
-\end{longtable}
 
+\section*{Acronyms}
+\begin{acronym}[HLPW5]
+  \acro{AIAA}{American Institute of Aeronautics and Astronautics}
+  \acro{AOA}{angle of attack}
+  \acro{BF}{body-fitted}
+  \acro{CFD}{computational fluid dynamics}
+  \acro{CFR}{Code of Federal Regulations}
+  \acro{CRM}{Common Research Model}
+  \acro{FAA}{Federal Aviation Administration}
+  \acro{FAR}{Federal Airworthiness Regulations}
+  \acro{FR}{freezing rain}
+  \acro{GARP}{Geometric Approach to Ray--Patch Intersections}
+  \acro{HLPW5}{fifth High-Lift Prediction Workshop}
+  \acro{HPC}{high-performance computing}
+  \acro{HTC}{heat-transfer coefficient}
+  \acro{IBM}{immersed-boundary method}
+  \acro{IPS}{ice-protection system}
+  \acro{IPW}{Ice Prediction Workshop}
+  \acro{IRT}{Icing Research Tunnel}
+  \acro{LES}{large-eddy simulation}
+  \acro{LWC}{liquid water content}
+  \acro{MOF}{moment of fluid}
+  \acro{MPI}{Message Passing Interface}
+  \acro{MVD}{median volume diameter}
+  \acro{PDE}{partial differential equation}
+  \acro{RANS}{Reynolds-averaged Navier--Stokes}
+  \acro{SA}{Spalart--Allmaras}
+  \acro{SLD}{supercooled large droplet}
+  \acro{SSD}{standard supercooled droplet}
+  \acro{SWIM}{Shallow-Water Icing Model}
+  \acro{VOF}{volume of fluid}
+\end{acronym}
+
+\section*{Symbols}
+\begin{longtable}{lp{5in}}
+$A$                         & Area [$\mathrm{m^2}$]\\
+$C_D$                       & Droplet drag coefficient [-]\\
+$C_{ref}$                   & Reference chord length [$\mathrm{m}$]\\
+$d$                         & Droplet diameter [$\mathrm{m}$]\\
+$f_m$                       & Mass-loss coefficient [-]\\
+$h$                         & Water-film thickness [$\mathrm{m}$]\\
+$HTC$                       & Convective heat-transfer coefficient [$\mathrm{W\,m^{-2}\,K^{-1}}$]\\
+$k$                         & Thermal conductivity [$\mathrm{W\,m^{-1}\,K^{-1}}$]\\
+$M$                         & Mach number [-]\\
+$\dot{m}$                   & Mass flow rate [$\mathrm{kg\,s^{-1}}$]\\
+$\boldsymbol{n}$            & Outward unit-normal vector [-]\\
+$p$                         & Pressure [$\mathrm{Pa}$]\\
+$Pr$                        & Prandtl number [-]\\
+$\dot{Q}$                   & Heat flux [$\mathrm{W\,m^{-2}}$]\\
+$r$                         & Recovery factor [-]\\
+$Re$                        & Reynolds number [-]\\
+$t$                         & Time [$\mathrm{s}$]\\
+$T$                         & Temperature [$\mathrm{K}$]\\
+$\boldsymbol{u}$            & Velocity vector [$\mathrm{m\,s^{-1}}$]\\
+$\boldsymbol{V}$            & Interface-growth velocity [$\mathrm{m\,s^{-1}}$]\\
+$We$                        & Weber number [-]\\
+$\alpha$                    & Nondimensional water concentration [-]\\
+$\beta$                     & Collection efficiency [-]\\
+$\gamma$                    & Droplet-bin weight [-]\\
+$\epsilon$                  & Sticking rate [-]\\
+$\eta$                      & Immersed-boundary penalization parameter [-]\\
+$\kappa$                    & Interface curvature [$\mathrm{m^{-1}}$]\\
+$\mu$                       & Dynamic viscosity [$\mathrm{Pa\,s}$]\\
+$\rho$                      & Density [$\mathrm{kg\,m^{-3}}$]\\
+$\sigma$                    & Surface tension [$\mathrm{N\,m^{-1}}$]\\
+$\phi$                      & Level-set function [$\mathrm{m}$]\\
+$\chi$                      & Solid-mask function [-]\\
+\end{longtable}
