@@ -8,6 +8,7 @@ A level-1 auxiliary file: CHAPTERS/3-Abstract.aux
 A level-1 auxiliary file: CHAPTERS/4-Sigles_Abrev.aux
 A level-1 auxiliary file: CHAPTERS/5-Introduction.aux
 A level-1 auxiliary file: CHAPTERS/6-Revue_litterature.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LAGRANGIAN.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LEVEL_SET.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_IBM.aux
 A level-1 auxiliary file: CHAPTERS/7-CHAPTER_DISCUSSIONS.aux
@@ -19,7 +20,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10130 items from 5000.
+Reallocated field_info (elt_size=4) to 12245 items from 5000.
 Database file #1: Document.bib
 Warning--string name "june" is undefined
 --line 1719 of file Document.bib
@@ -31,11 +32,11 @@ Warning--missing publisher in oneraIcingWindTunnel
 Warning--empty year in oneraIcingWindTunnel
 Warning--missing publisher in iceAccretionOnSweptWings
 Warning--empty year in iceAccretionOnSweptWings
+Warning--empty year in pabloIcing
 Warning--empty journal in zabaletamultishot
 Warning--empty year in zabaletamultishot
 Warning--missing publisher in glennIce
 Warning--empty year in glennIce
-Warning--empty year in pabloIcing
 Warning--missing institution in wright2008user
 Warning--missing publisher in spallartAllmaras
 Warning--empty year in spallartAllmaras
@@ -56,47 +57,50 @@ Warning--empty year in tuckerEikonal
 Warning--missing publisher in inviscidIBM47
 Warning--empty year in inviscidIBM47
 Warning--empty journal in mittal2005immersed
+Warning--empty journal in faa2010engine
+Warning--missing publisher in parenteau
+Warning--empty year in parenteau
 
 Done.
-You've used 113 entries,
+You've used 160 entries,
             4024 wiz_defined-function locations,
-            1482 strings with 28867 characters,
-and the built_in function-call counts, 79995 in all, are:
-= -- 6573
-> -- 1912
-< -- 646
-+ -- 1047
-- -- 340
-* -- 3792
-:= -- 12095
-add.period$ -- 224
-call.type$ -- 113
-change.case$ -- 105
-chr.to.int$ -- 1383
-cite$ -- 142
-duplicate$ -- 5926
-empty$ -- 6376
-format.name$ -- 432
-if$ -- 18453
+            1710 strings with 36570 characters,
+and the built_in function-call counts, 107886 in all, are:
+= -- 8854
+> -- 2506
+< -- 758
++ -- 1346
+- -- 470
+* -- 5022
+:= -- 16436
+add.period$ -- 331
+call.type$ -- 160
+change.case$ -- 149
+chr.to.int$ -- 1578
+cite$ -- 192
+duplicate$ -- 8244
+empty$ -- 8932
+format.name$ -- 589
+if$ -- 24905
 int.to.chr$ -- 0
-int.to.str$ -- 113
-missing$ -- 1033
-newline$ -- 370
-num.names$ -- 113
-pop$ -- 2365
+int.to.str$ -- 160
+missing$ -- 1483
+newline$ -- 511
+num.names$ -- 160
+pop$ -- 3461
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 6315
+skip$ -- 8558
 stack$ -- 0
-substring$ -- 3433
-swap$ -- 4809
-text.length$ -- 185
+substring$ -- 4085
+swap$ -- 6450
+text.length$ -- 232
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 113
-warning$ -- 29
-while$ -- 339
-width$ -- 116
-write$ -- 1095
-(There were 31 warnings)
+type$ -- 160
+warning$ -- 32
+while$ -- 430
+width$ -- 163
+write$ -- 1521
+(There were 34 warnings)

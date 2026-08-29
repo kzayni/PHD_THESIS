@@ -181,3 +181,95 @@ sublimation, respectively. The energy associated with ice formation may be expre
 \end{equation}
 
 where $C_{p,i}$ is the specific heat capacity of ice and $L_f$ is the latent heat of fusion.
+
+
+\section{Mesh Refinement Study}
+\label{sec:VERIF_NACA}
+\begin{table}[h!]
+\centering
+\caption{Simulation Parameters}
+\begin{tabular}{cccccc}
+\hline \hline
+Description & MVD[$\mu m$] & AOA[\textdegree]& Ma[-]& C$_{ref}$[inch] & Re[-]\\
+\hline
+NACA0012 & 30.0 & 5.0 & 0.4 & 1.0 & 8.85 $\cdot 10^6$ \\
+\hline \hline
+\end{tabular}
+\label{tab:naca0012_VERIF}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\subfloat[\centering Impingement Results on the 129x129 mesh.]{%
+\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129.eps}
+\label{fig:NACA0012_129}%
+}
+\subfloat[\centering Impingement Results on the 257x257 mesh.]{%
+\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257.eps}
+\label{fig:NACA0012_257}%
+}
+
+\hspace*{-1cm}
+
+\centering
+\subfloat[\centering Impingement Results on the 513x513 mesh.]{%
+\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513.eps}
+\label{fig:NACA0012_513}%
+}%
+\subfloat[\centering Impingement Results on the 1025x1025 mesh.]{%
+\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025.eps}   
+\label{fig:NACA0012_1025}}
+\caption{Mesh refinement effect on the Eulerian vs. Lagrangian results in terms of the collection efficiency.}
+\label{fig:NACA0012_VERIF}
+\end{figure}
+
+
+\begin{table}[h!]
+\centering
+\caption{Difference Between Eulerian vs. Lagrangian results in terms of Collection Efficiency.}
+\begin{tabular}{cc}
+\hline \hline
+Mesh & Max Difference $\beta$ [-]\\
+\hline
+129x129 & $0.069$ \\ \hline
+257x257 & $0.059$ \\ \hline
+513x513 & $0.037$ \\ \hline
+1025x1025 & $0.035$ \\ \hline
+\hline
+\end{tabular}
+\label{tab:naca0012_VERIF_error}
+\end{table}
+
+\newpage
+
+\section{SLD Models details}
+\label{app:SLD_MODELS_DETAILS}
+Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD models described in Section~\ref{Sec:SLDEffects}.
+
+\begin{table}[h!]
+\centering
+\caption{SLD Splashing Models Details}
+\label{tab:splashing_Models_dets}
+\begin{tabular}{ccc}
+\hline \hline
+\multicolumn{3}{c}{Wright et al. \cite{wright2004semi}}\\ 
+\hline
+ $\theta_0$ & Droplet Angle of Impact & -\\
+ $K_{M}$ & Splashing Parameter & $ \frac{0.859 \,  K^{0.5} \, (\frac{\rho_{w}}{LWC})^{0.125}}{sin(\theta_0)^{1.25}} $ \\
+  $K$ & Mundo Parameter & $Oh \, Re_d^{1.25}$ \\
+  $Oh$ & Ohnesorge Number & $\frac{\mu_w}{\sqrt{\sigma_w \, \rho_w \, D}}$ \\
+ \hline
+ \multicolumn{3}{c}{Trontin et al. \cite{trontin2016revisited}}\\ 
+ \hline
+  $\theta_c$ & Characteristic Droplet Angle of Impact & $25.0$\textdegree \\
+  $\theta_c$ & Critical Droplet Angle of Impact &  $\theta_0 \, tanh(Ca^{1.5})$ \\
+  $Ca$ & Capillary Number & $\frac{\mu_{w} \vert \boldsymbol{u_d} \vert}{\sigma_{w}}$ \\
+  $K_C$ & Cossali Number & $We \, Oh^{-0.4}$ \\
+  $We $ & Weber Number & $ \frac{\rho_{w} \vert \boldsymbol{u_d} \vert ^2  d}{\sigma_{w}}$ \\
+  $K_0$ & Critical Cossali Number & $657.0$ \\
+  $g(\frac{\theta}{\theta_c})$ & Angle of Impact Function & $1 \, if \, \theta \, > \, \theta_c \, else \, \frac{\theta}{\theta_c}$ \\
+  $f(\Tilde{K_c})$ & Cossali Number Function & $1 - 0.15 \frac{\Tilde{K_c}^2}{(100+\Tilde{K_c}^2)}$ \\
+  $\Tilde{K_c}$ & - & $max (\frac{K_c - K_0}{K_0},0)$\\
+\hline \hline
+\end{tabular}
+\end{table}

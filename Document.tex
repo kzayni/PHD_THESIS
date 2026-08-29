@@ -94,6 +94,11 @@
 \usepackage{pifont}
 \newcommand{\xmark}{\ding{55}}
 
+\usepackage{xcolor}
+
+\newcommand{\removeText}[1]{\textcolor{red}{#1}}
+\newcommand{\addText}[1]{\textcolor{blue}{#1}}
+
 %%
 %% Définitions spécifiques au format de rédaction de Poly.
 %% Here we define the Poly formatting.
@@ -270,9 +275,8 @@ a été dûment accepté\ifthenelse{\equal{\monDiplome}{M}}{}{e} par le jury d'e
 \include{CHAPTERS/5-Introduction}       % Introduction au sujet de recherche.
 \include{CHAPTERS/6-Revue_litterature}  % Revue de littérature / Literature review
 %\include{CHAPTERS/7-CHAPTER_THESIS_STRUCTURE}  % Revue de littérature / Literature review
-%\include{CHAPTERS/7-CHAPTER_LAGRANGIAN}
 
-\chapter{Article I: A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}\label{sec:lagArticle}
+\include{CHAPTERS/7-CHAPTER_LAGRANGIAN}
 
 \include{CHAPTERS/7-CHAPTER_LEVEL_SET}
 \include{CHAPTERS/7-CHAPTER_IBM}

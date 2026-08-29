@@ -363,7 +363,7 @@ Numerically, simulating droplet impacts requires high-resolution meshes to captu
     \beta_{i, \, final} = \epsilon \, \beta_{i, \, 0} 
 \end{equation}
 
-\noindent Table \ref{tab:splashing_Models} summarizes the splashing models implemented in CHAMPS \cite{laroche2021development}. Wright et al. \cite{wright2004semi} enhanced their splashing model by incorporating the impact angle into the splashing parameters and mass loss formula. Their results show that splashing is less likely when droplets impact perpendicular to the wall and more pronounced near impingement limits. The model was calibrated by comparing simulated water collection efficiency with experimental data to ensure accuracy across a wide range of cases. Similarly, Trontin et al. \cite{trontin2016revisited} used sub-functions to represent the mass loss rate as a function of incident angle and kinetic energy. By comparing their numerical results with experimental data, they fine-tuned the parameters to improve model precision. Details regarding the models parameters can be found in the Appendix \ref{app:sldModels}. The effects of both models on the collection efficiency will be examined in greater detail in Section~\ref{sec:Results}.
+\noindent Table \ref{tab:splashing_Models} summarizes the splashing models implemented in CHAMPS \cite{laroche2021development}. Wright et al. \cite{wright2004semi} enhanced their splashing model by incorporating the impact angle into the splashing parameters and mass loss formula. Their results show that splashing is less likely when droplets impact perpendicular to the wall and more pronounced near impingement limits. The model was calibrated by comparing simulated water collection efficiency with experimental data to ensure accuracy across a wide range of cases. Similarly, Trontin et al. \cite{trontin2016revisited} used sub-functions to represent the mass loss rate as a function of incident angle and kinetic energy. By comparing their numerical results with experimental data, they fine-tuned the parameters to improve model precision. Details regarding the models parameters can be found in the Appendix \ref{app:SLD_MODELS_DETAILS}. The effects of both models on the collection efficiency will be examined in greater detail in Section~\ref{sec:Results}.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -469,7 +469,7 @@ The flow conditions from the original workshop case are adopted. A single drople
 
 Unlike Eulerian simulations, where the iteration time correlates to solver efficiency, this metric is not directly applicable to Lagrangian solvers. This is because droplets may require different numbers of iterations to either impact the geometry or move past it. Consequently, the metric selected for comparison is the total computation time.
 
-\begin{figure}[t]
+\begin{figure}[!htbp]
 \centering
     \subfloat[Solver Speed Up.]{%
         \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.48\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/SpeedUp.eps}
@@ -479,7 +479,7 @@ Unlike Eulerian simulations, where the iteration time correlates to solver effic
         \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.48\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/Efficiency.eps}
         \label{fig:SolverEfficiency}%
         }%
-    \caption{Lagrangian Solver Scalability.}
+\caption{Parallel scalability of the Lagrangian solver: speedup and parallel efficiency relative to the two-node baseline.}
     \label{fig:scalability}
 \end{figure}
 
@@ -497,14 +497,14 @@ The loss in efficiency can be associated with differences in droplet trajectorie
     \label{eq:efficiency}
 \end{equation}
 
+\FloatBarrier
+
 \subsection{Case IPW1 - 112 : NACA64A008 Horizontal Tail }
-Figure \ref{fig:Impinge} presents impingement results of Case IPW1 - 112. The geometry of the case is provided in Appendix~\ref{app:geometries}. Within Fig. \ref{fig:HTAILSINGLE}, the effects of extending the impact zone of a droplet become apparent. When examining identical droplet quantities, the Lagrangian solution without the extension reveals undesired oscillations, because the present work solves continuous equations, which are not expected to produce oscillations, unlike experimental measurements which contains discrete sets each with their own experimental uncertainty. The newly purposed enhancement gives smooth results, and more importantly the new collection efficiency matches the Eulerian results. Lagrangian trajectories exhibit similar outcomes when compared to Eulerian results for both single diameter (92 $\mu$m Fig. \ref{fig:HTAILSINGLE}) and using the diameter distribution provided by the workshop in Fig. \ref{fig:HTAILEULAG}. The use of diameter distributions affects collection efficiency, as shown in Fig.~\ref{fig:HTAILSINGLEVSDIST}. Results using a diameter distribution exhibit extended impingement limits (approximately 0.1 in difference in the surface distance on the lower surface), due to smaller droplets following the flow streamlines more closely. These droplets are less likely to impact near the stagnation point but have a higher probability of colliding farther downstream.
+Figure \ref{fig:Impinge} presents impingement results of Case IPW1 - 112. Within Fig. \ref{fig:HTAILSINGLE}, the effects of extending the impact zone of a droplet become apparent. When examining identical droplet quantities, the Lagrangian solution without the extension reveals undesired oscillations, because the present work solves continuous equations, which are not expected to produce oscillations, unlike experimental measurements which contains discrete sets each with their own experimental uncertainty. The newly purposed enhancement gives smooth results, and more importantly the new collection efficiency matches the Eulerian results. Lagrangian trajectories exhibit similar outcomes when compared to Eulerian results for both single diameter (92 $\mu$m Fig. \ref{fig:HTAILSINGLE}) and using the diameter distribution provided by the workshop in Fig. \ref{fig:HTAILEULAG}. The use of diameter distributions affects collection efficiency, as shown in Fig.~\ref{fig:HTAILSINGLEVSDIST}. Results using a diameter distribution exhibit extended impingement limits (approximately 0.1 in difference in the surface distance on the lower surface), due to smaller droplets following the flow streamlines more closely. These droplets are less likely to impact near the stagnation point but have a higher probability of colliding farther downstream.
 
 
-\begin{figure}[t]
-\vspace{-1cm}
+\begin{figure}[!htbp]
 \centering
-\hspace*{-0.5cm}
 \subfloat[\centering Effect of droplet impact zone.]{%
 \includegraphics[width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE.eps}   
 \label{fig:HTAILSINGLE}}
@@ -513,7 +513,6 @@ Figure \ref{fig:Impinge} presents impingement results of Case IPW1 - 112. The ge
 \label{fig:HTAILSINGLEVSDIST}%
 }
 
-\hspace*{-1cm}
 \subfloat[\centering  Impingement results.]{%
 \includegraphics[width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION.eps}
 \label{fig:HTAILEULAG}%
@@ -523,7 +522,7 @@ Figure \ref{fig:Impinge} presents impingement results of Case IPW1 - 112. The ge
 \includegraphics[width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD.eps}
 \label{fig:HTAILBETRA}%
 }%
-\caption{\centering Results for CASE IPW1 - 112.}
+\caption{Collection-efficiency results for Case IPW1-112: impact-zone treatment, droplet-size distribution, Eulerian--Lagrangian comparison, and SLD-model assessment.}
 \label{fig:Impinge}
 \end{figure}
 
@@ -538,17 +537,17 @@ On the other hand, the model provided by \cite{trontin2016revisited} (denoted as
 
 \noindent However, this method requires a significantly larger number of droplets to achieve comparable accuracy. In the present work, the local flow-tube technique is employed, yielding accurate estimates of the collection efficiency.
 
+\FloatBarrier
 
 \subsection{Case IPW1 - 122 : Three Element Airfoil}
  Case IPW1 - 122 presents a configuration that is particularly challenging because of the re-circulation cove behind the Main element (Fig. \ref{fig:streamtraces}). Disparities emerge notably in the Main and Flap components of the geometry as was shown by most IPW1 participants (Fig. \ref{fig:MDA_MAIN_IPW1} - \ref{fig:MDA_FLAP_IPW1}). Fig. \ref{fig:MDA_SLAT_DISTRIBUTION}, \ref{fig:MDA_MAIN_DISTRIBUTION} and \ref{fig:MDA_FLAP_DISTRIBUTION}  show the results obtained in CHAMPS for both models using the diameter distribution provided by the workshop. The two models exhibit a good level of agreement. The Eulerian model tends to detect impingement towards the end of the main airfoil component on both sides of the geometry. This discrepancy arises from non-physical values observed for the droplet volume fraction, attributed to dispersion-induced oscillations. The prominence of the Slat component in collecting incoming droplets is apparent, due to its position at the forefront of the geometry. This trend is particularly pronounced on the pressure side, where the geometry is angled at a 4\textdegree $\,$ angle of attack, resulting in a greater accumulation of droplets. This configuration also influences the Main and Flap components, with minimal impingement observed on their suction side. Overall similar results can be observed between the two models. The slight difference between Eulerian and Lagrangian results can be related to dissipation from the Eulerian model, especially near the cove behind the main component as noted in \cite{blanchet2022conservative}. Ideally, these differences would diminish with mesh refinement as showcased in Appendix \ref{sec:VERIF_NACA}. 
 
-\begin{figure}[h!]
-\hspace*{0cm}
+\begin{figure}[!htbp]
+\centering
     \subfloat[Three Element Airfoil Geometry.]{%
     \includegraphics[trim={0cm 10.5cm 0cm 10.5cm},clip,width=0.6\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png}
     \label{fig:MDA_Geometry}%
     }
-    \hspace*{0.1cm}
     \subfloat[\centering Recirculation zone in the cove of the main element.]{%
     \includegraphics[trim={2cm 8cm 0cm 8cm},clip,width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png}
     \label{fig:streamtraces}%
@@ -557,18 +556,12 @@ On the other hand, the model provided by \cite{trontin2016revisited} (denoted as
     \label{fig:MDA_CASE_DESCRIPTION}
 \end{figure}
 
-\begin{figure}[h!]
-\hspace*{-1cm}
-% \subfloat[IPW1 results on the Slat.]{%
-% \includegraphics[width=0.35\textwidth]{FIGURES/RESULTS/CASE_122/PARTICIPANTS/SLAT_PARTICIPANTS.png} \quad
-% \label{fig:MDA_SLAT_IPW1}%
-% }%
-%\hspace*{-1cm}
+\begin{figure}[!htbp]
+\centering
 \subfloat[Main component results.]{%
 \includegraphics[trim={.1cm .1cm .1cm .1cm},clip,width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1.eps}
 \label{fig:MDA_MAIN_IPW1}%
 }
-\hspace*{0.5cm}
 \subfloat[ Flap component results. ]{%
 \includegraphics[trim={.1cm .1cm .1cm .1cm},clip,width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1.eps}
 \label{fig:MDA_FLAP_IPW1}%
@@ -581,8 +574,8 @@ On the other hand, the model provided by \cite{trontin2016revisited} (denoted as
 
 A similar trend is observed for the hybrid model (denoted “EUL. MODEL-L w/ REIMP. HYBRID”). The effect of re-injected Lagrangian droplets is particularly pronounced on the flap component, where the peak value increases compared to the baseline Eulerian model (denoted “EUL. W/O SLD”). A similar trend is observed across participants’ data and even in more recent results for this case \cite{bellosta2023lagrangian, moula2023icing}. This raises questions about the reliability of the re-injection model in predicting post-impact variables or/and the validity of the experimental results for this specific case.
 
-\begin{figure}[h!]
-\hspace*{-1cm}
+\begin{figure}[!htbp]
+\centering
 \subfloat[Impingement results on the Slat.]{%
 \includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION.eps} \quad
 \label{fig:MDA_SLAT_DISTRIBUTION}%
@@ -598,7 +591,6 @@ A similar trend is observed for the hybrid model (denoted “EUL. MODEL-L w/ REI
 \label{fig:MDA_FLAP_DISTRIBUTION}%
 }
 
-\hspace*{-1cm}
 \subfloat[SLD results on the Slat.]{%
 \includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD.eps} \quad
 \label{fig:MDA_SLAT_SLD}%
@@ -613,10 +605,11 @@ A similar trend is observed for the hybrid model (denoted “EUL. MODEL-L w/ REI
 \includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP.eps}
 \label{fig:MDA_FLAP_SLD}%
 }
-\caption{ Results of CASE IPW1 - 122.}
+\caption{Collection-efficiency results for Case IPW1-122. The upper row compares Eulerian and Lagrangian impingement predictions; the lower row assesses the SLD models and secondary-droplet re-impingement.}
 \label{fig:MDA}
 \end{figure}
 
+\FloatBarrier
 
 \subsection{Case IPW2 - 1.3 : Hybrid CRM (With Gap)}
 This case poses significant challenges due to the gap between the top of the airfoil and the wind tunnel wall (Fig. \ref{fig:CASE_1p3_GAP}). In one of the available meshes from the workshop, the gap was included and explicitly meshed, whereas in the other, the gap was ignored. The presence of this gap presents difficulties at both the flow solver and droplet solver levels, primarily due to the recirculation zone formed in this region, similar to the previous case but here investigated for a 3D geometry. While ice accretion diminishes this gap over time, as demonstrated by experimental ice shapes, the initial layer of ice remains influenced by its presence. Moreover, this test case serves as an excellent opportunity to evaluate the capabilities of the Lagrangian solver under such conditions. The results for this test case are illustrated in Fig. \ref{fig:CASE_1p3}. The initial comparisons show strong agreement between Eulerian and Lagrangian results accross all the cuts, with discrepancies appearing near the impingement limits. This trend is further highlighted in the contour plot of the collection efficiency shown in Fig. \ref{fig:CASE_1p3_Contour}. The latter showcase the relative difference between Lagrangian and Eulerian results with respect to collection efficiency calculated as follows:
@@ -627,114 +620,134 @@ This case poses significant challenges due to the gap between the top of the air
 
 \noindent Values below $10\%$ are omitted from the plot for clarity (colored in Grey). The observed differences are most pronounced near the impingement region, a consistent trend across all test cases. Additionally, the differences are positive (when not taking the absolute value), indicating that the Lagrangian solver predicts slightly larger impingement limits compared to the Eulerian solver. This observation should be further investigated in future work when comparing ice shapes derived from both models. Other discrepancies are also noticeable near the gap where the Eulerian solver usually have difficulty to predict impingement data.
 
-\begin{figure}[h!]
-\hspace*{-1cm}
-\subfloat[Case IPW2 1.3 Geometry.]{%
-\includegraphics[width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/GEO.png}
-\label{fig:CASE_1p3_GEO}%
-}
-%\hspace*{-1cm}
-\subfloat[Case IPW2 1.3 Gap region with the wind tunnel.]{%
-\includegraphics[width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/GAP.png}
-\label{fig:CASE_1p3_GAP}%
-}
-\caption{ Description of Case IPW2 1.3}
-\label{fig:CASE_1p3_Description}
-\end{figure}
-
-\begin{figure}[ht]
-\vspace{-1cm}
+\begin{landscape}
+\begin{figure}[p]
 \centering
-\hspace*{-0.5cm}
-\subfloat[Impingement Results on Station 1 : 18 inches.]{%
-\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.5\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN.eps}   
-\label{fig:CASE_1p3_18}}
-\subfloat[Impingement Results on Station 2 : 36 inches.]{%
-\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.5\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN.eps}
-\label{fig:CASE_1p3_36}%
-}
-
-\hspace*{-1cm}
-\centering
-\subfloat[Impingement Results on Station 3 : 54 inches.]{%
-\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN.eps}
-\label{fig:CASE_1p3_54}%
-}
-\subfloat[Relative Difference Between Eulerian and Lagrangian Solutions in Terms of Collection Efficiency.]{%
-\includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.49\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/difference.png}
-\label{fig:CASE_1p3_Contour}%
+\subfloat[Case geometry.]{%
+    \includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/GEO.png}%
+    \label{fig:CASE_1p3_GEO}%
 }%
-\caption{Results for CASE IPW2 - 1.3.}
+\hfill
+\subfloat[Gap between the model and the wind-tunnel wall.]{%
+    \includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/GAP.png}%
+    \label{fig:CASE_1p3_GAP}%
+}%
+\hfill
+\subfloat[Relative difference between the Eulerian and Lagrangian solutions.]{%
+    \includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/difference.png}%
+    \label{fig:CASE_1p3_Contour}%
+}%
+
+\medskip
+
+\subfloat[Station 1: 18 inches.]{%
+    \includegraphics[trim={0cm 0.05cm 0.05cm 0cm},clip,width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN.eps}%
+    \label{fig:CASE_1p3_18}%
+}%
+\hfill
+\subfloat[Station 2: 36 inches.]{%
+    \includegraphics[trim={0cm 0.05cm 0.05cm 0cm},clip,width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN.eps}%
+    \label{fig:CASE_1p3_36}%
+}%
+\hfill
+\subfloat[Station 3: 54 inches.]{%
+    \includegraphics[trim={0cm 0.05cm 0.05cm 0cm},clip,width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN.eps}%
+    \label{fig:CASE_1p3_54}%
+}%
+\caption{Case IPW2-1.3 geometry and Eulerian--Lagrangian collection-efficiency comparison at the three measurement stations and over the full surface.}
+\label{fig:CASE_1p3_Description}
 \label{fig:CASE_1p3}
 \end{figure}
+\end{landscape}
+
+\FloatBarrier
 
 \subsection{Case HLPW5 - 2.1 : CRM Wing-Body}
 The final case, using the Common Research Model (CRM), assesses the solver’s performance and accuracy on a larger, more complex configuration representative of an industrial aircraft. The impingement results for Case HLPW5 - 2.1 are presented in Fig. \ref{fig:2p1}. These results were extracted using cuts along the wing span and fuselage. The placement of these cuts is detailed in Fig. \ref{fig:cuts}. 
 
-\begin{figure}[htp]
-\vspace{-1cm} % Adjust the value as needed
-\hspace*{-1cm}
+For the fuselage, as shown in Fig. \ref{fig:CRM_FUSELAGE}, the peak collection efficiency is observed at the nose, gradually decreasing along the surface. The collection efficiency distribution on the wing, depicted in Fig. \ref{fig:CRM_WING_1} - \ref{fig:CRM_WING_5} exhibits a non-symmetrical shape due to the 6\textdegree $\,$ angle of attack imposed by the simulation conditions. Higher values of $\beta$ can be observed at the junction between the fuselage and the wing indicating higher impingement rate in that region. As in previous cases, more droplets are collected on the pressure side of the wing. However, since the CRM model features a swept wing, the effective angle of attack varies along the wing span. This variation is evident when comparing $\beta$ results on different hingewise cuts along the wing span. Unlike the inboard section (Fig. \ref{fig:CRM_WING_1}), the third cut shows more droplets collected on the suction side of the wing. The Lagrangian results match with the Eulerian results across all the cuts, ensuring consistency and accuracy in the simulation for such a large scale geometry.
+
+The SLD models implemented in this study exhibit consistent behavior across the full-scale CRM wing-body configuration presented in Fig. \ref{fig:CRM_FUSELAGE_SLD} - \ref{fig:CRM_WING_5_SLD}. Significant mass loss due to splashing is observed across all the cuts. Although acquiring experimental data for such a configuration is challenging, the current results align well with previous findings, demonstrating the robustness of the computational models. This consistent performance across different scales and configurations underscores the models applicability to real-world aviation scenarios.
+
+\begin{landscape}
+\begin{figure}[p]
+\centering
 \subfloat[\centering  Impingement results on the Fuselage.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION.eps} \quad
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION.eps}
 \label{fig:CRM_FUSELAGE}%
 }%
+\hfill
 \subfloat[\centering Impingement results on the Wing-1.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION.eps}
 \label{fig:CRM_WING_1}%
 }
+\hfill
 \subfloat[\centering Impingement results on the Wing-2.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION.eps}
 \label{fig:CRM_WING_2}%
 }
 
-\hspace*{-1cm}
+\medskip
+
 \subfloat[\centering Impingement results on the Wing-3.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION.eps} \quad
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION.eps}
 \label{fig:CRM_WING_3}%
 }%
+\hfill
 \subfloat[\centering Impingement results on the Wing-4.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION.eps}
 \label{fig:CRM_WING_4}%
 }
+\hfill
 \subfloat[\centering Impingement results on the Wing-5.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION.eps}
 \label{fig:CRM_WING_5}%
 }
+\caption{Collection-efficiency results for Case HLPW5-2.1 at the fuselage and five spanwise wing cuts.}
+\label{fig:2p1}
+\end{figure}
+\end{landscape}
 
-\hspace*{-1cm}
+\begin{landscape}
+\begin{figure}[p]
+\centering
 \subfloat[\centering SLD results on the Fuselage.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD.eps} \quad
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD.eps}
 \label{fig:CRM_FUSELAGE_SLD}%   
 }%
+\hfill
 \subfloat[\centering SLD results on the Wing-1.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD.eps}
 \label{fig:CRM_WING_1_SLD}%
 }
+\hfill
 \subfloat[\centering SLD results on the Wing-2.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD.eps}
 \label{fig:CRM_WING_2_SLD}%
 }
 
-\hspace*{-1cm}
+\medskip
+
 \subfloat[\centering SLD results on the Wing-3.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD.eps} \quad
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD.eps}
 \label{fig:CRM_WING_3_SLD}%
 }%
+\hfill
 \subfloat[\centering SLD results on the Wing-4.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD.eps}
 \label{fig:CRM_WING_4_SLD}%
 }
+\hfill
 \subfloat[\centering SLD results on the Wing-5.]{%
-\includegraphics[width=0.325\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD.eps}
+\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD.eps}
 \label{fig:CRM_WING_5_SLD}%
 }
-\caption{\centering Results for CASE HLPW5 - 2.1.}
-\label{fig:2p1}
+\caption{SLD-model results for Case HLPW5-2.1 at the fuselage and five spanwise wing cuts.}
+\label{fig:2p1_sld}
 \end{figure}
+\end{landscape}
 
-For the fuselage, as shown in Fig. \ref{fig:CRM_FUSELAGE}, the peak collection efficiency is observed at the nose, gradually decreasing along the surface. The collection efficiency distribution on the wing, depicted in Fig. \ref{fig:CRM_WING_1} - \ref{fig:CRM_WING_5} exhibits a non-symmetrical shape due to the 6\textdegree $\,$ angle of attack imposed by the simulation conditions. Higher values of $\beta$ can be observed at the junction between the fuselage and the wing indicating higher impingement rate in that region. As in previous cases, more droplets are collected on the pressure side of the wing. However, since the CRM model features a swept wing, the effective angle of attack varies along the wing span. This variation is evident when comparing $\beta$ results on different hingewise cuts along the wing span. Unlike the inboard section (Fig. \ref{fig:CRM_WING_1}), the third cut shows more droplets collected on the suction side of the wing. The Lagrangian results match with the Eulerian results across all the cuts, ensuring consistency and accuracy in the simulation for such a large scale geometry.
-
-\begin{figure}[htp] 
+\begin{figure}[!htbp] 
     \centering
     \subfloat[Collection Efficiency cuts along the wing span.]{%
         \includegraphics[trim={0.1cm 0.1cm 0.1cm 0.1cm},clip,width=0.5\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png}%
@@ -744,11 +757,11 @@ For the fuselage, as shown in Fig. \ref{fig:CRM_FUSELAGE}, the peak collection e
         \includegraphics[trim={0.1cm 0.1cm 0.2cm 0.1cm},clip, width=0.5\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png}%
         \label{fig:fuselageCuts}%
         }%
-    \caption{Collection Efficiency cuts.}
+    \caption{Locations of the collection-efficiency cuts on the CRM wing and fuselage.}
     \label{fig:cuts}
 \end{figure}
 
-The SLD models implemented in this study exhibit consistent behavior across the full-scale CRM wing-body configuration presented in Fig. \ref{fig:CRM_FUSELAGE_SLD} - \ref{fig:CRM_WING_5_SLD}. Significant mass loss due to splashing is observed across all the cuts. Although acquiring experimental data for such a configuration is challenging, the current results align well with previous findings, demonstrating the robustness of the computational models. This consistent performance across different scales and configurations underscores the models applicability to real-world aviation scenarios.
+\FloatBarrier
 
 \section{Conclusion}
 \label{sec:Conclusion}
@@ -756,115 +769,3 @@ The SLD models implemented in this study exhibit consistent behavior across the 
 This work presents a computationally efficient framework for Lagrangian particle tracking, featuring enhancements that increase the robustness, accuracy, and overall efficiency of the solver. The trajectory-tracking algorithm that leverages mesh connectivity precisely determines droplet velocities and positions. It employs a face-to-face approach that dynamically adjusts the droplet time step based on cell size to reduce numerical instabilities, particularly in regions of strong velocity and pressure gradients near walls. A ray-tracing enhanced intersection technique is incorporated to improve the performance of intersection detection and the solver overall scalability. An adaptive seeding strategy is implemented, utilizing Eulerian droplet data to trace trajectories back to a predefined seeding plane, thereby reducing the number of tracked droplets while maintaining accuracy; this is complemented by adaptive mesh refinement of the seeding grid, driven by the accumulated collection efficiency ($\beta$) on the surface. To enhance the accuracy of $\beta$ evaluation, a weighted interpolation based on the squared inverse distance between droplet impact locations and neighboring face centers is adopted, improving droplet coverage and reducing the need for large number of droplets. The solver also incorporates Supercooled Large Droplet (SLD) physics, accounting for mass loss mechanisms such as bouncing, splashing, and rebounding upon impact, which yields a more realistic collection efficiency and closer agreement with experimental data. Finally, a hybrid Eulerian–Lagrangian strategy is discussed, in which Eulerian simulations are used to model the initial deposition while secondary droplets are tracked with the Lagrangian solver, thereby enabling efficient and accurate treatment of SLD effects and complex droplet behavior.
 
 Benchmark cases were selected from the first and second AIAA Ice Prediction Workshops, with a large-scale configuration drawn from the fifth High-Lift Prediction Workshop. The solver achieves $94\%$ parallel efficiency on 16 nodes. Results show strong agreement between the CHAMPS Eulerian solver and the newly developed Lagrangian solver, with SLD simulations aligning more closely with experimental data than other codes reported in the literature. The hybrid Eulerian (for deposition)–Lagrangian(for secondary droplets) approach offers improvements over purely Eulerian predictions, including a slight increase in peak collection efficiency,  by combining the computational efficiency of the Eulerian solver for initial deposition with the enhanced droplet physics of the Lagrangian solver for secondary droplets, providing a promising pathway for future developments.
-
-
-% \section*{Acknowledgments}
-% This work is supported in part by a Bombardier/NSERC/CRIAQ Industrial Chair (first author) and a Canada Research Chair (second author). Calculations were performed on Digital Research Alliance of Canada and Calcul Quebec clusters.
-
-% \newpage
-
-% \section{Appendix}
-% \label{sec:appendix}
-% \subsection{Mesh Refinement Study}
-% \label{sec:VERIF_NACA}
-% \begin{table}[h!]
-% \centering
-% \caption{Simulation Parameters}
-% \begin{tabular}{cccccc}
-% \hline \hline
-% Description & MVD[$\mu m$] & AOA[\textdegree]& Ma[-]& C$_{ref}$[inch] & Re[-]\\
-% \hline
-% NACA0012 & 30.0 & 5.0 & 0.4 & 1.0 & 8.85 $\cdot 10^6$ \\
-% \hline \hline
-% \end{tabular}
-% \label{tab:naca0012_VERIF}
-% \end{table}
-
-% \begin{figure}[h!]
-% \centering
-% \subfloat[\centering Impingement Results on the 129x129 mesh.]{%
-% \includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129.eps}
-% \label{fig:NACA0012_129}%
-% }
-% \subfloat[\centering Impingement Results on the 257x257 mesh.]{%
-% \includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257.eps}
-% \label{fig:NACA0012_257}%
-% }
-
-% \hspace*{-1cm}
-
-% \centering
-% \subfloat[\centering Impingement Results on the 513x513 mesh.]{%
-% \includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513.eps}
-% \label{fig:NACA0012_513}%
-% }%
-% \subfloat[\centering Impingement Results on the 1025x1025 mesh.]{%
-% \includegraphics[trim={0cm 0.05cm 0.05cm 0cm}, clip, width=0.4\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025.eps}   
-% \label{fig:NACA0012_1025}}
-% \caption{Mesh refinement effect on the Eulerian vs. Lagrangian results in terms of the collection efficiency.}
-% \label{fig:NACA0012_VERIF}
-% \end{figure}
-
-
-% \begin{table}[h!]
-% \centering
-% \caption{Difference Between Eulerian vs. Lagrangian results in terms of Collection Efficiency.}
-% \begin{tabular}{cc}
-% \hline \hline
-% Mesh & Max Difference $\beta$ [-]\\
-% \hline
-% 129x129 & $0.069$ \\ \hline
-% 257x257 & $0.059$ \\ \hline
-% 513x513 & $0.037$ \\ \hline
-% 1025x1025 & $0.035$ \\ \hline
-% \hline
-% \end{tabular}
-% \label{tab:naca0012_VERIF_error}
-% \end{table}
-
-% \newpage
-
-% \subsection{SLD Models details}
-% \label{app:sldModels}
-% Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD models described in Section~\ref{Sec:SLDEffects}.
-
-% \begin{table}[h!]
-% \centering
-% \caption{SLD Splashing Models Details}
-% \label{tab:splashing_Models_dets}
-% \begin{tabular}{ccc}
-% \hline \hline
-% \multicolumn{3}{c}{Wright et al. \cite{wright2004semi}}\\ 
-% \hline
-%  $\theta_0$ & Droplet Angle of Impact & -\\
-%  $K_{M}$ & Splashing Parameter & $ \frac{0.859 \,  K^{0.5} \, (\frac{\rho_{w}}{LWC})^{0.125}}{sin(\theta_0)^{1.25}} $ \\
-%   $K$ & Mundo Parameter & $Oh \, Re_d^{1.25}$ \\
-%   $Oh$ & Ohnesorge Number & $\frac{\mu_w}{\sqrt{\sigma_w \, \rho_w \, D}}$ \\
-%  \hline
-%  \multicolumn{3}{c}{Trontin et al. \cite{trontin2016revisited}}\\ 
-%  \hline
-%   $\theta_c$ & Characteristic Droplet Angle of Impact & $25.0$\textdegree \\
-%   $\theta_c$ & Critical Droplet Angle of Impact &  $\theta_0 \, tanh(Ca^{1.5})$ \\
-%   $Ca$ & Capillary Number & $\frac{\mu_{w} \vert \boldsymbol{u_d} \vert}{\sigma_{w}}$ \\
-%   $K_C$ & Cossali Number & $We \, Oh^{-0.4}$ \\
-%   $We $ & Weber Number & $ \frac{\rho_{w} \vert \boldsymbol{u_d} \vert ^2  d}{\sigma_{w}}$ \\
-%   $K_0$ & Critical Cossali Number & $657.0$ \\
-%   $g(\frac{\theta}{\theta_c})$ & Angle of Impact Function & $1 \, if \, \theta \, > \, \theta_c \, else \, \frac{\theta}{\theta_c}$ \\
-%   $f(\Tilde{K_c})$ & Cossali Number Function & $1 - 0.15 \frac{\Tilde{K_c}^2}{(100+\Tilde{K_c}^2)}$ \\
-%   $\Tilde{K_c}$ & - & $max (\frac{K_c - K_0}{K_0},0)$\\
-% \hline \hline
-% \end{tabular}
-% \end{table}
-
-% \newpage
-
-% \subsection{Test-Case Geometries}
-% \label{app:geometries}
-%   \begin{figure}[htbp] 
-%     \centering
-%     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.7\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/HTAIL.png}
-%     \caption{Description of Case IPW1 - 112.}
-%     \label{fig:htailGeo}
-% \end{figure}
-
-

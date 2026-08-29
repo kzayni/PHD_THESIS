@@ -6,44 +6,64 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 {\pdfbookmark [0]{TABLE OF CONTENTS}{toc}}
-\contentsline {compteur}{LIST OF TABLES}{x}{chapter*.5}%
-\contentsline {compteur}{LIST OF FIGURES}{xi}{chapter*.6}%
-\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xii}{chapter*.7}%
-\contentsline {compteur}{LIST OF APPENDICES}{xiii}{chapter*.8}%
+\contentsline {compteur}{LIST OF TABLES}{xi}{chapter*.5}%
+\contentsline {compteur}{LIST OF FIGURES}{xii}{chapter*.6}%
+\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xiv}{chapter*.7}%
+\contentsline {compteur}{LIST OF APPENDICES}{xv}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ice Morphologies}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Regulations \& Certification}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Ice Accretion Numerical Modeling}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Problem Statement}{6}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Motivation for the Present Work}{7}{subsection.1.5.1}%
-\contentsline {section}{\numberline {1.6}Objectives of the Present Study}{8}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Thesis Outline}{11}{section.1.7}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{12}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aerodynamics}{14}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{16}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{18}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{19}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{20}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{23}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Geometry Evolution}{25}{section.2.5}%
-\contentsline {subsubsection}{Interface Tracking}{25}{section*.24}%
-\contentsline {subsubsection}{Interface Capturing}{27}{section*.26}%
-\contentsline {section}{\numberline {2.6}Geometry Representation}{29}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{30}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{31}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{33}{subsection.2.6.3}%
-\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{35}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Article I: A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}{38}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Article II: Three-Dimensional Multilayer Ice Accretion Using a Level-Set Method}{39}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Article III: An Immersed-Boundary Approach for Multilayer Ice Accretion Simulations}{40}{chapter.5}%
-\contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{41}{chapter.6}%
-\contentsline {chapter}{\numberline {7}CONCLUSION}{42}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Works}{42}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Limitations}{42}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Research}{42}{section.7.3}%
-\contentsline {compteur}{REFERENCES}{43}{chapter*.31}%
-\contentsline {compteur}{APPENDICES}{53}{chapter*.31}%
-\contentsline {section}{\numberline {A.1}Mass Balance}{53}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Energy Balance}{53}{section.A.2}%
+\contentsline {subsection}{\numberline {1.5.1}Motivation for the Present Work}{8}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Objectives of the Present Study}{9}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Thesis Outline}{12}{section.1.6}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{14}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aerodynamics}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{18}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{20}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{21}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{22}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Geometry Evolution}{27}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Interface Tracking}{28}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Interface Capturing}{29}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Geometry Representation}{31}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{32}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{33}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{35}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{38}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Article I: A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}{41}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{41}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Droplet Tracking Techniques}{43}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Droplet Tracking Approaches for Ice Accretion}{43}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Lagrangian Droplet Tracking}{44}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Improvements in Lagrangian Particle Tracking}{47}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Ray--Quadrilateral Intersections in CFD Applications}{47}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Adaptive Seeding}{49}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Collection Efficiency Computations}{52}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}SuperCooled Large Droplets Effects Modeling}{53}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Hybrid Eulerian-Lagrangian Solver}{57}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Parallelism}{58}{subsection.3.3.6}%
+\contentsline {section}{\numberline {3.4}Results \& Discussions}{59}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Scalability}{60}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Case IPW1 - 112 : NACA64A008 Horizontal Tail }{61}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Case IPW1 - 122 : Three Element Airfoil}{64}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Case IPW2 - 1.3 : Hybrid CRM (With Gap)}{67}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Case HLPW5 - 2.1 : CRM Wing-Body}{69}{subsection.3.4.5}%
+\contentsline {section}{\numberline {3.5}Conclusion}{72}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Article II: Three-Dimensional Multilayer Ice Accretion Using a Level-Set Method}{74}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Article III: An Immersed-Boundary Approach for Multilayer Ice Accretion Simulations}{75}{chapter.5}%
+\contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{76}{chapter.6}%
+\contentsline {chapter}{\numberline {7}CONCLUSION}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Works}{77}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{77}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Research}{77}{section.7.3}%
+\contentsline {compteur}{REFERENCES}{78}{chapter*.52}%
+\contentsline {compteur}{APPENDICES}{93}{chapter*.52}%
+\contentsline {section}{\numberline {A.1}Mass Balance}{93}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Energy Balance}{93}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Mesh Refinement Study}{95}{section.A.3}%
+\contentsline {section}{\numberline {A.4}SLD Models details}{96}{section.A.4}%
