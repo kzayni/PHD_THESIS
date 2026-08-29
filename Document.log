@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 AUG 2026 13:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 AUG 2026 13:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1087,6 +1087,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
+Overfull \hbox (5.41231pt too wide) in paragraph at lines 127--128
+[]\T1/lmr/m/n/12 This de-cou-pling be-tween the ge-om-e-try and the com-pu-ta-tional mesh makes immersed-boundary
+ []
+
 Package epstopdf Info: Source file: <FIGURES/INTRODUCTION/CYLINDER_BF.eps>
 (epstopdf)                    date: 2026-07-08 22:48:47
 (epstopdf)                    size: 1169350 bytes
@@ -1124,7 +1128,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9]
+[9 <./FIGURES/INTRODUCTION/CYLINDER_BF-eps-converted-to.pdf> <./FIGURES/INTRODUCTION/CYLINDER_IBM-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1133,7 +1137,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10 <./FIGURES/INTRODUCTION/CYLINDER_BF-eps-converted-to.pdf> <./FIGURES/INTRODUCTION/CYLINDER_IBM-eps-converted-to.pdf>]
+[10]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1142,7 +1146,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11]
+[11])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1151,16 +1155,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12])
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[13]
+[12]
 \openout2 = `CHAPTERS/6-Revue_litterature.aux'.
 
  (./CHAPTERS/6-Revue_litterature.tex
@@ -1174,7 +1169,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS.e
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS.eps>
 (epstopdf)             \includegraphics on input line 14.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf, id=799, 1344.02126pt x 1053.9375pt>
+<FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf, id=792, 1344.02126pt x 1053.9375pt>
 File: FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf  used on input line 14.
@@ -1191,7 +1186,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14
+[13
 
 
 
@@ -1205,7 +1200,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15 <./FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf>] (./TABLES/iceAccretionSolvers.tex
+[14 <./FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS-eps-converted-to.pdf>] (./TABLES/iceAccretionSolvers.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 9.
 )
@@ -1217,7 +1212,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16]
+[15]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1227,15 +1231,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/DROP_STREAM_TUBE.eps>
 (epstopdf)                    date: 2026-08-18 20:07:01
 (epstopdf)                    size: 1072434 bytes
@@ -1245,12 +1240,21 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/DROP_STREAM_TUBE.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf FIGURES/LIT_REV/DROP_STREAM_TUBE.eps>
 (epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf, id=912, 670.505pt x 409.53pt>
+<FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf, id=906, 670.505pt x 409.53pt>
 File: FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf  used on input line 108.
 (pdftex.def)             Requested size: 283.22154pt x 172.9825pt.
 
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18 <./FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1268,7 +1272,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20 <./FIGURES/LIT_REV/DROP_STREAM_TUBE-eps-converted-to.pdf>]
+[20]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1278,21 +1282,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[22]
-<FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg, id=981, 42.3984pt x 88.8921pt>
+<FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg, id=975, 42.3984pt x 88.8921pt>
 File: FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg Graphic file (type jpg)
 <use FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg>
 Package pdftex.def Info: FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg  used on input line 262.
 (pdftex.def)             Requested size: 94.40477pt x 197.96265pt.
-<FIGURES/LIT_REV/DROPLET_SPLASHING.png, id=984, 301.125pt x 374.39874pt>
+<FIGURES/LIT_REV/DROPLET_SPLASHING.png, id=978, 301.125pt x 374.39874pt>
 File: FIGURES/LIT_REV/DROPLET_SPLASHING.png Graphic file (type png)
 <use FIGURES/LIT_REV/DROPLET_SPLASHING.png>
 Package pdftex.def Info: FIGURES/LIT_REV/DROPLET_SPLASHING.png  used on input line 271.
@@ -1306,7 +1301,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23 <./FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg> <./FIGURES/LIT_REV/DROPLET_SPLASHING.png>]
+[22 <./FIGURES/LIT_REV/DROPLET_DEFORMATION.jpg> <./FIGURES/LIT_REV/DROPLET_SPLASHING.png>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1315,7 +1310,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24] (./TABLES/SLD_MODELS.tex)
+[23] (./TABLES/SLD_MODELS.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1324,7 +1319,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[24]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/MASS_BALANCE.eps>
 (epstopdf)                    date: 2026-08-11 23:34:05
 (epstopdf)                    size: 949246 bytes
@@ -1334,7 +1329,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/MASS_BALANCE.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf FIGURES/LIT_REV/MASS_BALANCE.eps>
 (epstopdf)             \includegraphics on input line 364.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf, id=1043, 507.8975pt x 357.335pt>
+<FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf, id=1036, 507.8975pt x 357.335pt>
 File: FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf  used on input line 364.
@@ -1348,7 +1343,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/ENERGY_BALANCE.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf FIGURES/LIT_REV/ENERGY_BALANCE.eps>
 (epstopdf)             \includegraphics on input line 369.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf, id=1044, 506.89375pt x 394.47375pt>
+<FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf, id=1037, 506.89375pt x 394.47375pt>
 File: FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf  used on input line 369.
@@ -1362,7 +1357,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26 <./FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf> <./FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf>]
+[25 <./FIGURES/LIT_REV/MASS_BALANCE-eps-converted-to.pdf> <./FIGURES/LIT_REV/ENERGY_BALANCE-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1371,7 +1366,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27]
+[26]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT.eps>
 (epstopdf)                    date: 2026-08-11 15:56:15
 (epstopdf)                    size: 807674 bytes
@@ -1381,7 +1376,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMEN
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT.eps>
 (epstopdf)             \includegraphics on input line 400.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf, id=1086, 654.445pt x 223.83624pt>
+<FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf, id=1079, 654.445pt x 223.83624pt>
 File: FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf  used on input line 400.
@@ -1395,7 +1390,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28 <./FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf>]
+[27 <./FIGURES/LIT_REV/LAGRANGIAN_NODE_DISPLACEMENT-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_LEVELSET.eps>
 (epstopdf)                    date: 2026-08-09 20:46:37
 (epstopdf)                    size: 1080794 bytes
@@ -1405,7 +1400,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_LEVELSET.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf FIGURES/LIT_REV/SIMPLIFIED_LEVELSET.eps>
 (epstopdf)             \includegraphics on input line 426.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf, id=1109, 919.435pt x 311.1625pt>
+<FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf, id=1102, 919.435pt x 311.1625pt>
 File: FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf  used on input line 426.
@@ -1419,7 +1414,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29]
+[28]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1428,7 +1423,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30 <./FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf>]
+[29 <./FIGURES/LIT_REV/SIMPLIFIED_LEVELSET-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1437,7 +1432,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31]
+[30]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/CUT_CELL.eps>
 (epstopdf)                    date: 2026-08-09 20:43:21
 (epstopdf)                    size: 749434 bytes
@@ -1447,7 +1442,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/CUT_CELL.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf FIGURES/LIT_REV/CUT_CELL.eps>
 (epstopdf)             \includegraphics on input line 494.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf, id=1167, 367.3725pt x 367.3725pt>
+<FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf, id=1160, 367.3725pt x 367.3725pt>
 File: FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf  used on input line 494.
@@ -1461,7 +1456,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32]
+[31]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1470,7 +1465,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33 <./FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf>]
+[32 <./FIGURES/LIT_REV/CUT_CELL-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_MASK.eps>
 (epstopdf)                    date: 2026-08-09 16:22:20
 (epstopdf)                    size: 924394 bytes
@@ -1480,7 +1475,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_MASK.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf FIGURES/LIT_REV/SIMPLIFIED_MASK.eps>
 (epstopdf)             \includegraphics on input line 565.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf, id=1210, 842.14626pt x 281.05pt>
+<FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf, id=1203, 842.14626pt x 281.05pt>
 File: FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf  used on input line 565.
@@ -1494,7 +1489,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[33]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1503,7 +1498,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35 <./FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf>]
+[34 <./FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1512,7 +1507,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36]
+[35]
 Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_GC.eps>
 (epstopdf)                    date: 2026-08-09 20:41:32
 (epstopdf)                    size: 762126 bytes
@@ -1522,7 +1517,7 @@ Package epstopdf Info: Source file: <FIGURES/LIT_REV/SIMPLIFIED_GC.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf FIGURES/LIT_REV/SIMPLIFIED_GC.eps>
 (epstopdf)             \includegraphics on input line 643.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf, id=1261, 367.3725pt x 367.3725pt>
+<FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf, id=1254, 367.3725pt x 367.3725pt>
 File: FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf  used on input line 643.
@@ -1536,7 +1531,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37 <./FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf>]
+[36 <./FIGURES/LIT_REV/SIMPLIFIED_GC-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1545,7 +1540,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
+[37]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1554,7 +1549,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39])
+[38])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1563,7 +1558,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40]
+[39]
 \openout2 = `CHAPTERS/7-CHAPTER_LAGRANGIAN.aux'.
 
  (./CHAPTERS/7-CHAPTER_LAGRANGIAN.tex
@@ -1577,7 +1572,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41
+[40
 
 
 
@@ -1591,8 +1586,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42]
-<FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png, id=1343, 1039.885pt x 924.45375pt>
+[41]
+<FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png, id=1336, 1039.885pt x 924.45375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png  used on input line 33.
@@ -1606,7 +1601,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43 <./FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png (PNG copy)>]
+[42 <./FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png (PNG copy)>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1615,7 +1610,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44]
+[43]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid.eps>
 (epstopdf)                    date: 2026-07-09 23:07:23
 (epstopdf)                    size: 24332 bytes
@@ -1625,7 +1620,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgrou
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid.eps>
 (epstopdf)             \includegraphics on input line 78.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf, id=1369, 348.30125pt x 253.94875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf, id=1362, 348.30125pt x 253.94875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf  used on input line 78.
@@ -1644,7 +1639,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughC
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells.eps>
 (epstopdf)             \includegraphics on input line 83.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf, id=1372, 311.1625pt x 243.91125pt>
+<FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf, id=1365, 311.1625pt x 243.91125pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf  used on input line 83.
@@ -1658,7 +1653,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/Trackingface2fac
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face.eps>
 (epstopdf)             \includegraphics on input line 88.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf, id=1375, 344.28625pt x 249.93375pt>
+<FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf, id=1368, 344.28625pt x 249.93375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf  used on input line 88.
@@ -1672,7 +1667,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45 <./FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf>]
+[44 <./FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/TrackingThroughCells-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1681,7 +1676,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46]
+[45]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0.eps>
 (epstopdf)                    date: 2026-07-09 23:07:23
 (epstopdf)                    size: 26720 bytes
@@ -1691,7 +1686,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0.eps>
 (epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf, id=1430, 493.845pt x 371.3875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf, id=1423, 493.845pt x 371.3875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf  used on input line 161.
@@ -1705,7 +1700,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1.eps>
 (epstopdf)             \includegraphics on input line 166.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf, id=1431, 484.81125pt x 377.41pt>
+<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf, id=1424, 484.81125pt x 377.41pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf  used on input line 166.
@@ -1719,7 +1714,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2.eps>
 (epstopdf)             \includegraphics on input line 171.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf, id=1432, 480.79625pt x 382.42876pt>
+<FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf, id=1425, 480.79625pt x 382.42876pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf  used on input line 171.
@@ -1733,7 +1728,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47 <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf>]
+[46 <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2-eps-converted-to.pdf>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1743,15 +1747,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [48]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[49]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/seedingPlane.eps>
 (epstopdf)                    date: 2026-07-09 23:07:23
 (epstopdf)                    size: 25651 bytes
@@ -1761,7 +1756,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/seedingPlane.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/seedingPlane.eps>
 (epstopdf)             \includegraphics on input line 234.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf, id=1516, 632.3625pt x 212.795pt>
+<FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf, id=1509, 632.3625pt x 212.795pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf  used on input line 234.
@@ -1775,7 +1770,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding.
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding.eps>
 (epstopdf)             \includegraphics on input line 239.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf, id=1520, 197.73875pt x 319.1925pt>
+<FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf, id=1513, 197.73875pt x 319.1925pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf  used on input line 239.
@@ -1794,13 +1789,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50 <./FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf>]
-<FIGURES/LAGRANGIAN_ARTICLE/CRM.png, id=1543, 1443.3925pt x 1282.7925pt>
+[49 <./FIGURES/LAGRANGIAN_ARTICLE/AdaptiveSeeding-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/seedingPlane-eps-converted-to.pdf>]
+<FIGURES/LAGRANGIAN_ARTICLE/CRM.png, id=1536, 1443.3925pt x 1282.7925pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CRM.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/CRM.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CRM.png  used on input line 254.
 (pdftex.def)             Requested size: 226.5729pt x 116.62895pt.
-<FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png, id=1545, 1039.885pt x 924.45375pt>
+<FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png, id=1538, 1039.885pt x 924.45375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png  used on input line 258.
@@ -1814,18 +1809,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51 <./FIGURES/LAGRANGIAN_ARTICLE/CRM.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png (PNG copy)>]
-<FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png, id=1556, 554.07pt x 198.7425pt>
+[50 <./FIGURES/LAGRANGIAN_ARTICLE/CRM.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/GRIDS.png (PNG copy)>]
+<FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png, id=1549, 554.07pt x 198.7425pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png  used on input line 285.
 (pdftex.def)             Requested size: 146.32849pt x 52.48758pt.
-<FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png, id=1557, 554.07pt x 198.7425pt>
+<FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png, id=1550, 554.07pt x 198.7425pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png  used on input line 289.
 (pdftex.def)             Requested size: 146.32849pt x 52.48758pt.
-<FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png, id=1559, 553.06625pt x 325.215pt>
+<FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png, id=1552, 553.06625pt x 325.215pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png  used on input line 293.
@@ -1839,8 +1834,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52 <./FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png> <./FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png> <./FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png>]
-<FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png, id=1578, 899.36pt x 963.6pt>
+[51 <./FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png> <./FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png> <./FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png>]
+<FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png, id=1571, 899.36pt x 963.6pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png  used on input line 314.
@@ -1850,7 +1845,7 @@ Underfull \hbox (badness 1331) in paragraph at lines 314--314
 []\T1/lmr/m/n/10.95 (a) |With-out con-sid-er-ing neigh-bor-ing el-e-
  []
 
-<FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png, id=1580, 899.36pt x 963.6pt>
+<FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png, id=1573, 899.36pt x 963.6pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png  used on input line 318.
@@ -1864,7 +1859,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53]
+[52]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1873,13 +1868,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54 <./FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png (PNG copy)>]
-<FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png, id=1609, 448.67625pt x 171.64125pt>
+[53 <./FIGURES/LAGRANGIAN_ARTICLE/impactZoneWO.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/impactZoneW.png (PNG copy)>]
+<FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png, id=1602, 448.67625pt x 171.64125pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png  used on input line 345.
 (pdftex.def)             Requested size: 212.41255pt x 81.25804pt.
-<FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png, id=1610, 605.26125pt x 304.13625pt>
+<FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png, id=1603, 605.26125pt x 304.13625pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png  used on input line 349.
@@ -1893,7 +1888,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55 <./FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png> <./FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png>]
+[54 <./FIGURES/LAGRANGIAN_ARTICLE/DropletDeformation.png> <./FIGURES/LAGRANGIAN_ARTICLE/dropletSplashing.png>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1921,15 +1925,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [58]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[59]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/SpeedUp.eps>
 (epstopdf)                    date: 2026-08-09 20:58:26
 (epstopdf)                    size: 25695 bytes
@@ -1939,7 +1934,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/SpeedUp.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/SpeedUp.eps>
 (epstopdf)             \includegraphics on input line 477.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf, id=1682, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf, id=1674, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf  used on input line 477.
@@ -1953,7 +1948,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/Efficiency.eps>
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/Efficiency.eps>
 (epstopdf)             \includegraphics on input line 481.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf, id=1684, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf, id=1676, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf  used on input line 481.
@@ -1967,7 +1962,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[60]
+[59]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1976,7 +1971,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[61 <./FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf>]
+[60 <./FIGURES/LAGRANGIAN_ARTICLE/SpeedUp-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/Efficiency-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE.eps>
 (epstopdf)                    date: 2026-08-09 21:04:14
 (epstopdf)                    size: 47827 bytes
@@ -1986,7 +1981,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE.eps>
 (epstopdf)             \includegraphics on input line 510.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf, id=1739, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf, id=1732, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf  used on input line 510.
@@ -2000,7 +1995,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD.eps>
 (epstopdf)             \includegraphics on input line 514.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf, id=1740, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf, id=1733, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf  used on input line 514.
@@ -2014,7 +2009,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIB
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 519.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf, id=1741, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf, id=1734, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf  used on input line 519.
@@ -2028,7 +2023,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD.eps>
 (epstopdf)             \includegraphics on input line 524.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf, id=1742, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf, id=1735, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf  used on input line 524.
@@ -2042,7 +2037,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[62]
+[61]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2051,13 +2046,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf>]
-<FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png, id=1810, 625.33624pt x 964.60374pt>
+[62 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_IMPACT_ZONE-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_MVD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_112_SLD-eps-converted-to.pdf>]
+<FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png, id=1803, 625.33624pt x 964.60374pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png  used on input line 550.
 (pdftex.def)             Requested size: 283.22154pt x 166.26709pt.
-<FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png, id=1812, 625.33624pt x 964.60374pt>
+<FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png, id=1805, 625.33624pt x 964.60374pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png  used on input line 554.
@@ -2076,7 +2071,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IP
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1.eps>
 (epstopdf)             \includegraphics on input line 564.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf, id=1814, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf, id=1807, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf  used on input line 564.
@@ -2090,7 +2085,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IP
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1.eps>
 (epstopdf)             \includegraphics on input line 568.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf, id=1816, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf, id=1809, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf  used on input line 568.
@@ -2104,7 +2099,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[64]
+[63]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2113,7 +2108,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[65 <./FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf>]
+[64 <./FIGURES/LAGRANGIAN_ARTICLE/MDA_FLOW_FIELD.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/MDA_RECIRCULATION.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_IPW1-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_IPW1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION.eps>
 (epstopdf)                    date: 2026-08-09 21:09:07
 (epstopdf)                    size: 29374 bytes
@@ -2123,7 +2118,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DI
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 582.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf, id=1858, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf, id=1850, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf  used on input line 582.
@@ -2137,7 +2132,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DI
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 587.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf, id=1859, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf, id=1851, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf  used on input line 587.
@@ -2151,7 +2146,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DI
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf, id=1860, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf, id=1852, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf  used on input line 592.
@@ -2170,7 +2165,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SL
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD.eps>
 (epstopdf)             \includegraphics on input line 597.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf, id=1861, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf, id=1853, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf  used on input line 597.
@@ -2184,7 +2179,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MA
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN.eps>
 (epstopdf)             \includegraphics on input line 602.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf, id=1862, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf, id=1854, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf  used on input line 602.
@@ -2198,7 +2193,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FL
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP.eps>
 (epstopdf)             \includegraphics on input line 607.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf, id=1863, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf, id=1855, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf  used on input line 607.
@@ -2217,7 +2212,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[66 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf>]
+[65 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2226,18 +2221,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[67]
-<FIGURES/LAGRANGIAN_ARTICLE/GEO.png, id=1938, 1076.02pt x 956.57375pt>
+[66]
+<FIGURES/LAGRANGIAN_ARTICLE/GEO.png, id=1931, 1076.02pt x 956.57375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GEO.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/GEO.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GEO.png  used on input line 629.
 (pdftex.def)             Requested size: 202.33734pt x 179.868pt.
-<FIGURES/LAGRANGIAN_ARTICLE/GAP.png, id=1939, 1076.02pt x 956.57375pt>
+<FIGURES/LAGRANGIAN_ARTICLE/GAP.png, id=1932, 1076.02pt x 956.57375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/GAP.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/GAP.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/GAP.png  used on input line 634.
 (pdftex.def)             Requested size: 202.33734pt x 179.868pt.
-<FIGURES/LAGRANGIAN_ARTICLE/difference.png, id=1940, 1039.885pt x 924.45375pt>
+<FIGURES/LAGRANGIAN_ARTICLE/difference.png, id=1933, 1039.885pt x 924.45375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/difference.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/difference.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/difference.png  used on input line 639.
@@ -2251,7 +2246,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN.ep
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN.eps>
 (epstopdf)             \includegraphics on input line 646.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf, id=1941, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf, id=1934, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf  used on input line 646.
@@ -2265,7 +2260,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN.ep
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN.eps>
 (epstopdf)             \includegraphics on input line 651.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf, id=1943, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf, id=1936, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf  used on input line 651.
@@ -2279,7 +2274,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN.ep
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN.eps>
 (epstopdf)             \includegraphics on input line 656.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf, id=1945, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf, id=1938, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf  used on input line 656.
@@ -2297,7 +2292,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[68 <./FIGURES/LAGRANGIAN_ARTICLE/GEO.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/GAP.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/difference.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf>]
+[67 <./FIGURES/LAGRANGIAN_ARTICLE/GEO.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/GAP.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/difference.png (PNG copy)> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_18IN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_36IN-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_1p3_54IN-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2306,7 +2301,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[69
+[68
 
 
 ]
@@ -2319,7 +2314,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAG
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 678.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf, id=1996, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf, id=1989, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf  used on input line 678.
@@ -2333,7 +2328,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 683.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf, id=1997, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf, id=1990, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf  used on input line 683.
@@ -2347,7 +2342,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 688.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf, id=1998, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf, id=1991, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf  used on input line 688.
@@ -2361,7 +2356,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 695.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf, id=1999, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf, id=1992, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf  used on input line 695.
@@ -2375,7 +2370,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 700.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf, id=2000, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf, id=1993, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf  used on input line 700.
@@ -2389,7 +2384,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION.eps>
 (epstopdf)             \includegraphics on input line 705.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf, id=2001, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf, id=1994, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf  used on input line 705.
@@ -2403,7 +2398,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[70 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf>]
+[69 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_DISTRIBUTION-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_DISTRIBUTION-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD.eps>
 (epstopdf)                    date: 2026-08-09 21:28:55
 (epstopdf)                    size: 40702 bytes
@@ -2413,7 +2408,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAG
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD.eps>
 (epstopdf)             \includegraphics on input line 717.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf, id=2067, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf, id=2060, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf  used on input line 717.
@@ -2427,7 +2422,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD.eps>
 (epstopdf)             \includegraphics on input line 722.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf, id=2068, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf, id=2061, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf  used on input line 722.
@@ -2441,7 +2436,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD.eps>
 (epstopdf)             \includegraphics on input line 727.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf, id=2069, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf, id=2062, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf  used on input line 727.
@@ -2455,7 +2450,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD.eps>
 (epstopdf)             \includegraphics on input line 734.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf, id=2070, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf, id=2063, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf  used on input line 734.
@@ -2469,7 +2464,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD.eps>
 (epstopdf)             \includegraphics on input line 739.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf, id=2071, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf, id=2064, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf  used on input line 739.
@@ -2483,7 +2478,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD.eps>
 (epstopdf)             \includegraphics on input line 744.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf, id=2072, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf, id=2065, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf  used on input line 744.
@@ -2497,13 +2492,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[71 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf>]
-<FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png, id=2138, 1076.02pt x 956.57375pt>
+[70 <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_FUSELAGE_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_1_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_2_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_3_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_4_SLD-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_WING_5_SLD-eps-converted-to.pdf>]
+<FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png, id=2130, 1076.02pt x 956.57375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CUTS_WING.png  used on input line 755.
 (pdftex.def)             Requested size: 236.01555pt x 209.67369pt.
-<FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png, id=2140, 1076.02pt x 956.57375pt>
+<FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png, id=2132, 1076.02pt x 956.57375pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png Graphic file (type png)
 <use FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/CUTS_FUSELAGE.png  used on input line 759.
@@ -2517,7 +2512,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72
+[71
 
 
 
@@ -2531,7 +2526,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[73]
+[72]
 \openout2 = `CHAPTERS/7-CHAPTER_LEVEL_SET.aux'.
 
  (./CHAPTERS/7-CHAPTER_LEVEL_SET.tex
@@ -2545,7 +2540,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74
+[73
 
 
 
@@ -2564,7 +2559,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[75
+[74
 
 
 
@@ -2583,7 +2578,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[76
+[75
 
 
 
@@ -2602,7 +2597,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[77
+[76
 
 
 
@@ -2620,7 +2615,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[78
+[77
 
 
 
@@ -2630,6 +2625,15 @@ Underfull \hbox (badness 6725) in paragraph at lines 73--74
  []
 
 
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[78]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2657,6 +2661,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [81]
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `en'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `en'. Using the pattern for
+** the default language instead.
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2666,13 +2677,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [82]
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `en'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtran.bst: No hyphenation pattern has been
-** loaded for the language `en'. Using the pattern for
-** the default language instead.
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2744,7 +2748,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[90]
+[90])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2753,16 +2757,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[91])
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[92]
+[91]
 \openout2 = `CHAPTERS/9-Annexes.aux'.
 
  (./CHAPTERS/9-Annexes.tex
@@ -2777,7 +2772,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[93
+[92
 
 
 ]
@@ -2789,7 +2784,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[94]
+[93]
 Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129.eps>
 (epstopdf)                    date: 2026-07-09 23:07:23
 (epstopdf)                    size: 31914 bytes
@@ -2799,7 +2794,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129.eps>
 (epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf, id=2274, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf, id=2267, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf  used on input line 206.
@@ -2813,7 +2808,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257.eps>
 (epstopdf)             \includegraphics on input line 210.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf, id=2276, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf, id=2269, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf  used on input line 210.
@@ -2827,7 +2822,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513.eps
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513.eps>
 (epstopdf)             \includegraphics on input line 218.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf, id=2278, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf, id=2271, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf  used on input line 218.
@@ -2841,7 +2836,7 @@ Package epstopdf Info: Source file: <FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025.ep
 (epstopdf)             Command: <repstopdf --outfile=FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025.eps>
 (epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
-<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf, id=2280, 598.235pt x 531.9875pt>
+<FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf, id=2273, 598.235pt x 531.9875pt>
 File: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf Graphic file (type pdf)
 <use FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf>
 Package pdftex.def Info: FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf  used on input line 221.
@@ -2859,7 +2854,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[95]
+[94]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2872,7 +2867,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[96 <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf>]
+[95 <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_129-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_257-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_513-eps-converted-to.pdf> <./FIGURES/LAGRANGIAN_ARTICLE/NACA0012_1025-eps-converted-to.pdf>]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2881,7 +2876,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[97] (./Document.aux (./CHAPTERS/1-Dedicace.aux) (./CHAPTERS/2-Remerciements.aux) (./CHAPTERS/3-Resume_sujet.aux) (./CHAPTERS/3-Abstract.aux) (./CHAPTERS/4-Sigles_Abrev.aux) (./CHAPTERS/5-Introduction.aux) (./CHAPTERS/6-Revue_litterature.aux) (./CHAPTERS/7-CHAPTER_LAGRANGIAN.aux) (./CHAPTERS/7-CHAPTER_LEVEL_SET.aux) (./CHAPTERS/7-CHAPTER_IBM.aux) (./CHAPTERS/7-CHAPTER_DISCUSSIONS.aux) (./CHAPTERS/8-Conclusion.aux) (./CHAPTERS/9-Annexes.aux))
+[96] (./Document.aux (./CHAPTERS/1-Dedicace.aux) (./CHAPTERS/2-Remerciements.aux) (./CHAPTERS/3-Resume_sujet.aux) (./CHAPTERS/3-Abstract.aux) (./CHAPTERS/4-Sigles_Abrev.aux) (./CHAPTERS/5-Introduction.aux) (./CHAPTERS/6-Revue_litterature.aux) (./CHAPTERS/7-CHAPTER_LAGRANGIAN.aux) (./CHAPTERS/7-CHAPTER_LEVEL_SET.aux) (./CHAPTERS/7-CHAPTER_IBM.aux) (./CHAPTERS/7-CHAPTER_DISCUSSIONS.aux) (./CHAPTERS/8-Conclusion.aux) (./CHAPTERS/9-Annexes.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2891,21 +2886,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Document.out' has not changed.
-(rerunfilecheck)             Checksum: D4E3A4EFBA8E28073A262F876C1D5795;13920.
+(rerunfilecheck)             Checksum: 02C2B17BC3096D0C3E6481E9A4A37396;13920.
  ) 
 Here is how much of TeX's memory you used:
- 23790 strings out of 473190
- 488209 string characters out of 5715801
- 830874 words of memory out of 5000000
+ 23786 strings out of 473190
+ 488169 string characters out of 5715801
+ 830512 words of memory out of 5000000
  46075 multiletter control sequences out of 15000+600000
  641464 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,17n,117p,2797b,1282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Document.pdf (111 pages, 26021086 bytes).
+Output written on Document.pdf (110 pages, 26018347 bytes).
 PDF statistics:
- 2571 PDF objects out of 2984 (max. 8388607)
- 2041 compressed objects within 21 object streams
- 470 named destinations out of 1000 (max. 500000)
+ 2562 PDF objects out of 2984 (max. 8388607)
+ 2033 compressed objects within 21 object streams
+ 466 named destinations out of 1000 (max. 500000)
  1098 words of extra memory for PDF output out of 10000 (max. 10000000)
 
