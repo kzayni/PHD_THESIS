@@ -20,14 +20,14 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 12245 items from 5000.
+Reallocated field_info (elt_size=4) to 12740 items from 5000.
 Database file #1: Document.bib
 Warning--string name "june" is undefined
---line 1719 of file Document.bib
-Warning--I didn't find a database entry for "IEEEexample:BSTcontrol"
+--line 1723 of file Document.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
 Warning--missing publisher in oneraIcingWindTunnel
 Warning--empty year in oneraIcingWindTunnel
 Warning--missing publisher in iceAccretionOnSweptWings
@@ -57,50 +57,55 @@ Warning--empty year in tuckerEikonal
 Warning--missing publisher in inviscidIBM47
 Warning--empty year in inviscidIBM47
 Warning--empty journal in mittal2005immersed
-Warning--empty journal in faa2010engine
 Warning--missing publisher in parenteau
 Warning--empty year in parenteau
+Warning--missing institution in broeren2011aerodynamic
+Warning--empty journal in thompsonDeformation
+Warning--empty year in thompsonDeformation
+Warning--missing publisher in OSHER2004
+Warning--empty journal in champsArticle
+Warning--empty year in champsArticle
 
 Done.
-You've used 160 entries,
+You've used 172 entries,
             4024 wiz_defined-function locations,
-            1710 strings with 36570 characters,
-and the built_in function-call counts, 107886 in all, are:
-= -- 8854
-> -- 2506
-< -- 758
-+ -- 1346
-- -- 470
-* -- 5022
-:= -- 16436
-add.period$ -- 331
-call.type$ -- 160
-change.case$ -- 149
-chr.to.int$ -- 1578
-cite$ -- 192
-duplicate$ -- 8244
-empty$ -- 8932
-format.name$ -- 589
-if$ -- 24905
+            1780 strings with 38445 characters,
+and the built_in function-call counts, 114958 in all, are:
+= -- 9486
+> -- 2688
+< -- 817
++ -- 1439
+- -- 497
+* -- 5346
+:= -- 17534
+add.period$ -- 348
+call.type$ -- 172
+change.case$ -- 160
+chr.to.int$ -- 1689
+cite$ -- 209
+duplicate$ -- 8754
+empty$ -- 9399
+format.name$ -- 632
+if$ -- 26540
 int.to.chr$ -- 0
-int.to.str$ -- 160
-missing$ -- 1483
-newline$ -- 511
-num.names$ -- 160
-pop$ -- 3461
+int.to.str$ -- 171
+missing$ -- 1563
+newline$ -- 544
+num.names$ -- 171
+pop$ -- 3630
 preamble$ -- 1
 purify$ -- 0
-quote$ -- 2
-skip$ -- 8558
+quote$ -- 4
+skip$ -- 9163
 stack$ -- 0
-substring$ -- 4085
-swap$ -- 6450
-text.length$ -- 232
+substring$ -- 4374
+swap$ -- 6903
+text.length$ -- 254
 text.prefix$ -- 0
-top$ -- 5
-type$ -- 160
-warning$ -- 32
-while$ -- 430
-width$ -- 163
-write$ -- 1521
-(There were 34 warnings)
+top$ -- 6
+type$ -- 172
+warning$ -- 37
+while$ -- 459
+width$ -- 174
+write$ -- 1622
+(There were 38 warnings)

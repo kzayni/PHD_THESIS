@@ -13,7 +13,7 @@
 \textbf{Flow} &
 \textbf{Droplet} &
 \textbf{Thermo.} &
-\textbf{Geo.}\tnote{**} &
+\textbf{Geo.} &
 \textbf{IBM} &
 \textbf{Multishot} &
 \textbf{Ref.} \\
@@ -24,7 +24,7 @@ FENSAP-ICE &
 RANS &
 Eul. &
 Messinger &
-Lag. + Wrapping &
+Algebraic + Wrapping &
 \xmark &
 \checkmark &
 \cite{Ozcer_2019}
@@ -35,7 +35,7 @@ SIMBA &
 RANS &
 Eul. &
 Messinger &
-Lag. &
+Algebraic &
 \checkmark &
 \checkmark &
 \cite{capizzanoIcing}
@@ -46,7 +46,7 @@ GlennICE &
 RANS/Euler &
 Lag. &
 Messinger &
-Lag. &
+Algebraic &
 \xmark &
 \checkmark &
 \cite{glennIce}
@@ -57,7 +57,7 @@ IGLOO3D &
 RANS/Euler &
 Eul. &
 Messinger &
-Lag./LS &
+Algebraic/LS &
 \checkmark &
 \checkmark &
 \cite{radenac2024workflow,pabloIcing,lavoieLevelSet}
@@ -68,18 +68,18 @@ PoliMIce &
 RANS &
 Lag. &
 Mod. Myers &
-Lag. + LS &
+Algebraic + LS &
 \xmark &
 \checkmark &
 \cite{donizetti2023level}
 \\
 
-Polytechnique Montréal\tnote{***} &
+Polytechnique Montréal\tnote{**} &
 CHAMPS &
 RANS/Euler/Potential &
 Eul. &
 Messinger/SWIM &
-Lag. + Hyp.&
+Algebraic + Hyp. &
 \xmark &
 \checkmark &
 \cite{bourgault-coteMultilayerAirfoilIce2019,papillon2022stochastic}
@@ -107,8 +107,7 @@ Eul.: Eulerian; Lag.: Lagrangian; LS: Level Set; Hyp.: Hyperbolic; Mod.: Modifie
 
 \item[] \textit{Notes:}
 \item[*] The solvers listed here refer to the icing frameworks. The aerodynamic flow solution may be provided by separate CFD solvers; therefore, the Flow column indicates the types of flow formulations compatible with each icing framework rather than a specific flow solver.
-\item[**] In the geometry-evolution column, Lag. denotes Lagrangian node displacement and should not be confused with Lagrangian droplet tracking.
-\item[***] \addText{Prior to the developments presented in this thesis, multilayer ice-accretion simulations in CHAMPS were limited to 2D/2.5D configurations and exhibited robustness limitations, while three-dimensional applications were restricted to single-step accretion.}
+\item[**] Prior to the developments presented in this thesis, multilayer ice-accretion simulations in CHAMPS were limited to 2D/2.5D configurations and exhibited robustness limitations, while 3D applications were restricted to single-step accretion.
 \end{tablenotes}
 
 \end{threeparttable}

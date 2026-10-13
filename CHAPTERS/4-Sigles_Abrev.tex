@@ -9,70 +9,108 @@
 \pagestyle{pagenumber}
 
 \section*{Acronyms}
-\begin{acronym}[HLPW5]
+\begin{acronym}[CHAMPS]
+  \acro{AABB}{Axis-aligned bounding box}
   \acro{AIAA}{American Institute of Aeronautics and Astronautics}
-  \acro{AOA}{angle of attack}
-  \acro{BF}{body-fitted}
-  \acro{CFD}{computational fluid dynamics}
+  \acro{AMR}{Adaptive mesh refinement}
+  \acro{AOA}{Angle of attack}
+  \acro{BDF}{Backward differentiation formula}
+  \acro{BF}{Body-fitted}
+  \acro{CFD}{Computational fluid dynamics}
   \acro{CFR}{Code of Federal Regulations}
+  \acro{CHAMPS}{Chapel Multiphysics Software}
   \acro{CRM}{Common Research Model}
   \acro{FAA}{Federal Aviation Administration}
   \acro{FAR}{Federal Airworthiness Regulations}
-  \acro{FR}{freezing rain}
+  \acro{FR}{Freezing rain}
   \acro{GARP}{Geometric Approach to Ray--Patch Intersections}
-  \acro{HLPW5}{fifth High-Lift Prediction Workshop}
-  \acro{HPC}{high-performance computing}
-  \acro{HTC}{heat-transfer coefficient}
-  \acro{IBM}{immersed-boundary method}
-  \acro{IPS}{ice-protection system}
+  \acro{GC}{Ghost cell}
+  \acro{GMRES}{Generalized minimal residual method}
+  \acro{HLPW5}{Fifth High-Lift Prediction Workshop}
+  \acro{HPC}{High-performance computing}
+  \acro{HTC}{Heat-transfer coefficient}
+  \acro{IBM}{Immersed-boundary method}
+  \acro{IM}{Image point}
+  \acro{IPS}{Ice-protection system}
   \acro{IPW}{Ice Prediction Workshop}
   \acro{IRT}{Icing Research Tunnel}
-  \acro{LES}{large-eddy simulation}
-  \acro{LWC}{liquid water content}
-  \acro{MOF}{moment of fluid}
+  \acro{LES}{Large-eddy simulation}
+  \acro{LWC}{Liquid water content}
+  \acro{MCCS}{Maximum combined cross section}
+  \acro{MOF}{Moment of fluid}
   \acro{MPI}{Message Passing Interface}
-  \acro{MVD}{median volume diameter}
-  \acro{PDE}{partial differential equation}
+  \acro{MVD}{Median volume diameter}
+  \acro{NUMA}{Non-uniform memory access}
+  \acro{ODE}{Ordinary differential equation}
+  \acro{PDE}{Partial differential equation}
   \acro{RANS}{Reynolds-averaged Navier--Stokes}
+  \acro{ROW}{Rosenbrock--Wanner}
   \acro{SA}{Spalart--Allmaras}
-  \acro{SLD}{supercooled large droplet}
-  \acro{SSD}{standard supercooled droplet}
+  \acro{SLD}{Supercooled large droplet}
+  \acro{SSD}{Standard supercooled droplet}
   \acro{SWIM}{Shallow-Water Icing Model}
-  \acro{VOF}{volume of fluid}
+  \acro{VOF}{Volume of fluid}
 \end{acronym}
 
 \section*{Symbols}
 \begin{longtable}{lp{5in}}
-$A$                         & Area [$\mathrm{m^2}$]\\
-$C_D$                       & Droplet drag coefficient [-]\\
-$C_{ref}$                   & Reference chord length [$\mathrm{m}$]\\
-$d$                         & Droplet diameter [$\mathrm{m}$]\\
-$f_m$                       & Mass-loss coefficient [-]\\
-$h$                         & Water-film thickness [$\mathrm{m}$]\\
-$HTC$                       & Convective heat-transfer coefficient [$\mathrm{W\,m^{-2}\,K^{-1}}$]\\
-$k$                         & Thermal conductivity [$\mathrm{W\,m^{-1}\,K^{-1}}$]\\
-$M$                         & Mach number [-]\\
-$\dot{m}$                   & Mass flow rate [$\mathrm{kg\,s^{-1}}$]\\
-$\boldsymbol{n}$            & Outward unit-normal vector [-]\\
-$p$                         & Pressure [$\mathrm{Pa}$]\\
-$Pr$                        & Prandtl number [-]\\
-$\dot{Q}$                   & Heat flux [$\mathrm{W\,m^{-2}}$]\\
-$r$                         & Recovery factor [-]\\
-$Re$                        & Reynolds number [-]\\
-$t$                         & Time [$\mathrm{s}$]\\
-$T$                         & Temperature [$\mathrm{K}$]\\
-$\boldsymbol{u}$            & Velocity vector [$\mathrm{m\,s^{-1}}$]\\
-$\boldsymbol{V}$            & Interface-growth velocity [$\mathrm{m\,s^{-1}}$]\\
-$We$                        & Weber number [-]\\
-$\alpha$                    & Nondimensional water concentration [-]\\
-$\beta$                     & Collection efficiency [-]\\
-$\gamma$                    & Droplet-bin weight [-]\\
-$\epsilon$                  & Sticking rate [-]\\
-$\eta$                      & Immersed-boundary penalization parameter [-]\\
-$\kappa$                    & Interface curvature [$\mathrm{m^{-1}}$]\\
-$\mu$                       & Dynamic viscosity [$\mathrm{Pa\,s}$]\\
-$\rho$                      & Density [$\mathrm{kg\,m^{-3}}$]\\
-$\sigma$                    & Surface tension [$\mathrm{N\,m^{-1}}$]\\
-$\phi$                      & Level-set function [$\mathrm{m}$]\\
-$\chi$                      & Solid-mask function [-]\\
+$A$                          & Area [$\mathrm{m^2}$]\\
+$C_D$                        & Droplet drag coefficient [-]\\
+$C_{ref}$                    & Reference chord length [$\mathrm{m}$]\\
+$D$                          & Droplet diameter [$\mathrm{m}$]\\
+$F$                          & Droplet drag-response coefficient [$\mathrm{s^{-1}}$]\\
+$f_m$                        & Mass-loss coefficient [-]\\
+$Fr$                         & Froude number [-]\\
+$\boldsymbol{g}$             & Gravitational acceleration [$\mathrm{m\,s^{-2}}$]\\
+$h$                          & Water-film thickness [$\mathrm{m}$]\\
+$h_{\mathrm{ice}}$           & Local ice thickness [$\mathrm{m}$]\\
+$H_{\mathrm{mod}}$           & Wall-modeling height [$\mathrm{m}$]\\
+$HTC$                        & Convective heat-transfer coefficient [$\mathrm{W\,m^{-2}\,K^{-1}}$]\\
+$k$                          & Thermal conductivity [$\mathrm{W\,m^{-1}\,K^{-1}}$]\\
+$K$                          & Droplet inertia parameter [-]\\
+$M$                          & Mach number [-]\\
+$\dot{m}$                    & Mass flow rate [$\mathrm{kg\,s^{-1}}$]\\
+$\dot{m}_{\mathrm{ice}}$     & Local ice mass-accretion rate [$\mathrm{kg\,m^{-2}\,s^{-1}}$]\\
+$\boldsymbol{n}$             & Outward unit-normal vector [-]\\
+$\boldsymbol{n}_{\phi}$      & Level-set interface unit-normal vector [-]\\
+$p$                          & Pressure [$\mathrm{Pa}$]\\
+$Pr$                         & Prandtl number [-]\\
+$\dot{Q}$                    & Heat flux [$\mathrm{W\,m^{-2}}$]\\
+$r$                          & Recovery factor [-]\\
+$R$                          & Specific gas constant [$\mathrm{J\,kg^{-1}\,K^{-1}}$]\\
+$Re$                         & Reynolds number [-]\\
+$Re_d$                       & Droplet Reynolds number [-]\\
+$t$                          & Time [$\mathrm{s}$]\\
+$T$                          & Temperature [$\mathrm{K}$]\\
+$T_0$                        & Stagnation temperature [$\mathrm{K}$]\\
+$T_\infty$                   & Freestream temperature [$\mathrm{K}$]\\
+$\boldsymbol{u}$             & Velocity vector [$\mathrm{m\,s^{-1}}$]\\
+$\boldsymbol{u}_a$           & Air velocity vector [$\mathrm{m\,s^{-1}}$]\\
+$\boldsymbol{u}_d$           & Droplet velocity vector [$\mathrm{m\,s^{-1}}$]\\
+$U_\infty$                   & Freestream velocity [$\mathrm{m\,s^{-1}}$]\\
+$\boldsymbol{V}$             & Interface-growth velocity [$\mathrm{m\,s^{-1}}$]\\
+$We$                         & Weber number [-]\\
+$\boldsymbol{x}_d$           & Droplet position vector [$\mathrm{m}$]\\
+$\boldsymbol{x}_{IB}$        & Position of the immersed-boundary point [$\mathrm{m}$]\\
+$\boldsymbol{x}_{V}$         & Position of the neighboring volume point [$\mathrm{m}$]\\
+$y^+$                        & Nondimensional wall distance [-]\\
+$\alpha$                     & Nondimensional water concentration [-]\\
+$\beta$                      & Collection efficiency [-]\\
+$\gamma$                     & Droplet-bin weight [-]\\
+$\Delta t$                   & Time step [$\mathrm{s}$]\\
+$\Delta t_{\mathrm{layer}}$  & Accretion time associated with one ice layer [$\mathrm{s}$]\\
+$\epsilon$                   & Sticking rate [-]\\
+$\eta$                       & Immersed-boundary penalization parameter [-]\\
+$\kappa$                     & Interface curvature [$\mathrm{m^{-1}}$]\\
+$\mu$                        & Dynamic viscosity [$\mathrm{Pa\,s}$]\\
+$\mu_a$                      & Air dynamic viscosity [$\mathrm{Pa\,s}$]\\
+$\rho$                       & Density [$\mathrm{kg\,m^{-3}}$]\\
+$\rho_a$                     & Air density [$\mathrm{kg\,m^{-3}}$]\\
+$\rho_d$                     & Droplet density [$\mathrm{kg\,m^{-3}}$]\\
+$\rho_w$                     & Water density [$\mathrm{kg\,m^{-3}}$]\\
+$\sigma$                     & Surface tension [$\mathrm{N\,m^{-1}}$]\\
+$\phi$                       & Level-set signed-distance function [$\mathrm{m}$]\\
+$\boldsymbol{\varphi}_{IB}$  & Flow variable at the immersed-boundary point\\
+$\boldsymbol{\varphi}_{V}$   & Flow variable at the neighboring volume point\\
+$\chi$                       & Solid-mask function [-]\\
 \end{longtable}

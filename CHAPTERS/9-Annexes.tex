@@ -198,15 +198,20 @@ corresponding flow conditions are summarized in Table~\ref{tab:naca0012_VERIF},
 and the maximum differences are reported in
 Table~\ref{tab:naca0012_VERIF_error}.
 
-\begin{table}[h!]
+\begin{table}[ht]
 \centering
-\caption{Simulation Parameters}
-\begin{tabular}{cccccc}
-\hline \hline
-Description & MVD[$\mu m$] & AOA[\textdegree]& Ma[-]& C$_{ref}$[inch] & Re[-]\\
+\caption{Summary of the NACA 0012 droplet-impingement verification case.}
+\begin{tabular}{cc}
 \hline
-NACA0012 & 30.0 & 5.0 & 0.4 & 1.0 & 8.85 $\cdot 10^6$ \\
-\hline \hline
+Parameter & NACA 0012 \\
+\hline
+Geometry & 2D NACA 0012 \\
+MVD [$\mu m$] & 30.0 \\
+AOA [\textdegree] & 5.0 \\
+Ma [-] & 0.4 \\
+$C_{ref}$ [$inch$] & 1.0 \\
+Re [-] & $8.85 \cdot 10^6$ \\
+\hline
 \end{tabular}
 \label{tab:naca0012_VERIF}
 \end{table}
@@ -241,21 +246,22 @@ NACA0012 & 30.0 & 5.0 & 0.4 & 1.0 & 8.85 $\cdot 10^6$ \\
 \centering
 \caption{Difference Between Eulerian vs. Lagrangian results in terms of Collection Efficiency.}
 \begin{tabular}{cc}
-\hline \hline
+\hline
 Mesh & Max Difference $\beta$ [-]\\
 \hline
-129x129 & $0.069$ \\ \hline
-257x257 & $0.059$ \\ \hline
-513x513 & $0.037$ \\ \hline
-1025x1025 & $0.035$ \\ \hline
+129x129 & $0.069$ \\
+257x257 & $0.059$ \\
+513x513 & $0.037$ \\
+1025x1025 & $0.035$ \\
 \hline
 \end{tabular}
 \label{tab:naca0012_VERIF_error}
 \end{table}
 
+\clearpage
 \section{SLD Model Details}
 \label{app:SLD_MODELS_DETAILS}
-Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD models described in Section~\ref{Sec:SLDEffects}.
+Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD models described in Section~\ref{sec:review_sld}.
 
 \begin{table}[h!]
 \centering
@@ -284,3 +290,98 @@ Table~\ref{tab:splashing_Models_dets} provides the parameters used for the SLD m
 \hline \hline
 \end{tabular}
 \end{table}
+
+\Annexe{NUMERICAL VERIFICATION}
+\label{app:verification_validation}
+
+This appendix provides supplementary verification results for the numerical methodologies developed in this thesis.
+
+\section{Lagrangian Droplet Integration}
+\label{app:lagrangian_integration}
+
+The temporal accuracy of the Lagrangian droplet integration is assessed using a manufactured trajectory with an analytical solution. A droplet is transported in a prescribed uniform carrier velocity $\boldsymbol{U}$ and subjected to a constant body acceleration $\boldsymbol{g}$ according to
+\begin{equation}
+    \frac{d\boldsymbol{u}_d}{dt}
+    =
+    2\left(\boldsymbol{U}-\boldsymbol{u}_d\right)+\boldsymbol{g}
+    \qquad
+    \frac{d\boldsymbol{x}_d}{dt}
+    =
+    \boldsymbol{u}_d
+\end{equation}
+The prescribed conditions are $\boldsymbol{U}=(1,0.4,0.2)$, $\boldsymbol{g}=(0,-0.3,0.1)$, $\boldsymbol{u}_d(0)=(0.2,-0.1,0.05)$, and $\boldsymbol{x}_d(0)=\boldsymbol{0}$. These conditions produce a time-dependent droplet velocity while retaining an analytical solution for the trajectory. Temporal convergence is evaluated using the Euclidean error in the droplet position at the final time:
+\begin{equation}
+    e_x =
+    \left\|
+    \boldsymbol{x}_{\mathrm{num}}(t_f)
+    -
+    \boldsymbol{x}_{\mathrm{exact}}(t_f)
+    \right\|
+\end{equation}
+Figure~\ref{fig:app_lagrangian_temporal_order} shows the decrease in the final-position error with time-step refinement. The error follows the second-order reference slope, confirming second-order temporal convergence of the Lagrangian trajectory integration for this verification problem.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{FIGURES/APPENDIX/LAGRANGIAN_TEMPORAL_ORDER.pdf}
+    \caption{Temporal convergence of the Lagrangian droplet trajectory integration using BDF2 with a BDF1 startup step.}
+    \label{fig:app_lagrangian_temporal_order}
+\end{figure}
+
+\section{Level-Set Transport}
+\label{app:levelset_verification}
+
+The spatial and temporal accuracy of the level-set transport solver is assessed using the uniform translation of a circular level-set field over the unit-square domain $\Omega=[0,1]\times[0,1]$. The field has a radius $R=0.2$ and is initially centered at $(0.35,0.45)$. A constant velocity $\boldsymbol{V}=(0.2,0.1,0)$ is prescribed from $t=0$ to $t=0.5$, resulting in a displacement of $(0.1,0.05)$ and a final center position of $(0.45,0.50)$. Since the field undergoes pure translation without deformation, the analytical solution at the final time is obtained directly by translating the initial field.
+
+% For the spatial convergence study, the error is quantified using the discrete $L_2$ norm,
+% \begin{equation}
+%     L_2 =
+%     \left[
+%     \frac{1}{N_c}
+%     \sum_{i=1}^{N_c}
+%     \left(
+%     \phi_i-\phi_i^{\mathrm{exact}}
+%     \right)^2
+%     \right]^{1/2},
+% \end{equation}
+% where $N_c$ is the number of computational cells, $\phi_i$ is the numerical level-set value at cell $i$, and $\phi_i^{\mathrm{exact}}$ is the corresponding analytical value.
+
+\subsection{Spatial Convergence}
+
+Spatial convergence is evaluated using four successively refined meshes with characteristic spacings $h=\Delta x=\Delta y=0.03125$, $0.015625$, $0.0078125$, and $0.00390625$, corresponding to $N=32$, $64$, $128$, and $256$ divisions along each coordinate direction. The time step is reduced consistently with mesh refinement such that the temporal error remains negligible relative to the spatial discretization error. Figure~\ref{fig:app_ls_verification}(a) shows the decrease in the $L_2$ error with mesh refinement. The observed convergence approaches second order, consistent with the spatial reconstruction used by the level-set solver.
+
+\subsection{Temporal Convergence}
+
+Temporal convergence is evaluated at a fixed spatial resolution of $N=256$. Starting from $\Delta t=0.03125$, the time step is successively halved, corresponding to $16$, $32$, $64$, $128$, $256$, and $512$ time steps over the prescribed final time. The spatial discretization is kept fixed throughout the refinement study. The second-order Rosenbrock--Wanner scheme is used to advance the level-set transport equation. To isolate the temporal discretization error from the fixed spatial error, the numerical solutions are compared with a reference solution computed on the same spatial mesh using $2048$ time steps. Figure~\ref{fig:app_ls_verification}(b) shows the resulting $L_2$ error with time-step refinement. The measured convergence remains approximately second order, consistent with the formal temporal accuracy of the Rosenbrock--Wanner scheme.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FIGURES/APPENDIX/LEVEL_SET_SPATIAL_ORDER.pdf}
+        \caption{Spatial convergence.}
+        \label{fig:app_ls_spatial_order}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FIGURES/APPENDIX/LEVEL_SET_TEMPORAL_ORDER.pdf}
+        \caption{Temporal convergence.}
+        \label{fig:app_ls_temporal_order}
+    \end{subfigure}
+    \caption{Spatial and temporal convergence of the level-set transport solver for the uniform translation of a circular level-set field: (a) spatial convergence with mesh refinement and (b) temporal convergence of the second-order Rosenbrock--Wanner scheme with time-step refinement.}
+    \label{fig:app_ls_verification}
+\end{figure}
+
+\section{Eulerian Immersed-Boundary Droplet Formulation}
+\label{app:eulerian_ibm_convergence}
+
+The spatial convergence of the Eulerian immersed-boundary droplet formulation is assessed using the analytical cylinder impingement problem introduced in Section~\ref{ibm:sec:cylinder}. The Cartesian background mesh is successively refined from $h=0.04$ to $h=0.0025$, where $h=\Delta x$ denotes the uniform Cartesian cell size, while all other numerical parameters are maintained constant. The convergence is evaluated using the error in the integrated collection efficiency $\beta_{\mathrm{tot}}$ relative to the analytical solution.
+
+Figure~\ref{fig:app_eulerian_ibm_convergence} shows the decrease in the integrated collection-efficiency error with mesh refinement. The coarser meshes remain outside the asymptotic convergence regime, while the finer meshes exhibit approximately second-order convergence. A similar behavior was reported by Lavoie et al.~\cite{lavoieDroplets} for immersed-boundary Eulerian droplet calculations. Although volume penalization generally limits the spatial accuracy near the immersed boundary, the penalization of the droplet equations is applied within the shadow region, where the collection efficiency is zero, rather than within the impingement region where $\beta$ is evaluated. Consequently, the penalization does not necessarily limit the convergence rate of the predicted collection efficiency.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{FIGURES/APPENDIX/EULERIAN_IBM_INTEGRAL_ORDER.pdf}
+    \caption{Spatial convergence of the integrated collection efficiency for the Eulerian immersed-boundary cylinder impingement problem.}
+    \label{fig:app_eulerian_ibm_convergence}
+\end{figure}
