@@ -9,7 +9,7 @@ Aircraft icing is the accumulation of ice on aircraft surfaces caused by the imp
 
 In addition to this separation of time scales, the low concentration of liquid water in icing clouds permits a further simplification in the treatment of the dispersed phase. Certification icing envelopes involve standard supercooled droplets (SSD) with characteristic diameters ranging from approximately $10$ to $50~\mu\mathrm{m}$, while SLD conditions can extend to diameters approaching $1000~\mu\mathrm{m}$. For a typical liquid water content (LWC) of $1~\mathrm{g/m^3}$, the corresponding liquid volume fraction is of the order of $10^{-6}$ \cite{hessClouds, rosenfeldClouds}. This small volume fraction justifies the common assumption of one-way coupling between the air and droplet phases.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\textwidth]{FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS.eps}
 \caption{Schematic of the multilayer ice accretion framework     with representative solutions at each stage.}\label{fig:icingFramework}
@@ -184,7 +184,7 @@ In a Lagrangian formulation, droplets are tracked individually by integrating th
 F\left(\boldsymbol{u}_a-\boldsymbol{u}_d\right)
 +
 \left(1-\frac{\rho_a}{\rho_d}\right)\boldsymbol{g}
-\label{eq:eqOfMotion}
+\label{eq:review_eqOfMotion}
 \end{equation}
 
 and
@@ -203,7 +203,7 @@ F =
 \frac{3 C_D \rho_a
 \left|\boldsymbol{u}_a-\boldsymbol{u}_d\right|}
 {4 \rho_d D}
-\label{eq:forceCoef}
+\label{eq:review_forceCoef}
 \end{equation}
 
 The airflow velocity $\boldsymbol{u}_a$ is evaluated at the instantaneous droplet position. 
@@ -440,7 +440,7 @@ As illustrated in Figure~\ref{fig:IceAirInterfaceLitRev}, the level-set function
     \boldsymbol{V}\cdot\nabla\phi
     =
     0
-    \label{eq:levelSet}
+    \label{eq:review_levelSet}
 \end{equation}
 
 where $\boldsymbol{V}$ is an extension of the interface-growth velocity to the computational region surrounding the interface.  When $\phi$ is maintained as a signed-distance function, the interface-normal vector $\boldsymbol{n}$ and curvature $\kappa$ can be evaluated as
@@ -591,7 +591,7 @@ Finally, the penalization parameter must be selected carefully: Decreasing $\eta
 
 \subsection{Discrete-Forcing Methods}
 
-Discrete-forcing methods impose the immersed-boundary conditions directly within the discretized governing equations. Their development is commonly traced to the work of Mohd-Yusof~\cite{mohd1997combined}, who modified the discrete momentum equations near the immersed interface to enforce a prescribed velocity. This idea was subsequently formalized and extended by Fadlun et al.~\cite{fadlun2000combined}. For illustration, the incompressible momentum equation may be written as
+Discrete-forcing methods impose the immersed-boundary conditions directly within the discretized governing equations. Their development is commonly traced to the work of Mohd-Yusof~\cite{mohd1997combined}, who modified the discrete momentum equations near the immersed interface to enforce a prescribed velocity. This approach was subsequently extended to other numerical frameworks, including finite-difference and finite-volume methods~\cite{fadlun2000combined,KIM2001132}. For illustration, the incompressible momentum equation may be written as
 
 \begin{equation}
     \frac{\partial \boldsymbol{u}}{\partial t}
@@ -602,43 +602,64 @@ Discrete-forcing methods impose the immersed-boundary conditions directly within
     \label{eq:discreteForcingMomentum}
 \end{equation}
 
-where $\boldsymbol{R}$ contains the convective, pressure, and viscous contributions
+where $\boldsymbol{R}$ contains the convective, pressure, and viscous contributions. and $\boldsymbol{f}$ denotes the discrete forcing. Using a forward-Euler time discretization gives
 
-\begin{equation}
-    \boldsymbol{R}
-    =
-    -\boldsymbol{u}\cdot\nabla\boldsymbol{u}
-    -\nabla p
-    +\frac{1}{Re}\nabla^2\boldsymbol{u}
-\end{equation}
+% \begin{equation}
+%     \boldsymbol{R}
+%     =
+%     -\boldsymbol{u}\cdot\nabla\boldsymbol{u}
+%     -\nabla p
+%     +\frac{1}{Re}\nabla^2\boldsymbol{u}
+% \end{equation}
 
-and $\boldsymbol{f}$ denotes the discrete forcing. Using a forward-Euler time discretization gives
+
 
 \begin{equation}
     \frac{\boldsymbol{u}^{n+1}-\boldsymbol{u}^{n}}{\Delta t}
     =
-    \boldsymbol{R}^{n}
+    \boldsymbol{R}
     +
-    \boldsymbol{f}^{n}
+    \boldsymbol{f}
 \end{equation}
 
-Imposing a target velocity $\boldsymbol{u}_{\mathrm{target}}$ at the forcing point leads to
+Imposing a target velocity $\boldsymbol{u}_{\mathrm{target}}$ at the immerse-boundary $\Gamma$  leads to
+
+% \begin{equation}
+%     \boldsymbol{f}^{n}
+%     =
+%     -\boldsymbol{R}^{n}
+%     +
+%     \frac{\boldsymbol{u}_{\mathrm{target}}
+%     -\boldsymbol{u}^{n}}{\Delta t}
+%     \label{eq:discreteForcing}
+% \end{equation}
 
 \begin{equation}
-    \boldsymbol{f}^{n}
+    \boldsymbol{f}
     =
-    -\boldsymbol{R}^{n}
-    +
-    \frac{\boldsymbol{u}_{\mathrm{target}}
-    -\boldsymbol{u}^{n}}{\Delta t}
+    \left\{
+    \begin{array}{c l}
+        -\boldsymbol{R}^{n}
+        + \dfrac{1}{\Delta t}
+        \left(
+        \boldsymbol{u}_{\mathrm{target}}
+        - \boldsymbol{u}^{n}
+        \right)
+        & \quad \text{on } \Gamma \\[6pt]
+        0
+        & \quad \text{elsewhere}
+    \end{array}
+    \right.
     \label{eq:discreteForcing}
 \end{equation}
 
-Although this formulation is expressed through a forcing term, it does not generally need to be evaluated as an independent physical quantity. Instead, the velocity update is directly constructed so that the desired target value is obtained.
+Although the formulation is expressed through a forcing term, this term does not need to be explicitly computed. Instead, the velocity at the cell is directly updated to enforce the desired target value. Majumdar et al.~\cite{majumdar2001rans} interpreted this approach as a generalization of the ghost-cell method traditionally used in body-fitted simulations to complete the numerical stencil near solid boundaries. The term Ghost-Cell Immersed Boundary Method (GCIBM) was later introduced by Tseng and Ferziger~\cite{tseng2003ghost}.
 
-The accuracy of the method depends primarily on the definition of $\boldsymbol{u}_{\mathrm{target}}$. The boundary value may be imposed directly from the nearest computational point, resulting in a staircase representation of the interface. Alternatively, the target value may be weighted using the local solid volume fraction to obtain a smoother transition. More accurate approaches reconstruct the target value from neighboring fluid data through interpolation~\cite{majumdar2001rans}. Unlike continuous-forcing methods, discrete forcing does not introduce a large source term into the continuous equations and therefore avoids the associated stiffness. However, its implementation depends on the spatial and temporal discretizations and generally requires geometrical preprocessing near the interface.
+Figure~\ref{fig:ghostCellSimplified} illustrates the general principle of the ghost-cell approach near an immersed boundary. The fluid cells adjacent to the immersed interface require values from cells located inside the solid to complete their computational stencil, similarly to the use of halo cells at body-fitted boundaries. These cells are therefore identified as ghost cells, and appropriate values must be assigned to them to account for the presence of the immersed boundary. The manner in which these values are determined directly influences the accuracy and stability of the resulting solution.
 
-A widely used form of discrete forcing is the ghost-cell immersed-boundary method, developed by Tseng and Ferziger~\cite{tseng2003ghost}. It generalizes the ghost-cell treatment of body-fitted boundaries to interfaces that do not coincide with the computational mesh. Cells located inside the solid but required to complete the stencil of neighboring fluid cells are identified as ghost cells. For each ghost cell, a wall point is determined on the immersed interface and an image point is constructed in the fluid, commonly along the wall-normal direction (Fig.~\ref{fig:ghostCellSimplified}).
+The simplest approach consists of directly assigning the prescribed boundary value as the target value in the ghost cells. However, this produces a staircase representation of the immersed interface, limits the local accuracy to first order, and can induce spurious oscillations near the boundary. A smoother treatment can be obtained by weighting the forcing according to the fraction of each computational cell occupied by the solid. A more widely adopted approach instead determines the ghost-cell values through interpolation from neighboring fluid cells while accounting for the boundary condition at the immersed interface~\cite{fadlun2000combined,tseng2003ghost}.
+
+One common interpolation procedure relies on the construction of an image point in the fluid domain. For each ghost cell, a wall point is first determined on the immersed interface and an image point is constructed in the fluid, commonly along the wall-normal direction, as illustrated in Fig.~\ref{fig:ghostCellSimplified}. Since the image point generally does not coincide with a computational point, its value is reconstructed from neighboring fluid cells. The ghost-cell value can then be determined using the reconstructed image-point value together with the prescribed boundary condition at the wall.
 
 % More recently, Elices Paz et al.~\cite{pabloIcing} proposed an adaptive ghost-cell placement in which ghost cells may also be positioned in the fluid near highly curved or thin regions, improving robustness and accuracy while alleviating the multi-value problem.
 
@@ -649,11 +670,11 @@ A widely used form of discrete forcing is the ghost-cell immersed-boundary metho
 \label{fig:ghostCellSimplified}
 \end{figure}
 
-Depending on the interpolation procedure, ghost-cell methods can retain the order of accuracy of the underlying numerical scheme and provide a sharp representation of the immersed interface~\cite{mittal2008versatile,tseng2003ghost}. The governing equations and flux calculations in the fluid domain remain largely unchanged, with the principal additions consisting of the geometrical preprocessing and the interpolation used to update the image and ghost values. These operations must be performed efficiently to limit the computational overhead.
+Depending on the interpolation procedure, ghost-cell methods can preserve the order of accuracy of the underlying numerical scheme and provide a sharp representation of the immersed interface~\cite{mittal2008versatile,tseng2003ghost}. The governing equations and flux calculations in the fluid domain remain largely unchanged, with the principal additions consisting of the geometrical preprocessing and the interpolation used to update the image and ghost values. These operations must be performed efficiently to limit the computational overhead.
 
 The main difficulties arise from the construction of suitable ghost, wall, and image points in regions containing high curvature, sharp features, or closely spaced boundaries. The image point may fall inside the solid or may not have a sufficient number of neighboring fluid cells for the required interpolation stencil. The number and placement of ghost-cell layers also depend on the numerical scheme and the width of its computational stencil. These issues become particularly important for complex iced geometries.
 
-In addition to ghost-cell methods, other discrete-forcing formulations have been developed. Capizzano et al.\cite{capizzano2007compressible,capizzano2011turbulent} proposed a face-forcing approach in which the boundary condition is imposed through the fluxes of the cell faces intersected by the immersed interface rather than through reconstructed cell values. The procedure remains similar to the ghost-cell approach: a wall-normal direction is constructed through the intersected face, an image point is defined in the fluid, and the state at this point is interpolated from neighboring cells. The reconstructed state is then used to determine the flux at the immersed-boundary face. This approach has been applied to Euler flows and RANS simulations\cite{capizzano2007compressible,capizzano2011turbulent}.
+In addition to ghost-cell methods, other discrete-forcing formulations have been developed. Capizzano et al.~\cite{capizzano2007compressible,capizzano2011turbulent} proposed a face-forcing approach in which the boundary condition is imposed through the fluxes of the cell faces intersected by the immersed interface rather than through reconstructed cell values. The procedure remains similar to the ghost-cell approach: a wall-normal direction is constructed through the intersected face, an image point is defined in the fluid, and the state at this point is interpolated from neighboring cells. The reconstructed state is then used to determine the flux at the immersed-boundary face. This approach has been applied to Euler flows and RANS simulations~\cite{capizzano2007compressible,capizzano2011turbulent}.
 
 Face forcing avoids some of the difficulties associated with placing several rows of ghost cells near complex interfaces. However, it requires a dedicated treatment of the numerical fluxes on immersed-boundary faces and therefore introduces more extensive modifications to the flow solver than conventional ghost-cell methods.
 

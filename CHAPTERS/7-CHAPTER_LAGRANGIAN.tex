@@ -77,7 +77,7 @@ A central difficulty in Lagrangian particle tracking on unstructured meshes is t
         \includegraphics[width=0.32\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/Trackingface2face.eps}
         \label{fig:face2face}%
         }%
-    \caption{ Droplet tracking techniques.}
+    \caption{Comparison of droplet tracking techniques used to identify the computational cells traversed by a droplet trajectory: (a) auxiliary-grid tracking, (b) face-to-face tracking with droplet positions located inside the computational cells, and (c) face-to-face tracking with droplet positions located on the intersected cell faces.}
     \label{fig:lagrangianTracking}
 \end{figure}
 
@@ -144,7 +144,7 @@ Hexahedral elements are commonly used in CFD meshes because they can provide hig
 \begin{figure}[htb]
     \centering
     \includegraphics[trim = {10.5cm 0cm 4.5cm 0cm}, clip, width=0.85\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_2p1_MESH_CUT.png}
-    \caption{Cut through the computational mesh of the CRM wing--body configuration from HLPW5, illustrating the hexahedral refinement around the aircraft geometry.}
+    \caption{Cut through the computational mesh of the CRM wing--body configuration from the Fifth AIAA High-Lift Prediction Workshop (HLPW5), illustrating the hexahedral refinement around the aircraft geometry.}
     \label{fig:HLPW5_mesh_cut}
 \end{figure}
 
@@ -170,22 +170,23 @@ An alternative is to represent the quadrilateral directly as a bilinear patch, p
 Several algorithms have been proposed for computing ray--bilinear patch intersections. Equating Eqs.~\ref{eq:ray_param} and \ref{eq:bilinear_patch} yields a system of three equations that can be solved analytically \cite{Ramsey_2004}. This algebraic formulation has been used in Lagrangian particle-tracking applications \cite{Haselbacher_2007, Kopper_2023}. The more recent GARP (Geometric Approach to Ray/bilinear Patch intersections) method of \cite{Reshetov_2019} instead uses the geometric properties of the bilinear patch to determine the intersection.
 
 \begin{figure}[htb] 
-\centering
-    \subfloat[Step 0: Definition of the ray and bilinear patch geometry.]{%
+    \centering
+    \subfloat[Step 0: Definition of the ray and bilinear patch.]{%
         \includegraphics[width=0.3\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_0.eps}%
         \label{fig:GARP_STEP0}%
-        }%
+    }%
     \hspace{0.1cm}
-    \subfloat[Step 1: Determination of the intersection $u$-parameter along the bilinear patch.]{%
+    \subfloat[Step 1: Determination of the intersection parameter $u$.]{%
         \includegraphics[width=0.3\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_1.eps}%
         \label{fig:GARP_STEP1}%
-        }%
+    }%
     \hspace{0.1cm}
-    \subfloat[Step 2: Determination of the intersection $v$-parameter along the bilinear patch.]{%
+    \subfloat[Step 2: Determination of the intersection parameter $v$.]{%
         \includegraphics[width=0.3\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/GARP_STEP_2.eps}%
         \label{fig:GARP_STEP2}%
-        }%
-    \caption{Steps for ray--bilinear patch intersection.}
+    }%
+    \caption{Geometrical construction used for the ray--bilinear patch intersection, showing the definition of the ray and patch geometry followed by the successive determination of the intersection parameters $u$ and $v$.}
+    \label{fig:GARP_steps}
 \end{figure}
 
 The GARP method interprets the bilinear patch as a ruled surface obtained by linear interpolation between two opposite edges. The intersection procedure is carried out in two parametric stages, as illustrated in Fig.~\ref{fig:GARP_STEP1}--\ref{fig:GARP_STEP2}. For a given value of $u$, the corresponding ruling segment is defined by the two interpolated points
@@ -200,7 +201,7 @@ The first stage determines the values of $u$ for which this segment is coplanar 
 
 For each retained value of $u$, the ruling segment $\boldsymbol{P}_a\boldsymbol{P}_b$ is therefore fixed. The second stage determines $v$ and $t$ by finding the closest points between the line supporting this segment and the line supporting the ray. A valid intersection requires $v \in [0,1]$ and $t \ge 0$. In the presence of multiple valid solutions, the intersection corresponding to the smallest admissible value of $t$ is selected.
 
-Whereas Ramsey et al.~\cite{Ramsey_2004} determine the intersection by algebraically manipulating the ray and bilinear-patch equations (Eqs.~\eqref{eq:ray} and~\eqref{eq:bilinearPatch}), resulting in relatively complex intermediate expressions. GARP instead exploits the geometric nature of the problem to obtain a coplanarity condition for one patch parameter. Both approaches lead to a polynomial equation of degree at most two, but differ in how the intersection parameters are determined. The geometric formulation of GARP reduces the number of arithmetic operations required to determine the intersection~\cite{Reshetov_2019}.
+Whereas Ramsey et al.~\cite{Ramsey_2004} determine the intersection by algebraically manipulating the ray and bilinear-patch equations (Eqs.~\eqref{eq:ray_param} and~\eqref{eq:bilinear_patch}), resulting in relatively complex intermediate expressions. GARP instead exploits the geometric nature of the problem to obtain a coplanarity condition for one patch parameter. Both approaches lead to a polynomial equation of degree at most two, but differ in how the intersection parameters are determined. The geometric formulation of GARP reduces the number of arithmetic operations required to determine the intersection~\cite{Reshetov_2019}.
 
 To evaluate computational performance, one million random rays and quadrilateral patches were generated for intersection testing using the GARP and Ramsey et al.~\cite{Ramsey_2004} formulations, together with the traditional two-triangle approach. Both ray--patch methods reduce the computational cost relative to the two-triangle approach, with GARP providing an additional improvement over the formulation of Ramsey et al. \cite{Ramsey_2004}. The implications of the intersection algorithm on the overall solver scalability are discussed in Section~\ref{sec:Results}.
 
@@ -211,14 +212,14 @@ To evaluate computational performance, one million random rays and quadrilateral
 \label{tab:quad_intersections}
 
 \begin{tabular}{ccc}
-\hline
+\hline \hline
 \textbf{Method} &
 \textbf{ETR\tnote{*} vs. Two-Triangles \cite{M_ller_1997}} &
 \textbf{ETR\tnote{*} vs. Ramsey et al.\cite{Ramsey_2004}} \\
 \hline
 Ramsey et al.~\cite{Ramsey_2004} & $51.3\%$ & - \\
 GARP~\cite{Reshetov_2019} & $58.2\%$ & $14.2\%$ \\
-\hline
+\hline \hline
 \end{tabular}
 
 \begin{tablenotes}[flushleft]
@@ -269,19 +270,19 @@ To avoid this requirement, the droplets originating from the adaptive seeding gr
 
 \begin{figure}[htbp]
 \centering
-\subfloat[Droplet streamtube.]{%
+\subfloat[Conventional droplet streamtube.]{%
 \includegraphics[width=.31\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/FlowTube.png}
 \label{fig:flowTube}
 }%
-\subfloat[Pathological case for the collection efficiency.]{%
+\subfloat[Pathological streamtube configuration.]{%
 \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.31\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/ExtremeCase.png}
 \label{fig:extremeCase}
 }%
-\subfloat[Local droplet streamtube.]{%
+\subfloat[Local streamtube with auxiliary droplets.]{%
 \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=.31\textwidth]{FIGURES/LAGRANGIAN_ARTICLE/LocalFlowTube.png}
 \label{fig:localFlowTube}
 }%
-\caption{Collection-efficiency computations. Primary and auxiliary droplets are represented in blue and red, respectively.}
+\caption{Collection-efficiency computation based on droplet streamtubes: (a) conventional streamtube defined by neighboring primary droplets, (b) pathological configuration leading to an ill-defined streamtube, and (c) local streamtube constructed using auxiliary droplets around the primary trajectory. Primary and auxiliary droplets are represented in blue and red, respectively.}
 \label{fig:collectionEfficiencyMethods}
 \end{figure}
 
@@ -376,7 +377,7 @@ The results are first presented through a parallel scalability study to evaluate
 \centering
 \caption{Summary of the droplet-impingement benchmark cases.}
 \begin{tabular}{ccccc}
-\hline
+\hline \hline
 Parameter & IPW2-1.3 & IPW1-112 & IPW1-122 & HLPW5-2.1 \\
 \hline
 Geometry & \makecell{CRM\\Hybrid} & \makecell{NACA 64A008\\H-tail} & \makecell{Three-element\\airfoil} & \makecell{CRM\\wing--body} \\
@@ -386,7 +387,7 @@ Ma [-] & 0.21 & 0.23 & 0.23 & 0.20 \\
 $C_{ref}$ [$inch$] & 39.37 & 37.65 & 36.0 & 275.8 \\
 $T$ [$K$] & 247.15 & 280.0 & 278.0 & 288.15 \\
 Re [-] & $8.1 \cdot 10^6$ & $5.0 \cdot 10^6$ & $4.8 \cdot 10^6$ & $5.4 \cdot 10^6$ \\
-\hline
+\hline \hline
 \end{tabular}
 \label{tab:resultsLag}
 
@@ -508,40 +509,40 @@ Case IPW1-122 also corresponds to a configuration for which experimental collect
 \label{fig:MDA_Participants}
 \end{figure}
 
-The SLD results are presented in Fig.~\ref{fig:MDA_SLAT_SLD}--\ref{fig:MDA_FLAP_SLD}. On the slat, the predicted collection efficiency agrees well with the experimental measurements in terms of both the peak value and the impingement limits. On the main element, however, the collection efficiency is significantly underestimated. Better agreement is obtained on the flap, where the impingement limits are well predicted, although the peak collection efficiency remains underestimated. When secondary-droplet re-impingement is included using the methodology presented in Section~\ref{sec:collectionEfficiency}, the peak collection efficiency increases on both the main and flap elements, resulting in slightly closer agreement with the experimental measurements. Similar discrepancies between numerical predictions and the experimental measurements have also been reported for this case in the literature \cite{bellosta2023lagrangian,moula2023icing}, particularly on the downstream elements.
+The SLD results are presented in Fig.~\ref{fig:MDA_SLAT_SLD}--\ref{fig:MDA_FLAP_SLD}. On the slat, the predicted collection efficiency agrees well with the experimental measurements in terms of both the peak value and the impingement limits. The formulation of Trontin et al. underpredicts the peak collection efficiency but provides better agreement with the measurements over the remainder of the impingement region. On the main element, the collection efficiency is significantly underestimated, with only a minor influence from secondary-droplet re-impingement. Better agreement is obtained on the flap, where the impingement limits are well predicted, although the peak collection efficiency remains underestimated. In this case, including secondary-droplet re-impingement using the methodology presented in Section~\ref{sec:collectionEfficiency} noticeably increases the peak collection efficiency and improves the agreement with the experimental measurements. Similar discrepancies between numerical predictions and the experimental measurements have also been reported for this case in the literature~\cite{bellosta2023lagrangian,moula2023icing}, particularly on the downstream elements.
 
 \begin{landscape}
 \begin{figure}[p]
 \centering
 \subfloat[Impingement results on the Slat.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_DISTRIBUTION.eps}
 \label{fig:MDA_SLAT_DISTRIBUTION}%
 }%
 \hfill
 \subfloat[\centering Impingement results on the Main.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_MAIN_DISTRIBUTION.eps}
 \label{fig:MDA_MAIN_DISTRIBUTION}%
 }
 \hfill
 \subfloat[\centering Impingement results on the Flap.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_FLAP_DISTRIBUTION.eps}
 \label{fig:MDA_FLAP_DISTRIBUTION}%
 }
 
 \medskip
 
 \subfloat[SLD results on the Slat.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_SLD.eps}
 \label{fig:MDA_SLAT_SLD}%
 }%
 \hfill
 \subfloat[SLD results on the Main.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_MAIN.eps}
 \label{fig:MDA_MAIN_SLD}%
 }
 \hfill
 \subfloat[SLD results on the Flap.]{%
-\includegraphics[width=0.31\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP.eps}
+\includegraphics[width=0.305\linewidth]{FIGURES/LAGRANGIAN_ARTICLE/CASE_122_SLAT_FLAP.eps}
 \label{fig:MDA_FLAP_SLD}%
 }
 \caption{Collection-efficiency results for Case IPW1-122. The upper row compares Eulerian and Lagrangian impingement predictions; the lower row assesses the SLD models and secondary-droplet re-impingement.}

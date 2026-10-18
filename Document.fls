@@ -101,8 +101,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
-INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/soul/soulutf8.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/soul/soulutf8.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/soul/soul.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/soul/soul.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/soul/soul-ori.sty
@@ -245,8 +243,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT ./MemoireThese.sty
 INPUT MemoireThese.sty
-INPUT ./CHAPTERS/0-Definitions_Etudiant.tex
-INPUT ./CHAPTERS/0-Definitions_Etudiant.tex
 INPUT ./CHAPTERS/0-Definitions_Etudiant.tex
 INPUT ./CHAPTERS/0-Definitions_Etudiant.tex
 INPUT ./CHAPTERS/0-Definitions_Etudiant.tex
@@ -641,6 +637,7 @@ INPUT ./FIGURES/LIT_REV/SIMPLIFIED_MASK.eps
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_MASK-eps-converted-to.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_GC.eps
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_GC.eps
 INPUT ./FIGURES/LIT_REV/SIMPLIFIED_GC.eps
@@ -664,7 +661,6 @@ INPUT ./FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png
 INPUT ./FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png
 INPUT ./FIGURES/LAGRANGIAN_ARTICLE/DropletVolumeFraction.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx6.tfm
 INPUT ./FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid.eps
 INPUT ./FIGURES/LAGRANGIAN_ARTICLE/TrackingBackgroundGrid.eps
@@ -1019,7 +1015,6 @@ OUTPUT CHAPTERS/7-CHAPTER_LEVEL_SET.aux
 INPUT ./CHAPTERS/7-CHAPTER_LEVEL_SET.tex
 INPUT ./CHAPTERS/7-CHAPTER_LEVEL_SET.tex
 INPUT CHAPTERS/7-CHAPTER_LEVEL_SET.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmcsco10.tfm
 INPUT ./FIGURES/LEVELSET_ARTICLE/icingFramework.png
 INPUT ./FIGURES/LEVELSET_ARTICLE/icingFramework.png
 INPUT ./FIGURES/LEVELSET_ARTICLE/icingFramework.png
@@ -1498,8 +1493,6 @@ INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE.eps
 INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE-eps-converted-to.pdf
 INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE-eps-converted-to.pdf
 INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE-eps-converted-to.pdf
-INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE-eps-converted-to.pdf
-INPUT ./FIGURES/IBM_ARTICLE/CASE_01_ICE_SHAPE-eps-converted-to.pdf
 INPUT ./FIGURES/IBM_ARTICLE/CASE_04_ICE_SHAPE_01_LAYER.eps
 INPUT ./FIGURES/IBM_ARTICLE/CASE_04_ICE_SHAPE_01_LAYER.eps
 INPUT ./FIGURES/IBM_ARTICLE/CASE_04_ICE_SHAPE_01_LAYER.eps
@@ -1723,7 +1716,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsco10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb

@@ -1,6 +1,6 @@
 % List of symbols and acronyms
 \ifthenelse{\equal{\Langue}{english}}{
-    \newcommand\abbrevname{LIST OF SYMBOLS AND ACRONYMS}
+    \newcommand\abbrevname{LIST OF ACRONYMS AND SYMBOLS}
 }{
     \newcommand\abbrevname{LISTE DES SYMBOLES, SIGLES ET ABRÉVIATIONS}
 }
@@ -20,11 +20,13 @@
   \acro{CFR}{Code of Federal Regulations}
   \acro{CHAMPS}{Chapel Multiphysics Software}
   \acro{CRM}{Common Research Model}
+  \acro{ETR}{Execution-time reduction}
   \acro{FAA}{Federal Aviation Administration}
   \acro{FAR}{Federal Airworthiness Regulations}
   \acro{FR}{Freezing rain}
-  \acro{GARP}{Geometric Approach to Ray--Patch Intersections}
+  \acro{GARP}{Geometric Approach to Ray/Bilinear Patch Intersections}
   \acro{GC}{Ghost cell}
+  \acro{GCIBM}{Ghost-cell immersed-boundary method}
   \acro{GMRES}{Generalized minimal residual method}
   \acro{HLPW5}{Fifth High-Lift Prediction Workshop}
   \acro{HPC}{High-performance computing}
@@ -35,12 +37,11 @@
   \acro{IPW}{Ice Prediction Workshop}
   \acro{IRT}{Icing Research Tunnel}
   \acro{LES}{Large-eddy simulation}
+  \acro{LPT}{Longest-processing-time scheduling}
   \acro{LWC}{Liquid water content}
   \acro{MCCS}{Maximum combined cross section}
   \acro{MOF}{Moment of fluid}
-  \acro{MPI}{Message Passing Interface}
   \acro{MVD}{Median volume diameter}
-  \acro{NUMA}{Non-uniform memory access}
   \acro{ODE}{Ordinary differential equation}
   \acro{PDE}{Partial differential equation}
   \acro{RANS}{Reynolds-averaged Navier--Stokes}
@@ -67,7 +68,6 @@ $h_{\mathrm{ice}}$           & Local ice thickness [$\mathrm{m}$]\\
 $H_{\mathrm{mod}}$           & Wall-modeling height [$\mathrm{m}$]\\
 $HTC$                        & Convective heat-transfer coefficient [$\mathrm{W\,m^{-2}\,K^{-1}}$]\\
 $k$                          & Thermal conductivity [$\mathrm{W\,m^{-1}\,K^{-1}}$]\\
-$K$                          & Droplet inertia parameter [-]\\
 $M$                          & Mach number [-]\\
 $\dot{m}$                    & Mass flow rate [$\mathrm{kg\,s^{-1}}$]\\
 $\dot{m}_{\mathrm{ice}}$     & Local ice mass-accretion rate [$\mathrm{kg\,m^{-2}\,s^{-1}}$]\\
@@ -80,6 +80,7 @@ $r$                          & Recovery factor [-]\\
 $R$                          & Specific gas constant [$\mathrm{J\,kg^{-1}\,K^{-1}}$]\\
 $Re$                         & Reynolds number [-]\\
 $Re_d$                       & Droplet Reynolds number [-]\\
+$S_t$                        & Droplet Stokes number [-]\\
 $t$                          & Time [$\mathrm{s}$]\\
 $T$                          & Temperature [$\mathrm{K}$]\\
 $T_0$                        & Stagnation temperature [$\mathrm{K}$]\\
@@ -109,6 +110,8 @@ $\rho_a$                     & Air density [$\mathrm{kg\,m^{-3}}$]\\
 $\rho_d$                     & Droplet density [$\mathrm{kg\,m^{-3}}$]\\
 $\rho_w$                     & Water density [$\mathrm{kg\,m^{-3}}$]\\
 $\sigma$                     & Surface tension [$\mathrm{N\,m^{-1}}$]\\
+$\tau_d$                     & Characteristic droplet-response time [$\mathrm{s}$]\\
+$\tau_f$                     & Characteristic flow timescale [$\mathrm{s}$]\\
 $\phi$                       & Level-set signed-distance function [$\mathrm{m}$]\\
 $\boldsymbol{\varphi}_{IB}$  & Flow variable at the immersed-boundary point\\
 $\boldsymbol{\varphi}_{V}$   & Flow variable at the neighboring volume point\\

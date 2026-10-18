@@ -8,7 +8,7 @@
 {\pdfbookmark [0]{TABLE OF CONTENTS}{toc}}
 \contentsline {compteur}{LIST OF TABLES}{xiv}{chapter*.5}%
 \contentsline {compteur}{LIST OF FIGURES}{xv}{chapter*.6}%
-\contentsline {compteur}{LIST OF SYMBOLS AND ACRONYMS}{xxi}{chapter*.7}%
+\contentsline {compteur}{LIST OF ACRONYMS AND SYMBOLS}{xxi}{chapter*.7}%
 \contentsline {compteur}{LIST OF APPENDICES}{xxv}{chapter*.10}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
@@ -44,7 +44,7 @@
 \contentsline {subsection}{\numberline {3.3.3}Collection Efficiency Computations and SLD Effects}{49}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Parallelism}{53}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Results}{54}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Scalability}{55}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.1}Scalability}{54}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Case IPW1 - 112: NACA64A008 Horizontal Tail}{56}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Case IPW1 - 122: Three Element Airfoil}{58}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}Case HLPW5 - 2.1: CRM Wing-Body}{62}{subsection.3.4.4}%
@@ -68,33 +68,33 @@
 \contentsline {section}{\numberline {5.1}Introduction}{90}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Immersed-Boundary Representation}{91}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Immersed-Boundary Flow Treatment}{93}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Immersed-Boundary Droplet Treatment}{96}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Immersed-Boundary Droplet Treatment}{97}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Eulerian Formulation: Governing Equations and Penalization Strategy}{97}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Lagrangian Immersed-Surface Tracking}{98}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Immersed-Boundary Icing Coupling}{99}{section.5.5}%
+\contentsline {subsection}{\numberline {5.4.2}Lagrangian Immersed-Surface Tracking}{99}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Immersed-Boundary Icing Coupling}{100}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Results}{100}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{100}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{101}{subsection.5.6.1}%
 \contentsline {subsection}{\numberline {5.6.2}SLD Impingement}{101}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Case 01}{101}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Case 04}{103}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Case RG15}{104}{subsection.5.6.5}%
-\contentsline {section}{\numberline {5.7}Conclusion}{107}{section.5.7}%
+\contentsline {subsection}{\numberline {5.6.3}Case 01}{103}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Case 04}{104}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Case RG15}{106}{subsection.5.6.5}%
+\contentsline {section}{\numberline {5.7}Conclusion}{108}{section.5.7}%
 \contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{109}{chapter.6}%
-\contentsline {subsection}{\numberline {6.0.1}Eulerian and Lagrangian Droplet Impingement}{109}{subsection.6.0.1}%
-\contentsline {subsection}{\numberline {6.0.2}Algebraic and Level-Set Ice Accretion}{112}{subsection.6.0.2}%
-\contentsline {subsection}{\numberline {6.0.3}Body-Fitted and Immersed-Boundary Approaches}{114}{subsection.6.0.3}%
-\contentsline {chapter}{\numberline {7}CONCLUSION}{116}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Works}{116}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Limitations}{118}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Research}{119}{section.7.3}%
-\contentsline {compteur}{REFERENCES}{120}{chapter*.90}%
-\contentsline {compteur}{APPENDICES}{135}{chapter*.90}%
-\contentsline {section}{\numberline {A.1}Mass Balance}{135}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Energy Balance}{135}{section.A.2}%
-\contentsline {section}{\numberline {B.1}Mesh Refinement Study}{138}{section.B.1}%
-\contentsline {section}{\numberline {B.2}SLD Model Details}{140}{section.B.2}%
-\contentsline {section}{\numberline {C.1}Lagrangian Droplet Integration}{141}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Level-Set Transport}{141}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}Spatial Convergence}{142}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Temporal Convergence}{142}{subsection.C.2.2}%
-\contentsline {section}{\numberline {C.3}Eulerian Immersed-Boundary Droplet Formulation}{143}{section.C.3}%
+\contentsline {section}{\numberline {6.1}Eulerian and Lagrangian Droplet Impingement}{109}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Algebraic and Level-Set Ice Accretion}{112}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Body-Fitted and Immersed-Boundary Approaches}{114}{section.6.3}%
+\contentsline {chapter}{\numberline {7}CONCLUSION}{117}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Works}{117}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{119}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Research}{120}{section.7.3}%
+\contentsline {compteur}{REFERENCES}{122}{chapter*.90}%
+\contentsline {compteur}{APPENDICES}{138}{chapter*.90}%
+\contentsline {section}{\numberline {A.1}Mass Balance}{138}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Energy Balance}{138}{section.A.2}%
+\contentsline {section}{\numberline {B.1}Mesh Refinement Study}{141}{section.B.1}%
+\contentsline {section}{\numberline {B.2}SLD Model Details}{143}{section.B.2}%
+\contentsline {section}{\numberline {C.1}Lagrangian Droplet Integration}{144}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Level-Set Advection}{144}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}Spatial Convergence}{145}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Temporal Convergence}{145}{subsection.C.2.2}%
+\contentsline {section}{\numberline {C.3}Eulerian Immersed-Boundary Droplet Formulation}{146}{section.C.3}%

@@ -40,6 +40,9 @@ H.~Papillon~Laroche, ``Stochastic ice accretion model for aircraft icing,'' Ph.D
 \bibitem{taubinFilter}
 G.~Taubin, \emph{A Signal Processing Approach To Fair Surface Design}, 1st~ed.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing Machinery, 2023.
 
+\bibitem{papadakism2004water}
+M.~Papadakis, A.~Rachman, S.-C. Wong, H.-W. Yeong, K.~Hung, and C.~Bidwell, ``Water {{Impingement Experiments}} on a {{NACA}} 23012 {{Airfoil}} with {{Simulated Glaze Ice Shapes}},'' in \emph{42nd {{AIAA Aerospace Sciences Meeting}} and {{Exhibit}}}.\hskip 1em plus 0.5em minus 0.4em\relax {Reno, Nevada}: {American Institute of Aeronautics and Astronautics}, Jan. 2004.
+
 \bibitem{ICAO_StrategicPlan_2026}
 {International Civil Aviation Organization}, ``Icao strategic plan 2026--2050: Safe skies, sustainable future,'' International Civil Aviation Organization, Montréal, Canada, Tech. Rep., 2025.
 
@@ -370,6 +373,9 @@ Y.~Mohd, ``Combined immersed-boundary/b-spline methods for simulations of flow i
 \bibitem{fadlun2000combined}
 E.~A. Fadlun, R.~Verzicco, P.~Orlandi, and J.~Mohd-Yusof, ``Combined immersed-boundary finite-difference methods for three-dimensional complex flow simulations,'' \emph{Journal of computational physics}, vol. 161, no.~1, pp. 35--60, 2000.
 
+\bibitem{KIM2001132}
+J.~Kim, D.~Kim, and H.~Choi, ``An immersed-boundary finite-volume method for simulations of flow in complex geometries,'' \emph{Journal of Computational Physics}, vol. 171, no.~1, pp. 132--150, 2001.
+
 \bibitem{majumdar2001rans}
 S.~Majumdar, G.~Iaccarino, P.~Durbin \emph{et~al.}, ``Rans solvers with adaptive structured boundary non-conforming grids,'' \emph{Annual Research Briefs}, vol.~1, p. 179, 2001.
 
@@ -447,9 +453,6 @@ L.~Xie, P.~Li, H.~Chen, and H.~Liu, ``Robust and efficient prediction of the col
 
 \bibitem{parenteau}
 M.~Parenteau, S.~Bourgault-Cote, F.~Plante, E.~Kayraklioglu, and E.~Laurendeau, \emph{Development of Parallel CFD Applications with the Chapel Programming Language}.
-
-\bibitem{papadakism2004water}
-M.~Papadakis, A.~Rachman, S.-C. Wong, H.-W. Yeong, K.~Hung, and C.~Bidwell, ``Water {{Impingement Experiments}} on a {{NACA}} 23012 {{Airfoil}} with {{Simulated Glaze Ice Shapes}},'' in \emph{42nd {{AIAA Aerospace Sciences Meeting}} and {{Exhibit}}}.\hskip 1em plus 0.5em minus 0.4em\relax {Reno, Nevada}: {American Institute of Aeronautics and Astronautics}, Jan. 2004.
 
 \bibitem{moula2023icing}
 G.~Moula and I.~Ozcer, ``Icing simulation results using lagrangian particle tracking in ansys fluent icing,'' in \emph{SAE Technical Paper Series}, ser. ICE.\hskip 1em plus 0.5em minus 0.4em\relax SAE International, Jun. 2023.
@@ -529,6 +532,18 @@ W.~B. Wright, \emph{DRA/NASA/ONERA collaboration on icing research}.\hskip 1em p
 \bibitem{CONSTANT2021110240}
 B.~Constant, S.~P{\'e}ron, H.~Beaugendre, and C.~Benoit, ``An improved immersed boundary method for turbulent flow simulations on cartesian grids,'' \emph{Journal of Computational Physics}, vol. 435, p. 110240, 2021.
 
+\bibitem{reichardt1956}
+H.~Reichardt, ``{\"U}ber die geschwindigkeitsverteilung in einer geradlinigen turbulenten couettestr{\"o}mung,'' \emph{ZAMM - Zeitschrift f{\"u}r Angewandte Mathematik und Mechanik}, vol.~36, no.~S1, pp. S26--S29, 1956.
+
+\bibitem{jayatilleke1969}
+C.~L.~V. Jayatillaka, ``The influence of prandtl number and surface roughness on the resistance of the laminar sublayer to momentum and heat transfer,'' in \emph{Progress in Heat and Mass Transfer}, 1969, vol.~1, p. 193.
+
+\bibitem{nichols2004wall}
+R.~H. Nichols and C.~C. Nelson, ``Wall function boundary conditions including heat transfer and compressibility,'' \emph{AIAA Journal}, vol.~42, no.~6, pp. 1107--1114, 2004.
+
+\bibitem{chedevergne_aupoix}
+F.~Chedevergne and B.~Aupoix, ``Accounting for wall roughness effects in turbulence models: A wall function approach,'' \emph{Journal of Turbulence}, 2017.
+
 \bibitem{prakash2019rans}
 A.~Prakash, ``Rans computation of heat transfer over rough surfaces,'' Ph.D. dissertation, Ecole Polytechnique, Montreal (Canada), 2019.
 
@@ -537,6 +552,9 @@ P.~Lavoie, E.~Radenac, G.~Blanchard, {\'E}.~Laurendeau, and P.~Villedieu, ``Pena
 
 \bibitem{trontin2017description}
 P.~Trontin, G.~Blanchard, A.~Kontogiannis, and P.~Villedieu, ``Description and assessment of the new onera 2d icing suite igloo2d,'' in \emph{9th AIAA Atmospheric and Space Environments Conference}, 2017, p. 3417.
+
+\bibitem{jaillet2022quadtree}
+F.~Jaillet and C.~Lobos, ``Fast quadtree/octree adaptive meshing and re-meshing with linear mixed elements,'' \emph{Engineering with Computers}, vol.~38, no.~4, pp. 3399--3416, 2022.
 
 \bibitem{ozgen2009ice}
 S.~{\"O}zgen and M.~Can{\i}bek, ``Ice accretion simulation on multi-element airfoils using extended messinger model,'' \emph{Heat and Mass Transfer}, vol.~45, no.~3, pp. 305--322, 2009.

@@ -2,8 +2,12 @@
 
 \textit
 {
-This chapter presents a continuous level-set framework for simulating 3D ice accretion within a quasi-steady, multilayer approach. In contrast to traditional Lagrangian surface-node displacement methods, which may suffer from mesh distortion and topological limitations, the proposed method relies on an implicit interface-capturing formulation that naturally represents complex geometric features and topological changes. The continuous level-set equation is solved on adapted meshes using a conservative formulation combined with a semi-implicit Rosenbrock-Wanner time integration scheme. A local interface-reconstruction procedure is introduced to monitor and control the accreted ice volume without requiring full surface extraction. The zero level set is then extracted using an external library (\textsc{MMG}) to generate a conformal surface mesh. To reduce numerical oscillations while preserving the overall ice shape and volume, a smoothing filter is applied to the extracted surface. The proposed methodology is assessed on representative icing configurations, including a manufactured test case and experimental cases from the first Ice Prediction Workshop (IPW1). The results demonstrate good agreement with reference and experimental data.
+This chapter presents a continuous level-set framework for simulating 3D ice accretion within a quasi-steady, multilayer approach. In contrast to traditional Lagrangian surface-node displacement methods, which may suffer from mesh distortion and topological limitations, the proposed method relies on an implicit interface-capturing formulation that naturally represents complex geometric features and topological changes. The continuous level-set equation is solved on adapted meshes using a conservative formulation combined with a semi-implicit Rosenbrock-Wanner time integration scheme. A local interface-reconstruction procedure is introduced to monitor and control the accreted ice volume without requiring full surface extraction. The zero level set is then extracted using an external library (\textup{\textsc{MMG}}) to generate a conformal surface mesh. To reduce numerical oscillations while preserving the overall ice shape and volume, a smoothing filter is applied to the extracted surface. The proposed methodology is assessed on representative icing configurations, including a manufactured test case and experimental cases from the first Ice Prediction Workshop (IPW1). The results demonstrate good agreement with reference and experimental data.
 }
+
+\par\vspace{0.5cm}
+
+\noindent\textit{Submitted to Computers \& Fluids on 22 June 2026 (under review).}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -134,13 +138,13 @@ h_{ice} &= \frac{\Delta t_{icing} \, \dot{m}_{ice}}{\rho_{ice} \, A_{wall}}.
 \centering
 \caption{Icing Velocity Formulations}
 \begin{tabular}{ccc}
-\hline 
+\hline \hline
 Icing Velocity & Norm & Direction \\ 
 \hline
 Pena et al. \cite{PENA2016278} & $\dot{m}_{ice} / (\rho_{ice} A_{wall})$ & $\boldsymbol{n}_{wall}$ \\ 
 Bourgeault-Côté et al. \cite{bourgault2019ice} & $\dot{m}_{ice} / (\rho_{ice} \, \Delta A_{local})$ & $\boldsymbol{n}_{\phi}$ \\ 
 Lavoie et al. \cite{lavoieLevelSet} & $h_{ice} / \Delta t_{icing}$ & $\boldsymbol{n}_{\phi}$ \\ 
-\hline
+\hline \hline
 \end{tabular}
 \label{tab:velocityFormulation}
 \end{table}
@@ -205,7 +209,7 @@ In contrast, the present work employs a Rosenbrock--Wanner (ROW) semi-implicit t
 
 The global ice mass is evaluated at each time step by integrating the volume of the region where $\phi < 0$, allowing the simulation to terminate at the prescribed total ice mass. In the present work, variable ice density is not currently considered; therefore, the mass is assumed to be directly proportional to the accumulated volume. Cells are first classified according to the sign of $\phi$ at their nodes: cells located entirely within the ice region contribute fully to the volume, whereas intersected cells require a partial volume evaluation. In the latter case, a local interface reconstruction is performed only within the intersected cells, following the different intersection configurations illustrated in Fig.~\ref{fig:LocalExtraction}, thereby avoiding the cost of a full surface extraction. This local treatment is sufficient for volume estimation and remains inexpensive to evaluate at each time step. The reconstruction is carried out on simplicial elements. In 2D, interface intersections within triangles are determined by linear interpolation along the edges, forming a polygon whose area is then evaluated. In 3D, a similar procedure is applied to tetrahedra, where the intersection points define a clipped polyhedron whose volume is computed. The use of simplicial elements, as imposed by the \textsc{MMG} extraction library \cite{DAPOGNY2014358}, also proves advantageous by limiting the number of possible intersection configurations to be considered.
 
-% \begin{figure}[h!]
+% \begin{figure}[ht!]
 % \hspace*{0cm}
 %     \centering
 %     \subfloat[Three nodes with $\phi < 0$: element is entirely negative.]{%
@@ -318,7 +322,7 @@ This smoothing method can be interpreted as a low-pass filter applied to the mes
 
 Through this two-stage filtering process, this smoothing filter effectively regularizes the extracted surface while preserving the geometric integrity of the predicted ice shape, making it particularly suitable for multilayer ice accretion simulations where accumulated numerical noise could otherwise degrade the solution quality. An example is presented in Figure~\ref{fig:SmoothingEffects}.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Smoothing effects on the first ice layer.]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.5\textwidth]{FIGURES/LEVELSET_ARTICLE/SMOOTHING_EFFECTS_FIRST_LAYER.png}
@@ -344,7 +348,7 @@ Cases 241 and 242 correspond to 2D icing configurations on a NACA 23012 airfoil,
 \centering
 \caption{Summary of the IPW1 benchmark cases.}
 \begin{tabular}{ccccc}
-\hline 
+\hline \hline
 Parameter & 241 & 242 & 361 & 362 \\ 
 \hline
 Geometry & \makecell{2D\\NACA 23012} & \makecell{2D\\NACA 23012} & \makecell{3D Swept\\NACA 0012} & \makecell{3D Swept\\NACA 0012} \\
@@ -356,7 +360,7 @@ AOA [\textdegree] & 2.0 & 2.0 & 0.0 & 0.0 \\
 C$_{ref}$ [$inch$] & 18 & 18 & 36 & 36 \\ 
 $T_{static}$ [$K$] & 250.15 & 266.05 & 257.0  & 266.0 \\  
 Re [-] & $3.8 \cdot 10^6$ & $3.4 \cdot 10^6$ & $7.2 \cdot 10^6$ & $6.7 \cdot 10^6$ \\
-\hline 
+\hline \hline
 \end{tabular}
 \label{tab:results}
 \end{table}
@@ -380,7 +384,7 @@ Figure~\ref{fig:ThreeHorns} compares the interface obtained from level-set conto
 
 The second case considered in this study corresponds to a rime ice case from IPW1. Rime ice forms when the temperature is significantly below the freezing point, such that water droplets freeze immediately upon impact. This leads to streamlined ice shapes. Figure~\ref{fig:Case241VariablesResults} presents the icing-related variables and compares them with the IPW1 participant results. Overall, the predicted distributions are in good agreement with the participant envelope. Figure~\ref{fig:Case241IceShape} shows the ice shape obtained for this case, again compared with the IPW1 results and with the experimental MCCS. The level-set solution agrees well with the experimental maximum ice height at the leading edge, with some mismatch on the upper and lower surfaces. These differences may be partly attributed to experimental uncertainties. Stochastic ice-accretion solvers reported in the literature, such as \cite{PAPILLONLAROCHE2023104420}, may provide improved predictions in these regions. Figure~\ref{fig:Case241IceShape} also shows the convergence of the ice shape with an increasing number of accretion layers for the level-set method, using 1, 10, and 20 layers. The solution is seen to converge by 10 layers, while the differences between 10 and 20 layers remain negligible.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Pressure coefficient.]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.32\textwidth]{FIGURES/LEVELSET_ARTICLE/CASE_IPW1_241_CP.eps}
@@ -413,14 +417,14 @@ Ice shape comparisons remain difficult to assess in a fully quantitative manner,
 \centering
 \caption{Comparison of the maximum ice height relative to the clean geometry.}
 \begin{tabular}{lcc}
-\hline
+\hline \hline
 Config. & Ice height [mm] & Relative error [\%] \\
 \hline
 Exp.   & $10.87$ & -- \\
 01 layer   & $10.16$ & $6.47$ \\
 10 layers & $10.69$ & $1.68$ \\
 20 layers & $10.79$ & $0.70$ \\
-\hline
+\hline \hline
 \end{tabular}
 \label{tab:maxIceHeightComparison}
 \end{table}
@@ -429,7 +433,7 @@ Exp.   & $10.87$ & -- \\
 \label{subsec:naca_242}
 The third case considered is a glaze ice case, for which the static temperature is not sufficiently low to ensure immediate freezing upon droplet impact. As a result, a liquid water film forms on the surface, and part of the collected water runs back downstream before freezing. In contrast to rime ice, this process leads to less streamlined and more complex accreted shapes, often characterized by the development of ice horns \cite{diebold2013aerodynamic}. The icing-related variables obtained for this case are presented in Figure~\ref{fig:Case242VariablesResults}. Overall, the predicted trends remain in reasonable agreement with the range of results reported by the other IPW1 participants. However, the computed heat transfer coefficient (HTC) lies on the lower end of the participant spread, which is consistent with the formation of an ice shape that does not fully match the experimental accretion, as further illustrated in Figure~\ref{fig:iceShapeBaselineVsImproved}.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Pressure coefficient.]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.32\textwidth]{FIGURES/LEVELSET_ARTICLE/CASE_IPW1_242_CP.eps}
@@ -501,14 +505,14 @@ The comparison reported in Table~\ref{tab:hornAngleComparison} shows that the pr
 \centering
 \caption{Comparison of the upper and lower horn angles for Case 242, together with the relative error with respect to the experimental reference.}
 \begin{tabular}{cccccc}
-\hline
+\hline \hline
 Config. & $k_s/c \, [-]$ & $\theta_{Upper}$ [$^\circ$] & Upper rel. error [\%] & $\theta_{Lower}$ [$^\circ$] & Lower rel. error [\%] \\
 \hline
 Exp. & --    & $29.00$ & --    & $39.77$ & --    \\
 2    & $0.002$ & $46.69$ & $60.96$ & $66.89$ & $68.21$ \\
 3    & $0.003$ & $22.34$ & $22.99$ & $37.39$ & $5.96$  \\
 4    & $0.004$ & $0.63$  & $97.83$ & $17.34$ & $56.39$ \\
-\hline
+\hline \hline
 \end{tabular}
 \label{tab:hornAngleComparison}
 \end{table}
@@ -518,7 +522,7 @@ Exp. & --    & $29.00$ & --    & $39.77$ & --    \\
 
 Case 361 involves a $30^\circ$ swept NACA 0012 wing configuration tested in a wind tunnel. According to the workshop conditions, this case corresponds to a rime ice regime. Figure~\ref{fig:Case361VariablesResults} presents the obtained predictions for the aerodynamic and icing-related surface quantities. Overall, a good agreement is observed with the envelope of the IPW1 participants' results, indicating that the main physical trends are well captured by the present framework.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Pressure coefficient.]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.32\textwidth]{FIGURES/LEVELSET_ARTICLE/CASE_IPW1_361_CP.eps}
@@ -542,7 +546,7 @@ Figure~\ref{fig:Case361Ice} compares the ice shapes obtained with 1, 2, and 5 ac
 
 This tendency suggests that the discrepancy may not primarily originate from the numerical treatment of the geometric update, but rather from the experimental accretion conditions themselves. More specifically, the flatter and less protruding experimental ice shape may indicate that the accretion did not correspond to an ideal purely rime regime, or that additional physical effects not included in the present model influenced the final geometry.
 
-\begin{figure}[h!] 
+\begin{figure}[ht!] 
     \subfloat[Comparison of predicted ice shapes by the level-set]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.5\textwidth]{FIGURES/LEVELSET_ARTICLE/CASE_IPW1_361_ICE_SHAPE.eps}
     \label{fig:Case361IceShape}%
@@ -559,7 +563,7 @@ This tendency suggests that the discrepancy may not primarily originate from the
 \label{subsec:3D_case_362}
 Following the previous rime ice case, Case 362 is characterized by similar aerodynamic and icing conditions, with the main difference being the higher static temperature. Although this change has only a limited effect on the aerodynamic flow field, it plays a central role in the resulting ice morphology. As discussed previously, increasing the temperature reduces the local freezing fraction and promotes liquid water runback along the surface. The water can then freeze farther downstream, leading to more complex glaze ice shapes. In the present swept wing configuration, this behavior is associated with the formation of spanwise scallop structures with non-uniform size and spacing. Such features are consistent with the 3D nature of glaze ice accretion on swept wings, where the spanwise flow component, liquid-water runback, and local heat-transfer variations can promote non-uniform ice growth. These features are illustrated in Fig.~\ref{fig:Case362Clip}.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Clipped view of the 10-layer ice shape]{%
     %\fbox{%
@@ -590,7 +594,7 @@ In contrast with the rime ice case, a multilayer approach is essential for this 
 
 Figure~\ref{fig:IceShapeCase362_MCCS_VS_SLICE} presents a comparison of the predicted ice shape using a local spanwise slice extracted at the midspan location and the corresponding MCCS representation. Since the experimental data are only available in the form of an MCCS, a direct comparison with the local experimental morphology is not possible. However, the predicted results clearly illustrate how the MCCS can smooth and damp local spanwise variations, masking important 3D features of the ice accretion. This emphasizes the limitations of assessing highly 3D ice shapes using only 2D cross-sectional representations, since they may not fully capture the local morphology of the accretion. Future work should therefore aim to develop improved 3D comparison tools and more representative quantitative metrics for evaluating the agreement between predicted and experimental ice shapes.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \hspace*{0cm}
     \subfloat[Effect of the number of accretion layers]{%
     \includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=0.5\textwidth]{FIGURES/LEVELSET_ARTICLE/CASE_IPW1_362_ICE_SHAPE.eps}
