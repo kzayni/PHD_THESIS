@@ -334,6 +334,8 @@ OUTPUT CHAPTERS/2-Remerciements.aux
 INPUT ./CHAPTERS/2-Remerciements.tex
 INPUT ./CHAPTERS/2-Remerciements.tex
 INPUT CHAPTERS/2-Remerciements.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT ./CHAPTERS/3-Resume_sujet.tex
 INPUT ./CHAPTERS/3-Resume_sujet.tex
 OUTPUT CHAPTERS/3-Resume_sujet.aux
@@ -444,7 +446,6 @@ INPUT ./FIGURES/Icing/engineIcing.png
 INPUT ./FIGURES/Icing/engineIcing.png
 INPUT ./FIGURES/Icing/engineIcing.png
 INPUT ./FIGURES/Icing/engineIcing.png
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT ./FIGURES/Icing/pitotIcing.jpg
 INPUT ./FIGURES/Icing/pitotIcing.jpg
 INPUT ./FIGURES/Icing/pitotIcing.jpg
