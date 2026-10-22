@@ -306,9 +306,7 @@ H.~Beaugendre, F.~Morency, F.~Gallizio, and S.~Laurens, ``Computation of ice she
 A.~Donizetti, T.~Bellosta, A.~Rausa, B.~Re, and A.~Guardone, ``Three-dimensional front-tracking technique for multistep simulations of aircraft icing,'' \emph{Journal of Aircraft}, vol.~62, no.~2, pp. 328--340, 2025.
 
 \bibitem{papillonlaroche2026geometricreinitializationcapillaryflows}
-\BIBentryALTinterwordspacing
-H.~Papillon-Laroche, A.~Alphonius, M.~Schreter-Fleischhacker, J.-P. Harvey, and B.~Blais, ``Geometric reinitialization for capillary flows: a comparative study with state-of-the-art conservative level-set methods,'' 2026. [Online]. Available: \url{https://arxiv.org/abs/2602.00275}
-\BIBentrySTDinterwordspacing
+H.~Papillon-Laroche, A.~Alphonius, M.~Schreter-Fleischhacker, J.-P. Harvey, and B.~Blais, ``Geometric reinitialization for capillary flows: a comparative study with state-of-the-art conservative level-set methods,'' 2026.
 
 \bibitem{PESKIN1972252}
 C.~S. Peskin, ``Flow patterns around heart valves: A numerical method,'' \emph{Journal of Computational Physics}, vol.~10, no.~2, pp. 252--271, 1972.
