@@ -9,7 +9,7 @@ This chapter introduces the context of aircraft icing, its impact on flight safe
 In the context of climate change and increasingly stringent environmental regulations, the aeronautical industry is moving toward the development of more efficient and lower-emission aircraft. This transition introduces new aerodynamic, structural, and operational challenges, while maintaining flight safety as the primary requirement\cite{ICAO_StrategicPlan_2026}.  One by-product is the need for reliable certification procedures capable of assessing aircraft performance and safety over a wide range of operating conditions.
 
 Among the phenomena considered during aircraft certification, in-flight icing presents significant challenges to aircraft safety and performance~\cite{leary2002we}. Ice accretion occurs when an aircraft flies through clouds containing supercooled water droplets\footnote{Supercooled water droplets are liquid water droplets that remain unfrozen despite being at temperatures below the freezing point.}. When these droplets impinge on exposed surfaces and the local thermal conditions allow freezing, ice can accumulate on the aircraft geometry. The resulting ice shapes may significantly modify the aerodynamic configuration of the aircraft, leading to increased drag, reduced lift, altered stall behavior, and degraded controllability~\cite{leary2002we,lynch2001effects,cao2015aircraft, kafyekeReview}. While aircraft icing is commonly associated with large exposed components such as wings, empennages,  aircraft nose, and engines, it may also affect smaller
-but critical components, including probes and sensors, as illustrated in Figure~\ref{fig:icingComp}. Ice accretion on these components can alter the aircraft response and produce erroneous measurements  comprising  flight safety.
+but critical components, including probes and sensors, as illustrated in Figure~\ref{fig:icingComp}. Ice accretion on these components can alter the aircraft response and produce erroneous measurements  compromising  flight safety.
 
 \begin{figure}[htp]
 \centering
@@ -28,23 +28,35 @@ but critical components, including probes and sensors, as illustrated in Figure~
 
 Aircraft icing was not initially regarded as a primary concern during the early years of powered flight. Because aircraft were not yet equipped for routine instrument flight, pilots generally avoided clouds, and encounters with icing conditions were mostly inadvertent. This situation changed in the mid-1920s, when the U.S. Air Mail Service began operating scheduled day-and-night routes between New York and Chicago. These operations exposed pilots to icing conditions on a regular basis, and several serious incidents and accidents in 1926 and 1927 highlighted the need for practical solutions to the icing problem \cite{leary2002we}. Early research efforts were therefore mainly directed toward ice-protection systems (IPS)\footnote{Ice protection systems are divided into two categories: anti-icing systems are designed to prevent ice formation on protected surfaces, whereas de-icing systems allow ice to form temporarily before removing it.}, including heated aircraft components, waterproof coatings, greased propellers, electrically heated pitot-static tubes, and pneumatic de-icing boots~\cite{leary2002we}. Although some of these solutions proved useful in specific applications, they remained largely empirical and did not provide a complete understanding of the physical mechanisms governing ice accretion.
 
-Over the following decades, repeated claims that aircraft icing had been effectively solved proved premature, as operational experience continued to reveal unresolved challenges and the need for dedicated experimental investigation under controlled conditions. This need motivated the development of controlled icing research capabilities, culminating in the construction of the Icing Research Tunnel (IRT) in Cleveland in the 1940s \cite{leary2002we}. The IRT enabled systematic investigations of supercooled cloud conditions, droplet impingement, aerodynamic performance degradation, and the performance of anti-icing and de-icing systems. These experimental studies played a central role in improving the physical understanding of aircraft icing and later provided essential data for the development, validation, and certification of numerical icing prediction methods \cite{potapczuk1991icing}. These early efforts subsequently motivated the development of similar experimental icing facilities, which are discussed in Section~\ref{sec:RegAndCert}.
+Over the following decades, repeated claims that aircraft icing had been effectively solved proved premature~\cite{leary2002we}, as operational experience continued to reveal unresolved challenges and the need for dedicated experimental investigation under controlled conditions. This need motivated the development of controlled icing research capabilities, culminating in the construction of the Icing Research Tunnel (IRT) in Cleveland in the 1940s \cite{leary2002we}. The IRT enabled systematic investigations of supercooled cloud conditions, droplet impingement, aerodynamic performance degradation, and the performance of anti-icing and de-icing systems. These experimental studies played a central role in improving the physical understanding of aircraft icing and later provided essential data for the development, validation, and certification of numerical icing prediction methods \cite{potapczuk1991icing}. These early efforts subsequently motivated the development of similar experimental icing facilities, which are discussed in Section~\ref{sec:RegAndCert}.
 \section{Ice Morphologies}\label{sec:IceMorphologies}
 
-Depending on the atmospheric and aerodynamic conditions, different ice morphologies may develop on aircraft surfaces. At low temperatures, rime ice forms when supercooled droplets freeze almost immediately upon impact. This rapid solidification produces a relatively smooth, streamlined, and opaque ice shape. The opaque appearance of rime ice is associated with air trapped within the ice during the rapid freezing process.
+Depending on the atmospheric and aerodynamic conditions, different ice morphologies may develop on aircraft surfaces. At low temperatures, rime ice forms when supercooled droplets freeze almost immediately upon impact. This rapid solidification produces a relatively smooth, streamlined, and opaque ice shape\addText{ (Fig.~\ref{fig:crmScallops}a)}. The opaque appearance of rime ice is associated with air trapped within the ice during the rapid freezing process.
 
-As the temperature increases toward the freezing point, glaze ice may form. In this regime, the impinging droplets do not freeze completely upon impact. Instead, part of the liquid water remains on the surface, forming a thin water film that can run back before freezing downstream. Glaze ice is therefore usually denser and more transparent than rime ice and often leads to more complex ice shapes, including horn-like structures. On swept configurations, it can also produce 3D features such as ice feathers and larger-scale structures commonly referred to as scallops or lobster tails because of their characteristic resemblance to these forms (Fig.~\ref{fig:crmScallops}).
+As the temperature increases toward the freezing point, glaze ice may form. In this regime, the impinging droplets do not freeze completely upon impact. Instead, part of the liquid water remains on the surface, forming a thin water film that can run back before freezing downstream. Glaze ice is therefore usually denser and more transparent than rime ice and often leads to more complex ice shapes, including horn-like structures. On swept configurations, it can also produce 3D features such as ice feathers and larger-scale structures commonly referred to as scallops or lobster tails because of their characteristic resemblance to these forms (Fig.~\ref{fig:crmScallops}\addText{b}).
 
-A third regime, mixed ice, occurs as a transition between rime and glaze conditions. In this case, glaze-like ice may form near the stagnation region, where the impingement rate is high and the water does not freeze completely on impact. Farther downstream, the remaining droplets or runback water may freeze more rapidly, producing rime-like deposits. Mixed ice therefore combines features of both rime and glaze ice.
+A third regime, mixed ice, occurs as a transition between rime and glaze conditions. In this case, glaze-like ice may form near the stagnation region, where the impingement rate is high and the water does not freeze completely on impact. Farther downstream, the remaining droplets or runback water may freeze more rapidly, producing rime-like deposits. Mixed ice therefore combines features of both rime and glaze ice\addText{ (Fig.~\ref{fig:crmScallops}c)}.
 
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=0.3\textwidth]{FIGURES/INTRODUCTION/CRM_ICING_1.jpg}%
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{FIGURES/INTRODUCTION/CRM_RIME.jpg}
+        \subcaption{Rime ice}
+    \end{subfigure}%
     \hspace{0.25cm}%
-    \includegraphics[width=0.3\textwidth]{FIGURES/INTRODUCTION/CRM_ICING_2.JPG}%
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{FIGURES/INTRODUCTION/CRM_GLAZE.JPG}
+        \subcaption{Glaze ice}
+    \end{subfigure}%
     \hspace{0.25cm}%
-    \includegraphics[width=0.3\textwidth]{FIGURES/INTRODUCTION/CRM_ICING_3.JPG}%
-    \caption{Ice accretion on the leading edge of the Common Research Model (CRM) hybrid wing configuration tested in the NASA Icing Research Tunnel. Photos taken from~\cite{noauthor_crm-hl_2022}.}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{FIGURES/INTRODUCTION/CRM_MIXED.JPG}
+        \subcaption{Mixed ice}
+    \end{subfigure}
+    \caption{Ice accretion on the leading edge of the \addText{midspan section of the} Common Research Model (CRM) hybrid wing configuration tested in the NASA Icing Research Tunnel. Photos taken from~\cite{noauthor_crm-hl_2022}.}
     \label{fig:crmScallops}
 \end{figure}
 
@@ -58,9 +70,25 @@ This recognition led to additional regulatory developments, culminating in the i
 
 The certification of IPS may rely on several complementary approaches, including flight testing, icing wind-tunnel testing, and numerical simulation \cite{FAA_AC_20_73A}. Flight tests provide the direct assessment of aircraft behavior in realistic operating conditions and may be conducted either in natural icing environments or using artificial ice shapes. However, such tests are expensive, difficult to reproduce, and may involve safety risks, particularly when degraded aerodynamic performance or controllability must be evaluated.
 
-Icing wind tunnels therefore became an essential complementary experimental tool for studying ice accretion and evaluating IPS performance under controlled conditions. Facilities such as the NASA IRT, the National Research Council (NRC) Low-Speed Icing Wind Tunnel in Canada~\cite{canadaNRCIceAccretion}, the Rail Tec Arsenal (RTA) facility in Austria \cite{ferschitz2017development}, and the Office National d'Études et de Recherches Aérospatiales (ONERA) icing facilities \cite{oneraIcingWindTunnel} in France have contributed extensively to the development of experimental databases for icing research and certification support. Compared with flight testing, wind-tunnel experiments offer better control of atmospheric parameters, and detailed access to local measurements. Nevertheless, they remain costly and face important scaling limitations, especially as aircraft components increase in size. Reproducing full-scale icing conditions often requires preserving several competing similarity parameters, including the relationships between droplet size, leading-edge radius, liquid water content, velocity, temperature, and accretion time. In practice, the model geometry or operating conditions must often be adjusted to fit within the facility constraints, and these adjustments can themselves require dedicated extensive analyses \cite{iceAccretionOnSweptWings}.
+Icing wind tunnels therefore became an essential complementary experimental tool for studying ice accretion and evaluating IPS performance under controlled conditions. Facilities such as the NASA IRT, the National Research Council (NRC) Low-Speed Icing Wind Tunnel in Canada~\cite{canadaNRCIceAccretion}, \addText{the Italian Aerospace Research Centre (CIRA) Icing Wind Tunnel in Italy~\cite{vecchione2003overview},} the Rail Tec Arsenal (RTA) facility in Austria \cite{ferschitz2017development}, and the Office National d'Études et de Recherches Aérospatiales (ONERA) icing facilities \cite{oneraIcingWindTunnel} in France have contributed extensively to the development of experimental databases for icing research and certification support. Compared with flight testing, wind-tunnel experiments offer better control of atmospheric parameters, and detailed access to local measurements. Nevertheless, they remain costly and face important scaling limitations, especially as aircraft components increase in size. Reproducing full-scale icing conditions often requires preserving several competing similarity parameters, including the relationships between droplet size, leading-edge radius, liquid water content, velocity, temperature, and accretion time.In practice, the model geometry or operating conditions must often be adjusted to fit within the facility constraints, and these adjustments can themselves require dedicated extensive analyses \cite{iceAccretionOnSweptWings}. \addText{For example, the NASA swept-wing icing experiments employed representative sections of the CRM65 wing~\cite{iceAccretionOnSweptWings}, a 65\%-scale version of the original Common Research Model (CRM), rather than the complete wing to accommodate the dimensions of the NASA Icing Research Tunnel (IRT), as illustrated in Figure~\ref{fig:crm65Comparison}.}
 
-In addition, ice accretion experiments are subject to variability from one test to another, owing to uncertainties in cloud calibration, droplet distributions, thermal conditions, surface roughness, and measurement procedures. These limitations have motivated the development of numerical icing tools as a complementary approach to flight and wind-tunnel testing.
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[c]{0.36\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{FIGURES/INTRODUCTION/CRM_SETUP.JPG}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.55\textwidth}
+        \centering
+        \includegraphics[trim={0cm 5cm 0cm 5cm},clip,width=\linewidth]{FIGURES/INTRODUCTION/MODEL_COMP.png}
+    \end{minipage}
+    \caption{CRM65 midspan swept-wing model: experimental setup in the NASA Icing Research Tunnel (left) and size comparison with the complete CRM65 reference wing (right).}
+    \label{fig:crm65Comparison}
+\end{figure}
+
+\removeText{In addition, ice accretion experiments are subject to variability from one test to another, owing to uncertainties in cloud calibration, droplet distributions, thermal conditions, surface roughness, and measurement procedures. These limitations have motivated the development of numerical icing tools as a complementary approach to flight and wind-tunnel testing.}
+\addText{The high cost of experimental testing and the difficulties associated with reproducing full-scale icing conditions have motivated the development of numerical icing tools. These methods provide a complementary approach to flight and wind-tunnel testing, allowing a broader range of configurations and operating conditions to be investigated at a reduced cost.}
 
 \section{Ice Accretion Numerical Modeling}\label{sec:IceAccretionNumericalModeling}
 
@@ -73,15 +101,15 @@ The simplest implementation consists of performing the entire accretion process 
 \begin{figure}[htp]
     \centering
     \subfloat[Single-step ice shape.]{%
-        \includegraphics[width=0.325\textwidth]{FIGURES/INTRODUCTION/SINGLE_LAYER_ICE_SHAPE.eps}%
+        \includegraphics[width=0.45\textwidth]{FIGURES/INTRODUCTION/CASE_362_IPW1_SINGLE_LAYER.eps}%
         \label{fig:singlelayer}%
     }%
     \hspace{1cm}%
     \subfloat[Multilayer ice shape.]{%
-        \includegraphics[width=0.325\textwidth]{FIGURES/INTRODUCTION/MULTILAYER_ICE_SHAPE.eps}%
+        \includegraphics[width=0.45\textwidth]{FIGURES/INTRODUCTION/CASE_362_IPW1_FIVE_LAYERS.eps}%
         \label{fig:multilayer}%
     }%
-    \caption{Comparison of single-step and multilayer ice accretion predictions on a NACA~23012 airfoil at iso-physical parameters.}
+    \caption{Comparison of single-step and \addText{five-layer} ice accretion predictions on a \removeText{NACA~23012 airfoil}\addText{NACA~0012  $30^\circ$ swept wing} at iso-physical parameters.}
     \label{fig:iceShape}
 \end{figure}
 
@@ -96,14 +124,13 @@ By accounting for the progressive modification of the geometry, the multilayer a
 
 \section{Problem Statement}\label{sec:ProblemStatement}
 
-Two-dimensional icing simulations have played a central role in the development and validation of ice accretion models. They remain computationally efficient and are particularly useful for airfoil configurations, parametric studies, and comparisons with well-controlled experimental databases. In some applications, they are also extended to approximate 3D effects through 2.5D approaches \cite{pierreLavoie2p5D}. However, such methods remain limited when the ice accretion process is governed by genuinely 3D flow features, spanwise transport, complex geometry effects, or non-uniform impingement patterns.
+Two-dimensional icing simulations have played a central role in the development and validation of ice accretion models. They remain computationally efficient and are particularly useful for airfoil configurations, parametric studies, and comparisons with well-controlled experimental databases. In some applications, they are also extended to approximate 3D effects through 2.5D approaches \cite{pierreLavoie2p5D}. However, such methods remain limited when the ice accretion process is governed by genuinely 3D flow features, spanwise transport, complex geometry effects, or non-uniform impingement patterns. \addText{Additional modeling challenges arise under Supercooled Large Droplet (SLD) conditions, such as those defined in Appendix~O, where droplet deformation, splashing, and secondary impingement must be considered to accurately predict water collection.}
 
 Fully 3D simulations provide a more general framework for predicting ice accretion on realistic aircraft components and complex configurations. Nevertheless, they are significantly more demanding in terms of computational resources and numerical robustness.
 The large computational meshes required to resolve 3D geometries, combined with the repeated solution of the aerodynamic, droplet, and thermodynamic models in a multilayer framework, make high-performance computing (HPC) an important component of practical 3D ice accretion simulations. Efficient parallel algorithms and scalable numerical methods are therefore required to maintain tractable computational times as the problem size and number of accretion steps increase.
-These difficulties become particularly important in multilayer simulations, where the geometry must be updated repeatedly as the ice grows. These difficulties become particularly important in multilayer simulations, where the geometry must be updated repeatedly as the ice grows. Each update may degrade the mesh quality or generate invalid surface and volume elements (Fig.~\ref{fig:surfaceMeshEntanglement}). As a result, a simulation that has already required substantial computational effort may fail before reaching the final accretion time.
+These difficulties become particularly important in multilayer simulations, where the geometry must be updated repeatedly as the ice grows. Each update may degrade the mesh quality \addText{and require smoothing or additional geometric adjustments to maintain a valid discretization,} or generate invalid surface and volume elements (Fig.~\ref{fig:surfaceMeshEntanglement}). \addText{Furthermore, repeated geometry updates must preserve the accumulated ice mass while minimizing the need for manual intervention, making mass conservation and automation important requirements for a robust multilayer methodology.} As a result, a simulation that has already required substantial computational effort may fail before reaching the final accretion time.
 
-This robustness constraint partly explains why single-step ice accretion strategies remain widely used in practical applications. They are simpler to execute and reduce the risk of mesh failure, but they also limit the ability of the solver to account for the feedback between the evolving ice shape and the surrounding flow and droplet fields. In the Ice Prediction Workshop (IPW)\footnote{The Ice Prediction Workshops (IPW)~\cite{laurendeau2022summary,laurendeau2024summary}  are an AIAA international benchmark initiative for  assessing state-of-the-art in numerical aircraft icing tools against experimental data.}, many submitted ice-shape predictions relied on such single-step approaches. While effective from a computational standpoint, these methods generally showed reduced ability to reproduce complex accretion features, especially when compared with multilayer simulations \cite{laurendeau2022summary,laurendeau2024summary}. This highlights the need for numerical strategies capable of preserving the robustness of single-step approaches while retaining the improved physical fidelity of
-multilayer ice-growth modeling. 
+This robustness constraint partly explains why single-step ice accretion strategies remain widely used in practical applications. They are simpler to execute and reduce the risk of mesh failure, but they also limit the ability of the solver to account for the feedback between the evolving ice shape and the surrounding flow and droplet fields. In the Ice Prediction Workshop (IPW)\footnote{The Ice Prediction Workshops (IPW)~\cite{laurendeau2022summary,laurendeau2024summary} are an AIAA international benchmark initiative for assessing state-of-the-art numerical aircraft icing tools against experimental data.}, many submitted ice-shape predictions relied on such single-step approaches. While effective from a computational standpoint, these methods generally showed reduced ability to reproduce complex accretion features, especially when compared with multilayer simulations \cite{laurendeau2022summary,laurendeau2024summary}. This highlights the need for numerical strategies capable of preserving the robustness of single-step approaches while retaining the improved physical fidelity of multilayer ice-growth modeling.
 
 \subsection{Motivation for the Present Work}
 
@@ -148,48 +175,29 @@ The primary objective of this thesis is to improve the robustness of 3D multilay
 
 More specifically, this work develops and assesses numerical methods required to support robust multilayer ice accretion simulations, including Lagrangian particle tracking for droplet impingement prediction, Supercooled Large Droplet effects in Eulerian and Lagrangian formulations, level-set-based geometry update and surface reconstruction, and an immersed-boundary extension of the existing icing framework.
 
-To accomplish this objective, the following sub-objectives are defined.
-
+To accomplish this objective, the following sub-objectives are defined:
 
 \subsection*{O.1: Develop, Accelerate, and Assess a Lagrangian Droplet Impingement Model and Extend Droplet Impingement Modeling to Supercooled Large Droplet Conditions}
-
-
 
 The first objective is to develop and evaluate Lagrangian particle-tracking methods for predicting droplet trajectories and collection efficiency.
 
 The method is assessed in terms of impingement limits, collection-efficiency distributions, computational cost, and parallel performance, and is compared with the existing Eulerian droplet model.
 
-
-
-
 This objective also extends both the Eulerian and Lagrangian impingement models to account for Supercooled Large Droplet effects.
 These developments are used to assess the influence of large-droplet effects on droplet collection and impingement limits.
 
-\subsection*{O.2: Develop and Assess a Robust Level-Set Methodology for 3D Multilayer Ice-Shape Evolution}
-
-
-
+\subsection*{O.2: Develop and Assess a Robust \addText{and Accurate} Level-Set Methodology for 3D Multilayer Ice-Shape Evolution}
 
 The second objective is to develop a robust methodology for multilayer ice-shape evolution using a level-set description of the evolving geometry.
 The method is intended to support geometry displacement, surface reconstruction, and preservation of the clean portions of the geometry, while reducing geometric failures during multilayer simulations.
 
-
-
-
 The methodology is then applied and assessed on representative 2D and 3D icing configurations.
 These cases are used to demonstrate its applicability to multilayer ice accretion and to examine its behavior for increasingly complex geometries.
 
-
 \subsection*{O.3: Develop, Integrate, and Assess an Immersed-Boundary Framework for Ice Accretion Simulations}
-
-
-
 
 The third objective is to extend an existing immersed-boundary flow solver by integrating Eulerian and Lagrangian droplet impingement, thermodynamic ice accretion, and geometry-evolution capabilities within a unified ice-accretion framework.
 The objective is to demonstrate the feasibility of performing the complete ice-accretion sequence without repeated body-fitted volume remeshing and to establish a numerical foundation for the further development of immersed-boundary icing methods.
-
-
-
 
 The resulting immersed-boundary framework is then assessed against established body-fitted formulations using selected verification and validation cases.
 Comparisons of droplet collection efficiencies and final ice shapes are used to evaluate the agreement between the two approaches and identify areas requiring further development.

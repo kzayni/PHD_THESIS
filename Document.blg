@@ -20,7 +20,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 13010 items from 5000.
+Reallocated field_info (elt_size=4) to 13145 items from 5000.
 Database file #1: Document.bib
 Warning--string name "june" is undefined
 --line 1723 of file Document.bib
@@ -67,45 +67,45 @@ Warning--empty journal in champsArticle
 Warning--empty year in champsArticle
 
 Done.
-You've used 178 entries,
+You've used 181 entries,
             4024 wiz_defined-function locations,
-            1814 strings with 39457 characters,
-and the built_in function-call counts, 119646 in all, are:
-= -- 9900
-> -- 2771
-< -- 866
-+ -- 1487
-- -- 508
-* -- 5566
-:= -- 18251
-add.period$ -- 360
-call.type$ -- 178
-change.case$ -- 166
-chr.to.int$ -- 1794
-cite$ -- 215
-duplicate$ -- 9094
-empty$ -- 9752
-format.name$ -- 647
-if$ -- 27625
+            1830 strings with 40068 characters,
+and the built_in function-call counts, 121803 in all, are:
+= -- 10089
+> -- 2812
+< -- 882
++ -- 1509
+- -- 515
+* -- 5665
+:= -- 18578
+add.period$ -- 367
+call.type$ -- 181
+change.case$ -- 169
+chr.to.int$ -- 1824
+cite$ -- 218
+duplicate$ -- 9264
+empty$ -- 9928
+format.name$ -- 657
+if$ -- 28128
 int.to.chr$ -- 0
-int.to.str$ -- 177
-missing$ -- 1613
-newline$ -- 562
-num.names$ -- 177
-pop$ -- 3727
+int.to.str$ -- 180
+missing$ -- 1641
+newline$ -- 571
+num.names$ -- 180
+pop$ -- 3787
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 9544
+skip$ -- 9723
 stack$ -- 0
-substring$ -- 4631
-swap$ -- 7196
-text.length$ -- 268
+substring$ -- 4716
+swap$ -- 7330
+text.length$ -- 274
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 178
+type$ -- 181
 warning$ -- 37
-while$ -- 481
-width$ -- 180
-write$ -- 1684
+while$ -- 489
+width$ -- 183
+write$ -- 1714
 (There were 38 warnings)

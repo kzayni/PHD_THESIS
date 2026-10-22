@@ -1,0 +1,111 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Document-clean.aux
+A level-1 auxiliary file: CHAPTERS/1-Dedicace.aux
+A level-1 auxiliary file: CHAPTERS/2-Remerciements.aux
+A level-1 auxiliary file: CHAPTERS/3-Resume_sujet.aux
+A level-1 auxiliary file: CHAPTERS/3-Abstract.aux
+A level-1 auxiliary file: CHAPTERS/4-Sigles_Abrev.aux
+A level-1 auxiliary file: CHAPTERS/5-Introduction.aux
+A level-1 auxiliary file: CHAPTERS/6-Revue_litterature.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LAGRANGIAN.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_LEVEL_SET.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_IBM.aux
+A level-1 auxiliary file: CHAPTERS/7-CHAPTER_DISCUSSIONS.aux
+A level-1 auxiliary file: CHAPTERS/8-Conclusion.aux
+The style file: IEEEtran.bst
+A level-1 auxiliary file: CHAPTERS/9-Annexes.aux
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 13145 items from 5000.
+Database file #1: Document.bib
+Warning--string name "june" is undefined
+--line 1723 of file Document.bib
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+Warning--missing publisher in oneraIcingWindTunnel
+Warning--empty year in oneraIcingWindTunnel
+Warning--missing publisher in iceAccretionOnSweptWings
+Warning--empty year in iceAccretionOnSweptWings
+Warning--empty year in pabloIcing
+Warning--empty journal in zabaletamultishot
+Warning--empty year in zabaletamultishot
+Warning--missing publisher in glennIce
+Warning--empty year in glennIce
+Warning--missing institution in wright2008user
+Warning--missing publisher in spallartAllmaras
+Warning--empty year in spallartAllmaras
+Warning--missing publisher in guillaumeAuger
+Warning--empty year in guillaumeAuger
+Warning--missing publisher in montreuilHTC
+Warning--empty year in montreuilHTC
+Warning--missing publisher in isikLagrangian
+Warning--empty year in isikLagrangian
+Warning--missing publisher in zaidSabriLagrangian
+Warning--empty year in zaidSabriLagrangian
+Warning--empty journal in clift2005bubbles
+Warning--missing publisher in andySLD
+Warning--empty year in andySLD
+Warning--missing publisher in lagNodeDisplacement
+Warning--empty year in lagNodeDisplacement
+Warning--empty year in tuckerEikonal
+Warning--missing publisher in inviscidIBM47
+Warning--empty year in inviscidIBM47
+Warning--empty journal in mittal2005immersed
+Warning--missing publisher in parenteau
+Warning--empty year in parenteau
+Warning--missing institution in broeren2011aerodynamic
+Warning--empty journal in thompsonDeformation
+Warning--empty year in thompsonDeformation
+Warning--missing publisher in OSHER2004
+Warning--empty journal in champsArticle
+Warning--empty year in champsArticle
+
+Done.
+You've used 181 entries,
+            4024 wiz_defined-function locations,
+            1831 strings with 40088 characters,
+and the built_in function-call counts, 121803 in all, are:
+= -- 10089
+> -- 2812
+< -- 882
++ -- 1509
+- -- 515
+* -- 5665
+:= -- 18578
+add.period$ -- 367
+call.type$ -- 181
+change.case$ -- 169
+chr.to.int$ -- 1824
+cite$ -- 218
+duplicate$ -- 9264
+empty$ -- 9928
+format.name$ -- 657
+if$ -- 28128
+int.to.chr$ -- 0
+int.to.str$ -- 180
+missing$ -- 1641
+newline$ -- 571
+num.names$ -- 180
+pop$ -- 3787
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 4
+skip$ -- 9723
+stack$ -- 0
+substring$ -- 4716
+swap$ -- 7330
+text.length$ -- 274
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 181
+warning$ -- 37
+while$ -- 489
+width$ -- 183
+write$ -- 1714
+(There were 38 warnings)

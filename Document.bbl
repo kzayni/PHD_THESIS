@@ -40,6 +40,9 @@ H.~Papillon~Laroche, ``Stochastic ice accretion model for aircraft icing,'' Ph.D
 \bibitem{taubinFilter}
 G.~Taubin, \emph{A Signal Processing Approach To Fair Surface Design}, 1st~ed.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing Machinery, 2023.
 
+\bibitem{lavoieDroplets}
+P.~Lavoie, E.~Radenac, G.~Blanchard, {\'E}.~Laurendeau, and P.~Villedieu, ``Penalization method for eulerian droplet impingement simulations toward icing applications,'' \emph{AIAA Journal}, vol.~60, no.~2, pp. 641--653, 2022.
+
 \bibitem{papadakism2004water}
 M.~Papadakis, A.~Rachman, S.-C. Wong, H.-W. Yeong, K.~Hung, and C.~Bidwell, ``Water {{Impingement Experiments}} on a {{NACA}} 23012 {{Airfoil}} with {{Simulated Glaze Ice Shapes}},'' in \emph{42nd {{AIAA Aerospace Sciences Meeting}} and {{Exhibit}}}.\hskip 1em plus 0.5em minus 0.4em\relax {Reno, Nevada}: {American Institute of Aeronautics and Astronautics}, Jan. 2004.
 
@@ -86,6 +89,9 @@ R.~Akhurst, ``Aircraft accident report: in-flight icing encounter and loss of co
 
 \bibitem{canadaNRCIceAccretion}
 M.~Oleskiw, ``A review of 65 years of aircraft in-flight icing research at nrc,'' \emph{Canadian aeronautics and space journal. Le journal aéronautique et spatial du Canada}, vol.~47, 09 2001.
+
+\bibitem{vecchione2003overview}
+L.~Vecchione, P.~P. De~Matteis, and G.~Leone, ``An overview of the cira icing wind tunnel,'' in \emph{41st AIAA Aerospace Sciences Meeting and Exhibit}.\hskip 1em plus 0.5em minus 0.4em\relax American Institute of Aeronautics and Astronautics, 2003.
 
 \bibitem{ferschitz2017development}
 H.~Ferschitz, M.~Wannemacher, O.~Bucek, F.~Kn{\"o}bel, and W.~Breitfu{\ss}, ``Development of sld capabilities in the rta icing wind tunnel,'' \emph{SAE International Journal of Aerospace}, vol.~10, no. 2017-01-9001, pp. 12--21, 2017.
@@ -148,6 +154,9 @@ W.~B. Wright, C.~E. Porter, E.~T. Galloway, and D.~L. Rigby, \emph{GlennICE 2.1 
 
 \bibitem{donizetti2023level}
 A.~Donizetti, T.~Bellosta, A.~Rausa, B.~Re, and A.~Guardone, ``Level-set mass-conservative front-tracking technique for multistep simulations of in-flight ice accretion,'' \emph{Journal of Aircraft}, pp. 1--11, 2023.
+
+\bibitem{forsyth2023pitot}
+P.~Forsyth and K.~Szilder, ``Experimental and numerical ice accretion shapes on a pitot probe model,'' \emph{SAE International Journal of Advances and Current Practices in Mobility}, vol.~6, no.~3, pp. 1194--1205, 2024.
 
 \bibitem{alkebsiPhd}
 A.~Al-Kebsi, ``{Multi-step icing modelling in the NSMB solver},'' Theses, {Universit{\'e} de Strasbourg}, Jan. 2020.
@@ -388,6 +397,9 @@ F.~Capizzano, ``A compressible flow simulation system based on cartesian grids w
 \bibitem{capizzano2011turbulent}
 F.~Capizzano, ``Turbulent wall model for immersed boundary methods,'' \emph{AIAA journal}, vol.~49, no.~11, pp. 2367--2381, 2011.
 
+\bibitem{ZAYNI2026112019}
+K.~Zayni, M.~Blanchet, and Éric Laurendeau, ``A ray-tracing-enhanced lagrangian particle tracking framework for ice accretion applications,'' \emph{Aerospace Science and Technology}, vol. 175, p. 112019, 2026.
+
 \bibitem{climate}
 H.~J.~S. Fernando and Y.-J. Choi, \emph{Particle laden geophysical flows: from geophysical to sub-kolmogorov scales}.\hskip 1em plus 0.5em minus 0.4em\relax Springer Netherlands, 2007, p. 407–421.
 
@@ -484,9 +496,6 @@ V.~Mallet, D.~Keyes, and F.~Fendell, ``Modeling wildland fire propagation with l
 \bibitem{champsArticle}
 M.~Parenteau, S.~Bourgault-Cote, F.~Plante, E.~Kayraklioglu, and E.~Laurendeau, ``Development of parallel cfd applications with the chapel programming language.''
 
-\bibitem{ZAYNI2026112019}
-K.~Zayni, M.~Blanchet, and Éric Laurendeau, ``A ray-tracing-enhanced lagrangian particle tracking framework for ice accretion applications,'' \emph{Aerospace Science and Technology}, vol. 175, p. 112019, 2026.
-
 \bibitem{Zhu_2014}
 C.~X. Zhu, C.~L. Zhu, and B.~Fu, ``3d ice accretion simulation for complex configuration basing on improved messinger model,'' \emph{Advanced Materials Research}, vol. 1025–1026, p. 148–155, Sep. 2014.
 
@@ -529,6 +538,9 @@ J.~M. Diebold, A.~P. Broeren, and M.~Bragg, ``Aerodynamic classification of swep
 \bibitem{wright1997dra}
 W.~B. Wright, \emph{DRA/NASA/ONERA collaboration on icing research}.\hskip 1em plus 0.5em minus 0.4em\relax NYMA, Incorporated, 1997.
 
+\bibitem{capizzano2014eulerian}
+F.~Capizzano and E.~Iuliano, ``A eulerian method for water droplet impingement by means of an immersed boundary technique,'' \emph{Journal of Fluids Engineering}, vol. 136, no.~4, p. 040906, 2014.
+
 \bibitem{CONSTANT2021110240}
 B.~Constant, S.~P{\'e}ron, H.~Beaugendre, and C.~Benoit, ``An improved immersed boundary method for turbulent flow simulations on cartesian grids,'' \emph{Journal of Computational Physics}, vol. 435, p. 110240, 2021.
 
@@ -546,9 +558,6 @@ F.~Chedevergne and B.~Aupoix, ``Accounting for wall roughness effects in turbule
 
 \bibitem{prakash2019rans}
 A.~Prakash, ``Rans computation of heat transfer over rough surfaces,'' Ph.D. dissertation, Ecole Polytechnique, Montreal (Canada), 2019.
-
-\bibitem{lavoieDroplets}
-P.~Lavoie, E.~Radenac, G.~Blanchard, {\'E}.~Laurendeau, and P.~Villedieu, ``Penalization method for eulerian droplet impingement simulations toward icing applications,'' \emph{AIAA Journal}, vol.~60, no.~2, pp. 641--653, 2022.
 
 \bibitem{trontin2017description}
 P.~Trontin, G.~Blanchard, A.~Kontogiannis, and P.~Villedieu, ``Description and assessment of the new onera 2d icing suite igloo2d,'' in \emph{9th AIAA Atmospheric and Space Environments Conference}, 2017, p. 3417.

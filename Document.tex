@@ -97,8 +97,15 @@
 
 \usepackage{xcolor}
 
-\newcommand{\removeText}[1]{\textcolor{red}{#1}}
-\newcommand{\addText}[1]{\textcolor{blue}{#1}}
+% In the clean build, omit deleted text while retaining added text.
+% The regular build continues to show both kinds of revision markup.
+\ifdefined\CleanThesisVersion
+  \newcommand{\removeText}[1]{}
+  \newcommand{\addText}[1]{#1}
+\else
+  \newcommand{\removeText}[1]{\textcolor{red}{#1}}
+  \newcommand{\addText}[1]{\textcolor{blue}{#1}}
+\fi
 
 %%
 %% Définitions spécifiques au format de rédaction de Poly.

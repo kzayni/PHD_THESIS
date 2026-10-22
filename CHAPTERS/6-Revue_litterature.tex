@@ -5,14 +5,48 @@ This chapter reviews the principal numerical ingredients involved in aircraft ic
 }
 
 \section{Overview of Numerical Ice Accretion Modeling}\label{sec:review_icing_overview}
-Aircraft icing is the accumulation of ice on aircraft surfaces caused by the impingement and freezing of supercooled water droplets. From a numerical point of view, the problem involves the coupling of an external aerodynamic flow, a dispersed liquid phase, a surface thermodynamic balance, and an evolving fluid-solid interface. These different components are characterized by distinct physical time scales, which motivates the modular formulation used in most ice-accretion solvers~\cite{guardoneReview}.  Certification icing conditions generally involve exposure over several minutes, resulting in an ice-accretion time scale that is several orders of magnitude longer than the characteristic flow and droplet time scales~\cite{guardoneReview}. Owing to this disparity, the transient ice-accretion process may be approximated as a succession of quasi-steady states.
 
-In addition to this separation of time scales, the low concentration of liquid water in icing clouds permits a further simplification in the treatment of the dispersed phase. Certification icing envelopes involve standard supercooled droplets (SSD) with characteristic diameters ranging from approximately $10$ to $50~\mu\mathrm{m}$, while SLD conditions can extend to diameters approaching $1000~\mu\mathrm{m}$. For a typical liquid water content (LWC) of $1~\mathrm{g/m^3}$, the corresponding liquid volume fraction is of the order of $10^{-6}$ \cite{hessClouds, rosenfeldClouds}. This small volume fraction justifies the common assumption of one-way coupling between the air and droplet phases.
+Aircraft icing is the accumulation of ice on aircraft surfaces caused by the impingement and freezing of supercooled water droplets. From a numerical point of view, the problem involves the coupling of an external aerodynamic flow, a dispersed liquid phase, a surface thermodynamic balance, and an evolving fluid-solid interface. These different components are characterized by distinct physical time scales, which motivates the modular formulation used in most ice-accretion solvers~\cite{guardoneReview}. \removeText{Certification icing conditions generally involve exposure over several minutes, resulting in an ice-accretion time scale that is several orders of magnitude longer than the characteristic flow and droplet time scales~\cite{guardoneReview}. Owing to this disparity, the transient ice-accretion process may be approximated as a succession of quasi-steady states.}\addText{The characteristic time scales associated with the airflow, droplet motion, and ice accretion are denoted by $\tau_f$, $\tau_d$, and $\tau_{\mathrm{ice}}$, respectively, and is given by}
+\begin{equation}
+    \addText{
+    \tau_f = \frac{L}{U_\infty},
+    \qquad
+    \tau_d = \frac{\rho_d D^2}{18\mu_a},
+    \qquad
+    \tau_{\mathrm{ice}} = \frac{L}{V_{\mathrm{ice}}}
+    }
+\end{equation}
+\addText{where $L$ is a characteristic length, $U_\infty$ is the free-stream velocity, $\rho_d$ and $D$ are the droplet density and diameter, respectively, $\mu_a$ is the dynamic viscosity of air, and $V_{\mathrm{ice}}$ is the ice-growth velocity. The droplet relaxation time $\tau_d$ is defined under the Stokes drag assumption. The ratio between the droplet and airflow time scales defines the Stokes number}
+\begin{equation}
+    \addText{
+    \mathrm{St} = \frac{\tau_d}{\tau_f},
+    }
+\end{equation}
+\addText{which is typically of order unity or smaller for standard supercooled droplets (SSDs) but can be higher under supercooled large droplet (SLD) conditions, indicating that droplet relaxation times can be comparable to the characteristic airflow time scale.}
+
+\addText{Under rime icing conditions, assuming that all impinging water freezes, the ice-growth velocity is given by}
+\begin{equation}
+    \addText{
+    V_{\mathrm{ice}} =
+    \frac{\beta\,\mathrm{LWC}\,U_\infty}{\rho_i},
+    }
+\end{equation}
+\addText{where $\rho_i$ is the ice density, $\mathrm{LWC}$ is the liquid water content, and $\beta$ is the local collection efficiency\footnote{The collection efficiency is a dimensionless quantity representing the ratio of the local impinging water mass flux to the free-stream water mass flux.}. The ratio between the ice-accretion and airflow time scales is therefore}
+\begin{equation}
+    \addText{
+    \frac{\tau_{\mathrm{ice}}}{\tau_f}
+    = \frac{\rho_i}{\beta\,\mathrm{LWC}}
+    \approx 10^6.
+    }
+\end{equation}
+\addText{This separation of approximately six orders of magnitude indicates that ice growth occurs on a much longer time scale than the airflow and droplet dynamics. Consequently, the transient ice-accretion process can be approximated as a succession of quasi-steady states.}
+
+In addition to this separation of time scales, the low concentration of liquid water in icing clouds permits a further simplification in the treatment of the dispersed phase. Certification icing envelopes involve \removeText{standard supercooled droplets (SSD)}\addText{SSDs} with characteristic diameters ranging from approximately $10$ to $50~\mu\mathrm{m}$, while SLD conditions can extend to diameters approaching $1000~\mu\mathrm{m}$. For a typical \removeText{liquid water content (LWC)}\addText{LWC} of $1~\mathrm{g/m^3}$, the corresponding liquid volume fraction is of the order of $10^{-6}$ \cite{hessClouds, rosenfeldClouds}. This small volume fraction justifies the common assumption of one-way coupling between the air and droplet phases.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.8\textwidth]{FIGURES/LIT_REV/ICING_FRAMEWORK_SOLUTIONS.eps}
-\caption{Schematic of the multilayer ice accretion framework     with representative solutions at each stage.}\label{fig:icingFramework}
+\caption{Schematic of the multilayer ice accretion framework with representative solutions at each stage.}\label{fig:icingFramework}
 \end{figure}
 
 These assumptions provide the foundation for the conventional quasi-steady ice-accretion framework (Fig.~\ref{fig:icingFramework}). In its simplest form, the aerodynamic flow is first computed around the clean geometry. The resulting velocity field is then used to determine the transport of the dispersed phase and the local droplet impingement rate on the exposed surface. The latter is then provided to a surface thermodynamic model, which evaluates the local mass and energy balances and returns the ice-growth rate. Finally, the geometry is updated according to the predicted ice thickness. Representative aerodynamic, droplet, geometry-evolution, and mesh-update solutions associated with this sequence are shown in Fig.~\ref{fig:icingFramework}. When this sequence is performed only once over the full exposure time, the approach is often referred to as a single-step or single-shot accretion simulation. When the total icing time is divided into several shorter intervals, the same sequence is repeated on the evolving geometry, leading to a multilayer formulation. Intermediate strategies, such as predictor--corrector formulations~\cite{radenac2024workflow, maximeBlanchetDynamicThermo}, have also been proposed to partially account for the retroaction of the growing ice shape on the flow and droplet fields. This limits the additional computational cost to a small number of surface-solution correction cycles.
@@ -52,7 +86,8 @@ where $T_s$ is the surface temperature and $T_{rec}$  the recovery temperature. 
     \label{eq:recovery_temperature}
 \end{equation}
 
-where $T_e$ and $M_e$ are the temperature and Mach number at the edge of the boundary layer, respectively, with $M_e$ obtained from the local flow conditions using isentropic relations \cite{radenac2024workflow}, and $r$ is the recovery factor. Montreuil et al.~\cite{montreuilHTC} use $r=Pr^{1/3}\approx0.9$ for turbulent flows and $r=0.85$ for laminar flows.
+where $T_e$ and $M_e$ are the temperature and Mach number at the edge of the boundary layer, respectively, with $M_e$ obtained from the local flow conditions using isentropic relations \cite{radenac2024workflow}, and $r$ is the recovery factor. \removeText{Montreuil et al.~\cite{montreuilHTC} use $r=Pr^{1/3}\approx0.9$ for turbulent flows and $r=0.85$ for laminar flows.}
+\addText{In practice, recovery factors of $r=Pr^{1/3}\approx0.9$ for turbulent flows and $r=0.85$ for laminar flows are commonly adopted in the literature~\cite{montreuilHTC}.}
 
 To avoid relying on an approximate recovery factor, Montreuil et al.~\cite{montreuilHTC} also proposed evaluating the HTC from two RANS solutions performed with different thermal wall conditions. For two prescribed wall temperatures $T_{w,0}$ and $T_{w,1}$, the corresponding wall heat fluxes satisfy
 
@@ -278,7 +313,7 @@ where $\sigma$ is the surface tension of water. $C_{D,\mathrm{sphere}}$ and $C_{
 
 The most consequential SLD effects generally arise during droplet-wall interaction. At relatively low impact energy, an impinging droplet may stick to or spread over the surface and contribute directly to the surface water film. Under other conditions, it may bounce, splash, or break into secondary droplets~\cite{tan2007experimental, andySLD}. These secondary droplets can be ejected from the surface and may subsequently reimpinge farther downstream, thereby extending the effective impingement region. The amount of water deposited on the surface is therefore determined not only by the collection efficiency, but also by the outcome of the impact process.
 
-Because resolving individual droplet impacts with interface-capturing methods would be prohibitively expensive at aircraft scale~\cite{habashiSPH}, these first-order SLD wall-interaction effects are generally represented through semi-empirical models. Such models are commonly formulated in terms of nondimensional impact parameters, including the Reynolds, Weber, and Ohnesorge numbers, and may also account for the impact angle and impact velocity. A common approach consists in correcting the collection efficiency using a sticking rate $\epsilon$, or equivalently a mass-loss coefficient $f_m$:
+Because resolving individual droplet impacts with interface-capturing methods would be prohibitively expensive at aircraft scale~\cite{habashiSPH}, these first-order SLD wall-interaction effects are generally represented through semi-empirical models. Such models are commonly formulated in terms of nondimensional impact parameters, including the Reynolds, Weber, and Ohnesorge numbers \addText{($\mathrm{Oh} = \mu_d/\sqrt{\rho_d \sigma D}$)}, and may also account for the impact angle and impact velocity. A common approach consists in correcting the collection efficiency using a sticking rate $\epsilon$, or equivalently a mass-loss coefficient $f_m$:
 
 \begin{equation}
 \beta_{\mathrm{final}}
@@ -373,13 +408,13 @@ The thermodynamic problem involves three unknowns: the local ice-accretion rate,
 \end{itemize}
 
 
- Although the model remains the basis of many contemporary ice-accretion solvers, its original implementation relied on a surface-marching procedure initiated near the stagnation point. This dependence on a clearly identified stagnation location complicates its application to configurations involving multiple stagnation regions, separated flows, or general 3D geometries.
+Although the model remains the basis of many contemporary ice-accretion solvers, its original implementation relied on a surface-marching procedure initiated near the stagnation point. This dependence on a clearly identified stagnation location complicates its application to configurations involving multiple stagnation regions, separated flows, or general 3D geometries.
 
 Several extensions have consequently been proposed to improve either the physical description or the numerical robustness of the thermodynamic calculation. Myers et al.~\cite{myersExtension}, for example, extended the classical formulation by accounting for heat conduction through the growing ice layer. Although this modification provides a more detailed representation of the temperature distribution within the ice, it does not remove the dependence of the solution on the treatment of the stagnation point.
 
 A different strategy was introduced by Zhu et al.~\cite{zhu2012} through an iterative implementation of the Messinger model. Rather than relying exclusively on a predefined marching direction originating from a stagnation point, the surface-water distribution and thermodynamic state are updated iteratively. The transport direction of the runback water is determined from the local wall-shear-stress direction, with the surface-pressure gradient providing an additional contribution. This formulation is better suited to complex and 3D geometries and has consequently been adopted by several modern ice-prediction tools, as reflected in the methods reported during recent ice-prediction workshops~\cite{laurendeau2022summary,laurendeau2024summary}.
 
-Bourgault et al.~\cite{SWIM} proposed an alternative formulation known as the Shallow-Water Icing Model (SWIM). In this approach, the liquid-water film is represented through surface PDEs describing its transport and evolution. In contrast to the iterative Messinger formulation, SWIM retains an explicitly unsteady description of the water film. It can therefore represent transient film-transport phenomena more naturally, but generally requires a more involved numerical treatment and introduces an additional computational cost. For most ice-accretion conditions, the resulting ice shapes have nevertheless been found to remain broadly comparable to those obtained using iterative Messinger formulations~\cite{guardoneReview}.
+Bourgault et al.~\cite{SWIM} proposed an alternative \addText{time-accurate thermodynamic} formulation known as the Shallow-Water Icing Model (SWIM). In this approach, the liquid-water film is represented through surface PDEs describing its transport and evolution. In contrast to the iterative Messinger formulation, SWIM \removeText{retains an explicitly unsteady description of the water film}\addText{resolves the transient evolution of the water film}. It can therefore represent transient film-transport phenomena more naturally, but generally requires a more involved numerical treatment and introduces an additional computational cost. For most ice-accretion conditions, the resulting ice shapes have nevertheless been found to remain broadly comparable to those obtained using iterative Messinger formulations~\cite{guardoneReview}.
 A more comprehensive assessment and comparison of the classical Messinger model, its extensions, and SWIM formulations is provided by Lavoie et al.~\cite{lavoieThermo}.
 In that work, it was established that, for time scales beyond the transient film response, SWIM recovers the Messinger solution by construction~\cite{lavoieThermo}.
 
@@ -460,7 +495,7 @@ and
     \right)
 \end{equation}
 
-Several attempts have been made to introduce level-set representations into aircraft ice-accretion simulations. Peña et al.~\cite{PENA2016278} presented one of the first applications of a level-set method to the evolution of an ice shape. Their work demonstrated the feasibility of representing ice growth implicitly, but the application was limited to single-step accretion.
+Several attempts have been made to introduce level-set representations into aircraft ice-accretion simulations. Peña et al.~\cite{PENA2016278} presented \removeText{one of }the first applications of a level-set method to the evolution of an ice shape. Their work demonstrated the feasibility of representing ice growth implicitly, but the application was limited to single-step accretion.
 Beaugendre et al.~\cite{HeloiseBeaugendre} employed a level-set representation in a different icing context, namely to describe the evolving geometry and trajectories of ice fragments during shedding simulations. In this case, the implicit representation facilitated the treatment of moving solid interfaces and their interaction with the surrounding flow.
 
 Bourgault-Côté et al.\cite{bourgault-coteMultilayerAirfoilIce2019} and Lavoie et al.\cite{lavoieLevelSet} subsequently extended the use of level-set methods to 2D multilayer ice-accretion simulations. Their studies considered both body-fitted and immersed-boundary frameworks.

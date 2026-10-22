@@ -13,88 +13,88 @@
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ice Morphologies}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Regulations \& Certification}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.3}Regulations \& Certification}{4}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Ice Accretion Numerical Modeling}{5}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Problem Statement}{6}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Motivation for the Present Work}{8}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Objectives of the Present Study}{9}{subsection.1.5.2}%
-\contentsline {section}{\numberline {1.6}Thesis Outline}{11}{section.1.6}%
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aerodynamics}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{17}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{19}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{20}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{21}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{24}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Geometry Evolution}{27}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Interface Tracking}{27}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Interface Capturing}{28}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Geometry Representation}{30}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{32}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{33}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{35}{subsection.2.6.3}%
-\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{37}{section.2.7}%
-\contentsline {chapter}{\numberline {3}A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}{40}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{40}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Lagrangian Droplet Tracking for Ice Accretion}{41}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Improvements in Lagrangian Particle Tracking}{45}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Ray--Quadrilateral Intersections in CFD Applications}{45}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Adaptive Seeding}{48}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Collection Efficiency Computations and SLD Effects}{49}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Parallelism}{53}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Results}{54}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Scalability}{54}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Case IPW1 - 112: NACA64A008 Horizontal Tail}{56}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Case IPW1 - 122: Three Element Airfoil}{58}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Case HLPW5 - 2.1: CRM Wing-Body}{62}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Conclusion}{64}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Article : Three-Dimensional Multilayer Ice Accretion Using a Level-Set Method}{65}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{65}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CHAMPS Icing Framework}{68}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Level-Set Ice Accretion Formulation}{69}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Level-Set Governing Equations and Initialization}{69}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Level-Set Advection: Velocity Formulation, Surface-Quantity Propagation, and Time Integration}{70}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Ice Mass Computation and Local Interface Reconstruction}{73}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Geometry Extraction and Smoothing}{74}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Results}{77}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Three-Horns Ice Accretion Case}{78}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Case IPW1 241}{79}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Case IPW1 242}{80}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Case IPW1 361}{85}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Case IPW1 362}{86}{subsection.4.5.5}%
-\contentsline {section}{\numberline {4.6}Conclusion}{88}{section.4.6}%
-\contentsline {chapter}{\numberline {5}An Immersed-Boundary Approach for Multilayer Ice Accretion Simulations}{90}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{90}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Immersed-Boundary Representation}{91}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Immersed-Boundary Flow Treatment}{93}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Immersed-Boundary Droplet Treatment}{97}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Eulerian Formulation: Governing Equations and Penalization Strategy}{97}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Lagrangian Immersed-Surface Tracking}{99}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Immersed-Boundary Icing Coupling}{100}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Results}{100}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{101}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}SLD Impingement}{101}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Case 01}{103}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Case 04}{104}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Case RG15}{106}{subsection.5.6.5}%
-\contentsline {section}{\numberline {5.7}Conclusion}{108}{section.5.7}%
-\contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{109}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Eulerian and Lagrangian Droplet Impingement}{109}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Algebraic and Level-Set Ice Accretion}{112}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Body-Fitted and Immersed-Boundary Approaches}{114}{section.6.3}%
-\contentsline {chapter}{\numberline {7}CONCLUSION}{117}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of Works}{117}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Limitations}{119}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Research}{120}{section.7.3}%
-\contentsline {compteur}{REFERENCES}{122}{chapter*.90}%
-\contentsline {compteur}{APPENDICES}{138}{chapter*.90}%
-\contentsline {section}{\numberline {A.1}Mass Balance}{138}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Energy Balance}{138}{section.A.2}%
-\contentsline {section}{\numberline {B.1}Mesh Refinement Study}{141}{section.B.1}%
-\contentsline {section}{\numberline {B.2}SLD Model Details}{143}{section.B.2}%
-\contentsline {section}{\numberline {C.1}Lagrangian Droplet Integration}{144}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Level-Set Advection}{144}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}Spatial Convergence}{145}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Temporal Convergence}{145}{subsection.C.2.2}%
-\contentsline {section}{\numberline {C.3}Eulerian Immersed-Boundary Droplet Formulation}{146}{section.C.3}%
+\contentsline {section}{\numberline {1.5}Problem Statement}{7}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Motivation for the Present Work}{9}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Objectives of the Present Study}{11}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}Thesis Outline}{12}{section.1.6}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{14}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aerodynamics}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{21}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{22}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{23}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{26}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Geometry Evolution}{28}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Interface Tracking}{28}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Interface Capturing}{30}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Geometry Representation}{32}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Geometrical Methods}{33}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Continuous-Forcing Methods}{34}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Discrete-Forcing Methods}{36}{subsection.2.6.3}%
+\contentsline {section}{\numberline {2.7}Synthesis and Positioning of the Present Work}{39}{section.2.7}%
+\contentsline {chapter}{\numberline {3}A Ray-Tracing-Enhanced Lagrangian Particle Tracking Framework for Ice Accretion Applications}{42}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{42}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Lagrangian Droplet Tracking for Ice Accretion}{43}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Improvements in Lagrangian Particle Tracking}{47}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Ray--Quadrilateral Intersections in CFD Applications}{47}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Adaptive Seeding}{50}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Collection Efficiency Computations and SLD Effects}{51}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Parallelism}{55}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Results}{56}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Scalability}{57}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Case IPW1 - 112: NACA64A008 Horizontal Tail}{58}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Case IPW1 - 122: Three Element Airfoil}{61}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Case HLPW5 - 2.1: CRM Wing-Body}{64}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Conclusion}{66}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Article : Three-Dimensional Multilayer Ice Accretion Using a Level-Set Method}{67}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{67}{section.4.1}%
+\contentsline {section}{\numberline {4.2}CHAMPS Icing Framework}{70}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Level-Set Ice Accretion Formulation}{71}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Level-Set Governing Equations and Initialization}{71}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Level-Set Advection: Velocity Formulation, Surface-Quantity Propagation, and Time Integration}{72}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Ice Mass Computation and Local Interface Reconstruction}{75}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Geometry Extraction and Smoothing}{76}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Results}{79}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Three-Horns Ice Accretion Case}{80}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Case IPW1 241}{81}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Case IPW1 242}{83}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Case IPW1 361}{87}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Case IPW1 362}{88}{subsection.4.5.5}%
+\contentsline {section}{\numberline {4.6}Conclusion}{90}{section.4.6}%
+\contentsline {chapter}{\numberline {5}An Immersed-Boundary Approach for Multilayer Ice Accretion Simulations}{92}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{92}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Immersed-Boundary Representation}{94}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Immersed-Boundary Flow Treatment}{97}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Immersed-Boundary Droplet Treatment}{100}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Eulerian Formulation: Governing Equations and Penalization Strategy}{100}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Lagrangian Immersed-Surface Tracking}{102}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Immersed-Boundary Icing Coupling}{103}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Results}{103}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{104}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}SLD Impingement}{105}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Case 01}{106}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Case 04}{107}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Case RG15}{109}{subsection.5.6.5}%
+\contentsline {section}{\numberline {5.7}Conclusion}{110}{section.5.7}%
+\contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{113}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Eulerian and Lagrangian Droplet Impingement}{113}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Algebraic and Level-Set Ice Accretion}{116}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Body-Fitted and Immersed-Boundary Approaches}{119}{section.6.3}%
+\contentsline {chapter}{\numberline {7}CONCLUSION}{121}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Works}{121}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Limitations}{123}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Research}{124}{section.7.3}%
+\contentsline {compteur}{REFERENCES}{127}{chapter*.92}%
+\contentsline {compteur}{APPENDICES}{143}{chapter*.92}%
+\contentsline {section}{\numberline {A.1}Mass Balance}{143}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Energy Balance}{143}{section.A.2}%
+\contentsline {section}{\numberline {B.1}Mesh Refinement Study}{146}{section.B.1}%
+\contentsline {section}{\numberline {B.2}SLD Model Details}{148}{section.B.2}%
+\contentsline {section}{\numberline {C.1}Lagrangian Droplet Integration}{149}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Level-Set Advection}{149}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}Spatial Convergence}{150}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Temporal Convergence}{150}{subsection.C.2.2}%
+\contentsline {section}{\numberline {C.3}Eulerian Immersed-Boundary Droplet Formulation}{151}{section.C.3}%
