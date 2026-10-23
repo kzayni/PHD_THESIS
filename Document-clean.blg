@@ -69,15 +69,15 @@ Warning--empty year in champsArticle
 Done.
 You've used 181 entries,
             4024 wiz_defined-function locations,
-            1831 strings with 40088 characters,
-and the built_in function-call counts, 121803 in all, are:
-= -- 10089
+            1830 strings with 40056 characters,
+and the built_in function-call counts, 121764 in all, are:
+= -- 10083
 > -- 2812
 < -- 882
 + -- 1509
 - -- 515
-* -- 5665
-:= -- 18578
+* -- 5660
+:= -- 18564
 add.period$ -- 367
 call.type$ -- 181
 change.case$ -- 169
@@ -86,20 +86,20 @@ cite$ -- 218
 duplicate$ -- 9264
 empty$ -- 9928
 format.name$ -- 657
-if$ -- 28128
+if$ -- 28122
 int.to.chr$ -- 0
 int.to.str$ -- 180
 missing$ -- 1641
-newline$ -- 571
+newline$ -- 569
 num.names$ -- 180
-pop$ -- 3787
+pop$ -- 3786
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 4
-skip$ -- 9723
+skip$ -- 9722
 stack$ -- 0
 substring$ -- 4716
-swap$ -- 7330
+swap$ -- 7329
 text.length$ -- 274
 text.prefix$ -- 0
 top$ -- 6
@@ -107,5 +107,5 @@ type$ -- 181
 warning$ -- 37
 while$ -- 489
 width$ -- 183
-write$ -- 1714
+write$ -- 1711
 (There were 38 warnings)

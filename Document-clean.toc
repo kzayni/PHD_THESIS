@@ -21,9 +21,9 @@
 \contentsline {section}{\numberline {1.6}Thesis Outline}{12}{section.1.6}%
 \contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{13}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Overview of Numerical Ice Accretion Modeling}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aerodynamics}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Aerodynamics}{16}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Dispersed Phase Modeling}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{20}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Eulerian Droplet Formulation}{19}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Lagrangian Droplet Formulation}{21}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Supercooled Large Droplet Modeling}{21}{subsection.2.3.3}%
 \contentsline {section}{\numberline {2.4}Thermodynamic Modeling}{25}{section.2.4}%
@@ -73,11 +73,11 @@
 \contentsline {subsection}{\numberline {5.4.2}Lagrangian Immersed-Surface Tracking}{100}{subsection.5.4.2}%
 \contentsline {section}{\numberline {5.5}Immersed-Boundary Icing Coupling}{101}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Results}{102}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{103}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}SLD Impingement}{103}{subsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.6.3}Case 01}{104}{subsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.6.4}Case 04}{105}{subsection.5.6.4}%
-\contentsline {subsection}{\numberline {5.6.5}Case RG15}{107}{subsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.6.1}Cylinder Impingement Verification}{102}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}SLD Impingement}{104}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Case 01}{105}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Case 04}{106}{subsection.5.6.4}%
+\contentsline {subsection}{\numberline {5.6.5}Case RG15}{106}{subsection.5.6.5}%
 \contentsline {section}{\numberline {5.7}Conclusion}{109}{section.5.7}%
 \contentsline {chapter}{\numberline {6}GENERAL DISCUSSIONS}{111}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Eulerian and Lagrangian Droplet Impingement}{111}{section.6.1}%
